@@ -1,4 +1,4 @@
-The original CD is lot
+The original CD is lost
 
 gcom is the hardest part of the install.  Gethin does this part.
 
