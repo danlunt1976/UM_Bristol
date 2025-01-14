@@ -1,0 +1,7 @@
+Edits scripts on the fly for a specific machine.
+
+Streamlined as possible.
+
+Still has weird pdksh.
+
+Some user-specific bits.
