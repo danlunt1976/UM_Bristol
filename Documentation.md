@@ -23,3 +23,9 @@ Had to play around a bit with the .obsidian folder.  I had to add .obsidian to t
 
 Now seems to sync quite well.
 
+Git Training:
+https://chryswoods.com/introducing_git/
+
+GitHub Training:
+https://chryswoods.com/git_collaboration/
+
