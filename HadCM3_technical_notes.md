@@ -1,3 +1,9 @@
+This contains links to technical notes about HadCM3.
+
+This is currently mostly notes based on meetings with Paul, and is not really of use/interest to most users of the model.  
+
+Users should instead go to [HadCM3_user_notes](HadCM3_user_notes).  
+
 [PUMA](PUMA.md)
 
 [Model_install](Model_install.md)

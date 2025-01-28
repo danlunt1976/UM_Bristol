@@ -1,4 +1,4 @@
-Edits scripts on the fly for a specific machine.
+Clustersubmit edits the submit scripts on the fly for a specific machine.
 
 Streamlined as possible.
 

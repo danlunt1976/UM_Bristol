@@ -1,8 +1,8 @@
-BluePebble is possibly the future of local hardware.  Could have a head-node plus a disk.
+BluePebble is possibly the future of local hardware.  Could have a head-node plus a disk.  However, Digital Labs may be replacing Bluepebble.  See [University_HPC](University_HPC)
 
 Need an eocene replacement.  
 
-Also need to replace Oligocene/Holocene.
+Also need to replace oligocene/holocene.
 
 Fund via Capital Bids?
 
@@ -14,7 +14,7 @@ Triassic: very old
 
 Silurian: also old
 
-David Gardner is currently overloaded.
+David Gardner is currently overloaded and so has little time for new development work.
 
 Rocky8 now on miocene.  But not tested.  gfortran does not compile all the scripts.  Intel compiler is fine though.  qplot does not compile.
 

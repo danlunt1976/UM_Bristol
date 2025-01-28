@@ -1,8 +1,8 @@
-Use markdown for documentation (.md files) and link to github?
+Use markdown for documentation (.md files) and link to github.
 
-Could set up a Jupyter Hub for python.
+Could set up a Jupyter Hub for python on one of BRIDGE machines.  Discussed this with Fabien.
 
-Could set up a BRIDGE account on github (Greg may have one that he controls)
+Could set up a BRIDGE account on github (Greg may have one that he controls already).
 
 Could set up an organisation on github.
 
