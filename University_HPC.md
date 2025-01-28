@@ -1,4 +1,4 @@
-[Back to HadCM3_technical_notes](HadCM3_technical_notes)
+[Back to HadCM3_technical_notes](HadCM3_technical_notes.md)
 
 **Paul Valdes** - Craig Butts (HoS, chemistry) got money (from EPSRC?) for BC/BP replacement.  Cloud but local.  Dynamically partitioned.  But disk space is an issue.
 

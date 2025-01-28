@@ -1,4 +1,4 @@
-[Back to HadCM3_technical_notes](HadCM3_technical_notes)
+[Back to HadCM3_technical_notes](HadCM3_technical_notes.md)
 
 Clustersubmit edits the submit scripts on the fly for a specific machine.
 

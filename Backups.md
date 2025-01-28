@@ -1,4 +1,4 @@
-[Back to HadCM3_technical_notes](HadCM3_technical_notes)
+[Back to HadCM3_technical_notes](HadCM3_technical_notes.md)
 
 Home and ummodel are backed up.
 
