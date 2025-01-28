@@ -1,4 +1,4 @@
-[Back to HadCM3_technical_notes](Back to HadCM3_technical_notes)
+[Back to HadCM3_technical_notes](HadCM3_technical_notes)
 
 Use markdown for documentation (.md files) and link to github.
 

@@ -1,4 +1,4 @@
-[Back to HadCM3_technical_notes](Back to HadCM3_technical_notes)
+[Back to HadCM3_technical_notes](HadCM3_technical_notes)
 
 Two versions: 4.5.3 versus 4.5.1
 

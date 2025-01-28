@@ -1,4 +1,4 @@
-[Back to HadCM3_technical_notes](Back to HadCM3_technical_notes)
+[Back to HadCM3_technical_notes](HadCM3_technical_notes)
 
 The original CD with the code from the Met Office is lost
 
