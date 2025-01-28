@@ -1,6 +1,6 @@
 [Back to HadCM3_user_notes](HadCM3_user_notes.md)
 
-The starting point for this document was [Paul's notes](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/Starting_Using_the_Hadley_Centre_Climate_Model.docx)
+The starting point for this document was [Paul's notes](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/Starting_Using_the_Hadley_Centre_Climate_Model.docx). This itself was originally written as a guide for our undergraduate students who were carrying out dissertations using HadCM3.
 
 # Introduction
 
@@ -86,3 +86,222 @@ A particularly recommended course is:
 [https://www.netacad.com/campaign/linux-unhatched3](https://www.netacad.com/campaign/linux-unhatched3)
 
 Before going any further, try these online courses until you feel that you are confident using Linux.  In particular, make sure that you can write and edit text files using emacs, move around your directory structures, copy files, move files, and delete files.
+
+
+# Setting up your Linux environment
+
+Now that you are familiar with Linux, you can finish setting up access to your accounts. You only need to do this ONCE. It is important that you follow the instructions precisely and in the order that they are listed. If you are not using bluepebble, skip all commands related to it.
+
+WARNING: The script setup_system overwrites a number of existing files. If you are a new user, this is correct. If you are an existing user, you may wish to avoid using the script but you might want to look at what the script does and mimic it.
+
+One of the key things is to set up ssh keys so that we can move files around between systems without the need for a password. We do this for all machines within the University of Bristol domain. It is **very important** that you follow these instructions precisely. When you have completed the bluecrystal/bluepebble/eocene ssh key setups, test to see if it works by trying to logon from one machine to another (e.g. from eocene type: `ssh bc4`). If successful, then you will not need a password.
+
+These are the commands for different machines, to be done in the following order:
+
+### (a) bluecrystal
+
+Login to bluecrystal (bc4login.acrc.bris.ac.uk). Standard folder and paths can then be created by typing:
+
+`~ggpjv/swsvalde/etc/setup_system`
+
+Press return (default yes) for all questions.
+
+This sets ups all the relevant files, paths and directories that are required to run the UM. It also creates a number of default files (e.g. .profile, .bashrc) which as you become more knowledgeable, you may want to edit. It also includes setting up short machine names for transferring files between machines. Specifically, bc4login.acrc.bris.ac.uk becomes bc4, bp1-login04.acrc.bris.ac.uk becomes bp14, and all of the BRIDGE servers can be used as their short name (i.e., eocene rather than eocene.ggy.bris.ac.uk). See $HOME/.ssh/config for full list of short names.
+
+ssh keys are setup by:
+```
+cd $HOME/.ssh
+ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa
+```
+Press return for all questions (DO NOT ENTER A PASSPHRASE).
+```
+chmod 400 ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+ssh-copy-id -i ~/.ssh/id_rsa bp14
+ssh-copy-id -i ~/.ssh/id_rsa eocene
+```
+
+### (b) bluepebble
+
+Login to bluepebble (bp1-login04.acrc.bris.ac.uk ). Standard folder and paths can then be created by typing:
+
+`~ggpjv/swsvalde/etc/setup_system`
+
+Press return (default yes) for all questions.
+
+The script does a similar role to that on bluecrystal, but folder locations are different.
+
+Setting up ssh keys is similar:
+```
+cd $HOME/.ssh
+ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa
+```
+Press return for all questions (DO NOT ENTER A PASSPHRASE).
+```
+chmod 400 ~/.ssh_ _id_rsa
+cat ~/.ssh/_ _id_rsa.pub >> ~/.ssh/authorized_keys
+ssh-copy-id -i ~/.ssh/id_rsa bc4
+ssh-copy-id -i ~/.ssh/id_rsa eocene
+```
+
+### (c)    eocene
+
+Login to Eocene (eocene.ggy.bris.ac.uk). Standard folder and paths can then be created by typing:
+
+`~swsvalde/etc/setup_system`
+
+Press return (default yes) for all questions.
+
+(NOTE the different folder address above)
+
+The script does a similar role to that on bluecrystal, but folder locations are different.
+
+Setting up ssh keys is similar:
+```
+cd $HOME/.ssh
+ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa
+```
+Press return for all questions (DO NOT ENTER A PASSPHRASE).
+```
+chmod 400 ~/.ssh_ _id_rsa
+cat ~/.ssh/_ _id_rsa.pub >> ~/.ssh/authorized_keys
+ssh-copy-id -i ~/.ssh/id_rsa bc4
+ssh-copy-id -i ~/.ssh/id_rsa bp14_
+```
+
+### (d)   archer2/puma2
+
+You should have already setup the ssh keys as part of the registering process for archer2/puma2. You can add further keys from different machines if you would like. There are also instructions at NCAS for making the logging on puma2 from archer2 password less.
+
+To log into puma2, log into eocene, and then type (you only need to do this once per eocene session):
+
+`eval $(ssh-agent); ssh-add ~/.ssh/id_rsa_puma_`
+
+you should now be able to log into archer2/puma2 from eocene, by typing:
+
+`ssh archer2`
+
+On archer2, create a symbolic link:
+
+`ln -s /home/n02/n02-puma/username /umui_jobs`
+
+then
+
+`ssh puma2`
+
+Once logged on to puma2, type:
+
+`~swsvalde/etc/setup_system`
+
+Press return (default yes) for all questions.
+
+The script does a similar role to that on bluecrystal but folder locations are different.
+
+This has now completed the setup of all of the machines that are required. You only need to do this once.
+
+
+# Advanced Computing Research Centre
+
+You should also make yourself familiar with the ACRC webpages:
+
+https://www.bristol.ac.uk/acrc/high-performance-computing/hpc-documentation-support-and-training/
+
+
+# Overall Summary of running and processing the Unified Model
+
+## Introduction
+
+Climate is the average (and other statistics) of weather. The World Meteorological Organisation defines climate as the 30-year statistics of weather, although there is no scientific basis for the use of 30 years. Frequently, researchers working on modern climate choose a shorter period (10 or 20 years). This allows for a more rapid updating of climate to reflect recent changes but means there is more natural variability in the signal (there is a lot of natural, unforced variability of weather and climate). Lovejoy (2013, 2018) suggests that there is a scientific rationale for using 100 years as the averaging period.
+
+A climate model works by simulating day-to-day weather and then treating the resulting output in the same way as real weather. Climate (and other statistics) are calculated from the model simulated weather. The internal time step of the atmosphere (and land surface) model is typically about 30 minutes. The internal time step of the ocean is typically about 1 hour and, in theory, we could output simulated weather at this frequency. However, this would produce a huge amount of output.
+
+In many cases, we do not know the initial state of the climate system, so we often must arbitrarily initialise the state of the atmosphere, ocean, and land surface and then wait until the model reaches a dynamic equilibrium. The atmosphere rapidly comes into equilibrium (within a decade or two). The land surface (especially the deep soil moisture) takes a few decades more. Vegetation can take several centuries to a millennium (boreal forests are slow to grow). The surface ocean responds within a century or two, the deep ocean can take several thousand years (as can ocean biogeochemistry). Hence, we normally run the model for a 'spinup' period to allow the model to reach a dynamic equilibrium and then perform averaging (and other statistics) on a final segment.
+
+## Overall Process
+
+The introduction above gives an idea of the sort of work that is required in order to complete a climate simulation. It can be summarised in the following steps:
+
+1. **Prepare experiment**
+Prepare an experiment job, using the umui (on puma). The umui is a data base which contains all the information about a particular simulation. The umui creates a 5 letter code which becomes the job name and is used in all following work. In UM terminology, the 5 letter is called the RUNID.
+
+2. **Copy to HPC**
+Once the job is prepared, there is a button on the umui which processes the job. This creates a folder (in $HOME/umui_jobs/RUNID on puma) with a set of files that will control the running of the model, based on the information in the umui database. We must transfer this folder onto the HPC machine where we run the job.
+
+3. **Compile executable**
+On the HPC machine, we first must create an 'executable' file for the model itself. We do this be submitting the job to 'compile' the code (which is mainly in Fortran) into an executable. It is this executable that we will run. Creating the executable can take between an hour and 12 hours to complete.
+
+4. **Submit simulation**
+Once the executable is created, we can then submit the job to run the model itself. All HPC machines are shared and jobs can be submitted to a number of different queues, depending on the length of the simulation and whether it is a test or full run. Most machines have time limits varying from an hour of cpu time up to 14 days. However, the run may take a long time (up to several months) and will often therefore multiple continuation submissions.
+
+5. **Transfer Data**
+Whilst the model is running, it is outputting the “weather” data and this can rapidly grow to very large quantity of data. Most HPC machines do not have large data storage areas so we need to transfer the data back to our BRIDGE servers.   This is done automatically, following a few setup steps. A script will download all “old” output files (i.e. those no longer needed by the simulation) and will also convert them from UM format to netcdf format. To do this you need to:
+
+- Create an entry in our BRIDGE database of UM simulations, and create a copy of the ancillary files (these are files used to setup land sea mask, orography). These two steps are controlled by webpages.
+- Add the RUNID to a file called $HOME/bin/ftp_sh.bc4.params (or equivalent)
+
+6. **Tidy Experiment and Output**
+When the simulation is finished, you need to download the remaining files, using a script called tidy_expt. You may also want to run another script (fill_gaps_new01) to check that no file is missing.
+
+7. **Create Climate Files**
+Finally, you need to process the files to produce the climate means and other diagnostics. This is also controlled by a webpage.
+
+
+# Prepare the experiment: exploring the Unified Model User Interface
+
+You can now start exploring the model!
+
+Log on to puma. Note that you must have Xming running for the following to work – Xming allows a remote machine to send windows to your desktop.
+
+Type (the & sign puts the user interface in the background, so you can continue to type at the command line):
+
+`umui &` 
+
+A grey Gui should pop up. If it doesn’t then check that Xming and putty are correctly set up.
+
+First, we will find some of the models described in the GMD paper and .  They are all owned by user swsvalde.
+
+Click on: Search –> Filter, and set Owner = swsvalde,USER
+
+Where USER is your username on puma.  This will show your experiments, and those owned by swsvalde.  In 'umui language', an 'Experiment' is a folder that contains a number of 'Jobs'.  A Job is the same as a model simulation.
+
+# Transferring to the HPC machine
+
+Having processed the experiment, the umui will have created a folder on puma2 called $HOME/umui_jobs/expt_name.
+
+This folder needs to be transferred to the HPC machine. To do this, you need to do one or two copies depending on which machine your id_rsa.puma was created. From this machine, type:
+
+`scp -rp archer2:umui_jobs/expt_name ~/umui_jobs`
+
+If this machine is not the HPC, then do
+
+`scp -rp ~/umui_jobs/expt_name bc4:umui_jobs`
+
+(use bc4 for bluecrystal, use bp14 for bluepebble).
+
+You should now have the expt_name folder on the HPC machine.
+
+
+# Submitting the simulation
+
+Now that all of the scripts have been transferred, we need to submit the job. This normally requires two steps. The first step requires to create the executable file from the fortran code. To do this, type:
+
+`clustersubmit -C y -r bc4 expt_name`
+
+You now have to wait. On bc4, it will take about 6 hours to create the executable. On bp14, it will take about an hour. You will receive an email (either on the machine, or your inbox).
+
+After the executable is completed, you now need to submit the actual simulation. To do this, try:
+
+`clustersubmit -c n -s y -a y -q veryshort -r bc4 -p 7x4 expt_name`     (if using bc4)
+
+or
+
+`clustersubmit -c n -s y -a y -q short -r bp14 -p 6x4 expt_name`   (if using bp14)
+
+This submits your job.
+
+
+# Other documentation
+
+Here is documentation for some of the key scripts/processes:
+[Documentation for clustersubmit](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/Documentation_for_clustersubmit.docx)
+[Documentation for ensembles](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/Running_Ensembles_on_bluecrystalp4.docx)
