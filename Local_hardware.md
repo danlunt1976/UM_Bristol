@@ -1,3 +1,5 @@
+[Back to HadCM3_technical_notes](Back to HadCM3_technical_notes)
+
 BluePebble is possibly the future of local hardware.  Could have a head-node plus a disk.  However, Digital Labs may be replacing Bluepebble.  See [University_HPC](University_HPC)
 
 Need an eocene replacement.  

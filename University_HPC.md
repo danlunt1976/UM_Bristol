@@ -1,3 +1,5 @@
+[Back to HadCM3_technical_notes](Back to HadCM3_technical_notes)
+
 **Paul Valdes** - Craig Butts (HoS, chemistry) got money (from EPSRC?) for BC/BP replacement.  Cloud but local.  Dynamically partitioned.  But disk space is an issue.
 
 **David Manley** - £1.2 million for x86 replacement.  EPSRC money.  Key people are Annela Seddon (APVC), Stacey Downton (leading on IT side).  Speak to Stacey about BC4 replacement.  BRICS - Bristol Research....  Also Simon Hanna who is the Academic Lead.  

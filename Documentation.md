@@ -1,3 +1,5 @@
+[Back to HadCM3_technical_notes](Back to HadCM3_technical_notes)
+
 Use markdown for documentation (.md files) and link to github.
 
 Could set up a Jupyter Hub for python on one of BRIDGE machines.  Discussed this with Fabien.
