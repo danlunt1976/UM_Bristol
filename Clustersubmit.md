@@ -5,3 +5,7 @@ Streamlined as possible.
 Still has weird pdksh.
 
 Some user-specific bits.
+
+Paul has documented this - see webpages.  Need to shift this onto github/markdown.
+
+

@@ -29,3 +29,5 @@ https://chryswoods.com/introducing_git/
 GitHub Training:
 https://chryswoods.com/git_collaboration/
 
+Dan will merge documentation and start new markdown version.  Test with Niels in first instance.
+
