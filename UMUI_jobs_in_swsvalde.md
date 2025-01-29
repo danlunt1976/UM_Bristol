@@ -57,8 +57,11 @@ In addition, there are some further variables defined in: Sub-Model Independent 
 1. If the variables are specified as $HOME, this will work for the user but will not work if another user copies your folder without them also copying the folder structure and contents. It is therefore better to give the path as ~username/ancil/scotese/160_4_1deg. This would work for any user without having to create a copy of the contents.
 
 2. In addition to the variables above, we always use the following:
+   
 a. DATAM = \$DUMP2HOLD/um/\$RUNID/datam
+
 b. DATAW= \$DUMP2HOLD/um/\$RUNID/dataw
+
 c.  UCOMPDIR= \$DUMP2HOLD/um/\$RUNID/code
 
 # Modsets
