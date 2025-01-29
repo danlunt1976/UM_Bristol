@@ -84,3 +84,7 @@ There are several options in the model where you can choose the fast version of 
 
 Until recently, we always selected the fast version, but I have recently discovered (2021) that the bit reproducible version is not slower (or in one case faster)! Hence, they are now all changed to bit reproducible except in one location because the isotope code was not coded for this option.
 
+# Summary
+
+With these changes adopted, ...
+

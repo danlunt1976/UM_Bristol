@@ -10,5 +10,8 @@
 
 [Documentation for ensembles](Running_Ensembles_on_bluecrystalp4.md)
 
+[HadCM3 for CMIP7](HadCM3_CMIP7.md)
+
+
 
 

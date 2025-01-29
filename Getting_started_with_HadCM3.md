@@ -304,6 +304,7 @@ This submits your job.
 
 Here is documentation for some of the key scripts/processes:
 
-[Documentation for clustersubmit](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/Documentation_for_clustersubmit.docx)
+[Documentation for clustersubmit](Documentation_for_clustersubmit.md)
 
-[Documentation for ensembles](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/Running_Ensembles_on_bluecrystalp4.docx)
+[Documentation for ensembles](Running_Ensembles_on_bluecrystalp4)
+
