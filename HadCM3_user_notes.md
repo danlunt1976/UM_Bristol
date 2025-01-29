@@ -6,7 +6,7 @@
 
 [HadCM3_Workflow](HadCM3_Workflow.md)
 
-To be converted to markdown: [Documentation_for_clustersubmit](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/Documentation_for_clustersubmit.docx)
+[Documentation for clustersubmit](Documentation_for_clustersubmit.md)
 
 To be converted to markdown: [Documentation_for_ensembles](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/Running_Ensembles_on_bluecrystalp4.docx)
 
