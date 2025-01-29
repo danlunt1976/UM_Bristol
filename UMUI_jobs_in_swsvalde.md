@@ -34,6 +34,7 @@ Within a umui job, go to **Sub-Model Independent -> Script Inserts and Modificat
 | UM_OUTPUT  | Folder for various output files. I don’t think this is used!                                                                                                 | \$HOME/PUM_Output/vn4.5    |
 | TEMP       | Temporary folder for a variety of files whilst model is running                                                                                              | \$DUMP2HOLD/um/\$RUNID/tmp |
 | IN         | Temporary input file folder.                                                                                                                                 | \$TEMP                     |
+
 In the submission script (clustersubmit), the values for ANCIL_ROOT and PV_ROOT are changed to reflect the full pathname for the appropriate machine.
 
 In addition, there are some further variables defined in: Sub-Model Independent -> **File & Directory Naming. Time Convention & Environment**. Note that these variables point towards various folders, but the variables can be ignored subsequently. For instance, in the ancil section, you can completely ignore the variables defined below and give the folder location as something completely different. This is OK to do (provided you keep to the structures e.g., using \$HOME or ~username) but it is perhaps a little bit less tidy/structured than using the variables below.
