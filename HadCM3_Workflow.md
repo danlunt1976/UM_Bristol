@@ -1,4 +1,7 @@
 [Back to HadCM3_user_notes](HadCM3_user_notes.md)
+
+# HadCM3 Workflow
+
 # Introduction
 
 The BRIDGE (Bristol Research Initiative for the Dynamic Global Environment) research group works with collaborators at XTBG (Xishuanbanna Tropical Botanical Garden) use computer models to research past, present and future climate change, investigate the causes of these changes, and the impact on plants and biodiversity. We use plant fossil data combined with computer models of climate and vegetation. Climate models require high performance computing.

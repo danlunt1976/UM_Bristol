@@ -1,3 +1,5 @@
+# HadCM3 user notes
+
 [Getting_started_with_HadCM3](Getting_started_with_HadCM3.md)
 
 [UMUI jobs in swsvalde](UMUI_jobs_in_swsvalde.md)

@@ -1,5 +1,6 @@
 [Back to HadCM3_user_notes](HadCM3_user_notes.md)
 
+# UMUI jobs in swsvalde
 # Introduction
 
 When I started using the UM, I inherited a lot of different jobs from the Hadley Centre. These jobs covered the whole range of scientifically different versions of the model, from normal HadAM3-N48 (and HadAM3-N216), to HadSM3 and HadCM3-M1, and HadCM3-M2.1. However, the jobs often had lots of differences, due to different users, differences in STASH, the date when the job was created, different machines etc. etc. This made it very difficult to compare jobs and work out what was a true scientific difference, and what was just a path or machine technical difference. I also wanted to be able to submit to a range of different machines without having to make lots of changes to the job.

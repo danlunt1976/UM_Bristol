@@ -1,5 +1,7 @@
 [Back to HadCM3_user_notes](HadCM3_user_notes.md)
 
+# Getting started with HadCM3
+
 The starting point for this document was [Paul's notes](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/Starting_Using_the_Hadley_Centre_Climate_Model.docx). This itself was originally written as a guide for our undergraduate students who were carrying out dissertations using HadCM3.
 
 # Introduction

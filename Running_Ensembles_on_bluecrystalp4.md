@@ -1,5 +1,8 @@
 [Back to HadCM3_user_notes](HadCM3_user_notes.md)
 
+
+# Documentation for ensembles
+
 # Background
 
 Very often on bluepebble/bluecrystal, we have to queue for some time before the job commences. It is then frustrating if it crashes (e.g. with negative pressure or negative theta) after a relatively short time. The crash can often be easy to sort out but your job goes to the bottom of the queue.

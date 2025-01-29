@@ -1,4 +1,4 @@
-This is the home for documentation of the Bristol version of the UK Met Office Unified Model.
+# This is the home for documentation of the Bristol version of the UK Met Office Unified Model.
 
 [HadCM3_user_notes](HadCM3_user_notes.md)
 
