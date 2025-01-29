@@ -2,6 +2,8 @@
 
 [UMUI jobs in swsvalde](UMUI_jobs_in_swsvalde.md)
 
+[Standard swsvalde UM Model jobs](Standard_swsvalde_UM_Model_jobs.md)
+
 [HadCM3_Workflow](HadCM3_Workflow.md)
 
 To be converted to markdown: [Documentation_for_clustersubmit](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/Documentation_for_clustersubmit.docx)
