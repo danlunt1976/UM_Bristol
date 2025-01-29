@@ -42,11 +42,11 @@ account="GEOG015942"
 
 Typical options are shown for a typical bluecrystal configuration:
 
-cores_ns="7" 
-cores_ew="4" 
-nomail="y" 
-notransfer="y" 
-rhost="bc4" 
-queue="cpu" 
+cores_ns="7"  
+cores_ew="4"  
+nomail="y"  
+notransfer="y"  
+rhost="bc4"  
+queue="cpu"  
 account="GEOG015942"
 
