@@ -1,8 +1,8 @@
 [Getting_started_with_HadCM3](Getting_started_with_HadCM3.md)
 
-[UMUI jobs in swsvalde](UMUI_jobs_in_swsvalde)
+[UMUI jobs in swsvalde](UMUI_jobs_in_swsvalde.md)
 
-To be converted to markdown: [HadCM3_Workflow](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/HadCM3_Workflow.docx)
+[HadCM3_Workflow](HadCM3_Workflow.md)
 
 To be converted to markdown: [Documentation_for_clustersubmit](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/Documentation_for_clustersubmit.docx)
 
