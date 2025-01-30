@@ -2,7 +2,7 @@
 
 # Getting started with HadCM3
 
-The starting point for this document was [Paul's notes](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/old_now_on_github_do_not_use/Starting_Using_the_Hadley_Centre_Climate_Model.docx). This itself was originally written as a guide for our undergraduate students who were carrying out dissertations using HadCM3.  You may also be interested to look at [Niels's notes](Nils_notes_for_running_HadCM3.md)
+The starting point for this document was [Paul's notes](https://www.paleo.bristol.ac.uk/UM_Docs/Bristol_Tech_Notes/old_now_on_github_do_not_use/Starting_Using_the_Hadley_Centre_Climate_Model.docx). This itself was originally written as a guide for our undergraduate students who were carrying out dissertations using HadCM3.  You may also be interested to look at [Nils's notes](Nils_notes_for_running_HadCM3B.md)
 
 # Introduction
 
