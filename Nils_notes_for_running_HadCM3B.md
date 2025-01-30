@@ -124,7 +124,7 @@
 
 # Postprocessing:
 - Through webinterface
-- Open https://www.paleo.bristol.ac.uk/web_pages.htm (bridge, webpages)
+- Open https://www.paleo.bristol.ac.uk/web_pages.htm
 - Click on "Add/Modify List Runs": enter new job into list of eperiments: if building directly on previous experiment, can use this one to set default values
 - Click on "Get_boundary_condition_files": if building directly on previous experiment, can use this one to create symlinks to old experiment) (Note: I'm not sure if this is actually needed at this point, or enough to do it after the run is finished and all files are transferred to silurian, should only work if I copy job files from puma first to eocene and then to bc4 and not if I copy them directly to bc4; in the latter case, it's likely that it should still work if it's only added after copying everything onto silurian]
 - Log onto silurian with "ssh -X USERNAME@silurian.ggy.bris.ac.uk"
