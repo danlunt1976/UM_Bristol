@@ -136,7 +136,7 @@
 - Data can be accessed from eocene through umdata/JOBNAME (umdata is a symlink /home/bridge/swsvalde/umdata, where symlinks to the actual locations of the data are collected, the actual location of the data is selected automatically by the system by searching for the disk with the most available space)
 - When run is finished, run "tidy_expt -machine bc4 -expt JOBNAME" (this copies all remaining files and converts them to nc files, tar's and gzip's the dataw directory such that run could be restarted from those files if needed, and deletes all run files from bc4)
 - After this, all model output is stored on silurian
-- Open https://www.paleo.bristol.ac.uk/web_pages.htm (bridge, webpages)
+- Open https://www.paleo.bristol.ac.uk/web_pages.htm
 - Click on "Run_scripts", enter jobname, and click on run_scripts
 - Specify diagnostics that should be run
 - Click on "Run_Diag"
