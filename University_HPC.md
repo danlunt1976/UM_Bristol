@@ -19,28 +19,35 @@ Questions for Simon:
 * Role of ACRC?
 BC4 is currently £1M per year to run.  May be a 6-month option to extend.  
 18th Dec: meet with Bond, Wooly, and others.
-Annela Seddon is new APVC Faculty FRD.  Simon had a meeting with her, but crashed by Ian Bond.
+Annela Seddon is new APVC Faculty FRD.  Simon had a meeting with her, but also attended by Ian Bond.
 
 Paul Valdes and Gethin Williams and Sadaf and Simon - Options for HPC
-* **BC4** : maybe extended 6 months?  Few £100.  Guy Poppy VC for research.  Ian Bond currently decision maker while Guy spin up.  Climate is one of our uni Strategic Objectives.
+* **BC4** : maybe extended 6 months?  Few £100.  Guy Poppy VC for research.  Ian Bond currently decision maker while Guy spins up.  Climate is one of our uni Strategic Objectives.
 * **Bluepebble**.  our jobs may have low priority as it favours single-core jobs.  We have 4 dedicated nodes.  Never used for a large ensemble (2 week queueing time).  Could buy more nodes.  BUT, still planned to be turned off.  May work multi-node for high-res model.  Will likely out-live BC4.   Maybe late 2026 turn-off.  But storage may deplete faster.  Currently working really well as the "new silurian".
-* **Digital Labs**. We don't have an account on this.  Maybe due to EPSRC funding.  Stacey Downton controls (Gethin says maybe not?).  No diskspace?  Would multi-node jobs work?  Sadaf's baby.  Uses OpenStack.  Flexible but very complex.  StackHPC is the company.  "mother of all learning curves". Uses VMs and cubinettis.  Ultimately, the user sees a slurm cluster. Craig Butts EPSRC £300k.  But no staff time for this.  Chris Woods is now employed on Isambard (in Thailand).  Sadaff in favour of this.  £1.3 million on x86 chips.  40 nodes x 200 cores.  Sadaff will ask someone to slurmify this.  The Gethin install the model.  Summer of this year for slurm to be there?  No idea how fast it will be.  Very filesystem and node dependent.  But Sadaf is now also head of Isambard, so little time for this.  
+* **Digital Labs**. We don't have an account on this.  Maybe due to EPSRC funding.  Stacey Downton controls (Gethin says maybe not?).  Low diskspace?  Would multi-node jobs work?  Sadaf is the lead.  Uses OpenStack.  Flexible but complex.  StackHPC is the company.  "mother of all learning curves". Uses VMs and cubinettis.  Ultimately, the user sees a slurm cluster. Craig Butts EPSRC £300k.  But no staff time for this.  Chris Woods is now employed on Isambard (in Thailand).  Sadaff in favour of this.  £1.3 million on x86 chips.  40 nodes x 200 cores.  Sadaff will ask someone to slurmify this.  The Gethin install the model.  Summer of this year for slurm to be there?  No idea how fast it will be.  Very filesystem and node dependent.  Sadaf is now also head of Isambard.  
   Simon says "The plan is to get a prototype x86 service running as soon as possible i.e. this month, and get some early users testing it.  Then we need to start the procurement exercise for the new nodes in order to have a replacement service running by the summer in time for the BC4 shutdown.  We had the promise of a substantial investment to kickstart the venture.  But, it’s a complex project and lots of people involved and we are waiting for a project manager to be appointed, so I’ve nothing definite to report on timescales.  It’s unlikely the prototype service will start now until February. However, there was acceptance that the service to users should not be interrupted over the summer, so everyone is working to that goal."...."Yes, I have you and others in Geography in mind as test users.  Also, some astrophysicists and chemists.  It’s important to stress test the system before we commit, and Sadaf is keen that we do this."
   Key thing is to press for the necessary storage on this system.  Think this sits under Bristol Centre for Supercomputing (BriCS).  
 * **Archer2** Michael Mimmiter - Simon Tett.  Ensemble script on pre-Archer.  FAMOUS in container on Archer.  Maybe good for high-res model.  FPU if have a grant- NERC grant may help.  We may have low queue priority.  Gethin thinks may be OK.  Gethin could port to Archer - will need buy-in from Grenville and Annette.
-* **Isambard 3 / AI** Gethin.  nupdate is an issue.  Original CRAY.  Mike Blackburn wrote a C nupdate.  CRAY did release source code.  Isambard 2 - 2 years per day!  Maybe 10 years per day.  Ideal solution if it can work.  Bristol has an FPU component that is very big. May be a panel for FPU component. Nodes are "Grace-Grace" = two Grace chips on a node.  Isambard 3 - UoB has 10% of this.  Gethin working on installing here.  nupdate (written in fortran?) is an issue.  The original code is a "binary blob" that is unpacked by nupdate.  Maybe ready sooner rather than later?  Arm design, build by nvidia, called Grace.  Not x86!
+* **Isambard 3 / AI** Gethin.  nupdate is an issue.  Original CRAY.  Mike Blackburn wrote a C nupdate.  CRAY did release source code.  Isambard 2 - 2 years per day!  Maybe 10 years per day (Gethin updated this to say it is 2-10 times slower than on BC4.  But largely irrelevant as Isambard 3 is very different to Isambard 2).  Ideal solution if it can work.  Bristol has an FPU component that is very big. May be a panel for FPU component. Nodes are "Grace-Grace" = two Grace chips on a node.  Isambard 3 - UoB has 10% of this.  Gethin working on installing here.  nupdate (written in fortran?) is an issue.  The original code is a "binary blob" that is unpacked by nupdate.  Maybe ready sooner rather than later?  Arm design, build by nvidia, called Grace.  Not x86!  One issue is the "swapbounds" step in the UM, which brings all calculations back to a single node every timestep, and does not scale well on non-x86 chips.
   Simon says "Regarding the code issues, I spoke with Sadaf Alam and Simon MS, and they are keen that the slow running should be resolved.  They have a sort of hotline to HPE for support with this sort of problem and have asked that Gethin raise tickets with them for investigation.  I’ve passed this on to Gethin so you might get some progress there.  The call for general UOB access to Isambard 3 (and Isambard AI) will go out this week for short projects beginning in February."...."Regarding Isambard, I think everyone is keen for it to be a success, including the vendors, so we should take advantage of this support while it is available."
-* **Condor** PCs in department.  Speak to Jeff.  Don't go there says Gethin.
-* **Cloud Computing** Price may increase and costly.  Data output?  Very expensive for volatile data.  £20k per year for 500 TBytes volatile.  If in a container then may work.  Code is working with gfortran.  Informally, Stacey recommends this approach.
-* **Fanny's machines** Won't be replaced.  Stay away - don't tell Keith/Barney!
-* **Self-service cluster (aka NextGen)**.  Keith Woolley.  Tony Payne used.  Not many cores.  Not for HPC.  But could be a test for the cloud.  Keith persuaded registrar to giv lots of cash - ££8M, but no one used.  Uses VMWARE version of openStack.  All cash spent on consultants.  May give it to ACRC!  Very little hardware.  Could merge with Digital Labs and make a success for Keith?!  Barney has put in a lot of security.  Stacey has EPSRC grant to inject funding.  ACRC sites in IT services.    
+* **Condor** PCs in department.  Speak to Jeff.  Not a good solution according to Gethin.
+* **Cloud Computing** Price may increase and costly.  Data output?  May be very expensive for volatile data.  ~£20k per year for 500 TBytes volatile.  If in a container then may work.  Code is working with gfortran.  Informally, Stacey recommends considering this approach.
+* **Fanny's machines** Won't be replaced.  Not a long-term solution.
+* **Self-service cluster (aka NextGen)**.  Keith Woolley.  Tony Payne used.  Not many cores.  Not for HPC.  But could be a test for the cloud.  Uses VMWARE version of openStack.  Has a lot of security.  Stacey has EPSRC grant to inject funding.  ACRC sites in IT services.    
 
+**Organisation**
 Keith Woolley > Matt Shard > Steph Downton
 Woolley > Steve Edge... > Simon Spate > Duncan Baldwin > David Gardner
-Woolley vs. Sadaf
-Was Sadaf and Chapman but Chapman could not work with Sadaf and left.
-Gethin currently doing extra role as Chapman left.
+Keith Woolley and Sadaf lead IT services and BriCS respectively.
+Previously was Sadaf and Chapman.  Gethin currently doing extra role as Chapman left.
+ACRC will likely be split between BRiCS and IT services.
+Digital Labs will sit in BriCS (with Isamabrds).
+NextGen-AI will sit in IT services.
+RDSF will sit in IT services.
+
+**Gethin**
 UK-wide - many groups struggling with UM install due to move from Centos7 to Rocky8.
+1-day MOAP, 1-day Paul.  3 days ACRC.
 
 **Isambard 3 application**
 
@@ -71,4 +78,5 @@ Sadaf said that NVIDIA will not really be interested in our code as it is too ol
 - Now to mid-term: continue with x86 UoB HPC continuity on Digital Labs cluster.  It currently has 10x2 AMD x86 processors with 128 cores per node (Gethin can confirm).  Dan will check timeline with Ian Bond.  We are ready to go waiting for the approval where we can gradually increase x86 capacity to close to 80% of BC4 CPU core count in the next 6 months. 
 - Medium to long term (6+ months plus) explore opportunities for code modernisation on newer multi-core x86 and ARM processors.  This would require a couple of RSE resources and possibly community efforts.
 - In parallel, find out details and plans for the next gen facility by IT services (I do not have visibility).
+
 
