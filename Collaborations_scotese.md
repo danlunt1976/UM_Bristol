@@ -1,0 +1,47 @@
+
+[Back to Collaborations](Collaborations.md)
+
+# Collaborations with Scotese simulations
+
+
+The purpose of this file is to document collaborations associated with BRIDGE simulations, in particular the “Scotese” simulations carried out by Dan (and earlier simulations by Paul).
+
+Usually we are very happy to share simulations, but would require that we (The person who carried out the simulation, the project PI, and the Bristol person who is the primary contact) are included as co-authors in at least the first paper they publish that uses the simulations, and are included in the scientific discussions.
+
+
+# Information on the simulations
+
+[See this document for details of the simulations and naming convention of the Scotese simulations](Accessing_scotese.md)
+
+**Alex’s Getech simulations:**  
+tfgs = Getech paleogeogs (to 300 Ma), but with CO2 from tfke.  Same physics as tfke.  10 Cretaceous stages currently missing.
+
+
+# Collaborations:
+
+|   |   |   |   |   |
+|---|---|---|---|---|
+|**Names**|**Institution**|**Work**|**Simulations**|**Paper status**|
+|Emily Judd and Jess Tierney|Arizona University|Phantastic temperature curve|texp1, texz1, teya1, texv1, texy, tfgw, tfke|Published|
+|Yongyun Hu|Peking University|Ocean circulation|scotese_spinupa, tfja|Published (without us!)|
+|Mattias Green|Bangor University|Paleo tidal mixing|tfke|Paper submitted|
+|Cooper Malanoski ([cooper.malanoski@wolfson.ox.ac.uk](mailto:cooper.malanoski@wolfson.ox.ac.uk)). Erin’s student/post-doc. (Alex F)|Oxford|Phanerozoic extinction velocity|tfke|Published.|
+|Jon Richey (jdrichey@ucdavis.edu)|UC Davis|Ecological Plant modelling|tfks (TBC)|in prep|
+|Wolf Dummann and Jens Herrle|Frankfurt University|OAE2 termination|tfke+tfks|in prep|
+|Barry Lomax, Mathew Kent (Alex F)|Nottingham University|Geocarb CO2 modelling|tfke+tfks|In prep|
+|Erin Saupe - Various|Oxford|Various. Playing around with data atm.|tfke+tfks|In prep.|
+|Emma Dunne|FAU|Niche modelling for Sauropods|tfke/tfks/tfgs|In prep.|
+|Lewis Jones|Vigo|Niche modelling – Corals & biogeography (Koppen climate classification of Phanerozioc)|tfke/tfks/tfgs|In prep.|
+|JORGE GARCÍA GIRÓN & Ale Chiarenza|Vigo|dinosaurian megaherbivores|tfke/tfks/tfgs|In prep.|
+|William J Matthaeus <willmatt@udel.edu>|Trinity College Dublin|paleo-ecosystem simulations using Paleo-BGC for the Triassic-Jurassic.|tfks/tfke|In prep.|
+|Zoe Dennehy-Carr and Joy Singarayer.  z.h.dennehy-carr@pgr.reading.ac.uk|Reading|Miocene biogeographical modelling|||
+|Ana Paiva and Pedro Godoy|Universidade de São Paulo, Brazil|The role of climate on the emergence of giant caimaninae from the miocene western amazonian region|tfgs|Published|
+|Roger Benson|Oxford|Marine animal diversity across latitudinal and temperature gradients during the Phanerozoic|tfks|Submitted, in review|
+|James Hansford|The Zoological Society of London|Crocodylomorph.  riassic, Jurassic, Cretaceous, Palaeogene, Neogene, Quaternary|Tfks,tfke|Sent data|
+|Alex Pohl|Dijon, Bourgogne|Genie, FOAM|Tfks,tfke|Submitted, in review|
+|Tom Hearing/Mark Williams/Tom Green|Leicester|Cambrian|Tfks,tfke|Comments on paper|
+|Jianming Qin|China University of Geosciences, Beijing|Cretaceous|Tfks,tfke|Sent data (via Chenmin)|
+|Davide Foffa|Birmingham|pterosauromorph climate|Tfks,tfke|submitted|
+|Niklas Werner|ETH|climate multistabililty and carbon cycling over the course of the Phanerozoic|Tfks,tfke|Sent simulation doc|
+|Alexis Balembois|Bourgogne, Dijon|marine biodiversity and the niche-environment interaction through deep time|Tfks,tfke|submitted|
+|Alexandros Pantelides|UCL?|Paleobiology PhD student, currently working with Alfio A.Chiarenza and Phillip Mannion on data related to the Campanian-Maastrichtian transition|Tfks,tfke||
