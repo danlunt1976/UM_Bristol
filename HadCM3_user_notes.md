@@ -18,4 +18,3 @@
 
 [Collaborations](Collaborations.md)
 
-
