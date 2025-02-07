@@ -19,7 +19,8 @@ Questions for Simon:
 * Role of ACRC?
 BC4 is currently £1M per year to run.  May be a 6-month option to extend.  
 18th Dec: meet with Bond, Wooly, and others.
-Annela Seddon is new APVC Faculty FRD.  Simon had a meeting with her, but also attended by Ian Bond.
+Annela Seddon is new APVC Faculty FRD.  Simon had a meeting with her, but also attended by Ian Bond.  
+"No, sorry, I can give no update.  I’ve tried to find out what is going on, but I have also been told to wait.  We are not waiting for each other, we are specifically awaiting permission from above to spend the money.  I think there are many factors in play here but anything I might say at this point would be guesswork, so best not said.  I suggest agitating with Heads of School and above - we wanted to move with the project at the start of January in order to have a viable service before BC4 gets shut down.  The longer we wait, the less likely that becomes."
 
 Paul Valdes and Gethin Williams and Sadaf and Simon - Options for HPC
 * **BC4** : maybe extended 6 months?  Few £100.  Guy Poppy VC for research.  Ian Bond currently decision maker while Guy spins up.  Climate is one of our uni Strategic Objectives.
