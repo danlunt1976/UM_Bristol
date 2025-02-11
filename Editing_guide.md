@@ -57,7 +57,9 @@ Instead of editing the wiki directly as above, you can download a 'clone' of the
 
 (4) Once you have finished editing, re-open GitHub Desktop.  Click on 'Fetch origin' to 'pull' any changes that anyone else has made.  Then write a comment in the 'Summary' box, and then click on 'Commit to main'
 
-(5) Have another beer.
+(5) Click on 'Push origin'
+
+(6) Have another beer.
 
 ### From a MAC
 
