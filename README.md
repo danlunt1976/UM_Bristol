@@ -6,5 +6,7 @@
 
 [HadGEM_technical_notes](HadGEM_technical_notes.md)
 
+---
+[How to edit these pages](Editing_guide.md)
 
 
