@@ -77,7 +77,26 @@ See Simon Hanna document.
 Met with Sadaf Alam and Gethin Williams and Richard Gilham.
 Sadaf said that NVIDIA will not really be interested in our code as it is too old and bespoke, so no support for installing on Isambard.
 - Now to mid-term: continue with x86 UoB HPC continuity on Digital Labs cluster.  It currently has 10x2 AMD x86 processors with 128 cores per node (Gethin can confirm).  Dan will check timeline with Ian Bond.  We are ready to go waiting for the approval where we can gradually increase x86 capacity to close to 80% of BC4 CPU core count in the next 6 months. 
+*It is great to hear that Digital Labs will eventually be close to 80% of BC4 core count.  This is really good news for us.  I will push Ian on the timeline for the £1M investment.
+Is the 80% what we expect to get from Ian Bond's £1M?  Or does 80% include an expectation that users will also provide funds for cores? 
+Are the initial 10 AMD processors ready to use for testing now?  i.e. is slurm installed and can we have a test account, please.   As I explained, for continuity of service we really need to start the work of installing and benchmarking our code asap.
+A key thing for us is plenty of disk space on the cluster, as we produce a lot of data!  How much disk space is currently on Digital Labs, what is the aspiration for eventual disk space, and how does this compare with what is on BC4?
+
 - Medium to long term (6+ months plus) explore opportunities for code modernisation on newer multi-core x86 and ARM processors.  This would require a couple of RSE resources and possibly community efforts.
+*Yes, Gethin has started on this.  How much he works on this, and how much on installing the model on Digital Labs, is a decision that depends on the answers to the above questions, I guess.*
+
 - In parallel, find out details and plans for the next gen facility by IT services (I do not have visibility).
+*I have chatted to Sophie Downton about this.  She seemed unclear as to whether Ian's investment of £1M would go to Digital Labs or to NextGen, so this makes things a little confusing for us.  It would be good to have some clarity - I will chat to Ian about this too.  From what I heard from you, it sounds like Digital Labs would be our preferred option.*
 
+**Ian Bond**
+Thank you for your time on Tuesday - it was much appreciated.
 
+In terms of the HPC part of our discussion, see below for my understanding of what we discussed - please let me know if any of this is incorrect.  If you are happy then I will disseminate this more widely in Geography.
+
+- As part of the "x86 HPC" community, I am really pleased that the Faculty recognises the importance of maintaining an x86 capability, and grateful for the investment of ~£1 million.
+    
+- The Faculty recognises the importance of "continuity of service", in particular for ongoing funded grants and deliverables, and that this will mean a period of overlap between the old and new systems due to the timescales required to port complex codes, including extending BC4 if necessary (which will hopefully not be needed!)
+    
+- The new system will be DigitalLabs and will be procured, maintained, and supported through BriCS, led by Sadaf Alam.
+    
+- I will email Sadaf to ensure that the Users have meaningful input into the specification of the new machine, in particular with regard to ensuring an appropriate balance between storage and compute.
