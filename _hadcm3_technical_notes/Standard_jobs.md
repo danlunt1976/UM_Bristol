@@ -3,6 +3,7 @@ layout: single
 title: Standard jobs
 excerpt: "Standard jobs"
 permalink: "/hadcm3_technical_notes/Standard_jobs/"
+collection: HadCM3_technical_notes
 ---
 <!-- [Back to HadCM3_technical_notes](HadCM3_technical_notes.md) -->
 

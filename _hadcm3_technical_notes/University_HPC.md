@@ -3,6 +3,7 @@ layout: single
 title: University HPC
 excerpt: "University HPC"
 permalink: "/hadcm3_technical_notes/University_HPC/"
+collection: HadCM3_technical_notes
 ---
 <!-- [Back to HadCM3_technical_notes](HadCM3_technical_notes.md) -->
 

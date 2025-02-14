@@ -3,6 +3,7 @@ layout: single
 title: Documentation
 excerpt: "Documentation"
 permalink: "/hadcm3_technical_notes/Documentation/"
+collection: HadCM3_technical_notes
 ---
 
 [Back to HadCM3_technical_notes](HadCM3_technical_notes.md)

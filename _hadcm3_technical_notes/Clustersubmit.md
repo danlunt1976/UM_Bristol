@@ -3,6 +3,7 @@ layout: single
 title: Clustersubmit
 excerpt: "Clustersubmit"
 permalink: "/hadcm3_technical_notes/Clustersubmit/"
+collection: HadCM3_technical_notes
 ---
 <!-- [Back to HadCM3_technical_notes](HadCM3_technical_notes.md) -->
 

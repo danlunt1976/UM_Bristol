@@ -3,6 +3,7 @@ layout: single
 title: Local hardware
 excerpt: "Local hardware"
 permalink: "/hadcm3_technical_notes/Local_hardware/"
+collection: HadCM3_technical_notes
 ---
 <!-- [Back to HadCM3_technical_notes](HadCM3_technical_notes.md) -->
 

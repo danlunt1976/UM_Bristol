@@ -3,6 +3,7 @@ layout: single
 title: Backups
 excerpt: "Backups"
 permalink: "/hadcm3_technical_notes/Backups/"
+collection: HadCM3_technical_notes
 ---
 
 <!-- [Back to HadCM3_technical_notes](HadCM3_technical_notes.md) -->

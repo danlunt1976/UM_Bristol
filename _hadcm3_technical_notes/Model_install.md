@@ -3,6 +3,7 @@ layout: single
 title: Model_install
 excerpt: "Model_install"
 permalink: "/hadcm3_technical_notes/Model_install/"
+collection: HadCM3_technical_notes
 ---
 <!-- [Back to HadCM3_technical_notes](HadCM3_technical_notes.md) -->
 
