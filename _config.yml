@@ -350,7 +350,7 @@ defaults:
       related: true
   # hadcm3_user_notes
   - scope:
-      path: ""
+      path: "_HadCM3_user_notes"
       type: HadCM3_user_notes
     values:
       layout: single
@@ -363,7 +363,7 @@ defaults:
       related: true
   # hadcm3_technical_notes
   - scope:
-      path: ""
+      path: "_HadCM3_technical_notes"
       type: HadCM3_technical_notes
     values:
       layout: single
@@ -376,7 +376,7 @@ defaults:
       related: true
   # hadgem_technical_notes
   - scope:
-      path: ""
+      path: "_HadGEM_technical_notes"
       type: HadGEM_technical_notes
     values:
       layout: single
