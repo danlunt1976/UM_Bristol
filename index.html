@@ -5,6 +5,32 @@ permalink: /
 author_profile: true
 ---
 
+<aside class="sidebar__right sticky">
+  <nav class="toc">
+    <header><h4 class="nav__title"><i class="fas fa-list"></i> Collections</h4></header>
+    {% assign collection_order = "hadcm3_user_notes, hadcm3_technical_notes, hadgem_technical_notes" | split: ", " %}
+    
+    {% for label in collection_order %}
+      {% for collection in site.collections %}
+        {% if collection.label == label %}
+          {% unless collection.output == false or collection.label == "posts" %}
+            <ul class="toc__menu">
+              <li>
+                <a href="#{{ collection.label | slugify }}">{{ collection.label }}</a>
+                <ul>
+                  {% for post in collection.docs %}
+                    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+            </ul>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </nav>
+</aside>
+
 {% capture written_label %}'None'{% endcapture %}
 
 {% assign collection_order = "hadcm3_user_notes, hadcm3_technical_notes, hadgem_technical_notes" | split: ", " %}
@@ -13,7 +39,9 @@ author_profile: true
   {% for collection in site.collections %}
     {% if collection.label == label %}
       {% unless collection.output == false or collection.label == "posts" %}
-        <h2 id="{{ collection.label | slugify }}" class="archive__subtitle">{{ collection.label }}</h2>
+        <hr class="archive__separator">
+        <!-- 为下方h2添加背景 -->
+        <h2 id="{{ collection.label | slugify }}" class="archive__title" style="background-color: #0092CA; color: white; padding: 10px; border-radius: 5px;">{{ collection.label }}</h2>
         {% for post in collection.docs %}
           {% include archive-single.html %}
         {% endfor %}
