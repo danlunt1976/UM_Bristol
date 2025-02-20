@@ -1,0 +1,713 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Running Ensembles on bluecrystalp4 - HadCM3 Documentation</title>
+<meta name="description" content="Running Ensembles on bluecrystalp4">
+
+
+  <meta name="author" content="Dan Lunt">
+  
+  <meta property="article:author" content="Dan Lunt">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="HadCM3 Documentation">
+<meta property="og:title" content="Running Ensembles on bluecrystalp4">
+<meta property="og:url" content="http://localhost:4000/UM_Bristol/hadcm3_user_notes/Running_Ensembles_on_bluecrystalp4/">
+
+
+  <meta property="og:description" content="Running Ensembles on bluecrystalp4">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-02-17T12:07:18+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/UM_Bristol/hadcm3_user_notes/Running_Ensembles_on_bluecrystalp4/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/UM_Bristol/feed.xml" type="application/atom+xml" rel="alternate" title="HadCM3 Documentation Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  window.enable_copy_code_button = true;
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/UM_Bristol/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/UM_Bristol/">
+          HadCM3 Documentation
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/UM_Bristol/Editing_guide"
+                
+                
+              >Editing Guide</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://github.com/danlunt1976/UM_Bristol"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/UM_Bristol/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/UM_Bristol/hadcm3_user_notes" itemprop="item"><span itemprop="name">Hadcm3_user_notes</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Running Ensembles on bluecrystalp4</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Running Ensembles on bluecrystalp4">
+    <meta itemprop="description" content="Running Ensembles on bluecrystalp4">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/UM_Bristol/hadcm3_user_notes/Running_Ensembles_on_bluecrystalp4/" itemprop="url">Running Ensembles on bluecrystalp4
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          11 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#documentation-for-ensembles">Documentation for ensembles</a></li><li><a href="#background">Background</a></li><li><a href="#basic-concept">Basic Concept</a><ul><li><a href="#step-1">Step 1</a></li><li><a href="#step-2">Step 2</a></li><li><a href="#step-3-assuming-that-ggpjvswsvaldebin-is-in-your-path-variable">Step 3 (assuming that ~ggpjv/swsvalde/bin is in your PATH variable)</a></li><li><a href="#step-4">Step 4</a></li><li><a href="#solving-problems">Solving Problems</a></li><li><a href="#ending-the-job">Ending the job</a></li><li><a href="#bit-more-ambition">Bit more ambition</a></li><li><a href="#a-little-more-details-of-the-scripts">A little more details of the scripts</a><ul><li><a href="#run_scripts_01">run_scripts_01</a></li><li><a href="#master_script_02">master_script_02</a></li><li><a href="#create_ensemble">create_ensemble</a></li></ul></li></ul></li></ul>
+            </nav>
+          </aside>
+        
+        <!-- [Back to HadCM3_user_notes](HadCM3_user_notes.md) -->
+
+<h1 id="documentation-for-ensembles">Documentation for ensembles</h1>
+
+<h1 id="background">Background</h1>
+
+<p>Very often on bluepebble/bluecrystal, we have to queue for some time before the job commences. It is then frustrating if it crashes (e.g. with negative pressure or negative theta) after a relatively short time. The crash can often be easy to sort out but your job goes to the bottom of the queue.</p>
+
+<p>Another problem with the queueing system on bluepebble/bluecrystal is that there is an absolute limit on the number of jobs that can run/queue at the same time (I think it is 40) but there is a larger limit on the total number of nodes (currently 100). The normal resolution of HadCM3 does not efficiently scale beyond 1 node so we cannot make use of the maximum node count.</p>
+
+<p>To solve this problem, we have created the “ensemble script” which can combine several jobs into one bigger job, or can run one job within a larger overall job that can restart the model if it crashes.</p>
+
+<h1 id="basic-concept">Basic Concept</h1>
+
+<p>UM version 4.5 (HadCM3 and family) consists of a set of fortran subroutines with a complicated suite of korn shell scripts to support running it. In practice, the complex scripts are quite difficult to change because they all strongly interact with one another. However, ultimately when you submit a job to run there is one overall driving script which runs everything.  Hence to run multiple versions of the model, all you need to do is to create/capture this script for each ensemble member and then find a mechanism to make the set of scripts run on a set of compute nodes. Simplistically, an ensemble script would look like:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#
+for node in list of nodes ; do
+  command to run job_N on node  &amp;
+done
+#
+while [ some criteria ] ; do
+  check to see if criteria satisfied
+done
+</code></pre></div></div>
+
+<p>where the <code class="language-plaintext highlighter-rouge">&amp;</code> gets the job to run in the background and will continue to run until some criteria is met. This structure is pretty much how the new method works.</p>
+
+<p>The script that drives the running of any particular job is created when you submit a job using clustersubmit, and is held in the umui_runs folder (not umui_jobs). It is called qsubmit.bc4loginX. bc4.acrc.priv and it is this script we need to grab (where X is one of the head nodes 1-4).</p>
+
+<h2 id="step-1">Step 1</h2>
+<p>Prepare your ensemble set of jobs, and run them for a few months. Currently the script works best for continuation runs (it will work for new runs too but it will always be less reliable because new jobs are less reliable).</p>
+
+<p>Copy the relevant umui_jobs to bc4/bp14</p>
+
+<h2 id="step-2">Step 2</h2>
+<p>On bluecrystal, create a folder $HOME/ensembles. Also copy some files:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp ~ggpjv/ensembles/run_scripts_01 \$HOME/ensembles  
+cp ~ggpjv/ensembles/master_script_02 \$HOME/ensembles  
+cp ~ggpjv/ensembles/normal_resubmit_02 \$HOME/ensembles  
+cp ~ggpjv/ensembles/history_script_02 \$HOME/ensembles
+</code></pre></div></div>
+<p>I’m advocating this method currently because I am still learning how best to do this and they may change without notice. Eventually we will have a stable version and these scripts will able to be accessed from some common location. By copying then across, there is no danger that they will change.</p>
+
+<h2 id="step-3-assuming-that-ggpjvswsvaldebin-is-in-your-path-variable">Step 3 (assuming that ~ggpjv/swsvalde/bin is in your PATH variable)</h2>
+
+<p>Use the script <strong>create_ensemble</strong> to prepare the required files. Details of the script are below but the simplest use is:</p>
+
+<p><code class="language-plaintext highlighter-rouge">create_ensemble -file xxxxx -expts list_expts</code></p>
+
+<p>Where xxxxx is a filename which will contain a list of the required unui_runs folders. You should typically keep this to about 6 or 7 characters.</p>
+
+<p>And list_expts is a list of experiments, separated by commas or spaces.</p>
+
+<p>The script creates a file $HOME/ensembles/ensemble_files/xxxxx.dat which contains a list of umui_runs folders.</p>
+
+<p>The script works by submitting each experiment, then deletes the submitted job, but saves the corresponding umui_runs folder by copying it into the $HOME/ensembles/umui_runs folder. It must do this because the $HOME/umui_runs/ folders get deleted. It also edits the qsubmit script to ensure that it correctly picks up node information, and edits the output file name to be .eleave instead of the normal .leave.</p>
+
+<p>Finally it creates the batch file to run the model. This file is called:
+$HOME/ensembles/xxxxx_batch.</p>
+
+<p>To submit the ensemble type:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\cd $HOME/ensembles
+sbatch xxxxx_batch
+</code></pre></div></div>
+
+<h2 id="step-4">Step 4</h2>
+<p>You now need to monitor how it is running. There are a number of tools to help:</p>
+
+<p>(a) <strong>check_running xxx</strong>   (or simply <strong>check_running</strong> which will do all files in $HOME/ensembles/ensemble_files).</p>
+
+<p>This creates a list of the status of each simulation within the ensemble file. If <strong>xxx</strong> is specified, it will do the xxx.dat file from $HOME/ensembles/ensemble_files/ folder. The output produces a list with each row looking like this:</p>
+
+<p><em>tfed.dat: tfedq: compute139: compute139: 4292608 Mar 12 14:39 tfedqa#pd000006607ja+ tfedqa#pd000006590dc+ Mar 12 09:47  79.31</em></p>
+
+<p>where first column is ensemble file, second is experiment name, third is the expected node based on those available, fourth is the actual node based on the .eleave file, 5-9 is the size, latest modification time, and name of latest file, 10-13 is the latest file when the last time you called the script, and column 14 is the estimated model speed (years per day) based on the time difference between the two files.</p>
+
+<p>Things to pay attention to are:</p>
+
+<p>(1) That the expected and actual node should be the same. If they are different, something bad has happened and you need to stop the job.</p>
+
+<p>(2) The date of the latest file should be nearly the current time (with one or two minutes). If not then that simulation has crashed. If it is more than 20 mins old, then it had also failed to restart so something more profound has gone wrong. But it may be possible to restart it. See later for solutions.</p>
+
+<p>(3) The model speed should be something appropriate (i.e. about 30-50 model years per day for HadCM3, 80-90 years per day for HadCM3L, and several hundred years per day for FAMOUS). If it is much smaller, it could be because the model is starting, running for a month or two and then crashing, and then repeating this sequence. So a file could look to be new, but overall the model is failing. See later for solutions.</p>
+
+<p>If (2) or (3) show problems, the first thing you should try is to reset the start file by using the restart_manually script (below). For some reason, I have noticed that the phist/thist files are not regularly updated so sometimes the model may try and restart from a much older location and the dump file is missing. This is quite common when restarting an ensemble run. NOTE that there is a time delay when doing this and it can take 20+ minutes before everything restarts so be patient and do not assume there is a problem prematurely!</p>
+
+<p>(b) <strong>special_where</strong>:  This is a tool I use a lot and is not especially related to ensembles but it is good check on progress of runs. It also checks that downloading is working too.   There are no arguments to this script, just type: special_where</p>
+
+<p>The output is a series of columns for each simulation of the form:</p>
+
+<p><em>tfefr n   90,484M diiidi pc_no =  2005 pd_no =  1766 pf_no =   699 pg_no =    35 last= tfefra#pd000006631sp+ ggpjv  8266     0 Mar 12 19:25</em></p>
+
+<p>2nd column = is it running or not (based on looking at the queue so will not think that it is running if part of an ensemble)<br />
+3rd column = total space used by experiment in dump2hold<br />
+4th column = what has happened to folder since last running script. Codes are n if new, d if number files reduced, s if same, S is same but file is recently created, and i if number of files is increasing. The set of letters correspond to total files, pc, pd, pf, pg and latest pd file.<br />
+5th-12th column = number of files of each type<br />
+13th column= latest file<br />
+14th column = owner<br />
+15th column = model speed, based on average across the files in datam (in units of 100x years per day)<br />
+16th column = model speed, based on time difference between latest file and previous one.<br />
+17th-19th = Date of modification of latest file</p>
+
+<p>(c) <strong>edit_phist xxx yyy zzz</strong>: This script will reset the phist/thist files to start from a specific dump file. It assumes that the start month was Dec and will only reset to a Dec start date. <strong>xxx</strong> is the experiment name, <strong>yyy</strong> is the dump_age_name (i.e. the name after …da), and <strong>zzz</strong> is the year since start of run. This script (the swsvalde version) is more sophisticated than other versions of this script because it resets all of the contents of the namelist file. This seems safer than only making the minimum modifications of the contents, though it is not clear whether it makes any difference.</p>
+
+<p>In theory, if you just specify the experiment name, it should work out the very latest restart. However, due to variations in the namelist structure, this is not fully reliable so there is an additional script.</p>
+
+<p>(d) <strong>restart_manually xxx</strong>: This is an extension to the edit_phist script and resets the phist/thist files to the latest available dump file. <strong>xxx</strong> is the experiment name. It works by finding the most recent dump file in the datam folder. However, to make this work it needs to know what was the start year of the simulation, and the script does not assume it is correctly stored in the phist/thist files. Hence to use this script you need to create a file in $HOME/ensembles/restart_manually_input with lines of the form:</p>
+
+<p>temp 1850<br />
+tewza 2850</p>
+
+<p>Where the number indicates the start year, and the 4 letter code means that all experiments starting with the 4 letter code will use this start year, whereas the 5 letter code only refers to the specific simulation.</p>
+
+<h2 id="solving-problems">Solving Problems</h2>
+
+<p>The output from the jobs is stored in the normal location ($HOME/um/umui_out) but in files ending .eleave. If the model goes wrong, it will rapidly generate .eleave files every 10-20 minutes.</p>
+
+<p><strong>clean_eleave_files:</strong> deletes all of the eleave files except for the latest one for each simulation.</p>
+
+<p>The .eleave files are identical to the normal .leave files so you can hopefully diagnose the problem and correct it. The job will then automatically restart.</p>
+
+<h2 id="ending-the-job">Ending the job</h2>
+
+<p>The job will not finish automatically. You will need to kill it (or let it timeout). Also, you will find the individual jobs will run at different speeds so you may decide to kill the job before they are all finished. For instance, it is a bit anti-social to be using 10 nodes but only one node is used. But there is no hard and fast rule. It is up to the individual to decide when to kill it.</p>
+
+<h2 id="bit-more-ambition">Bit more ambition</h2>
+
+<p>It is possible to start a new simulation when an ensemble member finishes and when there is still time left for the overall ensemble. To do this you must first run create_ensemble:</p>
+
+<p>` create_ensemble -file temp1 -expt abcde`</p>
+
+<p>Then edit the running ensemble_files/xxxxx.dat file and replace the job that has finished with the job that you want to start which is listed in temp1.dat. HOWEVER, you must be very careful to ensure that you keep the order the same. i.e if job 5 out of 8 has finished, you must replace line 5 and not add the job to the end. Similarly, you must keep the same number (actually you can increase the number of simulations listed but it is pointless. You must not decrease the number).</p>
+
+<p>However, there is an experimental facility (which so far seems to work) where you can create a list of jobs in the file $HOME/ensembles/new_runs_list.dat  then it will work through these when a job finishes.</p>
+
+<h2 id="a-little-more-details-of-the-scripts">A little more details of the scripts</h2>
+
+<h3 id="run_scripts_01">run_scripts_01</h3>
+<p>This script starts the jobs running. The first argument is the umui_runs folder name, and the second is the node to run it on. It copies the relevant $HOME/ensembles/umui_runs folder to $HOME/umui_runs and then starts the job by simply executing the relevant qsubmit script as a background job (this allows the system to move on to the next command).</p>
+
+<p>NOTE that there is a 120 sec time delay in the batch file after starting each job. This was added because there was a weird problem that I could not understand. Sometimes, if the jobs were started too rapidly, the output files (i.e. those in datam) would end up in the wrong simulation folder. I could not work out why but adding the time delay seems to largely cure the problem.</p>
+
+<h3 id="master_script_02">master_script_02</h3>
+<p>This script loops over the nodes, decides whether it is still running and then resubmits the job if it has crashed. It calls:</p>
+
+<p>(a) <strong>normal_resubmit_02:</strong> this works out whether the running job has stopped, and if so why has it failed. This script calls quite a few other scripts.</p>
+
+<p>(b) <strong>history_script_02:</strong> this work out the status of the run at the time of resubmission. In theory it can be used to help get the script to do different things depending on whether it has been resubmitted from this point before. But not very reliable.</p>
+
+<p>If these scripts work out it needs resubmitting then master_script will resubmit.</p>
+
+<h3 id="create_ensemble">create_ensemble</h3>
+<p>This creates the required files, specifically:</p>
+
+<p>(a) creates the umui_runs folder for each experiment within the ensemble by submitting the job using clustersubmit and then copying the umui_runs folder to the ensembles folder.</p>
+
+<p>(b) creates the .dat file for the ensemble which is the last of umui_runs folders</p>
+
+<p>(c) creates the batch file for the job.</p>
+
+<p>A full set of arguments are:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>-e</td>
+      <td>-expts</td>
+      <td>-expt )    - this is a list of expts. No default.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>-d</td>
+      <td>-delete</td>
+      <td>-new )    - by default, the script will add to an existing .dat file. If -d y, then the .dat file is created from scratch.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>-c )    - continuation run (default).If -c n, then will treat then as new runs.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>-f</td>
+      <td>-file )    - outfile name for .dat file, and also for the batch file.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>-p )    - processor usage. Default is 7x4. (but will default to 6x4 for bluepebble)</p>
+
+<p>-q )    - the queue to submit to. Default=cpu, but could be bridge or paleo.</p>
+
+<p>-g)    - groups the experiments into batches of N jobs</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Running+Ensembles+on+bluecrystalp4%20http%3A%2F%2Flocalhost%3A4000%2FUM_Bristol%2Fhadcm3_user_notes%2FRunning_Ensembles_on_bluecrystalp4%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUM_Bristol%2Fhadcm3_user_notes%2FRunning_Ensembles_on_bluecrystalp4%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/UM_Bristol/hadcm3_user_notes/Running_Ensembles_on_bluecrystalp4/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/UM_Bristol/hadcm3_user_notes/Nils_notes_for_running_HadCM3B/" class="pagination--pager" title="Nils notes for running HadCM3B
+">Previous</a>
+    
+    
+      <a href="/UM_Bristol/hadcm3_user_notes/Standard_swsvalde_UM_Model_jobs/" class="pagination--pager" title="Standard swsvalde UM Model jobs
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      
+        <p>
+          Comments are configured with provider: <strong>disqus</strong>,
+          but are disabled in non-production environments.
+        </p>
+      
+    
+  </article>
+
+  
+    
+    
+    
+    
+    
+    
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You may also enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/UM_Bristol/hadcm3_technical_notes/Downloading/" rel="permalink">Downloading
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Downloading
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/UM_Bristol/hadgem_technical_notes/HadGEM_workflow/" rel="permalink">HadGEM workflow
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">HadGEM workflow
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/UM_Bristol/hadcm3_technical_notes/Ensembles/" rel="permalink">Ensembles
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Ensembles
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/UM_Bristol/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">HadCM3 Documentation</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/UM_Bristol/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/UM_Bristol/assets/js/lunr/lunr.min.js"></script>
+<script src="/UM_Bristol/assets/js/lunr/lunr-store.js"></script>
+<script src="/UM_Bristol/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/UM_Bristol/hadcm3_user_notes/Running_Ensembles_on_bluecrystalp4/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/hadcm3_user_notes/Running_Ensembles_on_bluecrystalp4"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://um_bristol.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+  </body>
+</html>

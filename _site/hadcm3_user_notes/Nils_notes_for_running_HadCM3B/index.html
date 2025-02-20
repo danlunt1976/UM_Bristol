@@ -1,0 +1,709 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Nils notes for running HadCM3B - HadCM3 Documentation</title>
+<meta name="description" content="Notes for running HadCM3B">
+
+
+  <meta name="author" content="Dan Lunt">
+  
+  <meta property="article:author" content="Dan Lunt">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="HadCM3 Documentation">
+<meta property="og:title" content="Nils notes for running HadCM3B">
+<meta property="og:url" content="http://localhost:4000/UM_Bristol/hadcm3_user_notes/Nils_notes_for_running_HadCM3B/">
+
+
+  <meta property="og:description" content="Notes for running HadCM3B">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-02-17T12:07:18+00:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/UM_Bristol/hadcm3_user_notes/Nils_notes_for_running_HadCM3B/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/UM_Bristol/feed.xml" type="application/atom+xml" rel="alternate" title="HadCM3 Documentation Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script type="text/javascript">
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  window.enable_copy_code_button = true;
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/UM_Bristol/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/UM_Bristol/">
+          HadCM3 Documentation
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/UM_Bristol/Editing_guide"
+                
+                
+              >Editing Guide</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://github.com/danlunt1976/UM_Bristol"
+                
+                
+              >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/UM_Bristol/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/UM_Bristol/hadcm3_user_notes" itemprop="item"><span itemprop="name">Hadcm3_user_notes</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Nils notes for running HadCM3B</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Nils notes for running HadCM3B">
+    <meta itemprop="description" content="Notes for running HadCM3B">
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/UM_Bristol/hadcm3_user_notes/Nils_notes_for_running_HadCM3B/" itemprop="url">Nils notes for running HadCM3B
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#preliminary-steps-hadcm3">Preliminary steps HadCM3</a></li><li><a href="#create-new-job-on-puma">Create new job on puma</a></li><li><a href="#creating-mods">Creating mods</a></li><li><a href="#copy-job-to-bristol-servers">Copy job to Bristol servers</a></li><li><a href="#compile-job">Compile job</a></li><li><a href="#brute-force-code-modifications">Brute force code modifications</a></li><li><a href="#creating-runs-without-using-umui-gui">Creating runs without using umui GUI:</a></li><li><a href="#run-job">Run job</a></li><li><a href="#supervising-running-jobs">Supervising running jobs</a></li><li><a href="#postprocessing">Postprocessing:</a></li></ul>
+            </nav>
+          </aside>
+        
+        <h1 id="preliminary-steps-hadcm3">Preliminary steps HadCM3</h1>
+<ul>
+  <li>Get accounts (archer2, puma, bc, bp, bridge servers)</li>
+  <li>Set up ssh-keys</li>
+  <li>Start umui (note for ubuntu users: fonts-terminus-otb package needed for proper rendering)</li>
+</ul>
+
+<h1 id="create-new-job-on-puma">Create new job on puma</h1>
+<ul>
+  <li>Start umui</li>
+  <li>Search –&gt; Filter: owner
+    <ul>
+      <li>swsvalde: standard configurations of differenct HadCM3B versions
+        <ul>
+          <li>tdem –&gt; HadAM standard with dyn veg (PI)</li>
+          <li>tdaa –&gt; HadCM3 with dyn veg (PI)</li>
+        </ul>
+      </li>
+      <li>USERNAME: my experiments</li>
+    </ul>
+  </li>
+  <li>Experiment –&gt; new: create experiment code (4 letters) with some description</li>
+  <li>Select reference job (not experiment but job within experiment) and new experiment</li>
+  <li>Job –&gt; copy: select identifier for job (5th letter in the job code) and description</li>
+  <li>This creates new job in the new experiment</li>
+  <li>File –&gt; open read/write: this opens new window in which simulation can be further configured (mods = code modifications compared to vn4.5.1, ancil = boundary conditions, initial conditions, parameters)
+    <ul>
+      <li>“Model Selection –&gt; Sub-Model Independent –&gt; Compilation and Modification”: Select mods and compile options (Modifications for the model –&gt; relevant mods for model updates / bug fixes)
+        <ul>
+          <li>for compile options use: “Compile and build the executable named below, then stop” is standard (“Run from existing executable” rare alternative, because running new job with existing executable is normally done on different level where it’s faster to update the specifications you want to change than to click through the whole umui configuration gui)</li>
+          <li>e.g., “Modifications for the model” –&gt; abx0f406 –&gt; change MOSES1 to MOS2.1</li>
+        </ul>
+      </li>
+      <li>“Model Selection –&gt; Sub-Model Independent –&gt; Ancillary reference time”: Set reference time for boundary conditions (usually 1849-12-1 for PI, as simulations tend to start on Dec 1)</li>
+      <li>“Model Selection –&gt; Sub-Model Independent –&gt; Starte Date and Run Length Options”: Set start date (this can be a random year for all simulations with fixed orbit, as orbit time is specified somewhere else, typically 1850-12-1; for transient orbit there is option to use offset to have negative years for orbit calculation but still use positive years in output files), and run length (typically 100yr + 1 months for the initial December which exists to still have 100 DJFs in 100 yr simulations)</li>
+      <li>“Model Selection –&gt; Atmosphere”: Specific Atmosphere:
+        <ul>
+          <li>“Model Selection –&gt; Atmosphere –&gt; Section by section –&gt; Vegetation” allows configuring some vegetation parameters</li>
+          <li>“Model Selection –&gt; Atmosphere –&gt; Ancillary and input data files”: boundary conditions</li>
+          <li>“Model Selection –&gt; Atmosphere –&gt; STASH”: output specification (define diagnostics, i.e., variable, time averaging, usage)</li>
+          <li>“Model Selection –&gt; Atmosphere –&gt; STASH –&gt; STASH. Specification of Diagnostic requirements –&gt; Diagnostics” –&gt; Load diagnostics to add new variable, then specific time, domain and usage</li>
+          <li>After modifications run “Diagnostics –&gt; Verify Diagnostics” to check for potential errors</li>
+        </ul>
+      </li>
+      <li>“Model Selection –&gt; Ocean GCM”: similar to athmosphere</li>
+      <li>Click “Save”</li>
+      <li>Click “Process” –&gt; this creates the relevant configuration files</li>
+    </ul>
+  </li>
+  <li>Executable location –&gt; $DATAW</li>
+  <li>Output –&gt; $DATAM</li>
+  <li>Exit puma</li>
+  <li>On ARCHER2: job configuration in “umui_jobs/umui_jobs/JOBNAME”: these are just text files containing the full configuration of the job, that are then used to compile the job</li>
+</ul>
+
+<h1 id="creating-mods">Creating mods</h1>
+<ul>
+  <li>During configuration of add mod name to the list of mods
+    <ul>
+      <li>Select Model Selection –&gt; Sub-Model Independent –&gt; Compilation and Modifications –&gt; Modifications for the model</li>
+      <li>In Fortran mods, add a line after the existing mods: $MY_UPDATES/MODNAME.mod and set Y/N to Y</li>
+      <li>Then process job as previously described</li>
+    </ul>
+  </li>
+  <li>$MY_UPDATES refers to ~/um_updates/</li>
+  <li>In ~/um_updates create new file with “emacs MODNAME.mod” (.mod is not needed and just helps to identify the file as mod, in newest emacs version, its annoying because it is treated like a module file which makes writing the code very annoying)</li>
+  <li>Structure of a mod file
+    <ul>
+      <li>First line: 	<code class="language-plaintext highlighter-rouge">*ID MODNAME</code> Define the modname</li>
+      <li>Second line: <code class="language-plaintext highlighter-rouge">*DECLARE FILENAME</code> Defines in which file of the code deck, the code should be changed (note that for modifications of previous mods, the name of the mode needs to mentioned afterwards, but only the actual .f file needs to be declared here)</li>
+      <li>Afterwards, three types of modifications are possible:
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">*D  FILENAME.LINENUMBER \n NEWCODE</code> –&gt; Delete the specified number of code in the specified file and replace it by the (potentially multiple lines of) code provided in the following line (after \n)</li>
+          <li><code class="language-plaintext highlighter-rouge">*I  FILENAME.LINENUMBER \n NEWCODE</code> –&gt; Insert NEWCODE after line LINENUMBER in file FILENAME</li>
+          <li><code class="language-plaintext highlighter-rouge">*B  FILENAME.LINENUMBER \n NEWCODE</code> –&gt; Insert NEWCODE before line LINENUMBER in file FILENAME</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Example structure of a mod:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  *ID CO2_FACTORIZATION_150PPM
+  *DECLARE PHYSIO7A
+  *I PHYSIO7A.129
+				
+  !----------------------------------------------------------------------
+  ! Set atmospheric CO2 used in MOSES to 150ppm
+  !----------------------------------------------------------------------
+        REAL CO2_VEG                 ! CO2 value for factorization
+			                              
+        PARAMETER(CO2_VEG = 0.000227874)
+			
+  *D ACN1F405.125
+       &amp;,               CO2_VEG,CO2_3D,CO2_DIM,L_CO2_INTERACTIVE
+</code></pre></div>    </div>
+  </li>
+  <li>Note: Check im browser code deck what line in what file need to be changed (line number correspond to the versio available at https://www.paleo.bristol.ac.uk/UM4.5/UMbrowser/index.html)</li>
+  <li>Note: Correct inundation is important</li>
+  <li>Note: For inspiration can look at Paul’s experimental mods in ggpjv/um_updates</li>
+  <li>Note: For inspiration can look at operational mods in ggpjc/swsvalde/um_updates</li>
+  <li>Afterwards, check if the mode worked by checking if compile produced any errors and can check if the final code files in dataw/comp_JOBNAME.tar.gz look as intended (sometimes a different mod can change the file in an unexpected way such that the final code doesn’t look as intended)</li>
+</ul>
+
+<h1 id="copy-job-to-bristol-servers">Copy job to Bristol servers</h1>
+<ul>
+  <li>Log onto eocene</li>
+  <li>Run eval $(ssh-agent); ssh-add ~/.ssh/id_rsa_puma2</li>
+  <li>copy first to Eocene by running on Eocene: scp -rp archer2:umui_jobs/umui_jobs/JOBNAME umui_jobs/.</li>
+  <li>copy from Eocene to BC4 by running on Eocene: scp -rp umui_jobs/JOBNAME bc4:umui_jobs/.</li>
+  <li>then log onto bc4 with ssh bc4 to continue</li>
+</ul>
+
+<h1 id="compile-job">Compile job</h1>
+<ul>
+  <li>Run on bc4: clustersubmit -C y JOBNAME</li>
+  <li>This creates executable</li>
+  <li>To check if compilation was successful run on bc4: leave_file_errors_02 JOBNAME</li>
+</ul>
+
+<h1 id="brute-force-code-modifications">Brute force code modifications</h1>
+<ul>
+  <li>Unpack comp_JOBNAME.tar.gz file from dataw into code directly (which should be empty after compile)</li>
+  <li>Modify fortran files (<code class="language-plaintext highlighter-rouge">xxx.f</code>) as needed with emacs and save them</li>
+  <li>Then run two line to recompile the changed files:
+    <ul>
+      <li>make -f makefile.compile</li>
+      <li>make -f makefile.link</li>
+    </ul>
+  </li>
+  <li>Note: this procedure does not work if the subroutine is in the standard code deck, because the code directory only contains symlinks to standard files and will not recompile those files</li>
+</ul>
+
+<h1 id="creating-runs-without-using-umui-gui">Creating runs without using umui GUI:</h1>
+<ul>
+  <li>Create new job prior to compiling:
+  Step 1) Sript to copy job files, give new name to experiment, change EXPTID and JOBID in the job files where needed: <code class="language-plaintext highlighter-rouge">new_expt_letter OLDJOBID NEWJOBID</code>
+  Step 2) Modify jobfiles as desired (e.g. change modset in MODS_UM)
+  Step 3) Compile and run</li>
+  <li>Create new job from existing executable:
+  Step 1) Create baseline job with desired configuration (modsets)
+  Step 2) Run script to create ensembles: <code class="language-plaintext highlighter-rouge">create_ensemble</code>
+  Step 3) Modify namelist parameters (and ancil files if relevant?) in new jobs
+  Step 4) Run jobs (with clustersubmit?)</li>
+</ul>
+
+<h1 id="run-job">Run job</h1>
+<ul>
+  <li>Run on bc4: clustersubmit -c n -s y -a y -q veryshort -r bc4 -p 7x4 -P PROJECTNUMBER JOBNAME</li>
+  <li>“-c n” –&gt; new run</li>
+  <li>“-c y” –&gt; continuation</li>
+  <li>“-q veryshort” : max. 6h runtime</li>
+  <li>“-q cpu”: max 14d runtime</li>
+  <li>I don’t remember what -s and -a mean</li>
+  <li>Machine: “-r bc4”</li>
+  <li>Configuration for splitting domain: “-p 7x4”</li>
+  <li>Account: “-P PROJECTNUMBER”</li>
+  <li>Defaults for machine, configuration, and account can also be set in $HOME/.um/clustersubmit.conf</li>
+</ul>
+
+<h1 id="supervising-running-jobs">Supervising running jobs</h1>
+<ul>
+  <li>Checking status of your jobs: myqs1</li>
+  <li>Executable and logs in $HOME/DUMP2HOLD/um/JOBNAME/dataw/ (astart = atmosphere initial condition, ostart = ocean start condition, pe0-pe27: log from cores, pe0: lead core, thist: save current timestep for restart if model crashes)</li>
+  <li>Output in $HOME/DUMP2HOLD/um/JOBNAME/datam/ (da = dump, pc/pd/pi/pf/pg = output files for each month, solarorbit = orbit configuration in case of transient orbits)</li>
+  <li>Checking current state of simulation: “tail xqcra.fort6.pe0”</li>
+  <li>Checking state of all jobs and used diskspace: “special_where”</li>
+  <li>You can find your jobid with the following command: squeue -u USERNAME</li>
+  <li>The normal method to kill a Slurm job is: scancel JOBID</li>
+</ul>
+
+<h1 id="postprocessing">Postprocessing:</h1>
+<ul>
+  <li>Through webinterface</li>
+  <li>Open https://www.paleo.bristol.ac.uk/web_pages.htm</li>
+  <li>Click on “Add/Modify List Runs”: enter new job into list of eperiments: if building directly on previous experiment, can use this one to set default values</li>
+  <li>Click on “Get_boundary_condition_files”: if building directly on previous experiment, can use this one to create symlinks to old experiment) (Note: I’m not sure if this is actually needed at this point, or enough to do it after the run is finished and all files are transferred to silurian, should only work if I copy job files from puma first to eocene and then to bc4 and not if I copy them directly to bc4; in the latter case, it’s likely that it should still work if it’s only added after copying everything onto silurian]</li>
+  <li>Log onto silurian with “ssh -X USERNAME@silurian.ggy.bris.ac.uk”</li>
+  <li>create directory “bin” in your home directory (this is only needed once in the beginning)</li>
+  <li>create file “ftp_sh.bc4.params” (this is only needed once in the beginning)</li>
+  <li>Add jobname in file “ftp_sh.bc4.params”</li>
+  <li>There is automatic download script which runs through all users every 4h, downloads files from bc4 onto silurian, and converts them into nc files</li>
+  <li>For manual download, run “ftp_master -machine bc4 -expt JOBNAME” (this downloads files from bc4 onto silurian and converts them into nc files)</li>
+  <li>Data can be accessed from eocene through umdata/JOBNAME (umdata is a symlink /home/bridge/swsvalde/umdata, where symlinks to the actual locations of the data are collected, the actual location of the data is selected automatically by the system by searching for the disk with the most available space)</li>
+  <li>When run is finished, run “tidy_expt -machine bc4 -expt JOBNAME” (this copies all remaining files and converts them to nc files, tar’s and gzip’s the dataw directory such that run could be restarted from those files if needed, and deletes all run files from bc4)</li>
+  <li>After this, all model output is stored on silurian</li>
+  <li>Open https://www.paleo.bristol.ac.uk/web_pages.htm</li>
+  <li>Click on “Run_scripts”, enter jobname, and click on run_scripts</li>
+  <li>Specify diagnostics that should be run</li>
+  <li>Click on “Run_Diag”</li>
+  <li>This creates all files that are available trough the webserver, from eocene they can be accessed through “ummodel/data/JOBNAME” (ummodel is just a symlink to “/home/bridge/swsvalde/ummodel”; not sure how this ultimately works because that disk is too small to carry all runs available on the webserver, the majority has to lie somewhere else)</li>
+  <li>Progress of the postprocessing scripts can be tracked under https://www.paleo.bristol.ac.uk/ummodel/access/USERNAME_JOBNAME/</li>
+  <li>Delete all job files from silurian whenever it’s clear that the run is not needed anymore</li>
+  <li>Note: there is currently no simple way to transfer data from disk to tape, so, normally after cleaning up everything only the data on the webserver is still available from an experiment</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Nils+notes+for+running+HadCM3B%20http%3A%2F%2Flocalhost%3A4000%2FUM_Bristol%2Fhadcm3_user_notes%2FNils_notes_for_running_HadCM3B%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUM_Bristol%2Fhadcm3_user_notes%2FNils_notes_for_running_HadCM3B%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/UM_Bristol/hadcm3_user_notes/Nils_notes_for_running_HadCM3B/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/UM_Bristol/hadcm3_user_notes/HadCM3_Workflow/" class="pagination--pager" title="HadCM3 Workflow
+">Previous</a>
+    
+    
+      <a href="/UM_Bristol/hadcm3_user_notes/Running_Ensembles_on_bluecrystalp4/" class="pagination--pager" title="Running Ensembles on bluecrystalp4
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      
+        <p>
+          Comments are configured with provider: <strong>disqus</strong>,
+          but are disabled in non-production environments.
+        </p>
+      
+    
+  </article>
+
+  
+    
+    
+    
+    
+    
+    
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You may also enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/UM_Bristol/hadcm3_technical_notes/Local_hardware/" rel="permalink">Local hardware
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Local hardware
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/UM_Bristol/hadcm3_technical_notes/University_HPC/" rel="permalink">University HPC
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          12 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">University HPC
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/UM_Bristol/hadcm3_technical_notes/Ensembles/" rel="permalink">Ensembles
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Ensembles
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/UM_Bristol/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">HadCM3 Documentation</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/UM_Bristol/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/UM_Bristol/assets/js/lunr/lunr.min.js"></script>
+<script src="/UM_Bristol/assets/js/lunr/lunr-store.js"></script>
+<script src="/UM_Bristol/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/UM_Bristol/hadcm3_user_notes/Nils_notes_for_running_HadCM3B/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/hadcm3_user_notes/Nils_notes_for_running_HadCM3B"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://um_bristol.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+  </body>
+</html>
