@@ -24,6 +24,12 @@ Users should instead go to [HadCM3_user_notes](HadCM3_user_notes.md).
 
 [Documentation](Documentation.md)
 
+[Movies](Movies.md)
+
+[Extensions](Extensions.md)
+
+[Averaging](Averaging.md)
+
 
 
 

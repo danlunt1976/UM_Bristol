@@ -19,7 +19,8 @@ Questions for Simon:
 * Role of ACRC?
 BC4 is currently £1M per year to run.  May be a 6-month option to extend.  
 18th Dec: meet with Bond, Wooly, and others.
-Annela Seddon is new APVC Faculty FRD.  Simon had a meeting with her, but also attended by Ian Bond.
+Annela Seddon is new APVC Faculty FRD.  Simon had a meeting with her, but also attended by Ian Bond.  
+"No, sorry, I can give no update.  I’ve tried to find out what is going on, but I have also been told to wait.  We are not waiting for each other, we are specifically awaiting permission from above to spend the money.  I think there are many factors in play here but anything I might say at this point would be guesswork, so best not said.  I suggest agitating with Heads of School and above - we wanted to move with the project at the start of January in order to have a viable service before BC4 gets shut down.  The longer we wait, the less likely that becomes."
 
 Paul Valdes and Gethin Williams and Sadaf and Simon - Options for HPC
 * **BC4** : maybe extended 6 months?  Few £100.  Guy Poppy VC for research.  Ian Bond currently decision maker while Guy spins up.  Climate is one of our uni Strategic Objectives.
@@ -76,7 +77,91 @@ See Simon Hanna document.
 Met with Sadaf Alam and Gethin Williams and Richard Gilham.
 Sadaf said that NVIDIA will not really be interested in our code as it is too old and bespoke, so no support for installing on Isambard.
 - Now to mid-term: continue with x86 UoB HPC continuity on Digital Labs cluster.  It currently has 10x2 AMD x86 processors with 128 cores per node (Gethin can confirm).  Dan will check timeline with Ian Bond.  We are ready to go waiting for the approval where we can gradually increase x86 capacity to close to 80% of BC4 CPU core count in the next 6 months. 
-- Medium to long term (6+ months plus) explore opportunities for code modernisation on newer multi-core x86 and ARM processors.  This would require a couple of RSE resources and possibly community efforts.
-- In parallel, find out details and plans for the next gen facility by IT services (I do not have visibility).
+*It is great to hear that Digital Labs will eventually be close to 80% of BC4 core count.  This is really good news for us.  I will push Ian on the timeline for the £1M investment.
+Is the 80% what we expect to get from Ian Bond's £1M?  Or does 80% include an expectation that users will also provide funds for cores? 
+Are the initial 10 AMD processors ready to use for testing now?  i.e. is slurm installed and can we have a test account, please.   As I explained, for continuity of service we really need to start the work of installing and benchmarking our code asap.
+A key thing for us is plenty of disk space on the cluster, as we produce a lot of data!  How much disk space is currently on Digital Labs, what is the aspiration for eventual disk space, and how does this compare with what is on BC4?
 
+- Medium to long term (6+ months plus) explore opportunities for code modernisation on newer multi-core x86 and ARM processors.  This would require a couple of RSE resources and possibly community efforts.
+*Yes, Gethin has started on this.  How much he works on this, and how much on installing the model on Digital Labs, is a decision that depends on the answers to the above questions, I guess.*
+
+- In parallel, find out details and plans for the next gen facility by IT services (I do not have visibility).
+*I have chatted to Sophie Downton about this.  She seemed unclear as to whether Ian's investment of £1M would go to Digital Labs or to NextGen, so this makes things a little confusing for us.  It would be good to have some clarity - I will chat to Ian about this too.  From what I heard from you, it sounds like Digital Labs would be our preferred option.*
+
+**Ian Bond**
+Thank you for your time on Tuesday - it was much appreciated.
+
+In terms of the HPC part of our discussion, see below for my understanding of what we discussed - please let me know if any of this is incorrect.  If you are happy then I will disseminate this more widely in Geography.
+
+- As part of the "x86 HPC" community, I am really pleased that the Faculty recognises the importance of maintaining an x86 capability, and grateful for the investment of ~£1 million.
+    
+- The Faculty recognises the importance of "continuity of service", in particular for ongoing funded grants and deliverables, and that this will mean a period of overlap between the old and new systems due to the timescales required to port complex codes, including extending BC4 if necessary (which will hopefully not be needed!)
+    
+- The new system will be DigitalLabs and will be procured, maintained, and supported through BriCS, led by Sadaf Alam.
+    
+- I will email Sadaf to ensure that the Users have meaningful input into the specification of the new machine, in particular with regard to ensuring an appropriate balance between storage and compute.
+
+**Simon, Sadaf, India**
+
+As you may be aware, the University has given the green light for investing in a new HPC service at the university.
+
+Once in place, the new environment will gradually replace first [BlueCrystal 4](https://www.bristol.ac.uk/acrc/high-performance-computing/hpc-systems-tech-specs/ "https://www.bristol.ac.uk/acrc/high-performance-computing/hpc-systems-tech-specs/") and then [BluePebble](https://www.bristol.ac.uk/acrc/high-performance-computing/hpc-systems-tech-specs/ "https://www.bristol.ac.uk/acrc/high-performance-computing/hpc-systems-tech-specs/"). Launched in 2017 and 2020 respectively, our current systems are aging rapidly - and no longer meet energy-efficiency standards.
+
+**Contemporary x86 HPC CPUs and planned upgrade programme**   
+
+The University’s new HPC service will offer significant benefits to users compared with BlueCrystal 4 and BluePebble, including faster processors and a planned upgrade programme allowing the environment to grow with demand and remain up-to-date.  
+
+The CPU based system will be focused on the x86 architecture but will adapt to users requirements as technologies change. It is also a sustainable solution, both in terms of regular hardware investments to maintain and grow the system, and in terms of the huge energy and financial saving involved in switching away from BlueCrystal 4 and BluePebble.
+
+Once in place, the new HPC system will sit alongside the University allocations of [Isambard 3 and Isambard-AI](https://uob.sharepoint.com/sites/itservices/SitePages/Supercomputing.aspx?csf=1&web=1&e=DniBlk&CID=5471928e-225f-4e84-9e85-04ef47b08902 "Original URL: https://uob.sharepoint.com/sites/itservices/SitePages/Supercomputing.aspx?csf=1&web=1&e=DniBlk&CID=5471928e-225f-4e84-9e85-04ef47b08902. Click or tap if you trust this link."), to offer a comprehensive range of HPC solutions to staff and students.
+
+**HPC Service Continuity**
+
+The University’s [Digital Research Infrastructure Board](https://www.bristol.ac.uk/acrc/team-and-governance/digital-research-infrastructure-board/ "https://www.bristol.ac.uk/acrc/team-and-governance/digital-research-infrastructure-board/") and [IT Services](https://uob.sharepoint.com/sites/itservices "Original URL: https://uob.sharepoint.com/sites/itservices. Click or tap if you trust this link."), appreciate that any programme of changes to your HPC service will be a cause for concern.
+
+Over a thousand research projects and teaching courses throughout the University depend on high performance computing.
+
+We are committed to continuing to provide a university wide HPC service that meets your research and teaching needs throughout the transition to a new HPC service.
+
+**Timelines**
+
+We are currently developing the timelines for the transition to the new HPC system, and we will adjust these where needed to ensure there are no interruptions to the continuity of your HPC services.   
+
+**Transition to a modern x86 HPC facility**
+
+Once the new HPC system is built and ready for use, we will gradually transition users from BlueCrystal 4 and BluePebble onto the new HPC facility. This will be an incremental process to ensure the continuity of your HPC services at the University.
+
+**Keeping you informed**
+
+We appreciate that the continuity of HPC services is vital for your research and teaching, and we will send you monthly updates on the HPC transition project and timelines as these are developed and refined.
+
+**Your questions** 
+
+If you have any questions, or would like to raise any concerns, please join the next HPC user group meeting if you can. We will run the meeting as a Town Hall style meeting where all attendees can join the debate.
+
+**HPC User Forum, 24 February, 11.00 - 11.50am**  
+Venue: Join in-person at SCIF Garden Room (Royal Fort House) or join online via Teams.
+
+**[Register to join the HPC User Forum](https://events.teams.microsoft.com/event/4cd32125-7b58-4f94-a0ae-74ea43de5966@b2e47f30-cd7d-4a4e-a5da-b18cf1a4151b "https://events.teams.microsoft.com/event/4cd32125-7b58-4f94-a0ae-74ea43de5966@b2e47f30-cd7d-4a4e-a5da-b18cf1a4151b")**
+
+You can also get in touch with your school representative on the [HPC and RDSF Executive Committee](https://www.bristol.ac.uk/acrc/team-and-governance/hpc-and-rdsf-executive-committee-/ "https://www.bristol.ac.uk/acrc/team-and-governance/hpc-and-rdsf-executive-committee-/") who may be able to answer your questions.  The committee Chair is Simon Hanna, School of Physics.
+
+We are setting up a direct way for you to communicate with the HPC Transition Team, so you can ask questions or raise concerns. In our next update, we will let you know how you can get in touch with the team directly.  
+
+Simon Hanna, Chair of the High Performance Computing Executive
+
+Sadaf Alam, Director of Advanced Computing - Strategy and Academia
+
+India Davison, Senior Project Manager for the HPC Transition Project
+
+
+**HPC User Forum, 24/2/2025**
+
+Sanne Terry, Simon Hanna
+There was a HPC user group/meeting - one person per School
+Volunteers to chair User Group meetings
+Phase 1 pilot system 
+Aim for Phase 2 in July
+First project meeting this afternoon - 2x sys admin, Sadaf, Gethin, Simon (representing users)
+Will be 0.5 to 0.7 of BC4.
 
