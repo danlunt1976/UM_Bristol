@@ -13,7 +13,8 @@ This is a summary of the current state of our BRIDGE machines
 | holocene4                | Rocky 8     |                    | will be UM downlaods                             | Currently moving triassic array data to this disk array.                                                                            |
 | eocene2                  |             |                    | will be new main login node and home directories |                                                                                                                                     |
 | paleocene                |             |                    | will be new web server.                          | will replace oligocene.                                                                                                             |
-|                          |             |                    |                                                  |                                                                                                                                     |
+                                                                                            
+
 Array disk size from: `df -BG`
 OS from: `rpm -qa centos-release` or `rpm -qa rocky-release`
 
