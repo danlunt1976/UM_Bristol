@@ -17,14 +17,16 @@ It is strongly recommended to read the document before accessing any data. Some 
 
 ### CMIP7 forcings
 
-[CMIP7 forcings home page](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-forcing-datasets/)
+[CMIP7 forcings home page](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-forcing-datasets/), and you can have an overview [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/).
+
+Currently greenhouse gases are available, guide to use is [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/).
 
 ## HadCM3 implementation of forcings
 
 The following pages provide details of how to access CMIP forcings, process them into the correct format for HadCM3, and use them in a model run.
 
-- [Greenhosue gas concentrations](CMIP7_fcg_GHG.md)
-- [CO2 emissions](CMIP7_fcg_CO2.md)
+- [Greenhosue gas concentrations](CMIP7_fcg_GHG_CO2.md)
+- [CO<sub>2</sub> emissions](CMIP7_fcg_GHG_CO2.md)
 - [land-use change](CMIP7_fcg_LUC.md)
 - [aerosols](CMIP7_fcg_aerosol.md)
 - [ozone](CMIP7_fcg_ozone.md)
