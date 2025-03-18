@@ -1,4 +1,4 @@
-[Back to HadCM3 for CMIP](HadCM3_CMIP7.md)
+[Back to HadCM3 for CMIP7](HadCM3_CMIP7.md)
 
 In order to run CMIP7 simulations, HadCM3 must be able to ingest various forcings from greenhouse gases to aerosols and natural changes. These pages document where to get CMIP forcing from and how to process it for use in HadCM3.
 
