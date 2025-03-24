@@ -4,11 +4,11 @@
 
 ### Where to access data
 
-<info here where to find CMIP GHG data>
+<!-- info here where to find CMIP GHG data -->
 
 ### How to process data
 
-<info here how to process the CMIP data into the right format - whether it needs to be ancillary files, text files etc, which categroies to use, units required etc>
+<!-- info here how to process the CMIP data into the right format - whether it needs to be ancillary files, text files etc, which categroies to use, units required etc -->
 
 ### How to implement the forcing into HadCM3
 
