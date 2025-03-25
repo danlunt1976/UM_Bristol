@@ -61,6 +61,10 @@ Instead of editing the wiki directly as above, you can download a 'clone' of the
 
 (6) Have another beer.
 
+### Even More advanced writing (from a Windows machine)
+
+Instead of 'GitHub Desktop', you can download 'Git Bash'.  This is a bit like having a linux version of your windows files, and allows you to use git commands at the command line.  See instructions here: https://bristol-training.github.io/ukrn-intro-git-github .
+
 ### From a MAC
 
 I'm sure it's possible, but I have no idea how.
