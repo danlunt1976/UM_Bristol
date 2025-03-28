@@ -15,7 +15,7 @@ However, the link for downloading CMIP6 solar forcing data are now overwritten b
 ### How to process data
 
 #### Total Solar Irradiation (TSI)
-The HadCM3B model requires time-varying Total Solar Irradiation (TSI) file in annual mean resolution, saving as a `.dat` file with two columns (`year value`), without column name.
+The HadCM3B model requires time-varying Total Solar Irradiation (TSI) file in annual mean resolution, saving as a `.dat` file with two columns (`year value`), without column name. So we need to convert the original monthly data into annual mean format. You can use this python script to convert and plot data: [Convert_TSI_data.ipynb](Attachments/CMIP7_fcg_solar/Convert_TSI_data.ipynb)
 
 You can get the converted annual mean **varying_TSI_CMIP6.dat** file, for example, from [local path](Attachments/CMIP7_fcg_solar/varying_TSI_CMIP6.dat) (can be opened with Notepad), or in `BC4:/user/home/mf22281/um_updates/`.
 
