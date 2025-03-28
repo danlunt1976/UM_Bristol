@@ -10,7 +10,7 @@ Data can be access from links [monthly resolution reference solar forcing](https
 
 To be noticed, the CMIP7 solar forcing provides data ranging from 1850-2023 (1850-1873 for pre-industrial control; version 4.6). While CMIP6 provides data from 1850-2299 (version 3.2).
 
-However, the link for downloading CMIP6 solar forcing data are now overwritten by the CMIP7 one. But you can access data from my previous saved file: [[solarforcing-ref-mon_input4MIPs_solar_CMIP_SOLARIS-HEPPA-3-2_gn_18500101-22991231.nc]]
+However, the link for downloading CMIP6 solar forcing data are now overwritten by the CMIP7 one. But you can access data from my previous saved file: [[Attachments/CMIP7_fcg_solar/solarforcing-ref-mon_input4MIPs_solar_CMIP_SOLARIS-HEPPA-3-2_gn_18500101-22991231.nc]]
 
 ### How to process data
 
