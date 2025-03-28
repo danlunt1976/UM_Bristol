@@ -19,13 +19,14 @@ The HadCM3B model requires time-varying Total Solar Irradiation (TSI) file in an
 
 You can get the converted annual mean **varying_TSI_CMIP6.dat** file, for example, from [local path](Attachments/CMIP7_fcg_solar/varying_TSI_CMIP6.dat) (can be opened with Notepad), or in `BC4:/user/home/mf22281/um_updates/`.
 
-The file looks like this:
-![head of varying_TSI_CMIP6 file.png](Attachments/CMIP7_fcg_solar/head of varying_TSI_CMIP6 file.png)
+The file looks like this:  
+![head of varying_TSI_CMIP6 file.png](<Attachments/CMIP7_fcg_solar/head of varying_TSI_CMIP6 file.png>)
 
-The TSI data for CMIP6:
-![[TSI_CMIP6.png]]
+The TSI data for CMIP6:  
+![TSI_CMIP6.png](Attachments/CMIP7_fcg_solar/TSI_CMIP6.png)
 
 #### Spectrum
+coming soon ...
 
 ### How to implement the forcing into HadCM3
 
@@ -83,85 +84,64 @@ You can further check or modify the setting in
 ### Setting
 - xqcpz  
 	A copy of the standard HadCM3B job, tdaag, which is HadCM3-MOSES2.1-TRIFFID_dyn, Pre-industrial.  
+	Solar constant = 1361.0 $W/m^2$.  
 	re-run from year 1850 to 2299.
 - xqcpa  
 	solar file set as `BC4:/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat`  
 	running from year 1850 to 2299.
 - xqcpb  
 	solar file set as `BC4:/user/home/mf22281/um_updates/shift_TSI.dat`.  
-        This job is used to test the efficiency of the solar setting.    
+        This job is used to test the effectiveness of the solar setting.    
 	This solar file set the TSI values start from 1361 $W/m^{2}$ for 20 years, then suddenly shift to a larger value (1391 $W/m^{2}$) for 10 years, then shifts back to 1361 $W/m^{2}$ for the remaining years.  
 	Set running from year 1850 to 2299.  
 	![shift_TSI.png](Attachments/CMIP7_fcg_solar/shift_TSI.png)
 
 
+## Test with CMIP7 TSI
+coming soon ...
+
+## Test with CMIP7 spectrum
+coming soon ...
 
 ### Result
 #### compare TSI_CMIP6 with standard PI job (xqcpa - xqcpz)
+##### Surface air temperature
+![xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfjjs.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfjjs.png)  
+![xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfdjf.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfdjf.png)  
 
-Anomaly of Surface air temperature (ANN)
-![[xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.png]]
+##### Precipitation and Evaporation
+![xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfmonth.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfmonth.png)  
+![xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfjjs.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfjjs.png)  
+![xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfdjf.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfdjf.png)  
+![xqcpa-xqcpz_evap_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_evap_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_precipevap_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precipevap_all_months_fsy_pjxy-time-series_tfann.png)  
 
-Anomaly of Surface air temperature (JJAS)
-![[xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfjjs.png]]
+##### Mean sea level pressure
+![xqcpa-xqcpz_mslp_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_mslp_all_months_fsy_pjxy-time-series_tfann.png)  
 
-Anomaly of Surface air temperature (DJF)
-![[xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfdjf.png]]
+##### Solar radiation
+![xqcpa-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_downsolarsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downsolarsurf_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_netsolartoa_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netsolartoa_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_netsolarsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netsolarsurf_all_months_fsy_pjxy-time-series_tfann.png)  
 
+##### Longwave radiation
+![xqcpa-xqcpz_olr_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_olr_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_netlongsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netlongsurf_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_downlongsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downlongsurf_all_months_fsy_pjxy-time-series_tfann.png)  
 
-Anomaly of Precipitation (annual)
-![[xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfann.png]]
-
-Anomaly of Precipitation (monthly)
-![[xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfmonth.png]]
-
-Anomaly of Precipitation (JJAS)
-![[xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfjjs.png]]
-
-Anomaly of Precipitation (DJF)
-![[xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfdjf.png]]
-
-Anomaly of Evaporation
-![[xqcpa-xqcpz_evap_all_months_fsy_pjxy-time-series_tfann.png]]
+##### Net radiation
+![xqcpa-xqcpz_netradiationsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netradiationsurf_all_months_fsy_pjxy-time-series_tfann.png)  
 
 
-Anomaly of Precipitation - Evaporation
-![[xqcpa-xqcpz_precipevap_all_months_fsy_pjxy-time-series_tfann.png]]
+##### Heat fluxes
+![xqcpa-xqcpz_sensible_heat_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_sensible_heat_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_latent_heat_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_latent_heat_all_months_fsy_pjxy-time-series_tfann.png)  
 
-Anomaly of Mean sea level pressure
-![[xqcpa-xqcpz_mslp_all_months_fsy_pjxy-time-series_tfann.png]]
-
-Anomaly of Downward solar radiation at TOA
-![[xqcpa-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.png]]
-
-Anomaly of Downward solar radiation at surface
-![[xqcpa-xqcpz_downsolarsurf_all_months_fsy_pjxy-time-series_tfann.png]]
-
-Anomaly of Net Solar radiation at TOA
-![[xqcpa-xqcpz_netsolartoa_all_months_fsy_pjxy-time-series_tfann.png]]
-
-Anomaly of Net solar radiation at surface
-![[xqcpa-xqcpz_netsolarsurf_all_months_fsy_pjxy-time-series_tfann.png]]
+##### Total cloud cover (random overlap)
+![xqcpa-xqcpz_totalcloud_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_totalcloud_all_months_fsy_pjxy-time-series_tfann.png)  
 
 
 
-Anomaly of Downward longwave radiation at surface
-![[xqcpa-xqcpz_downlongsurf_all_months_fsy_pjxy-time-series_tfann.png]]
-
-Anomaly of Net upward longwave radiation at surface
-![[xqcpa-xqcpz_netlongsurf_all_months_fsy_pjxy-time-series_tfann.png]]
-
-Anomaly of Net radiation at surface
-![[xqcpa-xqcpz_netradiationsurf_all_months_fsy_pjxy-time-series_tfann.png]]
-
-Anomaly of Outgoing longwave radiation at TOA
-![[xqcpa-xqcpz_olr_all_months_fsy_pjxy-time-series_tfann.png]]
-
-Anomaly of Sensible heat flux
-![[xqcpa-xqcpz_sensible_heat_all_months_fsy_pjxy-time-series_tfann.png]]
-
-Anomaly of Latent heat flux
-![[xqcpa-xqcpz_latent_heat_all_months_fsy_pjxy-time-series_tfann.png]]
-
-Anomaly of Total cloud cover (random overlap)
-![[xqcpa-xqcpz_totalcloud_all_months_fsy_pjxy-time-series_tfann.png]]
