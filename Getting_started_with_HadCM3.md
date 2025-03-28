@@ -74,8 +74,7 @@ also download and install the Xming fonts:
   
 [https://sourceforge.net/projects/xming/files/Xming-fonts/7.7.0.10/Xming-fonts-7-7-0-10-setup.exe/download](https://sourceforge.net/projects/xming/files/Xming-fonts/7.7.0.10/Xming-fonts-7-7-0-10-setup.exe/download)
 
-First start Xming running from the version you just installed. If this is running correctly, the
-icon will appear on the right of the windows taskbar. Then open PuTTY (via ‘Start > All
+First start Xming running from the version you just installed. If this is running correctly, the icon will appear on the right of the windows taskbar. Then open PuTTY (via ‘Start > All
 Programs > PuTTY’). Fill in the host machine name on the first screen: bc4login.acrc.bris.ac.uk. To view windows sent from the host screen, you need to set up ‘forwarding’. On the left click the ‘+’ symbol next to SSH, then select X11. Tick the box to ’Enable X11 forwarding’.  Also on the left-hand menu, click on ‘Colours’ and put a tick in the box next to ‘Use system colours’.  Then click Open at the bottom of the window. When prompted enter your username. You will have been sent an email of these when you registered on the ACRC webpage. Remember to use the correct password for the machine you are using.
 
 Once you have logged in, you will automatically be in your ‘home’ directory, and you should see the command-line prompt.
@@ -86,6 +85,8 @@ There are many good online Linux courses, including some interactive ones, such 
 
 A particularly recommended course is:
 [https://www.netacad.com/campaign/linux-unhatched3](https://www.netacad.com/campaign/linux-unhatched3)
+
+The ACRC also provides some training courses and tutorials, including HPC, Linux, Python and R, etc. You can take a look here: [ACRC Training](https://www.bristol.ac.uk/acrc/training/)
 
 Before going any further, try these online courses until you feel that you are confident using Linux.  In particular, make sure that you can write and edit text files using emacs, move around your directory structures, copy files, move files, and delete files.
 
@@ -146,7 +147,7 @@ ssh-copy-id -i ~/.ssh/id_rsa bc4
 ssh-copy-id -i ~/.ssh/id_rsa eocene
 ```
 
-### (c)    eocene
+### (c) eocene
 
 Login to Eocene (eocene.ggy.bris.ac.uk). Standard folder and paths can then be created by typing:
 
@@ -171,7 +172,7 @@ ssh-copy-id -i ~/.ssh/id_rsa bc4
 ssh-copy-id -i ~/.ssh/id_rsa bp14_
 ```
 
-### (d)   archer2/puma2
+### (d) archer2/puma2
 
 You should have already setup the ssh keys as part of the registering process for archer2/puma2. You can add further keys from different machines if you would like. There are also instructions at NCAS for making the logging on puma2 from archer2 password less.
 
