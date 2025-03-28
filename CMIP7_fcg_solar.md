@@ -10,17 +10,17 @@ Data can be access from links [monthly resolution reference solar forcing](https
 
 To be noticed, the CMIP7 solar forcing provides data ranging from 1850-2023 (1850-1873 for pre-industrial control; version 4.6). While CMIP6 provides data from 1850-2299 (version 3.2).
 
-However, the link for downloading CMIP6 solar forcing data are now overwritten by the CMIP7 one. But you can access data from my previous saved file: [monthly resolution reference solar forcing for CMIP6](Attachments/CMIP7_fcg_solar/solarforcing-ref-mon_input4MIPs_solar_CMIP_SOLARIS-HEPPA-3-2_gn_18500101-22991231.nc)
+However, the link for downloading CMIP6 solar forcing data are now overwritten by the CMIP7 one. But you can access data from my previous saved file: [monthly resolution reference solar forcing for CMIP6](Attachments/CMIP7_fcg_solar/solarforcing-ref-mon_input4MIPs_solar_CMIP_SOLARIS-HEPPA-3-2_gn_18500101-22991231.nc).
 
 ### How to process data
 
 #### Total Solar Irradiation (TSI)
-The HadCM3B model requires time-varying Total Solar Irradiation (TSI) file in annual mean resolution, saving as a .dat file with two columns (`year value`), without column name.
+The HadCM3B model requires time-varying Total Solar Irradiation (TSI) file in annual mean resolution, saving as a `.dat` file with two columns (`year value`), without column name.
 
-You can get the converted annual mean **varying_TSI_CMIP6.dat** file from [[local path]] (can open with Notepad), or in `BC4:/user/home/mf22281/um_updates/`.
+You can get the converted annual mean **varying_TSI_CMIP6.dat** file, for example, from [local path](Attachments/CMIP7_fcg_solar/varying_TSI_CMIP6.dat) (can be opened with Notepad), or in `BC4:/user/home/mf22281/um_updates/`.
 
 The file looks like this:
-![[head of varying_TSI_CMIP6 file.png]]
+![head of varying_TSI_CMIP6 file.png](Attachments/CMIP7_fcg_solar/head of varying_TSI_CMIP6 file.png)
 
 The TSI data for CMIP6:
 ![[TSI_CMIP6.png]]
