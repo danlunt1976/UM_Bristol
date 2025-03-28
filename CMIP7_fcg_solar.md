@@ -30,61 +30,69 @@ The TSI data for CMIP6:
 ### How to implement the forcing into HadCM3
 
 #### Setup a transient TSI job
-Tutorial: [[Tutorial of Solar Orbit Setup_202503.docx]]
+Tutorial: [Tutorial of Solar Orbit Setup_202503.docx](<Attachments/CMIP7_fcg_solar/Tutorial of Solar Orbit Setup_202503.docx>)
+
 
 Key process:
 - copy a standard HadCM3B job. 
 - setup a module in PUMA2, UMUI window:
-	Model Selection 
-		-> sub-model independent 
-			-> compilation and modification 
-				-> modifications for the model 
-					-> Fortran Mods table
-	`$PV_UPDATES/solar_orbit_real1950.mod` | Y
 
-> $PV_UPDATAES: `BC4:/mnt/storage/private/bridge/swsvalde/um_updates/`
+
+
+> Model Selection  
+-> sub-model independent  
+-> compilation and modification  
+-> modifications for the model  
+-> Fortran Mods table
+> |Fortran modes | Include Y/N |
+> |--------------|-------------|
+> |$PV_UPDATES/solar_orbit_real1950.mod|Y|
+
+
+Where $PV_UPDATAES: `BC4:/mnt/storage/private/bridge/swsvalde/um_updates/`
 
 - Include time-varying TSI file and turn on related options in PUMA2, UMUI window:
-	Model Selection ->
-		-> sub-model independent 
-			-> Script inserts and modifications
-				-> Defined Environment Variable
-	- `L_SEC_VAR: .TRUE.`
-		set orbit changing through time
-	- `L_SOLAR_SPEC: .TRUE.`
-		set solar spectrum changing through time
-	- `ORB_REAL_YEAR: 0`
-	- `ORB_OFFSET_YEAR: 0`
-	- `SOLAR_FILE: /home/mf22281/um_updates/varying_TSI_CMIP6.dat` (change file path and name as you want)
-![[PUMA3_set_time_varying_TSI.png]]
+> Model Selection  
+-> sub-model independent  
+-> Script inserts and modifications  
+-> Defined Environment Variable  
+>> `L_SEC_VAR: .TRUE.`: set orbit changing through time  
+>> `L_SOLAR_SPEC: .TRUE.`: set solar spectrum changing through time  
+>> `ORB_REAL_YEAR: 0`  
+>> `ORB_OFFSET_YEAR: 0`  
+>> `SOLAR_FILE: /home/mf22281/um_updates/varying_TSI_CMIP6.dat` (change file path and name as you want)
+
+![PUMA3_set_time_varying_TSI.png](Attachments/CMIP7_fcg_solar/PUMA3_set_time_varying_TSI.png)
 
 - save
 - process
 - copy job from PUMA2 to `BC4:~/umui_jobs/`
 
 You can further check or modify the setting in
-`BC4:~/umui_jobs/jobid/MODS_UM`:
-![[BC4_umui_jobs_jobid_MODS_UM.png]]
+`BC4:~/umui_jobs/jobid/MODS_UM`:  
+![BC4_umui_jobs_jobid_MODS_UM.png](Attachments/CMIP7_fcg_solar/BC4_umui_jobs_jobid_MODS_UM.png)
 
-`BC4:~/umui_jobs/jobid/CNTLATM`:
-![[BC4_umui_jobs_jobid_CNTLATM.png]]
+`BC4:~/umui_jobs/jobid/CNTLATM`:  
+![BC4_umui_jobs_jobid_CNTLATM.png](Attachments/CMIP7_fcg_solar/BC4_umui_jobs_jobid_CNTLATM.png)
 
-`BC4:~/umui_jobs/jobid/SCRIPT` :
-![[BC4_umui_jobs_jobid_SCRIPT.png]]
+`BC4:~/umui_jobs/jobid/SCRIPT`:  
+![BC4_umui_jobs_jobid_SCRIPT.png](Attachments/CMIP7_fcg_solar/BC4_umui_jobs_jobid_SCRIPT.png)
+
 
 ## Test with CMIP6 TSI
 ### Setting
-- xqcpz
-	A copy of the standard HadCM3B job, tdaag, which is HadCM3-MOSES2.1-TRIFFID_dyn, Pre-industrial.
+- xqcpz  
+	A copy of the standard HadCM3B job, tdaag, which is HadCM3-MOSES2.1-TRIFFID_dyn, Pre-industrial.  
 	re-run from year 1850 to 2299.
-- xqcpa
-	solar file set as `BC4:/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat`
+- xqcpa  
+	solar file set as `BC4:/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat`  
 	running from year 1850 to 2299.
-- xqcpb
-	solar file set as `BC4:/user/home/mf22281/um_updates/shift_TSI.dat`
-	This solar file set the TSI values start from 1361 $W/m^{2}$ for 20 years, then suddenly shift to a larger value (1391 $W/m^{2}$) for 10 years, then shifts back to 1361 $W/m^{2}$ for the remaining years. 
-	Set running from year 1850 to 2299. 
-	![[shift_TSI.png]]
+- xqcpb  
+	solar file set as `BC4:/user/home/mf22281/um_updates/shift_TSI.dat`.  
+        This job is used to test the efficiency of the solar setting.    
+	This solar file set the TSI values start from 1361 $W/m^{2}$ for 20 years, then suddenly shift to a larger value (1391 $W/m^{2}$) for 10 years, then shifts back to 1361 $W/m^{2}$ for the remaining years.  
+	Set running from year 1850 to 2299.  
+	![shift_TSI.png](Attachments/CMIP7_fcg_solar/shift_TSI.png)
 
 
 
