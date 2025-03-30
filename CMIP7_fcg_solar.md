@@ -104,33 +104,31 @@ coming soon ...
 
 ## Result
 ### compare shift_TSI job with standard_PI job (xqcpb - xqcpz)  
-![image](https://github.com/user-attachments/assets/7762aedd-0c65-454f-9632-6dcf477a97cc)  
-![image](https://github.com/user-attachments/assets/ccc5be62-b5a2-4ad6-ac68-83363a52f158)  
-![image](https://github.com/user-attachments/assets/96537323-489d-4b72-9f33-a73e48a588a5)  
-![image](https://github.com/user-attachments/assets/b71da5e7-f283-4a27-87e2-1a8eea062eec)  
-![image](https://github.com/user-attachments/assets/d1b0e4c9-5ac0-43bc-a582-9d79ce723423)  
-
-
+![xqpcb-xqcpz_surface_air_temperature_ann](Attachments/CMIP7_fcg_solar/xqcpb-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.gif)   
+![xqcpb-xqcpz_precipitation_ann](Attachments/CMIP7_fcg_solar/xqcpb-xqcpz_precip_all_months_fsy_pjxy-time-series_tfann.gif)  
+![xqcpb-xqcpz_downward_solar_radiation_at_TOA](Attachments/CMIP7_fcg_solar/xqcpb-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.gif  )
+![xqcpb-xqcpz_outgoing_longwave_radiation_at_TOA](Attachments/CMIP7_fcg_solar/xqcpb-xqcpz_olr_all_months_fsy_pjxy-time-series_tfann.gif)  
+![xqcpb-xqcpz_net_energy_at_TOA](Attachments/CMIP7_fcg_solar/xqcpb-xqcpz_netenergytoa_all_months_fsy_pjxy-time-series_tfann.gif)  
 ### compare TSI_CMIP6 with standard PI job (xqcpa - xqcpz)
 #### Surface air temperature
-![xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfjjs.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfjjs.png)  
-![xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfdjf.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfdjf.png)  
+![xqcpa-xqcpz_surface_air_temperature_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_surface_air_temperature_jjs](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfjjs.png)  
+![xqcpa-xqcpz_surface_air_temperature_djf](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfdjf.png)  
 
 #### Precipitation and Evaporation
-![xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfmonth.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfmonth.png)  
-![xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfjjs.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfjjs.png)  
-![xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfdjf.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfdjf.png)  
-![xqcpa-xqcpz_evap_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_evap_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_precipevap_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precipevap_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_precipitation_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_precipitation_month](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfmonth.png)  
+![xqcpa-xqcpz_precipitation_jjs](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfjjs.png)  
+![xqcpa-xqcpz_precipitation_djf](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfdjf.png)  
+![xqcpa-xqcpz_evaporation_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_evap_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_precipitation-evaporation_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precipevap_all_months_fsy_pjxy-time-series_tfann.png)  
 
 #### Mean sea level pressure
-![xqcpa-xqcpz_mslp_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_mslp_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_mean_sea_level_pressure_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_mslp_all_months_fsy_pjxy-time-series_tfann.png)  
 
 #### Solar radiation
-![xqcpa-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_downsolarsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downsolarsurf_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_downward_solar_radiation_at_toa_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpa-xqcpz_downward_solar_radiation_at_surface_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downsolarsurf_all_months_fsy_pjxy-time-series_tfann.png)  
 ![xqcpa-xqcpz_netsolartoa_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netsolartoa_all_months_fsy_pjxy-time-series_tfann.png)  
 ![xqcpa-xqcpz_netsolarsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netsolarsurf_all_months_fsy_pjxy-time-series_tfann.png)  
 
