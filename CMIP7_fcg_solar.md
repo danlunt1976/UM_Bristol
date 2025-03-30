@@ -85,15 +85,18 @@ You can further check or modify the setting in
 - xqcpz  
 	A copy of the standard HadCM3B job, tdaag, which is HadCM3-MOSES2.1-TRIFFID_dyn, Pre-industrial.  
 	Solar constant = 1361.0 $W/m^2$.  
-	re-run from year 1850 to 2299.
+	re-run from year 1850 to 2299.  
+	check setting and results of xqcpz and xqcpz-tdaag [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpz/standard_new_html/xqcpz.html)  
 - xqcpa  
 	solar file set as `BC4:/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat`  
-	running from year 1850 to 2299.
+	running from year 1850 to 2299.  
+	check setting and results of xqcpa and xqcpa-xqcpz [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpa/standard_new_html/xqcpa.html)  
 - xqcpb  
 	solar file set as `BC4:/user/home/mf22281/um_updates/shift_TSI.dat`.  
         This job is used to test the effectiveness of the solar setting.    
 	This solar file set the TSI values start from 1361 $W/m^{2}$ for 20 years, then suddenly shift to a larger value (1391 $W/m^{2}$) for 10 years, then shifts back to 1361 $W/m^{2}$ for the remaining years.  
 	Set running from year 1850 to 2299.  
+	check setting and results of xqcpb and xqcpb-xqcpz [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpb/standard_new_html/xqcpb.html)  
 	![shift_TSI.png](Attachments/CMIP7_fcg_solar/shift_TSI.png)
 
 
@@ -142,6 +145,20 @@ coming soon ...
 
 ##### Total cloud cover (random overlap)
 ![xqcpa-xqcpz_totalcloud_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_totalcloud_all_months_fsy_pjxy-time-series_tfann.png)  
+
+#### compare shift_TSI job with standard_PI job (xqcpb - xqcpz)  
+![image](https://github.com/user-attachments/assets/7762aedd-0c65-454f-9632-6dcf477a97cc)  
+![image](https://github.com/user-attachments/assets/ccc5be62-b5a2-4ad6-ac68-83363a52f158)  
+![image](https://github.com/user-attachments/assets/96537323-489d-4b72-9f33-a73e48a588a5)  
+![image](https://github.com/user-attachments/assets/b71da5e7-f283-4a27-87e2-1a8eea062eec)  
+![image](https://github.com/user-attachments/assets/d1b0e4c9-5ac0-43bc-a582-9d79ce723423)  
+
+
+
+
+
+
+
 
 
 
