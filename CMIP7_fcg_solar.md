@@ -79,41 +79,45 @@ You can further check or modify the setting in
 `BC4:~/umui_jobs/jobid/SCRIPT`:  
 ![BC4_umui_jobs_jobid_SCRIPT.png](Attachments/CMIP7_fcg_solar/BC4_umui_jobs_jobid_SCRIPT.png)
 
-
-## Test with CMIP6 TSI
-### Setting
-- xqcpz  
-	A copy of the standard HadCM3B job, tdaag, which is HadCM3-MOSES2.1-TRIFFID_dyn, Pre-industrial.  
-	Solar constant = 1361.0 $W/m^2$.  
-	re-run from year 1850 to 2299.  
-	check setting and results of xqcpz and xqcpz-tdaag [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpz/standard_new_html/xqcpz.html)  
-- xqcpa  
-	solar file set as `BC4:/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat`  
-	running from year 1850 to 2299.  
-	check setting and results of xqcpa and xqcpa-xqcpz [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpa/standard_new_html/xqcpa.html)  
-- xqcpb  
-	solar file set as `BC4:/user/home/mf22281/um_updates/shift_TSI.dat`.  
-        This job is used to test the effectiveness of the solar setting.    
-	This solar file set the TSI values start from 1361 $W/m^{2}$ for 20 years, then suddenly shift to a larger value (1391 $W/m^{2}$) for 10 years, then shifts back to 1361 $W/m^{2}$ for the remaining years.  
-	Set running from year 1850 to 2299.  
-	check setting and results of xqcpb and xqcpb-xqcpz [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpb/standard_new_html/xqcpb.html)  
-	![shift_TSI.png](Attachments/CMIP7_fcg_solar/shift_TSI.png)
-
-
-## Test with CMIP7 TSI
+## Setting
+### Control run: xqcpz
+A copy of the standard HadCM3B job, tdaag, which is HadCM3-MOSES2.1-TRIFFID_dyn, Pre-industrial.  
+Solar constant = 1361.0 $W/m^2$.  
+re-run from year 1850 to 2299.  
+check setting and results of xqcpz and xqcpz-tdaag [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpz/standard_new_html/xqcpz.html)
+### Test effectivess of solar setting: xqcpb
+solar file set as `BC4:/user/home/mf22281/um_updates/shift_TSI.dat`.  
+This job is used to test the effectiveness of the solar setting.    
+This solar file set the TSI values start from 1361 $W/m^{2}$ for 20 years, then suddenly shift to a larger value (1391 $W/m^{2}$) for 10 years, then shifts back to 1361 $W/m^{2}$ for the remaining years.  
+Set running from year 1850 to 2299.  
+check setting and results of xqcpb and xqcpb-xqcpz [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpb/standard_new_html/xqcpb.html)  
+![shift_TSI.png](Attachments/CMIP7_fcg_solar/shift_TSI.png)
+### Test with CMIP6 TSI: xqcpa
+solar file set as `BC4:/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat`  
+running from year 1850 to 2299.  
+check setting and results of xqcpa and xqcpa-xqcpz [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpa/standard_new_html/xqcpa.html)  
+### Test with CMIP7 TSI
 coming soon ...
 
-## Test with CMIP7 spectrum
+### Test with CMIP7 spectrum
 coming soon ...
 
-### Result
-#### compare TSI_CMIP6 with standard PI job (xqcpa - xqcpz)
-##### Surface air temperature
+## Result
+### compare shift_TSI job with standard_PI job (xqcpb - xqcpz)  
+![image](https://github.com/user-attachments/assets/7762aedd-0c65-454f-9632-6dcf477a97cc)  
+![image](https://github.com/user-attachments/assets/ccc5be62-b5a2-4ad6-ac68-83363a52f158)  
+![image](https://github.com/user-attachments/assets/96537323-489d-4b72-9f33-a73e48a588a5)  
+![image](https://github.com/user-attachments/assets/b71da5e7-f283-4a27-87e2-1a8eea062eec)  
+![image](https://github.com/user-attachments/assets/d1b0e4c9-5ac0-43bc-a582-9d79ce723423)  
+
+
+### compare TSI_CMIP6 with standard PI job (xqcpa - xqcpz)
+#### Surface air temperature
 ![xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.png)  
 ![xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfjjs.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfjjs.png)  
 ![xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfdjf.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfdjf.png)  
 
-##### Precipitation and Evaporation
+#### Precipitation and Evaporation
 ![xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfann.png)  
 ![xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfmonth.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfmonth.png)  
 ![xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfjjs.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfjjs.png)  
@@ -121,37 +125,32 @@ coming soon ...
 ![xqcpa-xqcpz_evap_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_evap_all_months_fsy_pjxy-time-series_tfann.png)  
 ![xqcpa-xqcpz_precipevap_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precipevap_all_months_fsy_pjxy-time-series_tfann.png)  
 
-##### Mean sea level pressure
+#### Mean sea level pressure
 ![xqcpa-xqcpz_mslp_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_mslp_all_months_fsy_pjxy-time-series_tfann.png)  
 
-##### Solar radiation
+#### Solar radiation
 ![xqcpa-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.png)  
 ![xqcpa-xqcpz_downsolarsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downsolarsurf_all_months_fsy_pjxy-time-series_tfann.png)  
 ![xqcpa-xqcpz_netsolartoa_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netsolartoa_all_months_fsy_pjxy-time-series_tfann.png)  
 ![xqcpa-xqcpz_netsolarsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netsolarsurf_all_months_fsy_pjxy-time-series_tfann.png)  
 
-##### Longwave radiation
+#### Longwave radiation
 ![xqcpa-xqcpz_olr_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_olr_all_months_fsy_pjxy-time-series_tfann.png)  
 ![xqcpa-xqcpz_netlongsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netlongsurf_all_months_fsy_pjxy-time-series_tfann.png)  
 ![xqcpa-xqcpz_downlongsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downlongsurf_all_months_fsy_pjxy-time-series_tfann.png)  
 
-##### Net radiation
+#### Net radiation
 ![xqcpa-xqcpz_netradiationsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netradiationsurf_all_months_fsy_pjxy-time-series_tfann.png)  
 
 
-##### Heat fluxes
+#### Heat fluxes
 ![xqcpa-xqcpz_sensible_heat_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_sensible_heat_all_months_fsy_pjxy-time-series_tfann.png)  
 ![xqcpa-xqcpz_latent_heat_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_latent_heat_all_months_fsy_pjxy-time-series_tfann.png)  
 
-##### Total cloud cover (random overlap)
+#### Total cloud cover (random overlap)
 ![xqcpa-xqcpz_totalcloud_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_totalcloud_all_months_fsy_pjxy-time-series_tfann.png)  
 
-#### compare shift_TSI job with standard_PI job (xqcpb - xqcpz)  
-![image](https://github.com/user-attachments/assets/7762aedd-0c65-454f-9632-6dcf477a97cc)  
-![image](https://github.com/user-attachments/assets/ccc5be62-b5a2-4ad6-ac68-83363a52f158)  
-![image](https://github.com/user-attachments/assets/96537323-489d-4b72-9f33-a73e48a588a5)  
-![image](https://github.com/user-attachments/assets/b71da5e7-f283-4a27-87e2-1a8eea062eec)  
-![image](https://github.com/user-attachments/assets/d1b0e4c9-5ac0-43bc-a582-9d79ce723423)  
+
 
 
 
