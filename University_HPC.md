@@ -42,13 +42,17 @@ Woolley > Steve Edge... > Simon Spate > Duncan Baldwin > David Gardner
 Keith Woolley and Sadaf lead IT services and BriCS respectively.
 Previously was Sadaf and Chapman.  Gethin currently doing extra role as Chapman left.
 ACRC will likely be split between BRiCS and IT services.
-Digital Labs will sit in BriCS (with Isamabrds).
+Digital Labs will sit in BriCS (with Isambards).
 NextGen-AI will sit in IT services.
 RDSF will sit in IT services.
 
 **Gethin**
 UK-wide - many groups struggling with UM install due to move from Centos7 to Rocky8.
 1-day MOAP, 1-day Paul.  3 days ACRC.
+Saane - Polly - Stacey
+
+**Pilot Digital Labs**
+Has 10 nodes = 1280 cores (cf BC4=15,000).  200TB of solid-sate
 
 **Isambard 3 application**
 
@@ -134,15 +138,6 @@ Once the new HPC system is built and ready for use, we will gradually transition
 **Keeping you informed**
 
 We appreciate that the continuity of HPC services is vital for your research and teaching, and we will send you monthly updates on the HPC transition project and timelines as these are developed and refined.
-
-**Your questions** 
-
-If you have any questions, or would like to raise any concerns, please join the next HPC user group meeting if you can. We will run the meeting as a Town Hall style meeting where all attendees can join the debate.
-
-**HPC User Forum, 24 February, 11.00 - 11.50am**  
-Venue: Join in-person at SCIF Garden Room (Royal Fort House) or join online via Teams.
-
-**[Register to join the HPC User Forum](https://events.teams.microsoft.com/event/4cd32125-7b58-4f94-a0ae-74ea43de5966@b2e47f30-cd7d-4a4e-a5da-b18cf1a4151b "https://events.teams.microsoft.com/event/4cd32125-7b58-4f94-a0ae-74ea43de5966@b2e47f30-cd7d-4a4e-a5da-b18cf1a4151b")**
 
 You can also get in touch with your school representative on the [HPC and RDSF Executive Committee](https://www.bristol.ac.uk/acrc/team-and-governance/hpc-and-rdsf-executive-committee-/ "https://www.bristol.ac.uk/acrc/team-and-governance/hpc-and-rdsf-executive-committee-/") who may be able to answer your questions.  The committee Chair is Simon Hanna, School of Physics.
 
