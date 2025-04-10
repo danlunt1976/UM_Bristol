@@ -50,6 +50,8 @@ RDSF will sit in IT services.
 UK-wide - many groups struggling with UM install due to move from Centos7 to Rocky8.
 1-day MOAP, 1-day Paul.  3 days ACRC.
 Saane - Polly - Stacey
+Currently Thursdays until 2025.  50 days of MOAP.
+Options for funding are extend MOAP, ask Neil Abel, Past2Future, RSE.  Dan to speak to Stacey regarding RSE.
 
 **Pilot Digital Labs**
 Has 10 nodes = 1280 cores (cf BC4=15,000).  200TB of solid-sate
