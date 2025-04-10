@@ -162,3 +162,17 @@ Aim for Phase 2 in July
 First project meeting this afternoon - 2x sys admin, Sadaf, Gethin, Simon (representing users)
 Will be 0.5 to 0.7 of BC4.
 
+
+**HPC User Forum, March 2025**
+
+Chris Woodgate, Sanne Terry
+Now called BC5.
+BriCS = Isambard3 + Isambard AI
+BC5 = x86, CPU>GPU, hosted as part of Digital Labs
+April = procurement
+June+August = building
+August = migrating users
+https://uob.sharepoint.com/sites/hpc
+HPC transition project
+Firm commitment to continuity of service
+"Costing your research" document
