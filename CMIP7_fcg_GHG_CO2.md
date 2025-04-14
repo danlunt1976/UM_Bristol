@@ -15,12 +15,13 @@ For testing purposes, we used CMIP6 GHGs forcings. CMIP7 forcings are becoming a
    
    - Normally there should also be a paper documenting a particular forcing, in that case there should be other more friendly options available elsewhere. If not, you have to get a wget script attached to searched results, and run the scripts to download data – simply cd to the directory where you downloaded the wget script, and run with `bash ./wget_example_script`, or you might want to add execute permission first, `chmod +x wget_example_script`, and then run with `./wget_example_script`.
 
-   > [!TIP]
-   > Sometimes the script could fail because you do not have authrisation or certificates. This used to be quite important, but recently for most data, you can skip those by adding '-s' after the bash script, i.e., `$./wget_example_script -s`.
-
    - For GHGs, there is another source where you could have [an overview](https://greenhousegases.science.unimelb.edu.au/#!/view).
 
    - Finally, here is the [paper for GHGs](https://gmd.copernicus.org/preprints/gmd-2016-169/gmd-2016-169.pdf). Data could be downloaded from the supplimentary.
+
+> [!TIP]
+> Sometimes the script could fail because you do not have authrisation or certificates. This used to be quite important, but recently for most data, you can skip those by adding '-s' after the bash script, i.e., `$./wget_example_script -s`.
+
 
 2. CMIP7
    
@@ -55,7 +56,12 @@ These instructions apply to all well-mixed GHGs, which in HadCM3 are:
 - N<sub>2</sub>O
 - various halogneated CFC/HFC species
 
-There are two problems when implementing all these forcings to HadCM3(L). Firstly, for a transient run, it will be accurate to input these forcings as annual mean year by year. In the umui panel, under `Model Selection`>`Atmosphere`>`Scientific Parameters and Sections`>`Spec of trace gases and sulphate loading`, choose `Gen 2-stream LW rad absorption by CFC12` for example, we can see there are 3 methods to define specification of CFC12 absorption, either exclude it, or include using a constant value or include using the complex method of specification. We choose complex method. And then there come two method, either linear interpolation of exponential increase. The latter is useful when we want to explore e.g., 1% CO<sub>2</sub> scenario, the former is used here as we want to define several turning points and interpolate linearly (at most 50 years to define). As this is for test, we think it would be reasonable to define the time series every 30 years from 1850 to 2014 – the year 1850, 1880, 1910, 1940, 1970, 2000 and 2014. Secondly, there are so many CFC/HFC species (40 gases in CMIP6 if you'd like to know) which would not be "possible" to input one by one. In addition to this, normally three equivalent concs are given, 'HFC-134a-eq','CFC-12-eq', and 'CFC-11-eq' which provide radiative efficiency weighted sums of a group of species, details could be found [here](https://docs.google.com/document/d/1pU9IiJvPJwRvIgVaSDdJ4O0Jeorv_2ekEtted34K9cA/edit?tab=t.0).
+There are two problems when implementing all these forcings to HadCM3(L). 
+ - Firstly, for a transient run, it will be accurate to input these forcings as annual mean year by year. 
+> In the umui panel, under `Model Selection`>`Atmosphere`>`Scientific Parameters and Sections`>`Spec of trace gases and sulphate loading`, choose `Gen 2-stream LW rad absorption by CFC12`. For example, we can see there are 3 methods to define specification of CFC12 absorption, either exclude it, or include using a constant value or include using the complex method of specification. We choose complex method. And then there come two method, either linear interpolation of exponential increase. The latter is useful when we want to explore e.g., 1% CO<sub>2</sub> scenario, the former is used here as we want to define several turning points and interpolate linearly (at most 50 years to define). As this is for test, we think it would be reasonable to define the time series every 30 years from 1850 to 2014 – the year 1850, 1880, 1910, 1940, 1970, 2000 and 2014. 
+ - Secondly, there are so many CFC/HFC species (40 gases in CMIP6 if you'd like to know) which would not be "possible" to input one by one. 
+
+In addition to this, normally three equivalent concs are given, 'HFC-134a-eq','CFC-12-eq', and 'CFC-11-eq' which provide radiative efficiency weighted sums of a group of species, details could be found [here](https://docs.google.com/document/d/1pU9IiJvPJwRvIgVaSDdJ4O0Jeorv_2ekEtted34K9cA/edit?tab=t.0).
 
 Thus three options are given for modelers:
 
@@ -89,7 +95,11 @@ More details of HadCM3 test runs on GHGs could be found here, [section xqchc](ht
 
 ### 2.1 Where to access data
 
-Historical CO<sub>2</sub> concs are included in the GHGs data as indicated above. CO<sub>2</sub> emissions are separately stored. To access, go to [ESGF](https://aims2.llnl.gov/search?project=input4MIPs&versionType=all&&activeFacets=%7B%22source_id%22%3A%5B%22CEDS-CMIP-2025-03-18%22%2C%22CEDS-CMIP-2025-03-18-supplemental%22%5D%7D), in the `Classifications` filter, click `Variable ID`, select `CO2_em_anthro` and `CO2_em_AIR_anthro`, respectively, and download the data. Also, supplimentary to these, `CO2_em_SOLID_BIOFUEL_anthro` records solid biofuel (from biomass and biofuel combustion in households and some industrial settings – such as wood, dung, or charcoal burning for cooking or heating) separately, this should not be used to avoid double counting. This is separated because, 1), it has similar emission factors (lots of black carbon, CO, organics) to natural biomass burning (e.g. forest fires), and 2) seasonality and spatial patterns distinct from fossil fuel use, and 3) it would be easier to compare/combine this with biomass burning datasets like GFED or FINN.
+Historical CO<sub>2</sub> concs are included in the GHGs data as indicated above. CO<sub>2</sub> emissions are separately stored. To access, go to [ESGF](https://aims2.llnl.gov/search?project=input4MIPs&versionType=all&&activeFacets=%7B%22source_id%22%3A%5B%22CEDS-CMIP-2025-03-18%22%2C%22CEDS-CMIP-2025-03-18-supplemental%22%5D%7D), in the `Classifications` filter, click `Variable ID`, select `CO2_em_anthro` and `CO2_em_AIR_anthro`, respectively, and download the data. 
+
+Also, supplimentary to these, `CO2_em_SOLID_BIOFUEL_anthro` records solid biofuel (from biomass and biofuel combustion in households and some industrial settings – such as wood, dung, or charcoal burning for cooking or heating) separately, this should not be used to avoid double counting. This is separated because, 1), it has similar emission factors (lots of black carbon, CO, organics) to natural biomass burning (e.g. forest fires), and 2) seasonality and spatial patterns distinct from fossil fuel use, and 3) it would be easier to compare/combine this with biomass burning datasets like GFED or FINN. 
+
+For more details of how the Community Emissions Data System (CEDS) produced emissions data, refer to [Hoesly et al., 2018](https://gmd.copernicus.org/articles/11/369/2018/gmd-11-369-2018.pdf#page=25.19). For proper config of aerosols and reactive gases in climate models, refer to  [Lamarque et al., 2010](https://acp.copernicus.org/articles/10/7017/2010/).
 
 ### 2.2 How to process data
 
