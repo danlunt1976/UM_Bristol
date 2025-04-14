@@ -15,8 +15,8 @@ For testing purposes, we used CMIP6 GHGs forcings. CMIP7 forcings are becoming a
    
    - Normally there should also be a paper documenting a particular forcing, in that case there should be other more friendly options available elsewhere. If not, you have to get a wget script attached to searched results, and run the scripts to download data – simply cd to the directory where you downloaded the wget script, and run with `bash ./wget_example_script`, or you might want to add execute permission first, `chmod +x wget_example_script`, and then run with `./wget_example_script`.
 
-   > [!TIP]
-   > Sometimes the script could fail because you do not have authrisation or certificates. This used to be quite important, but recently for most data, you can skip those by adding '-s' after the bash script, i.e., `$./wget_example_script -s`.
+> [!TIP]
+> Sometimes the script could fail because you do not have authrisation or certificates. This used to be quite important, but recently for most data, you can skip those by adding '-s' after the bash script, i.e., `$./wget_example_script -s`.
 
    - For GHGs, there is another source where you could have [an overview](https://greenhousegases.science.unimelb.edu.au/#!/view).
 
