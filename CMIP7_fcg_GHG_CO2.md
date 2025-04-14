@@ -1,10 +1,10 @@
 [back to CMIP7 ancillaries](CMIP7_ancillaries.md)
 
-## GHG forcings for HadCM3
+## 1. GHG forcings for HadCM3
 
 For testing purposes, we used CMIP6 GHGs forcings. CMIP7 forcings are becoming available recently, which would also be documented.
 
-### Where to access data
+### 1.1 Where to access data
 
 <!-- info here where to find CMIP GHG data -->
 1. CMIP6
@@ -16,21 +16,18 @@ For testing purposes, we used CMIP6 GHGs forcings. CMIP7 forcings are becoming a
    - Normally there should also be a paper documenting a particular forcing, in that case there should be other more friendly options available elsewhere. If not, you have to get a wget script attached to searched results, and run the scripts to download data.
 
    > [!TIP]
-   > Sometimes the script could fail because you do not have authrisation or certificates. This used to be quite important, but recently for most data, you can skip those by adding '-s' after the bash script, i.e., `./wget_example_script -s`.
+   > Sometimes the script could fail because you do not have authrisation or certificates. This used to be quite important, but recently for most data, you can skip those by adding '-s' after the bash script, i.e., `$./wget_example_script -s`.
 
    - For GHGs, there is another source where you could have [an overview](https://greenhousegases.science.unimelb.edu.au/#!/view).
 
    - Finally, here is the [paper for GHGs](https://gmd.copernicus.org/preprints/gmd-2016-169/gmd-2016-169.pdf). Data could be downloaded from the supplimentary.
 
-2. CMIP7
-   
 
-
-### How to process data
+### 1.2 How to process data
 
 <!-- info here how to process the CMIP data into the right format - whether it needs to be ancillary files, text files etc, which categroies to use, units required etc -->
 
-### How to implement the forcing into HadCM3
+### 1.3 How to implement the forcing into HadCM3
 
 Greenhouse gas concentrations are included in HadCM3 via a umui panel, or can be hand-edited directly after the job is processed. The former is easier to track and copy. The latter is easier if there are many data points.
 
@@ -42,7 +39,7 @@ These instructions apply to all well-mixed GHGs, which in HadCM3 are:
 
 More details of HadCM3 test runs on GHGs could be found here, [section xqchc](https://github.com/Climateyousheng/cmip7/blob/main/HadCM3/expts_descriptions.md)
 
-## CO<sub>2</sub> conc/emissions for HadCM3
+## 2. CO<sub>2</sub> conc/emissions for HadCM3
 
 1. CO<sub>2</sub> concentrations
    
@@ -52,11 +49,11 @@ More details of HadCM3 test runs on GHGs could be found here, [section xqchc](ht
    
    For testing purpose, we've used old version of emission data, including **SRES A2** scenario and **CMIP6** scenario (which might be a high scenario as indicated by the AMOC decline (~35%) at the end of this century).
 
-### Where to access data
+### 2.1 Where to access data
 
-### How to process data
+### 2.2 How to process data
 
-### How to implement the forcing into HadCM3
+### 2.3 How to implement the forcing into HadCM3
 
 More details of HadCM3 test runs on CO<sub>2</sub> could be found here, [See section xqchd](https://github.com/Climateyousheng/cmip7/blob/main/HadCM3/expts_descriptions.md).
 
