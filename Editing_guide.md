@@ -71,25 +71,34 @@ Instead of 'GitHub Desktop', you can download 'Git Bash'. This is a bit like hav
 - Create a repo directly on local desktop, and make edits, then create a repo on GitHub and add the remote repo on local directory.
   
   1. Create a new directory using git bash:
-    > `mkdir new_repo`
+  
+  `mkdir new_repo`
+
   2. Create new files and commit:
-    > `echo "# Create a new repo." >> README.md`
-    > `git init`
-    > `git add README.md`
-    > `git commit -m "first commit"`
-    > `git branch -M main`
+  ```
+  echo "# Create a new repo." >> README.md
+  git init
+  git add README.md
+  git commit -m "first commit"
+  git branch -M main
+  ```
   3. Create a remote repo on GitHub:
-    > Add a new repo on Github (logon GitHub, click `Repositories` under the account on top left, and then click the green button on top right, or the plus sign to create a new repository)
-    > On the following page, type the name of the repository, e.g., `new_repo`
+    - Add a new repo on Github (logon GitHub, click `Repositories` under the account on top left, and then click the green button on top right, or the plus sign to create a new repository)
+
+    - On the following page, type the name of the repository, e.g., `new_repo`
   4. Link local and remote repo, on git bash:
-    > `git remote add origin https://<GitHub_account>/new_repo.git`
-    > `git push -u origin main`
+  ```
+  git remote add origin https://<GitHub_account>/new_repo.git
+  git push -u origin main
+  ```
 
 - Clone from an existing repo from GitHub.
   
   1. Choose a directory where you want to fetch a remote repo on GitHub
   2. Fetch a remote repo
-   > `git clone https://<GitHub_account>/new_repo.git`
+   
+  `git clone https://<GitHub_account>/new_repo.git`
+
   3. Then hopefully you will have permission to commit changes and push to the remote repo, if not, it will be more complicated. Then you will need to ask for permission or you need to fork the repo, and then clone the repo under your account.
 
 > [!NOTE]
@@ -100,20 +109,27 @@ Instead of 'GitHub Desktop', you can download 'Git Bash'. This is a bit like hav
 #### 2. Make changes and commit
 
 Before we make changes, just one more step to set up the local repo:
+
 To set commit email address:
+
 `git config user.email xxxxx@bristol.ac.uk`
+
 To set commit user name:
+
 `git config user.name xxxxx`
 
 Then we can create/edit/remove files. You can use whatever editors you prefer, e.g., nano (simple), vi (powerful but has a learning curve), or VSCode (powerful and intuitive, would recommend this).
 
 After making changes, we need to notify git to track changes on this file, instead of saying "*Git, if you wouldn't mind terribly, could you please consider staging these fine changes for the next commit? Much obliged.*", we do:
+
 `git add .` or `git add <filename>`
 
 Then we need to commit changes to make a new version of this repo, instead of saying "*Git, when you have a moment, might I trouble you to record these changes in the grand ledger of project history? A modest message follows, of course.*", we do:
+
 `git commit -m 'Added feature X.'`
 
 Lastly, it is time to upload changes to the remote repo, instead of saying "*Git, ever so sorry to intrude — would you be kind enough to convey my local efforts to the esteemed remote repository? It would mean the world.*", we do:
+
 `git push origin main`
 
 
@@ -153,8 +169,11 @@ Maybe also slightly differently, when set up user.name and user.email, we could 
 Some more useful commands:
 
 `git status` lists all files and says which are tracked
+
 `git status -uno` lists files which have changed compared with repo
+
 `git diff FILE` file difference
+
 `git ls-files` lists all files which are tracked
 
 Again, there are courses from the University, for beginners and advanced users.
