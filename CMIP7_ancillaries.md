@@ -11,7 +11,7 @@ and the database itself is here: [Inputs4MIPs](https://aims2.llnl.gov/search/inp
 
 It takes a bit of getting used to: you can search for example for a variable under "Classificaitons" tab, then "variable ID". It's probably best to know in advance exactly what you want rather than to browse. It's not very user friendly for random exploring...
 
-As an example, if you want GHG concentrations don't look for "CH4" but for "mole_fraction_of_CH4_in_air".
+As an example, if you want GHG concentrations don't look for "CH4" but for "mole_fraction_of_CH4_in_air". Though note for **CMIP7 data**, some changes are made – they've simplified the variable names, e.g., for 'mole_fraction_of_methane_in_air', 'ch4' is the new variable. A full list variable name mapping could be found here [CMIP7 GHG concs](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/).
 
 It is strongly recommended to read the document before accessing any data. Some datasets are also available elsewhere which can provide more friendly download options. 
 
@@ -20,6 +20,22 @@ It is strongly recommended to read the document before accessing any data. Some 
 [CMIP7 forcings home page](https://wcrp-cmip.org/cmip-phases/cmip7/cmip7-forcing-datasets/), and you can have an overview [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/).
 
 Currently greenhouse gases are available, guide to use is [here](https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/greenhouse-gas-concentrations/).
+
+Forcings availability (last updated: 14th Apr 2025):
+- [x] Anthropogenic short-lived climate forcer (SLCF) and CO<sub>2</sub> emissions
+- [x] Open biomass burning emissions
+- [x] Land use
+- [x] Greenhouse gas concentrations
+- [x] Stratospheric volcanic SO<sub>2</sub> emissions and aerosol optical properties
+- [ ] Ozone concentrations
+- [ ] Nitrogen deposition
+- [x] Solar
+- [ ] AMIP sst and sea-ice boundary forcing
+- [ ] Population density
+
+> [!NOTE]
+> There are two categories of data for CMIP7, the `mip_era` metadata value being 'CMIP7' and 'CMIP6Plus'. 'CMIP6Plus' is used for testing, while 'CMIP7' is used in CMIP7 production simulations.
+
 
 ## HadCM3 implementation of forcings
 
@@ -32,6 +48,12 @@ The following pages provide details of how to access CMIP forcings, process them
 - [ozone](CMIP7_fcg_ozone.md)
 - [solar](CMIP7_fcg_solar.md)
 - [volcanic](CMIP7_fcg_volc.md)
+
+## Forcings backup on Bridge machines
+
+As CMIP7 forcing data are provided at monthly resolution, and high spatial resolution (e.g., 0.5 degree for emissions), they are quite large and could be messy. We plan to backup these forcings (rawdata, ready-to-use ancillary files) on our machines. For long-term management, we would like to create a linux user group (i.e., for CMIP7), and everyone in the group have write permission (sometimes this could be dangerous). But this needs to be properly figured out as new machines or new systems are being updated.
+
+Currently, members responsible for forcings are suggested to have a copy of the data in their work directory. If they need to be backup up, please email either Paul, Dan or Alex to make a copy of them. FYI, the directory sits under `oligocene:~swsvalde/public_html/CMIP7`, which could be accessed on web at [www.paleo.bristol.ac.uk/CMIP7](https://www.paleo.bristol.ac.uk/CMIP7).
 
 
 
