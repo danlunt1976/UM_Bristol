@@ -135,7 +135,9 @@ Lastly, it is time to upload changes to the remote repo, instead of saying "*Git
 
 ### From a MAC
 
-I'm sure it's possible, but I have no idea how.
+Gitting from a MAC is not that different with Gitting from a windows or linux, but tools are different. On a MAC, no Git Bash is needed, default zsh from Terminal would be enough to access a remote host, and this mirrors what you do on a WSL on Windows (for Graphics application we need something different, XQuartz, and add an X flag when ssh to a host). So the workflow of VSCode (if you rely on it) doing the editing and Git Bash do the submitting works seamlessly here on a MAC.
+
+If you are unsure about this, I (Yousheng) am more than willing to help.
 
 
 ### From a Linux machine.
