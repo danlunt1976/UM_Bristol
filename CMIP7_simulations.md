@@ -9,7 +9,24 @@ Here we give a brief summary of our experiments. We plan to have several phases 
 
 ### 1. Historical greenhouse gas concentrations
 
+| experiment | description                           | source            |
+| ---------- | ------------------------------------- | ----------------- |
+| xqcha      | test run                              | <- xpuoo          |
+| **xqchb**  | control run                           | <- xpzab <- xpwca |
+| **xqchc**  | CMIP6 GHGs                            | <- xqchb          |
+| **xqchd**  | CMIP6 GHGs + CMIP6 O<sub>2</sub> conc | <- xqchc          |
+
+
 ### 2. Historical CO<sub>2</sub> emissions
+
+| experiment | description                        | source   |
+| ---------- | ---------------------------------- | -------- |
+| xqche      | emission test                      | <- xqchb |
+| xqchf      | SRESA2 emissions, with TRIFFID bug | <- xqchb |
+| **xqchh**  | SRESA2 emissions, bug fixed        | <- xqchf |
+| xqcht      | CMIP6 emissions, with TRIFFID bug  | <- xqchb |
+| **xqchi**  | CMIP6 emissions, bug fixed         | <- xqcht |
+| **TBC**    | CMIP7 emissions                    | <- xqchb |
 
 ### 3. Solar forcing
 xqcpa: 
@@ -34,5 +51,9 @@ To be notice, other jobs related to solar forcing need to be run later, includin
 ### 7. Ozone in HadCM3 and how to include CMIP forcing
 
 ## Combined testing phase
+
+| experiment | description               | source           |
+| ---------- | ------------------------- | ---------------- |
+| **TBC**    | emissions + solar forcing | <- (xqchi,xqcpa) |
 
 ## CMIP7 experiments phase
