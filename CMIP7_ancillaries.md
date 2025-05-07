@@ -2,6 +2,14 @@
 
 In order to run CMIP7 simulations, HadCM3 must be able to ingest various forcings from greenhouse gases to aerosols and natural changes. These pages document where to get CMIP forcing from and how to process it for use in HadCM3.
 
+### Contents
+- [Contents](#contents)
+- [Background](#background)
+- [CMIP7 forcings](#cmip7-forcings)
+- [HadCM3 implementation of forcings](#hadcm3-implementation-of-forcings)
+- [Forcings backup on Bridge machines](#forcings-backup-on-bridge-machines)
+
+
 ### Background
 
 CMIP forcing data is kept centrally in an activity called "inputs4mips".
@@ -37,7 +45,7 @@ Forcings availability (last updated: 14th Apr 2025):
 > There are two categories of data for CMIP7, the `mip_era` metadata value being 'CMIP7' and 'CMIP6Plus'. 'CMIP6Plus' is used for testing, while 'CMIP7' is used in CMIP7 production simulations.
 
 
-## HadCM3 implementation of forcings
+### HadCM3 implementation of forcings
 
 The following pages provide details of how to access CMIP forcings, process them into the correct format for HadCM3, and use them in a model run.
 
@@ -49,7 +57,12 @@ The following pages provide details of how to access CMIP forcings, process them
 - [solar](CMIP7_fcg_solar.md)
 - [volcanic](CMIP7_fcg_volc.md)
 
-## Forcings backup on Bridge machines
+As mentioned in [CMIP7_simulations](CMIP7_simulations.md), there are 3 phases we implement these forcings. Phase 1 (Single Testing Phase), we test the availability to add a single forcing; Phase 2 (Combined Testing Phase), we gradually merge various forcings; Phase 3 (CMIP7 experiments Phase), standard runs for CMIP7.
+
+For **Phase 2**, we document the processes in [CO<sub>2</sub> emissions](CMIP7_fcg_GHG_CO2.md).
+
+
+### Forcings backup on Bridge machines
 
 As CMIP7 forcing data are provided at monthly resolution, and high spatial resolution (e.g., 0.5 degree for emissions), they are quite large and could be messy. We plan to backup these forcings (rawdata, ready-to-use ancillary files) on our machines. For long-term management, we would like to create a linux user group (i.e., for CMIP7), and everyone in the group have write permission (sometimes this could be dangerous). But this needs to be properly figured out as new machines or new systems are being updated.
 
