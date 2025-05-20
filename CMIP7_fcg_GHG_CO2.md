@@ -14,7 +14,7 @@
   - [emissions + solar forcing](#emissions--solar-forcing)
     - [xqchi + xqcpa](#xqchi--xqcpa)
   - [emissions + GHGs conc](#emissions--ghgs-conc)
-  - [emissions + land-use](#emissions--land-use)
+  - [emissions + solar + land-use](#emissions--solar--land-use)
 
 ## 1. GHG forcings for HadCM3 (inc CO<sub>2</sub> concs)
 
@@ -197,7 +197,19 @@ Differences in Table Fortran mods
 
 And these differences were merged to `xqchz`, except for the running length, we keep it as from '1750–2014', i.e., 265 model years.
 
-Though new exec was created, we got problems running it — no fatal error could be spotted.
+Though new exec was created, we got problems running it — no fatal error could be spotted. Error code is 29:
+
+> forrtl: severe (29): file not found, unit 615, file /mnt/storage/private/bridge/um_output/nd20983/xqchz/datam/fort.615
+
+After diagonosing, we found that the pathname of solar forcing file is not complete. `/home/mf22281/um_updates/varying_TSI_CMIP6.dat` was used in the original `xqcpa`, while this failed to be converted into `/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat` on bc4.
+
+We manually edited `SCRIPT` and `CNTLATM`,
+
+In `SCRIPT`: SOLAR_VAR_FILE='/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat'
+
+In `CNTLATM`: SOLAR_FILE='/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat'
+
+And this fixed the problem now.
 
 
 
@@ -208,7 +220,7 @@ Though new exec was created, we got problems running it — no fatal error could
 
 [back to Contents](#contents)
 
-### emissions + land-use
+### emissions + solar + land-use
 
 
 [back to Contents](#contents)

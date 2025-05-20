@@ -52,8 +52,9 @@ To be notice, other jobs related to solar forcing need to be run later, includin
 
 ## Combined testing phase
 
-| experiment | description               | source           |
-| ---------- | ------------------------- | ---------------- |
-| **TBC**    | emissions + solar forcing | <- (xqchi,xqcpa) |
+| experiment | description                  | source           |
+| ---------- | ---------------------------- | ---------------- |
+| **xqchz**  | emissions + solar forcing    | <- (xqchi,xqcpa) |
+| **tbc**    | emissions + solar + land-use | <- (xqchz,xqcni) |
 
 ## CMIP7 experiments phase
