@@ -9,24 +9,24 @@ Here we give a brief summary of our experiments. We plan to have several phases 
 
 ### 1. Historical greenhouse gas concentrations
 
-| experiment | description                           | source            |
-| ---------- | ------------------------------------- | ----------------- |
-| xqcha      | test run                              | <- xpuoo          |
-| **xqchb**  | control run                           | <- xpzab <- xpwca |
-| **xqchc**  | CMIP6 GHGs                            | <- xqchb          |
-| **xqchd**  | CMIP6 GHGs + CMIP6 O<sub>2</sub> conc | <- xqchc          |
+| experiment | description                           | running length | source            |
+| ---------- | ------------------------------------- | -------------- | ----------------- |
+| xqcha      | test run                              | /              | <- xpuoo          |
+| **xqchb**  | control run                           | 1890-2090      | <- xpzab <- xpwca |
+| **xqchc**  | CMIP6 GHGs                            | 1890-2090      | <- xqchb          |
+| **xqchd**  | CMIP6 GHGs + CMIP6 O<sub>2</sub> conc | 1890-2090      | <- xqchc          |
 
 
 ### 2. Historical CO<sub>2</sub> emissions
 
-| experiment | description                        | source   |
-| ---------- | ---------------------------------- | -------- |
-| xqche      | emission test                      | <- xqchb |
-| xqchf      | SRESA2 emissions, with TRIFFID bug | <- xqchb |
-| **xqchh**  | SRESA2 emissions, bug fixed        | <- xqchf |
-| xqcht      | CMIP6 emissions, with TRIFFID bug  | <- xqchb |
-| **xqchi**  | CMIP6 emissions, bug fixed         | <- xqcht |
-| **TBC**    | CMIP7 emissions                    | <- xqchb |
+| experiment | description                        | running length | source   |
+| ---------- | ---------------------------------- | -------------- | -------- |
+| xqche      | emission test                      | 1650-1850      | <- xqchb |
+| xqchf      | SRESA2 emissions, with TRIFFID bug | 1750-2100      | <- xqchb |
+| **xqchh**  | SRESA2 emissions, bug fixed        | 1750-2100      | <- xqchf |
+| xqcht      | CMIP6 emissions, with TRIFFID bug  | 1750-2014      | <- xqchb |
+| **xqchi**  | CMIP6 emissions, bug fixed         | 1750-2014      | <- xqcht |
+| **TBC**    | CMIP7 emissions                    |                | <- xqchb |
 
 ### 3. Solar forcing
 xqcpa: 
@@ -52,9 +52,9 @@ To be notice, other jobs related to solar forcing need to be run later, includin
 
 ## Combined testing phase
 
-| experiment | description                  | source           |
-| ---------- | ---------------------------- | ---------------- |
-| **xqchz**  | emissions + solar forcing    | <- (xqchi,xqcpa) |
-| **tbc**    | emissions + solar + land-use | <- (xqchz,xqcni) |
+| experiment | description                  | running length | source           |
+| ---------- | ---------------------------- | -------------- | ---------------- |
+| **xqchz**  | emissions + solar forcing    | 1750-2014      | <- (xqchi,xqcpa) |
+| **tbc**    | emissions + solar + land-use |                | <- (xqchz,xqcni) |
 
 ## CMIP7 experiments phase

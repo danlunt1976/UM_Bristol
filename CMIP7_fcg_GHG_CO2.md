@@ -15,6 +15,7 @@
     - [xqchi + xqcpa](#xqchi--xqcpa)
   - [emissions + GHGs conc](#emissions--ghgs-conc)
   - [emissions + solar + land-use](#emissions--solar--land-use)
+    - [xqchz + xqchj](#xqchz--xqchj)
 
 ## 1. GHG forcings for HadCM3 (inc CO<sub>2</sub> concs)
 
@@ -222,5 +223,74 @@ And this fixed the problem now.
 
 ### emissions + solar + land-use
 
+#### xqchz + xqchj
+
+Based on xqchz, we made several changes following xqchj (copy from xqcni), expt is `xqchy`.
+
+1. environment: MY_VEG_DIST=$HOME/../glxaf/ancil/hyde_veg_dist
+
+```
+Difference in window subindep_FileDir
+ -> Model Selection
+   -> Sub-Model Independent
+     -> File & Directory Naming. Time Convention & Envirmnt Vars.
+Differences in Table Defined Environment Variables for Directories
+ 5c5
+<  MY_DUMPS $HOME/../tw23150/dumps
+---
+>  MY_DUMPS $HOME/dumps
+15a16
+>  MY_VEG_DIST $HOME/ancil/hyde_veg_dist
+```
+
+2. model mods: see changes in parenthesis
+
+```
+Difference in window subindep_Compile_Mods
+ -> Model Selection
+   -> Sub-Model Independent
+     -> Compilation and Modifications
+       -> Modifications for the model
+Differences in Table Fortran mods
+ 20a21,22
+>  /user/home/ggpjv/um_updates/export_production Y
+>  /user/home/ggpjv/um_updates/remin_temp_depend_05a Y
+67c69
+<  $PV_UPDATES/mods/vn4.5/hadam3/mod1702 Y            (removed)
+---
+>  /user/home/tw23150/mods/mod1702_cdj_2024.mf77 Y    (added)
+87,89d88
+<  /user/home/ggpjv/um_updates/export_production Y
+<  /user/home/ggpjv/um_updates/remin_temp_depend_05a Y
+<  /user/home/tw23150/mods/acn1f406 Y
+90a90
+>  /user/home/tw23150/mods/disturb_grid_fix.mf77 Y    (added)
+```
+
+3. atmos ancil: use xqchj config
+
+```
+Difference in window atmos_InFiles_PAncil_Disturb
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> Climatologies & potential climatologies
+         -> Vegetation Distribution: Disturbance.
+Radio button: Disturbed fraction of vegetation to be:
+ Job xqchi: Entry is set to 'Configured'
+ Job xqchj: Entry is set to 'Updated from ancil'
+Entry box: and file name
+ Job xqchi: Entry is set to 'qrfrac.disturb.H3Bris.anc'
+ Job xqchj: Entry is set to 'Hyde_veg_dist_mod_v1_1750'
+Entry box: Enter directory or Environment Variable
+ Job xqchi: Entry is set to '$MY_DUMPS/ancil'
+ Job xqchj: Entry is set to '/user/home/glxaf/ancil/hyde_veg_dist'
+Entry box: Every
+ Job xqchi: Entry is inactive
+ Job xqchj: Entry is set to '1'
+Radio button: Time
+ Job xqchi: Entry is inactive
+ Job xqchj: Entry is set to 'Years'
+ ```
 
 [back to Contents](#contents)
