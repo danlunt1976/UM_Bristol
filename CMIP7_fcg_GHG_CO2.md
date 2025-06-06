@@ -1,5 +1,22 @@
 [back to CMIP7 ancillaries](CMIP7_ancillaries.md)
 
+## Contents
+- [Contents](#contents)
+- [1. GHG forcings for HadCM3 (inc CO2 concs)](#1-ghg-forcings-for-hadcm3-inc-co2-concs)
+  - [1.1 Where to access data](#11-where-to-access-data)
+  - [1.2 How to process data](#12-how-to-process-data)
+  - [1.3 How to implement the forcing into HadCM3](#13-how-to-implement-the-forcing-into-hadcm3)
+- [2. CO2 emissions for HadCM3](#2-co2-emissions-for-hadcm3)
+  - [2.1 Where to access data](#21-where-to-access-data)
+  - [2.2 How to process data](#22-how-to-process-data)
+  - [2.3 How to implement the forcing into HadCM3](#23-how-to-implement-the-forcing-into-hadcm3)
+- [3. Combining multiple forcings](#3-combining-multiple-forcings)
+  - [emissions + solar forcing](#emissions--solar-forcing)
+    - [xqchi + xqcpa](#xqchi--xqcpa)
+  - [emissions + GHGs conc](#emissions--ghgs-conc)
+  - [emissions + solar + land-use](#emissions--solar--land-use)
+    - [xqchz + xqchj](#xqchz--xqchj)
+
 ## 1. GHG forcings for HadCM3 (inc CO<sub>2</sub> concs)
 
 For testing purposes, we used CMIP6 GHGs forcings. CMIP7 forcings are becoming available recently, which would also be documented.
@@ -29,6 +46,8 @@ For testing purposes, we used CMIP6 GHGs forcings. CMIP7 forcings are becoming a
 
    In general, the differences are small, but a max radiative forcing of 0.05 W/m<sup>2</sup> is estimated.
 
+[back to Contents](#contents)
+
 ### 1.2 How to process data
 
 <!-- info here how to process the CMIP data into the right format - whether it needs to be ancillary files, text files etc, which categroies to use, units required etc -->
@@ -45,6 +64,8 @@ To convert, e.g. ppmv to MMR is straightforward. For CO<sub>2</sub>, suppose the
 > $MMR(CO_2) = C * \frac{M(CO_2)}{M(air)} \times 10^{-6}$
 
 And similarly for other forcings. Scripts for processing could be found [here](https://github.com/Climateyousheng/cmip7/tree/main/scripts).
+
+[back to Contents](#contents)
 
 ### 1.3 How to implement the forcing into HadCM3
 
@@ -83,6 +104,8 @@ We chose Option 3 by default. Detailed concs are listed below:
 
 More details of HadCM3 test runs on GHGs could be found here, [section xqchc](https://github.com/Climateyousheng/cmip7/blob/main/HadCM3/expts_descriptions.md)
 
+[back to Contents](#contents)
+
 ## 2. CO<sub>2</sub> emissions for HadCM3
 
 1. CO<sub>2</sub> concentrations
@@ -101,9 +124,13 @@ Also, supplimentary to these, `CO2_em_SOLID_BIOFUEL_anthro` records solid biofue
 
 For more details of how the Community Emissions Data System (CEDS) produced emissions data, refer to [Hoesly et al., 2018](https://gmd.copernicus.org/articles/11/369/2018/gmd-11-369-2018.pdf#page=25.19). For proper config of aerosols and reactive gases in climate models, refer to  [Lamarque et al., 2010](https://acp.copernicus.org/articles/10/7017/2010/).
 
+[back to Contents](#contents)
+
 ### 2.2 How to process data
 
 Emissions are provided at monthly resolution, on a 0.5 degrer grid, with 50-years per data file. Files are in netcdf4 v4 (HDFv5) format with CF-compliant and ESGF-compliant metadata.
+
+[back to Contents](#contents)
 
 ### 2.3 How to implement the forcing into HadCM3
 
@@ -113,4 +140,157 @@ More details of HadCM3 test runs on CO<sub>2</sub> could be found here, [See sec
 > - for some uses we want HadCM3 to be "emissions driven" for CO<sub>2</sub>, and so will use CO<sub>2</sub> emissions ancialllries and the interactive carbon cycle. [See section xqche, xqchf, xqcht](https://github.com/Climateyousheng/cmip7/blob/main/HadCM3/expts_descriptions.md)
 > - some forcings are given in very granular (H)(C)FC species - these can often be lumped together into CFC-equivalents. See, e.g., [Jones et al HadGEM2 documentation, sec 3.3](https://gmd.copernicus.org/articles/4/543/2011/gmd-4-543-2011.html)
 
+[back to Contents](#contents)
 
+## 3. Combining multiple forcings
+
+### emissions + solar forcing
+
+#### xqchi + xqcpa
+
+Since they use quite divergent basic configs (e.g., the latter use a higher resolution ocean model, thus scientific parameters are massively different). The diff file sits in `bc4:~nd20983/umui_jobs/diff.xqchi.xqcpa`, but this is difficult to deploy. Alternatively, we had a look at the difference between `tdaag` (parent of `xqcpa`), and `xqcpa`.
+
+`diff.tdaag.xqcpa`
+```
+Job tdaag Title 2022-10-14: HadCM3M21D: Pre-Industrial: Reduced STASH
+Job xqcpa Title copy from tdaag. Change TSI as CMIP6 recommendation
+Difference in window subindep_ScriptMod
+ -> Model Selection
+   -> Sub-Model Independent
+     -> Script Inserts and Modifications
+Differences in Table Defined Environment Variables
+ 8c8,13
+<  SOLAR 1365.0
+---
+>  SOLAR 1361.0
+>  L_SEC_VAR .TRUE.
+>  L_SOLAR_SPEC .TRUE.
+>  SOLAR_FILE /home/mf22281/um_updates/varying_TSI_CMIP6.dat
+>  ORB_REAL_YEAR 0
+>  ORB_OFFSET_YEAR 0
+
+
+
+
+
+
+
+
+Difference in window subindep_Runlen
+ -> Model Selection
+   -> Sub-Model Independent
+     -> Start Date and Run Length Options
+Entry box: Years
+ Job tdaag: Entry is set to '100'
+ Job xqcpa: Entry is set to '450'
+
+Difference in window subindep_Compile_Mods
+ -> Model Selection
+   -> Sub-Model Independent
+     -> Compilation and Modifications
+       -> Modifications for the model
+Differences in Table Fortran mods
+ 75c75
+<  $PV_UPDATES/solar_orbit_real1950.mod Y
+---
+>  $PV_UPDATES/solar_orbit_real1950_ver03.mod Y
+```
+
+And these differences were merged to `xqchz`, except for the running length, we keep it as from '1750–2014', i.e., 265 model years.
+
+Though new exec was created, we got problems running it — no fatal error could be spotted. Error code is 29:
+
+> forrtl: severe (29): file not found, unit 615, file /mnt/storage/private/bridge/um_output/nd20983/xqchz/datam/fort.615
+
+After diagonosing, we found that the pathname of solar forcing file is not complete. `/home/mf22281/um_updates/varying_TSI_CMIP6.dat` was used in the original `xqcpa`, while this failed to be converted into `/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat` on bc4.
+
+We manually edited `SCRIPT` and `CNTLATM`,
+
+In `SCRIPT`: SOLAR_VAR_FILE='/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat'
+
+In `CNTLATM`: SOLAR_FILE='/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat'
+
+And this fixed the problem now.
+
+
+
+[back to Contents](#contents)
+
+### emissions + GHGs conc
+
+
+[back to Contents](#contents)
+
+### emissions + solar + land-use
+
+#### xqchz + xqchj
+
+Based on xqchz, we made several changes following xqchj (copy from xqcni), expt is `xqchy`.
+
+1. environment: MY_VEG_DIST=$HOME/../glxaf/ancil/hyde_veg_dist
+
+```
+Difference in window subindep_FileDir
+ -> Model Selection
+   -> Sub-Model Independent
+     -> File & Directory Naming. Time Convention & Envirmnt Vars.
+Differences in Table Defined Environment Variables for Directories
+ 5c5
+<  MY_DUMPS $HOME/../tw23150/dumps
+---
+>  MY_DUMPS $HOME/dumps
+15a16
+>  MY_VEG_DIST $HOME/ancil/hyde_veg_dist
+```
+
+2. model mods: see changes in parenthesis
+
+```
+Difference in window subindep_Compile_Mods
+ -> Model Selection
+   -> Sub-Model Independent
+     -> Compilation and Modifications
+       -> Modifications for the model
+Differences in Table Fortran mods
+ 20a21,22
+>  /user/home/ggpjv/um_updates/export_production Y
+>  /user/home/ggpjv/um_updates/remin_temp_depend_05a Y
+67c69
+<  $PV_UPDATES/mods/vn4.5/hadam3/mod1702 Y            (removed)
+---
+>  /user/home/tw23150/mods/mod1702_cdj_2024.mf77 Y    (added)
+87,89d88
+<  /user/home/ggpjv/um_updates/export_production Y
+<  /user/home/ggpjv/um_updates/remin_temp_depend_05a Y
+<  /user/home/tw23150/mods/acn1f406 Y
+90a90
+>  /user/home/tw23150/mods/disturb_grid_fix.mf77 Y    (added)
+```
+
+3. atmos ancil: use xqchj config
+
+```
+Difference in window atmos_InFiles_PAncil_Disturb
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> Climatologies & potential climatologies
+         -> Vegetation Distribution: Disturbance.
+Radio button: Disturbed fraction of vegetation to be:
+ Job xqchi: Entry is set to 'Configured'
+ Job xqchj: Entry is set to 'Updated from ancil'
+Entry box: and file name
+ Job xqchi: Entry is set to 'qrfrac.disturb.H3Bris.anc'
+ Job xqchj: Entry is set to 'Hyde_veg_dist_mod_v1_1750'
+Entry box: Enter directory or Environment Variable
+ Job xqchi: Entry is set to '$MY_DUMPS/ancil'
+ Job xqchj: Entry is set to '/user/home/glxaf/ancil/hyde_veg_dist'
+Entry box: Every
+ Job xqchi: Entry is inactive
+ Job xqchj: Entry is set to '1'
+Radio button: Time
+ Job xqchi: Entry is inactive
+ Job xqchj: Entry is set to 'Years'
+ ```
+
+[back to Contents](#contents)
