@@ -30,6 +30,8 @@ Users should instead go to [HadCM3_user_notes](HadCM3_user_notes.md).
 
 [Averaging](Averaging.md)
 
+[Conversion to Rocky8](Rocky8)
+
 
 
 
