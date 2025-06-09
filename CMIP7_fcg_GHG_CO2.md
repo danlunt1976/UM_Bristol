@@ -293,4 +293,32 @@ Radio button: Time
  Job xqchj: Entry is set to 'Years'
  ```
 
+4. prognostic tracers (not new as we did the same with emissions run but good to kept as a reminder).
+
+```
+```
+
+Now we still got the same filepath error seen before (forrel 615).
+
+Here, we changed the variable for solar files to:
+
+in SCRIPT:
+
+`SOLAR_FILE=$HOME/../mf22281/um_updates/varying_TSI_CMIP6.dat`
+
+in CNTLATM:
+
+`SOLAR_VAR_FILE='$HOME/../mf22281/um_updates/varying_TSI_CMIP6.dat'`
+
+It seems this path does not work...We have to replace it to absolute path:
+
+in SCRIPT:
+
+`SOLAR_FILE=/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat`
+
+in CNTLATM:
+
+`SOLAR_VAR_FILE='/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat'`
+
+
 [back to Contents](#contents)

@@ -65,6 +65,6 @@ To be notice, other jobs related to solar forcing need to be run later, includin
 | experiment | description                  | running length | source           |
 | ---------- | ---------------------------- | -------------- | ---------------- |
 | **xqchz**  | emissions + solar forcing    | 1750-2014      | <- (xqchi,xqcpa) |
-| **tbc**    | emissions + solar + land-use |                | <- (xqchz,xqcni) |
+| **xqchy**  | emissions + solar + land-use | 1750-2014      | <- (xqchz,xqcni) |
 
 ## CMIP7 experiments phase
