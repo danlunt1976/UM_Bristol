@@ -3,5 +3,5 @@
 
 Here is a link to IT services' wiki pages, related to the BRIDGE machines:
 
-xxxx
+https://bristoluni.atlassian.net/wiki/spaces/vut/pages/237371450/BRIDGE+info+pages
 
