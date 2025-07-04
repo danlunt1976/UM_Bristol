@@ -46,6 +46,16 @@ To be notice, other jobs related to solar forcing need to be run later, includin
 
 ### 5. Land-use forcing
 
+| experiment | description                                             | running length | source   |
+| ---------- | --------------------------------------------------------| -------------- | -------- |
+| xqcna      | test dyn TRIFFID, static Land Use  (LU)                 | 1850 - 1880    | <- xqavc |
+| xqcnb      | dyn and compressed LU, BUG                              | 1850 - 1880    | <- xqcna |
+| xqcnc      | dyn and uncompressed LU, BUG                            | 1850 - 1880    | <- xqcna |
+| xqcng      | dyn and compressed sequencial LU, new mods, BUG FIXED   | 1850 - 1880    | <- xqcnc |
+| xqcnh      | dyn and uncompressed sequencial LU, new mods, BUG FIXED | 1850 - 1880    | <- xqcng |
+| xqcni      | dyn and uncompressed Hyde LU, new mods, BUG FIXED       | 1850 - 1880    | <- xqcng |
+
+
 ### 6. Sulphur cycle/aerosol scheme
 
 ### 7. Ozone in HadCM3 and how to include CMIP forcing
