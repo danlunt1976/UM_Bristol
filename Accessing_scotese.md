@@ -115,9 +115,9 @@ tfks* = [https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/co2_all_04_nt.dat](
 
 The solar constant for each simulation is available either from the output files (see variable downSol_mm_TOA in the 'pdclann' output files), or in this file:
 
-Valdes et al (2021) simulations = [https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfgw.dat]
+Valdes et al (2021) simulations = [https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfgw.dat](https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfgw.dat)
 
-tfke*,tfks* = [https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfke.dat]
+tfke, tfks = [https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfke.dat](https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfke.dat)
 
 
 
