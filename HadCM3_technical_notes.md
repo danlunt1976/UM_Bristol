@@ -32,7 +32,9 @@ Users should instead go to [HadCM3_user_notes](HadCM3_user_notes.md).
 
 [Conversion to Rocky8](Rocky8)
 
-[System Administration](SysAdmin)
+[BRIDGE System Administration](BRIDGESysAdmin)
+
+[IT Services System Administration](SysAdmin)
 
 
 
