@@ -39,6 +39,10 @@ However, note that the last 5 simulations of the texp series are texq{a..e} rath
 
 There are also some other ensembles available, but they are not all published, and some may not be fully spun up, so please do get in contact before using them.  See Appendix 1.
 
+# Standard text for describing the model in Valdes et al (2021)
+
+We use a version of the coupled atmosphere-ocean General Circulation Model (GCM), HadCM3 (Gordon et al., 2000). The specific underlying version, HadCM3BL-M2.1aD, is described in detail in Valdes et al. (2017), with additional modifications applied in order to simulate deep-time past climates, described in Valdes et al (2021).  The model has a horizontal resolution of 3.75$^\circ$ × 2.5$^\circ$ in longitude–latitude in both the atmosphere and the ocean, and a vertical resolution with 19(20) unequally spaced vertical levels in the atmosphere(ocean).  Although HadCM3 is a relatively low-resolution and low complexity model compared to the latest state-of-the art models in CMIP6, its performance in simulating modern climate is comparable to many CMIP5 models (Valdes et al., 2017).
+
 # Standard text for describing tfks, tfke simulations
 
 *tfke and tfks*  
@@ -109,10 +113,19 @@ tfke* = [https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/co2_all_03_nt.dat](
 
 tfks* = [https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/co2_all_04_nt.dat](https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/co2_all_04_nt.dat)
 
+The solar constant for each simulation is available either from the output files (see variable downSol_mm_TOA in the 'pdclann' output files), or in this file:
+
+Valdes et al (2021) simulations = [https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfgw.dat]
+
+tfke*,tfks* = [https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfke.dat]
+
+
 
 # References
 
 Foster, G.L., Royer, D.L. ,and Lunt, D.J., Future climate forcing potentially without precedent in the last 420 million years. Nature Communications, 8, 14845 doi: 10.1038/ncomms14845, 2017.
+
+Gordon, C., Cooper, C., Senior, C. A., Banks, H., Gregory, J. M., Johns, T. C., Mitchell, J. F. B., and Wood, R. A.: The simulation of SST, sea ice extents and ocean heat transports in a version of the Hadley Centre coupled model without flux adjustments, Clim. Dynam., 16, 147–168, 2000.
 
 P. J. Irvine, L. J. Gregoire, D. J. Lunt, P. J. Valdes, An efficient method to generate a perturbed parameter ensemble of a fully coupled AOGCM without flux-adjustment. Geosci. Model Dev. 6, 1447–1462 (2013). doi:10.5194/gmd-6-1447-2013
 
