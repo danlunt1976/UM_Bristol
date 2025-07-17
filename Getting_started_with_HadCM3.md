@@ -141,8 +141,8 @@ ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa
 ```
 Press return for all questions (DO NOT ENTER A PASSPHRASE).
 ```
-chmod 400 ~/.ssh_ _id_rsa
-cat ~/.ssh/_ _id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 400 ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ssh-copy-id -i ~/.ssh/id_rsa bc4
 ssh-copy-id -i ~/.ssh/id_rsa eocene
 ```
@@ -166,8 +166,8 @@ ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa
 ```
 Press return for all questions (DO NOT ENTER A PASSPHRASE).
 ```
-chmod 400 ~/.ssh_ _id_rsa
-cat ~/.ssh/_ _id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 400 ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ssh-copy-id -i ~/.ssh/id_rsa bc4
 ssh-copy-id -i ~/.ssh/id_rsa bp14_
 ```
@@ -186,7 +186,10 @@ you should now be able to log into archer2/puma2 from eocene, by typing:
 
 On archer2, create a symbolic link:
 
-`ln -s /home/n02/n02-puma/username /umui_jobs`
+```
+cd $HOME
+ln -s /home/n02/n02-puma/$USER/umui_jobs
+```
 
 then
 
