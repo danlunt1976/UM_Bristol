@@ -58,7 +58,7 @@ Because of the above changes, it was decided NOT to automatically migrate users 
 (3)   Copy your files from eocene to eocene2. There are multiple ways of doing this but the simplest (and strongly recommended method) is using rsync. To use this, logon to miocene and then type:  
 `rsync -vrltp eocene:/home/bridge/$USER/. $HOME` 
 
-(4)   You need to create new .bash_profile and .bashrc files. I add the more common module load commands into the bash_profile file. If you feel expert, feel free to make your own changes. However, you might want to use the command (this creates a reasonable bash_profile and bashrc file, as well as a few standard links etc. Simply type:  
+(4)   You need to create new .bash_profile and .bashrc files. I add the more common module load commands into the bash_profile file. If you feel expert, feel free to make your own changes. However, you might want to use the 'setup_system' command (this creates a reasonable bash_profile and bashrc file, as well as a few standard links etc.) Simply type:  
 `~swsvalde/etc/setup_system`
 
 (5)   You need to create new ssh keys, if you need them, and especially if you use the download system to run HadCM3.  These are the commands (make sure you are precise about this, it is easy to make a typo error that invalidates whole process):  
