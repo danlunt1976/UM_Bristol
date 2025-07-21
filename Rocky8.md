@@ -75,9 +75,10 @@ Note that you may need to edit your ~/.ssh/known_hosts file on the new BRIDGE ma
 
 (7)   Similarly, change any scripts/code which use /home/bridge.
 
-(8)   If usign github, you will need to reset your config files, e.g. I used
+(8)   If using github on the new machines, you will need to reset your config files for each repository, e.g. I used  
 `git config user.name "Dan J. Lunt"`  
-`git config user.email d.j.lunt@bristol.ac.uk`
+`git config user.email d.j.lunt@bristol.ac.uk`  
+You may be able to use the '--global' flag to change all repositories.
 
 
 ## Download System (for HadCM3 users of bc4/bp14)
