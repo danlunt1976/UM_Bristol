@@ -67,8 +67,9 @@ Because of the above changes, it was decided NOT to automatically migrate users 
 Press return for all questions (DO NOT ENTER A PASSPHRASE).  
 `chmod 400 ~/.ssh/id_rsa`  
 `cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`  
-`ssh-copy-id -i ~/.ssh/id_rsa bc4`  
-`ssh-copy-id -i ~/.ssh/id_rsa bp14`
+`ssh-copy-id -i ~/.ssh/id_rsa bc4login.acrc.bris.ac.uk`  
+`ssh-copy-id -i ~/.ssh/id_rsa bp1-login04.acrc.bris.ac.uk`  
+Note that you may need to edit your ~/.ssh/known_hosts file on the new BRIDGE machine, by removing reference to the remote machine, if prompted 
 
 (6)   Change any broken symlinks to reflect the changes from /home/bridge to /home
 
