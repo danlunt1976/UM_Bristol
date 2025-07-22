@@ -14,3 +14,5 @@
    
 3. Replace any mod called "mod1702" with `/user/home/tw23150/mods/mod1702_cdj_2024.mf77`. This ensures proper treatment of the land-use/disturbance field as a disturbed area and not a disturbance rate.
 
+4. Another bug for the STASH_A, the time profile (time units) of 'TPHENOL' was set to every 48 days (which should be 48 timesteps or 1 day). This leads to inconsistency throughout pi files relating to veg variables and thus the webpage cannot work (variables for the land carbon cycle, i.e., GPP and NPP).
+
