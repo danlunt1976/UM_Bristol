@@ -19,14 +19,15 @@ Here we give a brief summary of our experiments. We plan to have several phases 
 
 ### 2. Historical CO<sub>2</sub> emissions
 
-| experiment | description                        | running length | source   |
-| ---------- | ---------------------------------- | -------------- | -------- |
-| xqche      | emission test                      | 1650-1850      | <- xqchb |
-| xqchf      | SRESA2 emissions, with TRIFFID bug | 1750-2100      | <- xqchb |
-| **xqchh**  | SRESA2 emissions, bug fixed        | 1750-2100      | <- xqchf |
-| xqcht      | CMIP6 emissions, with TRIFFID bug  | 1750-2014      | <- xqchb |
-| **xqchi**  | CMIP6 emissions, bug fixed         | 1750-2014      | <- xqcht |
-| **TBC**    | CMIP7 emissions                    |                | <- xqchb |
+| experiment | description                             | running length | source   |
+| ---------- | --------------------------------------- | -------------- | -------- |
+| xqche      | emission test                           | 1650-1850      | <- xqchb |
+| xqchf      | SRESA2 emissions, with TRIFFID bug      | 1750-2100      | <- xqchb |
+| **xqchh**  | SRESA2 emissions, bug fixed             | 1750-2100      | <- xqchf |
+| xqcht      | CMIP6 emissions, with TRIFFID bug       | 1750-2014      | <- xqchb |
+| **xqchi**  | CMIP6 emissions, bug fixed              | 1750-2014      | <- xqcht |
+| **TBC**    | CMIP7 emissions                         |                | <- xqchb |
+| xqchk      | CMIP6 emissions, veg timestep bug fixed | 1750-2014      | <- xqchi |
 
 ### 3. Solar forcing
 xqcpa: 
@@ -47,7 +48,7 @@ To be notice, other jobs related to solar forcing need to be run later, includin
 ### 5. Land-use forcing
 
 | experiment | description                                             | running length | source   |
-| ---------- | --------------------------------------------------------| -------------- | -------- |
+| ---------- | ------------------------------------------------------- | -------------- | -------- |
 | xqcna      | test dyn TRIFFID, static Land Use  (LU)                 | 1850 - 1880    | <- xqavc |
 | xqcnb      | dyn and compressed LU, BUG                              | 1850 - 1880    | <- xqcna |
 | xqcnc      | dyn and uncompressed LU, BUG                            | 1850 - 1880    | <- xqcna |
