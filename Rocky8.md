@@ -51,28 +51,35 @@ Users now need to transition to the new machines. Unfortunately, we cannot do th
 
 Because of the above changes, it was decided NOT to automatically migrate users onto the new system. Instead, you must do this yourselves. Here are the required steps:
 
-(1)   Tidy up your home folders on eocene.  This is a good opportunity to get rid of unwanted data, and this will speed up the process of moving.
+(1)   Tidy up your home folders on eocene.  This is a good opportunity to get rid of unwanted data, and this will speed up the process of moving.  Make sure you check the 'hidden' directories that start with a '.', as these can contain a lot of files.
 
 (2)   Logon to a converted machine (e.g. miocene). (NOTE that you cannot logon to any of the new machines from the old machines. You must open a new terminal window).
 
-(3)   Copy your files from eocene to eocene2. There are multiple ways of doing this but the simplest (and strongly recommended method) is using rsync. To use this, logon to miocene and then type:
-`rsync -vrltp eocene:/home/bridge/$USER/. $HOME`
+(3)   Copy your files from eocene to eocene2. There are multiple ways of doing this but the simplest (and strongly recommended method) is using rsync. To use this, logon to miocene and then type:  
+`rsync -vrltp eocene:/home/bridge/$USER/. $HOME` 
 
-(4)   You need to create new .bash_profile and .bashrc files. I add the more common module load commands into the bash_profile file. If you feel expert, feel free to make your own changes. However, you might want to use the command (this creates a reasonable bash_profile and bashrc file, as well as a few standard links etc. Simply type:
+(4)   You need to create new .bash_profile and .bashrc files. I add the more common module load commands into the bash_profile file. If you feel expert, feel free to make your own changes. However, you might want to use the 'setup_system' command (this creates a reasonable bash_profile and bashrc file, as well as a few standard links etc.) Simply type:  
 `~swsvalde/etc/setup_system`
 
-(5)   You need to create new ssh keys, if you need them, and especially if you use the download system to run HadCM3.  These are the commands (make sure you are precise about this, it is easy to make a typo error that invalidates whole process):
-`cd $HOME/.ssh`
-`ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa`
-Press return for all questions (DO NOT ENTER A PASSPHRASE).
-`chmod 400 ~/.ssh/id_rsa`
-`cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`
-`ssh-copy-id -i ~/.ssh/id_rsa bc4`
-`ssh-copy-id -i ~/.ssh/id_rsa bp14`
+(5)   You need to create new ssh keys, if you need them, and especially if you use the download system to run HadCM3.  These are the commands (make sure you are precise about this, it is easy to make a typo error that invalidates whole process):  
+`cd $HOME/.ssh`  
+`ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa`  
+Press return for all questions (DO NOT ENTER A PASSPHRASE).  
+`chmod 400 ~/.ssh/id_rsa`  
+`cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`  
+`ssh-copy-id -i ~/.ssh/id_rsa bc4login.acrc.bris.ac.uk`  
+`ssh-copy-id -i ~/.ssh/id_rsa bp1-login04.acrc.bris.ac.uk`  
+Note that you may need to edit your ~/.ssh/known_hosts file on the new BRIDGE machine, by removing reference to the remote machine, if prompted 
 
 (6)   Change any broken symlinks to reflect the changes from /home/bridge to /home
 
 (7)   Similarly, change any scripts/code which use /home/bridge.
+
+(8)   If using github on the new machines, you will need to reset your config files for each repository, e.g. I used  
+`git config user.name "Dan J. Lunt"`  
+`git config user.email d.j.lunt@bristol.ac.uk`  
+You may be able to use the '--global' flag to change all repositories.
+
 
 ## Download System (for HadCM3 users of bc4/bp14)
 
