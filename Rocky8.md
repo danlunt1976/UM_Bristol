@@ -75,7 +75,7 @@ Note that you may need to edit your ~/.ssh/known_hosts file on the new BRIDGE ma
 
 (7)   Similarly, change any scripts/code which use /home/bridge.
 
-(8)   You will need to modify any symlinks to RDSF projects.  First, you need to make sure that the RDSF project that you require is mounted on the machine you want to access it from.  You can see which projects are mounted on a particular machine, by logging in to that machine and typing: `showmount -e rdsfnfs.acrc.bris.ac.uk`.  If your project isn't mounted, then you will need to email rdsf-help@bristol.ac.uk and ask for it to be mounted.  You can then create a symlink to it - it should be visible in /projects .   
+(8)   You will need to modify any symlinks to RDSF projects.  First, you need to make sure that the RDSF project that you require is mounted on the machine you want to access it from.  You can see which projects are mounted on a particular machine, by logging in to that machine and typing: `showmount -e rdsfnfs.acrc.bris.ac.uk`.  If your project isn't mounted, then you will need to email rdsf-help@bristol.ac.uk and ask for it to be mounted.  You can then create a symlink to it - it should be visible in /projects but if not then you may need to run `ls /projects/XXX` first, where XXX is the exact name of the project, as the proejcts are only finally mounted when they are first accessed.   
 
 (9)   If using github on the new machines, you will need to reset your config files for each repository, e.g. I used  
 `git config user.name "Dan J. Lunt"`  
