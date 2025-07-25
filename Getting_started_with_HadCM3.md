@@ -221,7 +221,7 @@ A climate model works by simulating day-to-day weather and then treating the res
 
 In many cases, we do not know the initial state of the climate system, so we often must arbitrarily initialise the state of the atmosphere, ocean, and land surface and then wait until the model reaches a dynamic equilibrium. The atmosphere rapidly comes into equilibrium (within a decade or two). The land surface (especially the deep soil moisture) takes a few decades more. Vegetation can take several centuries to a millennium (boreal forests are slow to grow). The surface ocean responds within a century or two, the deep ocean can take several thousand years (as can ocean biogeochemistry). Hence, we normally run the model for a 'spinup' period to allow the model to reach a dynamic equilibrium and then perform averaging (and other statistics) on a final segment.
 
-For a detailed description of the HadCM3 workflow following an example, see [Example_HadCM3_Workflow](Example_HadCM3_Workflow.md).
+For a detailed description of the HadCM3 workflow following an example, see [Example_HadCM3_workflow](Example_HadCM3_workflow.md).
 
 
 # Other documentation
