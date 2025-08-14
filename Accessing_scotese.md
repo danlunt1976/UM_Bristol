@@ -57,7 +57,7 @@ In the Valdes et al simulations, the atmospheric CO2 is consistent with that of 
 
 # Climate variables
 
-You can access the HadCM3L climate outputs from e.g.:
+You can access the HadCM3L climatalogical mean (average of the last, typically 100, years of the simulations) outputs from e.g.:
 
 [https://www.paleo.bristol.ac.uk/ummodel/data/tfkea/climate/tfkeaa.pdclann.nc](https://www.paleo.bristol.ac.uk/ummodel/data/tfkea/climate/tfkeaa.pdclann.nc)
 
@@ -70,6 +70,25 @@ where
 * SEAS can be “jan”, “feb” etc. or “djf”, “jja” etc. or “ann”.  Note that TYPE=“o.pg” only exists with SEAS=“ann”.      
 
 In Linux, you can script the download of multiple files, see Appendix 2.
+
+# Timeseries
+
+You can access the HadCM3L timeseries at a monthly or yearly resolution, from e.g. :
+
+[https://www.paleo.bristol.ac.uk/ummodel/data/tfkea/monthly/tfkea.temp_mm_1_5m.monthly.nc](https://www.paleo.bristol.ac.uk/ummodel/data/tfkea/monthly/tfkea.temp_mm_1_5m.monthly.nc)
+
+The link above is formed from: ummodel/data/\[EXP\]/monthly/\[EXP\].\[VAR\].\[RES\].nc
+where
+* EXP is the simulation name (see above)
+* VAR is the variable name.  Not all variables are available for all simulations.  
+* RES is the temporal resolution.  For most variables this is "monthly".  For some it is "annual".
+Valid examples for tfkea for \[EXP].\[VAR] include (but are not limited to):
+* temp_mm_1_5m.monthly = 2m air temperature \[K]
+* precip_mm_srf.monthly = Precipitation \[kg/m2/2]
+* downSol_mm_TOA.monthly = Incoming solar radiation at the top of the atmosphere \[W/m2\]
+* upSol_mm_s3_TOA.monthly = Outgoing solar radiation at the top of the atmosphere \[W/m2\]
+* olr_mm_s3_TOA.monthly = Outgoing long wave radiation at the top of the atmosphere \[W/m2] 
+* temp_ym_dpth_2731.annual = Ocean temperature at a depth of 2731m \[degrees C]
 
 
 # Sediments and other derived quantities
