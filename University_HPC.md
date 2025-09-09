@@ -176,3 +176,29 @@ https://uob.sharepoint.com/sites/hpc
 HPC transition project
 Firm commitment to continuity of service
 "Costing your research" document
+
+
+**DRI User Forum, August 2025**
+
+Helen Jones - Project Manager, BC5.
+Physics tank room - racked and cabled.
+Early user testing, September.
+304 32-core nodes.  4GB per core.
+1.2 PBytes storage.
+
+Simon Hanna.
+Allocation process.
+full utilization, equitable, compliant, accountable.
+easy to use, and flexible.
+Projects - self-contained research (or teaching).
+Apply for X node hours.  Extensions allowed.
+How account for grants?
+Grants will get higher priority on queue
+Maybe will be expanded if there is a lot of grant income.
+Some BC5 expansion will replace BP.
+ACRC = BC4, BP, RDSF
+BriCS = BC5, Isambards
+
+
+
+
