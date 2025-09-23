@@ -37,6 +37,9 @@ where tfkea is 0Ma and tFkee is 540 Ma.
 
 However, note that the last 5 simulations of the texp series are texq{a..e} rather than tExp{a..e}, and that some of the simulation names in texp are appended with a “1” or a “2” – for a list see here: [https://www.paleo.bristol.ac.uk/ummodel/scripts/html_bridge/scotese_02.html](https://www.paleo.bristol.ac.uk/ummodel/scripts/html_bridge/scotese_02.html)
 
+You can see timeseries and animations through the Phanerozoic, e.g. here:
+https://www.paleo.bristol.ac.uk/ummodel/data/scotese_02/standard_new_html/scotese_02.html
+
 There are also some other ensembles available, but they are not all published, and some may not be fully spun up, so please do get in contact before using them.  See Appendix 1.
 
 # Standard text for describing the model in Valdes et al (2021)
