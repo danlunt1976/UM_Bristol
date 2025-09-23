@@ -199,6 +199,10 @@ Some BC5 expansion will replace BP.
 ACRC = BC4, BP, RDSF
 BriCS = BC5, Isambards
 
+**Gethin 11/9/2025**
+
+Isambard 3 completed 300 years.  
+Data on /work/um/tfcub/data_300_i3_pd/ pd files.
 
 
 
