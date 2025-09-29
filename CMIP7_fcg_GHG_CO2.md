@@ -40,11 +40,30 @@ For testing purposes, we used CMIP6 GHGs forcings. CMIP7 forcings are becoming a
 > Sometimes the script could fail because you do not have authrisation or certificates. This used to be quite important, but recently for most data, you can skip those by adding '-s' after the bash script, i.e., `$./wget_example_script -s`.
 
 
-2. CMIP7
+2. CMIP7 CO<sub>2</sub>
    
    We do not need CMIP7 concentrations as we use emissions. But for those interested, there is a [comparison](https://github.com/climate-resource/CMIP6-vs-CMIP7-GHG-Concentrations/tree/main) between CMIP6 and CMIP7 concentrations.
 
    In general, the differences are small, but a max radiative forcing of 0.05 W/m<sup>2</sup> is estimated.
+
+
+3. CMIP7 GHGs
+
+  There are some updates from CMIP6, the most apparent would be the latest data coverage will be 2022 (2014 in CMIP6). To better represent the increasing trend in main GHGs (ch4, n2o, cfc12eq and hfc134aeq), we put a higher density on the period after 1950.
+
+  | year\GHGs | CH<sub>4</sub> ($10^{-7}$) | N<sub>2</sub>O ($10^{-7}$) | CFC-12-eq ($10^{-10}$) | HFC-134a-eq ($10^{-10}$) |
+  | :-------: | :------------------------: | :------------------------: | :--------------------: | :----------------------: |
+  |   1850    |           4.423            |           4.126            |         0.3422         |          0.711           |
+  |   1920    |           5.558            |           4.314            |         0.4424         |          0.722           |
+  |   1950    |           6.450            |           4.415            |         1.344          |          0.8206          |
+  |   1960    |           6.993            |           4.450            |         3.314          |          0.8946          |
+  |   1970    |           7.822            |           4.503            |         9.787          |          1.067           |
+  |   1980    |           8.770            |           4.583            |         23.46          |          1.518           |
+  |   1990    |           9.523            |           4.693            |         38.03          |          2.198           |
+  |   2000    |           9.849            |           4.796            |         42.18          |          3.737           |
+  |   2010    |           10.02            |           4.910            |         42.27          |          7.167           |
+  |   2022    |           10.64            |           5.404            |         40.60          |          14.37           |
+
 
 [back to Contents](#contents)
 
