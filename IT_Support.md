@@ -22,7 +22,9 @@ All requests for support should go through one of three routes:
 
 ## Day-to-day user support
 
-* none at present
+* convsh/xconv install on new machines
+* xancil install on new machines
+* IDL standard libraries in one place.
 
 ## Long-term support
 
