@@ -63,9 +63,10 @@ To be notice, other jobs related to solar forcing need to be run later, includin
 
 ## Combined testing phase
 
-| experiment | description                  | running length | source           |
-| ---------- | ---------------------------- | -------------- | ---------------- |
-| **xqchz**  | emissions + solar forcing    | 1750-2014      | <- (xqchi,xqcpa) |
-| **xqchy**  | emissions + solar + land-use | 1750-2014      | <- (xqchz,xqcni) |
+| experiment | description                         | running length | source           |
+| ---------- | ----------------------------------- | -------------- | ---------------- |
+| **xqchz**  | emissions + solar forcing           | 1750-2014      | <- (xqchi,xqcpa) |
+| **xqchy**  | emissions + solar + land-use        | 1750-2014      | <- (xqchz,xqcni) |
+| **xqchx**  | emissions + solar + land-use + GHGs | 1850–2022      | <- (xqchy,xqchd) |
 
 ## CMIP7 experiments phase

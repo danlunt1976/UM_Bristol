@@ -13,9 +13,15 @@
 - [3. Combining multiple forcings](#3-combining-multiple-forcings)
   - [emissions + solar forcing](#emissions--solar-forcing)
     - [xqchi + xqcpa](#xqchi--xqcpa)
-  - [emissions + GHGs conc](#emissions--ghgs-conc)
+  - [emissions + solar + land-use + GHGs conc](#emissions--solar--land-use--ghgs-conc)
+    - [Configs](#configs)
+    - [Crash](#crash)
   - [emissions + solar + land-use](#emissions--solar--land-use)
     - [xqchz + xqchj](#xqchz--xqchj)
+- [Towards HadCM3B](#towards-hadcm3b)
+  - [`xqgta`](#xqgta)
+  - [`xqgtb`](#xqgtb)
+  - [`xqgtc`](#xqgtc)
 
 ## 1. GHG forcings for HadCM3 (inc CO<sub>2</sub> concs)
 
@@ -235,8 +241,53 @@ And this fixed the problem now.
 
 [back to Contents](#contents)
 
-### emissions + GHGs conc
+### emissions + solar + land-use + GHGs conc
 
+#### Configs
+
+We don't have an experiment that specifically implements CO<sub>2</sub> emissions and GHGs concentrations. Rather, in addition to merging "emissions+solar+LU" (`xqchy`), we have the experiment `xqchx` which adds GHGs. These are CMIP7 data (need to double check) – very confident we're using CMIP7 data, but not clear where the original data sit (could have another copy from raw data to compare with).
+
+Newly added data are as follows (into CNTLATM):
+
+```
+ CLIM_FCG_NYEARS(2)=10,
+ CLIM_FCG_YEARS(1,2)=1850,1920,1950,1960,1970,1980,1990,2000,2010,2022,
+ CLIM_FCG_LEVLS(1,2)=7.988000e-07,1.003800e-06,1.165000e-06,1.263000e-06,1.412800e-06,1.584000e-06
+ 1.720000e-06,1.778900e-06,1.809700e-06,1.922100e-06,
+ CLIM_FCG_RATES(1,2)=-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0
+ -32768.0,-32768.0,
+ CLIM_FCG_NYEARS(3)=10,
+ CLIM_FCG_YEARS(1,3)=1850,1920,1950,1960,1970,1980,1990,2000,2010,2022,
+ CLIM_FCG_LEVLS(1,3)=2.716000e-07,2.840000e-07,2.906000e-07,2.929000e-07,2.964000e-07,3.017000e-07
+ 3.089000e-07,3.157000e-07,3.232000e-07,3.557000e-07,
+ CLIM_FCG_RATES(1,3)=-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0
+ -32768.0,-32768.0,
+ CLIM_FCG_NYEARS(4)=0,
+ CLIM_FCG_NYEARS(5)=10,
+ CLIM_FCG_YEARS(1,5)=1850,1920,1950,1960,1970,1980,1990,2000,2010,2022,
+ CLIM_FCG_LEVLS(1,5)=8.200000e-09,1.060000e-08,3.220000e-08,7.940000e-08,2.345000e-07,5.620000e-07
+ 9.113000e-07,1.010600e-06,1.012900e-06,9.728000e-07,
+ CLIM_FCG_RATES(1,5)=-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0
+ -32768.0,-32768.0,
+ CLIM_FCG_NYEARS(6)=0,
+ CLIM_FCG_NYEARS(7)=0,
+ CLIM_FCG_NYEARS(8)=0,
+ CLIM_FCG_NYEARS(9)=0,
+ CLIM_FCG_NYEARS(10)=0,
+ CLIM_FCG_NYEARS(11)=10,
+ CLIM_FCG_YEARS(1,11)=1850,1920,1950,1960,1970,1980,1990,2000,2010,2022,
+ CLIM_FCG_LEVLS(1,11)=2.020000e-08,2.050000e-08,2.330000e-08,2.540000e-08,3.030000e-08,4.310000e-08
+ 6.240000e-08,1.061000e-07,2.035000e-07,4.081000e-07,
+ CLIM_FCG_RATES(1,11)=-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0,-32768.0
+ -32768.0,-32768.0,
+ &END
+```
+
+#### Crash
+
+Though the simulation went well, it kept failing around 1976–1980 (the ocean got blown up as well as the atmosphere!). Then this seems to be a global problem, and it is possible that some instabilities accumulate through time, during such a tricky period when the bc4 is retiring. We also checked that there are not any obvious abrupt changes from 1960 to 1970 in GHGs concentrations. It is therefore not clear whether this is due to server behaving differently than previously or a forcing issue.
+
+We will leave this simulation for now, as we are setting up new HadCM3 run and it makes more sense to test this possible inabilities on the new model. It will be interesting to look over the CO<sub>2</sub> through the integration though.
 
 [back to Contents](#contents)
 
@@ -341,3 +392,26 @@ in CNTLATM:
 
 
 [back to Contents](#contents)
+
+
+## Towards HadCM3B
+
+HadCM3B will be our target model to use for CMIP7 submission, detailed updates are (will be) documented in [CMIP7_models_description](CMIP7_model.md).
+
+Some conflicts between updates failed to compile model scripts, specifically updates in the soil moisture content, land carbon cycle. See [section xqgta](###xqgta)
+
+### `xqgta`
+
+This is a procursor simulation configured for CMIP7 runs. We wanted to start simple only include CO<sub>2</sub> concentrations, but it failed compiling.
+
+Several conflicts were resolved lately, and the new configuration sits in `xqgtb` (hard copy (strictly speaking, we did change the pathname for dumps, but they look for the same dump files) from `xqgra`). Issues still exist.
+
+Later on, we changed the mods for model scripts. Following `xqgra`, we replaced several mods except for volcanic forcing and CO<sub>2</sub> forcing, and `params_in_namelist_hadcm3_v3a.mod`. Failed to run, seems to be related to missing of forcings. Then we added in volcanic and CO<sub>2</sub>.
+
+### `xqgtb`
+
+Hard copy from `xqgra` (latest version on 03Oct2025). An executable was successfully compiled. But it sticked on the node. Paul had his run going after about a day (not sure how). Then we tried to submit using fewer cores, 1x1 will definitely work but running at ~5 model years per day. 1x24 works at ~30 model years per day (rough guess).
+
+### `xqgtc`
+
+This is a copy of `xqgtb`, using existing execs and changed running targets. Working.
