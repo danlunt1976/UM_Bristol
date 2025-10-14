@@ -18,7 +18,7 @@ All requests for support should go through one of three routes:
 # Log of outstanding requests
 
 ## Faults
-* Xin's silurian account needs extending.
+
 
 ## Day-to-day user support
 
