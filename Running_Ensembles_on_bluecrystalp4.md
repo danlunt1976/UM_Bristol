@@ -37,10 +37,10 @@ Copy the relevant umui_jobs to bc4/bp14 (if not done already - with the new puma
 ## Step 2
 On bluecrystal, create a folder \$HOME/ensembles. Also copy some files:
 ```
-cp ~ggpjv/ensembles/run_scripts_01 \$HOME/ensembles  
-cp ~ggpjv/ensembles/master_script_02 \$HOME/ensembles  
-cp ~ggpjv/ensembles/normal_resubmit_02 \$HOME/ensembles  
-cp ~ggpjv/ensembles/history_script_02 \$HOME/ensembles
+cp ~ggpjv/ensembles/run_scripts_01 $HOME/ensembles  
+cp ~ggpjv/ensembles/master_script_02 $HOME/ensembles  
+cp ~ggpjv/ensembles/normal_resubmit_02 $HOME/ensembles  
+cp ~ggpjv/ensembles/history_script_02 $HOME/ensembles
 ```
 I’m advocating this method currently because I am still learning how best to do this and they may change without notice. Eventually we will have a stable version and these scripts will able to be accessed from some common location. By copying then across, there is no danger that they will change.
 
