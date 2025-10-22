@@ -50,9 +50,11 @@ Use the script **create_ensemble** to prepare the required files. Details of the
 
 `create_ensemble -file xxxxx -expts list_expts`
 
-Where xxxxx is a filename which will contain a list of the required unui_runs folders. You should typically keep this to about 6 or 7 characters.
+Where xxxxx is a filename which will contain a list of the required umui_runs folders. You should typically keep this to about 6 or 7 characters.
 
 And list_expts is a list of experiments, separated by commas or spaces.
+
+(if you are submitting a very large ensemble, it can sometimes be beneficial to group the jobs over a range of different numbers of nodes, as the queuing system may favour different numbers of nodes at different time.  As an example, see ~ggdjl/ensembles/create_all)
 
 The script creates a file \$HOME/ensembles/ensemble_files/xxxxx.dat which contains a list of umui_runs folders.
 
@@ -131,7 +133,7 @@ The job will not finish automatically. You will need to kill it (or let it timeo
 
 It is possible to start a new simulation when an ensemble member finishes and when there is still time left for the overall ensemble. To do this you must first run create_ensemble:
 
-` create_ensemble -file temp1 -expt abcde`
+```create_ensemble -file temp1 -expt abcde```
 
 Then edit the running ensemble_files/xxxxx.dat file and replace the job that has finished with the job that you want to start which is listed in temp1.dat. HOWEVER, you must be very careful to ensure that you keep the order the same. i.e if job 5 out of 8 has finished, you must replace line 5 and not add the job to the end. Similarly, you must keep the same number (actually you can increase the number of simulations listed but it is pointless. You must not decrease the number).
 
@@ -164,17 +166,19 @@ This creates the required files, specifically:
 
 A full set of arguments are:
 
--e|-expts|-expt )    - this is a list of expts. No default.
+-e\|-expts\|-expt )    - this is a list of expts. No default.
 
--d|-delete|-new )    - by default, the script will add to an existing .dat file. If -d y, then the .dat file is created from scratch.
+-d\|-delete\|-new )    - by default, the script will add to an existing .dat file. If -d y, then the .dat file is created from scratch.
 
 -c )    - continuation run (default).If -c n, then will treat then as new runs.
 
--f|-file )    - outfile name for .dat file, and also for the batch file.
+-f\|-file )    - outfile name for .dat file, and also for the batch file.
 
 -p )    - processor usage. Default is 7x4. (but will default to 6x4 for bluepebble)
 
--q )    - the queue to submit to. Default=cpu, but could be bridge or paleo.
+-P ) - account. e.g. ```-P PGEO001321```.  You can set this with the -P option, or in $HOME/.um/clustersubmit.conf .  If using a .conf file, this file should contain a line of text of the form e.g.  ```account="PGEO001321"```
+
+-q )    - the queue to submit to. Default=cpu, but could be e.g. bridge or paleo.
 
 -g)    - groups the experiments into batches of N jobs
 
