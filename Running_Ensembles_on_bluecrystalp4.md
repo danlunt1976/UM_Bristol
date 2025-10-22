@@ -32,7 +32,7 @@ The script that drives the running of any particular job is created when you sub
 ## Step 1
 Prepare your ensemble set of jobs, and run them for a few months. Currently the script works best for continuation runs (it will work for new runs too but it will always be less reliable because new jobs are less reliable).
 
-Copy the relevant umui_jobs to bc4/bp14
+Copy the relevant umui_jobs to bc4/bp14 (if not done already - with the new puma on archer you will have done this already in order to run the short jobs above).
 
 ## Step 2
 On bluecrystal, create a folder \$HOME/ensembles. Also copy some files:
