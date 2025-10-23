@@ -39,7 +39,7 @@ conda install -c conda-forge requests
 (6) Now you are ready to rock and roll!  To run a python script, simply:
 ```python -i scriptname.py```
 
-(7) If you would like to see a noddy python script that makes some plots, see ~ggdjl/rhodri/rhodri_coals.py
+(7) If you would like to see a noddy python script that reads in some netcdf files and makes some plots, see ~ggdjl/rhodri/rhodri_coals.py
 
 Good luck!!!!
 
