@@ -117,6 +117,12 @@ tewza 2850
 
 Where the number indicates the start year, and the 4 letter code means that all experiments starting with the 4 letter code will use this start year, whereas the 5 letter code only refers to the specific simulation.
 
+If the dump files do not exist on this machine, will attempt to retrieve them from data download machines. The default data download machines is bp14. If you have another download machine, such as eocene, the data cannot be found. 
+This is how I solve this problem (I create my own version and run my own version): 
+1. cp swsvalde/bin/restart_manually [your_own_dictory]
+2. edit the restart_manually script in your own dictory: change the bp14 into e.g., eocene
+3. run your own version of this script, e.g., sh myscripts/restart_manually [expID]
+
 ## Solving Problems
 
 The output from the jobs is stored in the normal location (\$HOME/um/umui_out) but in files ending .eleave. If the model goes wrong, it will rapidly generate .eleave files every 10-20 minutes.
