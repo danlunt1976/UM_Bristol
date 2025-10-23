@@ -16,7 +16,7 @@ Github is a version control system which is very popular for maintaining code an
 The documentation files are automatically pushed to a webpage, which is here:
 [https://danlunt1976.github.io/UM_Bristol](https://danlunt1976.github.io/UM_Bristol "https://danlunt1976.github.io/UM_Bristol")
 
-You can also read the pages directly on github, here: https://github.com/danlunt1976/UM_Bristol . Start by clicking on the "README.md" file, which is the entry point: https://github.com/danlunt1976/UM_Bristol/blob/main/README.md
+You can also read the pages directly on github, here: [https://github.com/danlunt1976/UM_Bristol](https://github.com/danlunt1976/UM_Bristol) . Start by clicking on the "README.md" file, which is the entry point: [https://github.com/danlunt1976/UM_Bristol/blob/main/README.md](https://github.com/danlunt1976/UM_Bristol/blob/main/README.md)
 
 
 ## Writing the documentation
