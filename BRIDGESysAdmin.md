@@ -25,7 +25,7 @@ Standard bash is in /etc/skel
 `sudo -i`  
 `chage -l [USER]` : check for expiration date  
 `usermod -e YYYY-MM-DD [USER]` 
-
+`usermod -e '' [USER]` for non-expiring
 ### Disk space:
 To change array quota:  
 `xfs_quota -x -c 'report -h' /export/silurian/array-01`  
