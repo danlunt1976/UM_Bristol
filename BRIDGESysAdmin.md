@@ -26,7 +26,7 @@ log into e.g. silurian.
 ### Expiration date:
 `sudo -i`  
 `chage -l [USER]` : check for expiration date  
-`usermod -e YYYY-MM-DD [USER]` 
+`usermod -e YYYY-MM-DD [USER]`  
 `usermod -e '' [USER]` for non-expiring
 ### Disk space:
 To change array quota:  
