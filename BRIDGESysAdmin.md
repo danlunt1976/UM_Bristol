@@ -8,15 +8,16 @@ see also notes on our old wiki (some aspects of which are outdated):
 [http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/SystemAdmin/New-users](http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/SystemAdmin/New-users)
 
 `sudo -i`  
-Your password
+`[your password]`
 
-`ssh-agent $SHELL ; ssh-add ; [root password]`
+`ssh-agent $SHELL ; ssh-add`
+`[root password]`
 
 `cd ~swsvsalde/sbin/`  
 `./add_bridge_user.sh -u [UoB username - top priority] -d [for debug - doesn't do anything] -n [surname etc. - uses ldap] -e "2017-12-01" [expiry date] [-g miocene,lentil] [-s ksh] [-q is for quiet]`
 
-Then type number.  
-Default is for one year.  
+Then type the number for the user you want.  
+Default is for one year (-e '' will give a permanent account).  
 Standard bash is in /etc/skel
 
 ## To modify a user:
@@ -30,11 +31,11 @@ log into e.g. silurian.
 ### Disk space:
 To change array quota:  
 `xfs_quota -x -c 'report -h' /export/silurian/array-01`  
-`xfs_quota -x -c "limit bhard=50000g ggdjl" /export/silurian/array-01`  
-`xfs_quota -x -c "limit bsoft=49000g ggdjl" /export/silurian/array-01`
+`xfs_quota -x -c "limit bhard=50000g [USER]" /export/silurian/array-01`  
+`xfs_quota -x -c "limit bsoft=49000g [USER]" /export/silurian/array-01`
 
 To change home quota:  
-`edquota -u ggdjl`
+`edquota -u [USER]`
 
 Open a new or existing file with:  
 `vim filename`  
