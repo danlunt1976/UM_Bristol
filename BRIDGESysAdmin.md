@@ -4,8 +4,8 @@
 
 ## To add a new user:
 
-see notes on out old wiki:
-http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/SystemAdmin/New-users
+see also notes on our old wiki (some aspects of which are outdated):
+[http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/SystemAdmin/New-users](http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/SystemAdmin/New-users)
 
 `sudo -i`  
 Your password
@@ -21,6 +21,7 @@ Standard bash is in /etc/skel
 
 ## To modify a user:
 
+log into e.g. silurian.
 ### Expiration date:
 `sudo -i`  
 `chage -l [USER]` : check for expiration date  
