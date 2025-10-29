@@ -10,7 +10,7 @@ see also notes on our old wiki (some aspects of which are outdated):
 `sudo -i`  
 `[your password]`
 
-`ssh-agent $SHELL ; ssh-add`
+`ssh-agent $SHELL ; ssh-add`  
 `[root password]`
 
 `cd ~swsvsalde/sbin/`  
