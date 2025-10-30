@@ -18,16 +18,13 @@ our VPS name is: vps-b97454e8.vps.ovh.net
   - Username:  ubuntu
 and a link to reset your password.
 
-(5) Log in using e.g. ssh ubuntu@37.59.98.55
+(5) Log in using e.g. `ssh ubuntu@37.59.98.55`
 
 (6) reset your password
 
 (7) Have a beer.
 
-(8) not done this bit yet....
-nginx web server.  runs a docker.  container.  configure sslx access.  can restart server.  data.deepmip.org.
-
-(9) N.B. - the actual DeepMIP database is still live, and is on the ESGF.
+(8) This is teh big bit..... 
 
 Seb:
 sudo apt update
