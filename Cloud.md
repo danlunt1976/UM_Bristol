@@ -79,7 +79,67 @@ URL: http://37.59.98.55:8501
 
 ------
 
-Now needs a web server
+Now needs a web server (engine-x)
+sudo apt install -y nginx
+
+sudo vi /etc/nginx/sites-available/data.deepmip.org
+server {
+    listen 80;
+    server_name data.deepmip.org;
+ 
+    location / {
+        proxy_pass http://localhost:8501;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 86400;
+    }
+}
+
+
+replaced data.deepmip.org to 37.59.98.55
+
+sudo ln -s /etc/nginx/sites-available/data.deepmip.org /etc/nginx/sites-enabled/
+
+sudo rm /etc/nginx/sites-enabled/default
+
+sudo nginx -t
+
+sudo systemctl reload nginx
+
+-----
+
+sudo docker run -p 8501:8501 sebsteinig/deepmip-eocene-app:latest
+
+Now, browser http://37.59.98.55/ works!  Have removed need for :8501
+
+----
+
+# enable Docker to start on boot
+sudo systemctl enable docker
+ 
+# remove any existing container (if it exists)
+sudo docker rm -f deepmip-app
+ 
+# run the container in detached mode with restart policy
+sudo docker run -d \
+  --name deepmip-app \
+  --restart unless-stopped \
+  -p 8501:8501 \
+  sebsteinig/deepmip-eocene-app:latest
+# get status of all running docker apps
+sudo docker ps
+
+-----
+
+If website goes down:
+sudo reboot
+or, via ovh webpages.
+either way, it should restart the docker
 
 
 
