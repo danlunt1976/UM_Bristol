@@ -28,3 +28,62 @@ and a link to reset your password.
 nginx web server.  runs a docker.  container.  configure sslx access.  can restart server.  data.deepmip.org.
 
 (9) N.B. - the actual DeepMIP database is still live, and is on the ESGF.
+
+Seb:
+sudo apt update
+sudo apt upgrade
+sudo reboot
+
+sudo adduser deepmip-app
+sudo usermod -aG sudo deepmip-app
+
+Create key-pairs etc so log in from another machine
+ssh-copy-id deepmip-app@VPS-IP
+
+TRaffic limiting:
+sudo ufw allow OpenSSH
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw enable
+
+nslookup data.deepmip.org
+David G. needs to update the A record of data.deepmip.org so that it points to 37.59.98.55 in place of 51.89.165.226 
+
+load dcoker:
+https://docs.docker.com/engine/install/ubuntu
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+-----
+
+sudo docker run -p 8501:8501 sebsteinig/deepmip-eocene-app:latest
+
+You can now view your Streamlit app in your browser.
+URL: http://0.0.0.0:8501
+URL: http://37.59.98.55:8501
+
+------
+
+Now needs a web server
+
+
+
+
+
+
+
