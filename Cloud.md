@@ -142,6 +142,22 @@ or, via ovh webpages.
 either way, it should restart the docker
 
 
+----
+sudo apt-get install emacs
+----
+
+sudo apt install -y certbot python3-certbot-nginx
+
+
+Once David has changed this....
+edit /etc/nginx/sites-available/data.deepmip.org
+change server_name to data.deepmip.org
+
+Once A server is set.....
+sudo certbot --nginx -d data.deepmip.org
+
+
+
 
 
 
