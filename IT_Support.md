@@ -19,6 +19,8 @@ All requests for support should go through one of three routes:
 
 ## Faults
 
+* Xin's silurian account needs extending.
+* Can't ssh to BC4 from miocene or silurian
 
 ## Day-to-day user support
 

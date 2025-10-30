@@ -18,6 +18,8 @@
 
 [Documentation for tools](UM_tools_and_generic_tools.md)
 
+[Python on BRIDGE machines](Python_BRIDGE.md)
+
 [Collaborations](Collaborations.md)
 
 [Dan notes](Dan_notes.md)
