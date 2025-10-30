@@ -24,12 +24,13 @@ and a link to reset your password.
 
 (7) Have a beer.
 
-(8) This is teh big bit..... 
+(8) This is the big bit..... 
 
-Seb:
+```
 sudo apt update
 sudo apt upgrade
 sudo reboot
+```
 
 sudo adduser deepmip-app
 sudo usermod -aG sudo deepmip-app
