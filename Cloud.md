@@ -47,32 +47,26 @@ sudo ufw allow 443/tcp
 sudo ufw enable
 ```
 
-`nslookup data.deepmip.org`
-David G. needs to update the A record of data.deepmip.org so that it points to 37.59.98.55 in place of 51.89.165.226 
+`nslookup data.deepmip.org`  
 
 load docker:
-follow instructions here: [https://docs.docker.com/engine/install/ubuntu](https://docs.docker.com/engine/install/ubuntu)
+follow instructions here: [https://docs.docker.com/engine/install/ubuntu](https://docs.docker.com/engine/install/ubuntu)  
+(1) `for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done`  
+(2) text from "Set up Docker's apt repository"  
+(3) `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
-(1) `for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done`
+Now we can actualyl start the app:  
+`sudo docker run -p 8501:8501 sebsteinig/deepmip-eocene-app:latest`
 
-(2) text from "Add Docker's official GPG key:"
-
-
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
------
-
-sudo docker run -p 8501:8501 sebsteinig/deepmip-eocene-app:latest
-
-You can now view your Streamlit app in your browser.
-URL: http://0.0.0.0:8501
+You can now view your Streamlit app in your browser:  
 URL: http://37.59.98.55:8501
 
 ------
 
-Now needs a web server (engine-x)
-sudo apt install -y nginx
+Now needs a web server (engine-x)  
+`sudo apt install -y nginx`
 
+```
 sudo vi /etc/nginx/sites-available/data.deepmip.org
 server {
     listen 80;
@@ -90,33 +84,28 @@ server {
         proxy_read_timeout 86400;
     }
 }
+```
+replaced data.deepmip.org to 37.59.98.55 (will change back later).
 
-
-replaced data.deepmip.org to 37.59.98.55
-
+```
 sudo ln -s /etc/nginx/sites-available/data.deepmip.org /etc/nginx/sites-enabled/
-
 sudo rm /etc/nginx/sites-enabled/default
-
 sudo nginx -t
-
 sudo systemctl reload nginx
+```
 
------
-
-sudo docker run -p 8501:8501 sebsteinig/deepmip-eocene-app:latest
+`sudo docker run -p 8501:8501 sebsteinig/deepmip-eocene-app:latest`
 
 Now, browser http://37.59.98.55/ works!  Have removed need for :8501
 
-----
-
-# enable Docker to start on boot
-sudo systemctl enable docker
+enable Docker to start on boot  
+`sudo systemctl enable docker`
  
-# remove any existing container (if it exists)
-sudo docker rm -f deepmip-app
+remove any existing container (if it exists)  
+`sudo docker rm -f deepmip-app`
  
-# run the container in detached mode with restart policy
+run the container in detached mode with restart policy  
+```
 sudo docker run -d \
   --name deepmip-app \
   --restart unless-stopped \
@@ -124,29 +113,27 @@ sudo docker run -d \
   sebsteinig/deepmip-eocene-app:latest
 # get status of all running docker apps
 sudo docker ps
-
------
+```
 
 If website goes down:
-sudo reboot
-or, via ovh webpages.
-either way, it should restart the docker
+`sudo reboot`
+or, via ovh webpages.  Either way, it should restart the docker
 
+`sudo apt install -y certbot python3-certbot-nginx`
 
-----
-sudo apt-get install emacs
-----
+# TO DO 1:
+David G. needs to update the A record of data.deepmip.org so that it points to 37.59.98.55 in place of 51.89.165.226  
+Check with: `nslookup data.deepmip.org`
 
-sudo apt install -y certbot python3-certbot-nginx
-
-
-Once David has changed this....
-edit /etc/nginx/sites-available/data.deepmip.org
+# TO DO 2:
+Once David has changed this....  
+edit /etc/nginx/sites-available/data.deepmip.org  
 change server_name to data.deepmip.org
 
-Once A server is set.....
-sudo certbot --nginx -d data.deepmip.org
-
+# TO DO 3:
+Once A server is set.....  
+`sudo certbot --nginx -d data.deepmip.org`  
+To enable https://
 
 
 
