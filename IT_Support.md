@@ -27,6 +27,7 @@ All requests for support should go through one of three routes:
 * xancil install on new machines
 * IDL standard libraries in one place.
 * x-forwarding clash with cdo, nco, netcdf modules
+* update A record of data.deepmip.org
 
 ## Long-term support
 
