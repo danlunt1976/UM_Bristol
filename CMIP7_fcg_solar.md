@@ -5,10 +5,16 @@
 ### Where to access data
 You can find introduction of solar forcing from [Homepage of SOLARIS-HEPPA](https://www.solarisheppa.kit.edu/index.php), the [CMIP7 Solar forcing](https://www.solarisheppa.kit.edu/75.php), and the paper [Funke et al., 2024](https://gmd.copernicus.org/articles/17/1217/2024/).
 
-Data can be access from links [monthly resolution reference solar forcing](https://cloud.iaa.es/index.php/s/n7cacmRBjk5Gb8f), and [daily resolution reference solar forcing](https://cloud.iaa.es/index.php/s/nJFTPcnFwZ3smTo).
+Data can be access from links 
+[CMIP7 reference solar forcing dataset (1850-2023; monthly](https://cloud.iaa.es/index.php/s/n7cacmRBjk5Gb8f), 
+[CMIP7 reference solar forcing dataset (1850-2023; daily)](https://cloud.iaa.es/index.php/s/nJFTPcnFwZ3smTo), 
+and [CMIP7 future solar forcing dataset (2022-2299; monthly)](https://cloud.iaa.es/index.php/s/QWorEALDriYabgN); [CMIP7 future solar forcing dataset (2022-2299; daily)](https://cloud.iaa.es/index.php/s/j7ncYwoHXCtRwRE); 
+and [metadata](https://www.solarisheppa.kit.edu/img/CMIP7_metadata_description_4.6.pdf).
 
 
-To be noticed, the CMIP7 solar forcing provides data ranging from 1850-2023 (174 years in total. 1850-1873 for pre-industrial control; version 4.6). While CMIP6 provides data from 1850-2299 (450 years in total; version 3.2).
+
+To be noticed, the CMIP7 solar forcing provides reference data ranging from 1850-2023 (174 years in total. 1850-1873 for pre-industrial control; version 4.6) and future data ranging from 2022-2299 (version 4.6-a002). 
+CMIP6 provides data from 1850-2299 (450 years in total; version 3.2).
 
 However, the link for downloading CMIP6 solar forcing data are now overwritten by the CMIP7 one. But you can access data from my previous saved file: [monthly resolution reference solar forcing for CMIP6](Attachments/CMIP7_fcg_solar/solarforcing-ref-mon_input4MIPs_solar_CMIP_SOLARIS-HEPPA-3-2_gn_18500101-22991231.nc).
 
@@ -25,10 +31,10 @@ The file looks like this:
 TSI data for CMIP6:  
 ![TSI_CMIP6.png](Attachments/CMIP7_fcg_solar/TSI_CMIP6.png)
 
-TSI data for CMIP7:
+TSI data for CMIP7_reference:
 ![TSI_CMIP7.png](Attachments/CMIP7_fcg_solar/TSI_CMIP7.png)
 
-Comparisons of CMIP6 and CMIP7 TSI data:
+Comparisons of CMIP6 and CMIP7_reference TSI data:
 ![TSI_CMIP6&7_1.png](Attachments/CMIP7_fcg_solar/TSI_CMIP6&7_1.png)
 
 ![TSI_CMIP6&7_2.png](Attachments/CMIP7_fcg_solar/TSI_CMIP6&7_2.png)
@@ -97,15 +103,20 @@ This solar file set the TSI values start from 1361 $W/m^{2}$ for 20 years, then 
 Set running from year 1850 to 2299.  
 check setting and results of xqcpb and xqcpb-xqcpz [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpb/standard_new_html/xqcpb.html)  
 ![shift_TSI.png](Attachments/CMIP7_fcg_solar/shift_TSI.png)
-### Test with CMIP6 TSI: xqcpa
+### Test with CMIP6_TSI: xqcpa
 solar file set as `BC4:/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat`  
 running from year 1850 to 2299.  
 check setting and results of xqcpa and xqcpa-xqcpz [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpa/standard_new_html/xqcpa.html)  
-### Test with CMIP7 TSI
+### Test with CMIP7_TSI_ref: xqcpc
 solar file set as `BC4:/user/home/mf22281/um_updates/varying_TSI_CMIP7.dat`
 running from year 1850 to 2023.
 check setting and results of xqcpc and xqcpc-xqcpz [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpc/standard_new_html/xqcpc.html)
 
+### Test with CMIP7_TSI (reference + future): xqcpd
+solar file set as `BC4:/user/home/mf22281/um_updates/xxx?`
+running from year 1850 to 2299.
+check setting and results of xqcpd and xqcpd-xqcpz here.
+(To be update...)
 ## Result
 ### compare shift_TSI job with standard_PI job (xqcpb - xqcpz)  
 ![xqpcb-xqcpz_surface_air_temperature_ann](Attachments/CMIP7_fcg_solar/xqcpb-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.gif)   
@@ -117,11 +128,11 @@ check setting and results of xqcpc and xqcpc-xqcpz [here](https://www.paleo.bris
 
 ![xqcpa-xqcpz_downward_solar_radiation_at_toa_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.png)  
 
-### compare TSI_CMIP7 with standard PI job (xqcpc - xqcpz)
+### compare TSI_CMIP7_ref with standard PI job (xqcpc - xqcpz)
 ![xqcpc-xqcpz_surface_air_temperature_ann](Attachments/CMIP7_fcg_solar/xqcpc-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.gif)
 
 ![xqcpc-xqcpz_downward_solar_radiation_at_toa_ann](Attachments/CMIP7_fcg_solar/xqcpc-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.gif)
-### compare TSI_CMIP7 with TSI_CMIP6 (xqcpc - xqcpa)
+### compare TSI_CMIP7_ref with TSI_CMIP6 (xqcpc - xqcpa)
 ![xqcpc-xqcpa_surface_air_temperature_ann](Attachments/CMIP7_fcg_solar/xqcpc-xqcpa_temp2m_all_months_fsy_pjxy-time-series_tfann.gif)
 
 ![xqcpc-xqcpa_downward_solar_radiation_at_toa_ann](Attachments/CMIP7_fcg_solar/xqcpc-xqcpa_downsolartoa_all_months_fsy_pjxy-time-series_tfann.gif)
