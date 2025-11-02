@@ -8,7 +8,7 @@ You can find introduction of solar forcing from [Homepage of SOLARIS-HEPPA](http
 Data can be access from links [monthly resolution reference solar forcing](https://cloud.iaa.es/index.php/s/n7cacmRBjk5Gb8f), and [daily resolution reference solar forcing](https://cloud.iaa.es/index.php/s/nJFTPcnFwZ3smTo).
 
 
-To be noticed, the CMIP7 solar forcing provides data ranging from 1850-2023 (1850-1873 for pre-industrial control; version 4.6). While CMIP6 provides data from 1850-2299 (version 3.2).
+To be noticed, the CMIP7 solar forcing provides data ranging from 1850-2023 (174 years in total. 1850-1873 for pre-industrial control; version 4.6). While CMIP6 provides data from 1850-2299 (450 years in total; version 3.2).
 
 However, the link for downloading CMIP6 solar forcing data are now overwritten by the CMIP7 one. But you can access data from my previous saved file: [monthly resolution reference solar forcing for CMIP6](Attachments/CMIP7_fcg_solar/solarforcing-ref-mon_input4MIPs_solar_CMIP_SOLARIS-HEPPA-3-2_gn_18500101-22991231.nc).
 
@@ -22,11 +22,16 @@ You can get the converted annual mean **varying_TSI_CMIP6.dat** file, for exampl
 The file looks like this:  
 ![head of varying_TSI_CMIP6 file.png](<Attachments/CMIP7_fcg_solar/head of varying_TSI_CMIP6 file.png>)
 
-The TSI data for CMIP6:  
+TSI data for CMIP6:  
 ![TSI_CMIP6.png](Attachments/CMIP7_fcg_solar/TSI_CMIP6.png)
 
-#### Spectrum
-coming soon ...
+TSI data for CMIP7:
+![TSI_CMIP7.png](Attachments/CMIP7_fcg_solar/TSI_CMIP7.png)
+
+Comparisons of CMIP6 and CMIP7 TSI data:
+![TSI_CMIP6&7_1.png](Attachments/CMIP7_fcg_solar/TSI_CMIP6&7_1.png)
+
+![TSI_CMIP6&7_2.png](Attachments/CMIP7_fcg_solar/TSI_CMIP6&7_2.png)
 
 ### How to implement the forcing into HadCM3
 
@@ -97,65 +102,26 @@ solar file set as `BC4:/user/home/mf22281/um_updates/varying_TSI_CMIP6.dat`
 running from year 1850 to 2299.  
 check setting and results of xqcpa and xqcpa-xqcpz [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpa/standard_new_html/xqcpa.html)  
 ### Test with CMIP7 TSI
-coming soon ...
-
-### Test with CMIP7 spectrum
-coming soon ...
+solar file set as `BC4:/user/home/mf22281/um_updates/varying_TSI_CMIP7.dat`
+running from year 1850 to 2023.
+check setting and results of xqcpc and xqcpc-xqcpz [here](https://www.paleo.bristol.ac.uk/ummodel/data/xqcpc/standard_new_html/xqcpc.html)
 
 ## Result
 ### compare shift_TSI job with standard_PI job (xqcpb - xqcpz)  
 ![xqpcb-xqcpz_surface_air_temperature_ann](Attachments/CMIP7_fcg_solar/xqcpb-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.gif)   
-![xqcpb-xqcpz_precipitation_ann](Attachments/CMIP7_fcg_solar/xqcpb-xqcpz_precip_all_months_fsy_pjxy-time-series_tfann.gif)  
+
 ![xqcpb-xqcpz_downward_solar_radiation_at_TOA](Attachments/CMIP7_fcg_solar/xqcpb-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.gif  )
-![xqcpb-xqcpz_outgoing_longwave_radiation_at_TOA](Attachments/CMIP7_fcg_solar/xqcpb-xqcpz_olr_all_months_fsy_pjxy-time-series_tfann.gif)  
-![xqcpb-xqcpz_net_energy_at_TOA](Attachments/CMIP7_fcg_solar/xqcpb-xqcpz_netenergytoa_all_months_fsy_pjxy-time-series_tfann.gif)  
+
 ### compare TSI_CMIP6 with standard PI job (xqcpa - xqcpz)
-#### Surface air temperature
 ![xqcpa-xqcpz_surface_air_temperature_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_surface_air_temperature_jjs](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfjjs.png)  
-![xqcpa-xqcpz_surface_air_temperature_djf](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfdjf.png)  
 
-#### Precipitation and Evaporation
-![xqcpa-xqcpz_precipitation_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_precipitation_month](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfmonth.png)  
-![xqcpa-xqcpz_precipitation_jjs](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfjjs.png)  
-![xqcpa-xqcpz_precipitation_djf](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precip_all_months_fsy_pjxy-time-series_tfdjf.png)  
-![xqcpa-xqcpz_evaporation_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_evap_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_precipitation-evaporation_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_precipevap_all_months_fsy_pjxy-time-series_tfann.png)  
-
-#### Mean sea level pressure
-![xqcpa-xqcpz_mean_sea_level_pressure_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_mslp_all_months_fsy_pjxy-time-series_tfann.png)  
-
-#### Solar radiation
 ![xqcpa-xqcpz_downward_solar_radiation_at_toa_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_downward_solar_radiation_at_surface_ann](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downsolarsurf_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_netsolartoa_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netsolartoa_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_netsolarsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netsolarsurf_all_months_fsy_pjxy-time-series_tfann.png)  
 
-#### Longwave radiation
-![xqcpa-xqcpz_olr_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_olr_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_netlongsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netlongsurf_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_downlongsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_downlongsurf_all_months_fsy_pjxy-time-series_tfann.png)  
+### compare TSI_CMIP7 with standard PI job (xqcpc - xqcpz)
+![xqcpc-xqcpz_surface_air_temperature_ann](Attachments/CMIP7_fcg_solar/xqcpc-xqcpz_temp2m_all_months_fsy_pjxy-time-series_tfann.gif)
 
-#### Net radiation
-![xqcpa-xqcpz_netradiationsurf_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_netradiationsurf_all_months_fsy_pjxy-time-series_tfann.png)  
+![xqcpc-xqcpz_downward_solar_radiation_at_toa_ann](Attachments/CMIP7_fcg_solar/xqcpc-xqcpz_downsolartoa_all_months_fsy_pjxy-time-series_tfann.gif)
+### compare TSI_CMIP7 with TSI_CMIP6 (xqcpc - xqcpa)
+![xqcpc-xqcpa_surface_air_temperature_ann](Attachments/CMIP7_fcg_solar/xqcpc-xqcpa_temp2m_all_months_fsy_pjxy-time-series_tfann.gif)
 
-
-#### Heat fluxes
-![xqcpa-xqcpz_sensible_heat_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_sensible_heat_all_months_fsy_pjxy-time-series_tfann.png)  
-![xqcpa-xqcpz_latent_heat_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_latent_heat_all_months_fsy_pjxy-time-series_tfann.png)  
-
-#### Total cloud cover (random overlap)
-![xqcpa-xqcpz_totalcloud_all_months_fsy_pjxy-time-series_tfann.png](Attachments/CMIP7_fcg_solar/xqcpa-xqcpz_totalcloud_all_months_fsy_pjxy-time-series_tfann.png)  
-
-
-
-
-
-
-
-
-
-
-
-
+![xqcpc-xqcpa_downward_solar_radiation_at_toa_ann](Attachments/CMIP7_fcg_solar/xqcpc-xqcpa_downsolartoa_all_months_fsy_pjxy-time-series_tfann.gif)
