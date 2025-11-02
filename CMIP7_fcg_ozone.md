@@ -80,6 +80,7 @@ output
 	lon = 0;
 
 #### mergetime
+merge 4 historical transient files into one.
 ```
 cdo -s mergetime \
   input_185001-189912_N48_zonmean.nc \
@@ -88,6 +89,9 @@ cdo -s mergetime \
   input_200001-202212_N48_zonmean.nc \
   output_185001-202212_N48_zonmean.nc`
 ```
+`mergetime` concatenates along `time` and will sort by time if needed.
+
+The original file size is too large. So prefer conversion first, and mergetime later.
 ### How to implement the forcing into HadCM3
 
 <add info here how to incorporate into a model run>
