@@ -73,7 +73,7 @@ Method:
 	- lat = -90, -87.5, -85, ..., 85, 87.5, 90;
 	- lon = 0, 3.75, 7.5, ..., 348.75, 352.5, 356.25;
   
-1. calculate zonal mean: `cdo -s zonmean input_N48.nc output_N48_zonmean.nc`   
+2. calculate zonal mean: `cdo -s zonmean input_N48.nc output_N48_zonmean.nc`   
    
 - output:
 	- 3D(time, plev=66, lat=73, lon=0);  # 2.5°x0
