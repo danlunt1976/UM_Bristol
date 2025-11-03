@@ -58,8 +58,9 @@ So actually there are 2 datasets useful:
 - target: convert to N48 resolution and then calculate zonal mean. 
 - original format: 4D(time, plev=66, lat=96, lon=144) | 1.875°x2.5°
 - target format: 3D(time, plev=66, lat=73, lon=0) | 2.5°x0  
-----  
+
   
+Method: 
 - One integrated step: `cdo -s zonmean -remapbil,r96x73 input.nc output_N48_zonmean.nc`
 	- vmro3 is intensive variable, so choose **bilinear** method to convert lat and lon.  
 
@@ -67,17 +68,17 @@ So actually there are 2 datasets useful:
 - OR two steps: 
 1. convert horizontal resolution to N48: `cdo -s remapbil,r96x73 input.nc output_N48.nc`  
    
-output: 
-- 4D(time, plev=66, lat=72, lon=96);  # 2.5°x3.75°
-- lat = -90, -87.5, -85, ..., 85, 87.5, 90;
-- lon = 0, 3.75, 7.5, ..., 348.75, 352.5, 356.25;
+- output: 
+	- 4D(time, plev=66, lat=72, lon=96);  # 2.5°x3.75°
+	- lat = -90, -87.5, -85, ..., 85, 87.5, 90;
+	- lon = 0, 3.75, 7.5, ..., 348.75, 352.5, 356.25;
   
 1. calculate zonal mean: `cdo -s zonmean input_N48.nc output_N48_zonmean.nc`   
    
-output:
-- 3D(time, plev=66, lat=73, lon=0);  # 2.5°x0
-- lat = -90, -87.5, -85, ..., 85, 87.5, 90;
-- lon = 0;
+- output:
+	- 3D(time, plev=66, lat=73, lon=0);  # 2.5°x0
+	- lat = -90, -87.5, -85, ..., 85, 87.5, 90;
+	- lon = 0;
   
 #### mergetime
 merge 4 historical transient files into one.
