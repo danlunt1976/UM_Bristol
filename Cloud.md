@@ -116,25 +116,23 @@ sudo docker ps
 ```
 
 If website goes down:
-`sudo reboot`
+`sudo reboot`  
 or, via ovh webpages.  Either way, it should restart the docker
 
 `sudo apt install -y certbot python3-certbot-nginx`
 
-# TO DO 1:
-David G. needs to update the A record of data.deepmip.org so that it points to 37.59.98.55 in place of 51.89.165.226  
+David has updated the A record of data.deepmip.org so that it points to 37.59.98.55 in place of 51.89.165.226  
 Check with: `nslookup data.deepmip.org`
 
-# TO DO 2:
-Once David has changed this....  
 edit /etc/nginx/sites-available/data.deepmip.org  
 change server_name to data.deepmip.org
 
-# TO DO 3:
 Once A server is set.....  
 `sudo certbot --nginx -d data.deepmip.org`  
 To enable https://
 
+To check apps running:  
+`sudo docker ps`  
 
 
 
