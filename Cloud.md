@@ -134,7 +134,8 @@ To enable https://
 To check apps running:  
 `sudo docker ps`  
 
-
+To see details of an app:  
+`sudo docker inspect deepmip-app | grep -A 5 Mounts`
 
 
 
