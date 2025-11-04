@@ -27,7 +27,7 @@ Above mods for HadCM3L apply for HadCM3, there are a few modifications for HadCM
 ### Full mods (from PJV)
 
 <details>
-<summary><b> Modsets for HadCM3<b></summary>
+<summary><b>Modsets for HadCM3</b></summary>
 
 | update name                                       | Was the update in the original HadCM3   | Purpose of Update                                                                                                                                             | Does it change overall science (but it may change specific diagnostic output)   | Source/creator of update                                                                                                                  |
 |:--------------------------------------------------|:----------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
