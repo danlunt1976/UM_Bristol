@@ -49,51 +49,92 @@ So actually there are 2 datasets useful:
 	- nominal_resolution = "250 km" ;
 
 
-**check lat, lon, plev values**: `ncks -H -C -v lat,lon,plev input.nc`
+**check lat, lon, plev values**: `ncks -H -C -v lat,lon,plev input.nc`     
+
+`cdo sinfo input.nc`     
+
+`cdo showlevel in.nc`     
 
 - lat = -90, -88.105-, -86.211, ... , 86.211, 88.105, 90
 - lon = 0, 2.5, 5, 7.5, ... , 350, 352.5, 355, 357.5 
 - plev = 1000, 925, 850, 800, 780, 750, 700, 650, 600, 500, 450, 400, 350, 300, 285, 250, 200, 170, 150, 130, 115, 100, 90, 80, 70, 60, 50, 40, 35, 30, 25, 20, 15, 10, 7, 5, 4, 3, 2, 1.5, 1, 0.7, 0.5, 0.4, 0.3, 0.2, 0.15, 0.1, 0.07, 0.05, 0.04, 0.03, 0.02, 0.015, 0.01, 0.007, 0.005, 0.004, 0.003, 0.002, 0.0015, 0.001, 0.0008, 0.0005, 0.0003, 0.0001 ;
+
 #### convert: remap and zonmean
-- target: convert to N48 resolution and then calculate zonal mean. 
+- target: convert to HadCM3B resolution and then calculate zonal mean. 
 - original format: 4D(time, plev=66, lat=96, lon=144) | 1.875°x2.5°
-- target format: 3D(time, plev=66, lat=73, lon=0) | 2.5°x0  
+- target format: 3D(time, plev=17, lat=73 or 72, lon=96 ->0) | 2.5°x3.75°->2.5°x0
 
-  
 Method: 
-- One integrated step: `cdo -s zonmean -remapbil,r96x73 input.nc output_N48_zonmean.nc`
-	- vmro3 is intensive variable, so choose **bilinear** method to convert lat and lon.  
+- define lonlat:
+`nano grid_72x96.txt`
+```grid_72x96.txt
+gridtype  = lonlat
+xsize     = 96
+ysize     = 72
+xfirst    = 1.875
+xinc      = 3.75
+yfirst    = 88.75
+yinc      = -2.5
+```
+or
+`nano grid_73x96.txt`
+```grid_73x96.txt
+gridtype  = lonlat
+xsize     = 96
+ysize     = 73
+xfirst    = 0
+xinc      = 3.75
+yfirst    = 90
+yinc      = -2.5
+```
 
 
-- OR two steps: 
-1. convert horizontal resolution to N48: `cdo -s remapbil,r96x73 input.nc output_N48.nc`  
-   
-- output: 
-	- 4D(time, plev=66, lat=72, lon=96);  # 2.5°x3.75°
-	- lat = -90, -87.5, -85, ..., 85, 87.5, 90;
-	- lon = 0, 3.75, 7.5, ..., 348.75, 352.5, 356.25;
-  
-2. calculate zonal mean: `cdo -s zonmean input_N48.nc output_N48_zonmean.nc`   
-   
-- output:
-	- 3D(time, plev=66, lat=73, lon=0);  # 2.5°x0
-	- lat = -90, -87.5, -85, ..., 85, 87.5, 90;
-	- lon = 0;
-  
+- remap
+```
+cdo -selname,vmro3 -sellevel,1000,925,850,700,600,500,400,300,250,200,150,100,70,50,30,20,10 -remapbil,grid_72x96.txt input.nc output_72x96x17.nc
+```
+
+- remap and calculate zonal mean
+```
+cdo -zonmean \
+  -selname,vmro3 \
+  -sellevel,1000,925,850,700,600,500,400,300,250,200,150,100,70,50,30,20,10 \
+  -remapbil,grid_72x96.txt input.nc output_72x96x17_zonmean.nc
+
+```
+- vmro3 is intensive variable, so choose **bilinear** method to convert lat and lon.  
+
 #### mergetime
 merge 4 historical transient files into one.
 ```
 cdo -s mergetime \
-  input_185001-189912_N48_zonmean.nc \
-  input_190001-194912_N48_zonmean.nc \
-  input_195001-199912_N48_zonmean.nc \
-  input_200001-202212_N48_zonmean.nc \
-  output_185001-202212_N48_zonmean.nc`
+  input_185001-189912_72x96x17_zonmean.nc \
+  input_190001-194912_72x96x17_zonmean.nc \
+  input_195001-199912_72x96x17_zonmean.nc \
+  input_200001-202212_72x96x17_zonmean.nc \
+  output_185001-202212_72x96x17_zonmean.nc`
 ```
 `mergetime` concatenates along `time` and will sort by time if needed.
-     
-     
+
+
 The original file size is too large. So prefer conversion first, and mergetime later.
+
+#### converted file list
+- climatology
+	- `vmro3*_185001-185012-clim_72x96x17.nc`
+	- `vmro3*_185001-185012-clim_73x96x17.nc`
+	- `vmro3*_185001-185012-clim_72x96x17_zonmean.nc`
+	- `vmro3*_185001-185012-clim_73x96x17_zonmean.nc`
+
+- piControl transient
+	- `vmro3*_182901-184912_72x96x17_zonmean.nc`
+	- `vmro3*_182901-184912_73x96x17_zonmean.nc`
+
+- historical transient
+	- `vmro3*_185001-202212_72x96x17_zonmean.nc`
+	- `vmro3*_185001-202212_73x96x17_zonmean.nc`
+
+
 ### How to implement the forcing into HadCM3
 
 <add info here how to incorporate into a model run>
