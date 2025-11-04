@@ -1,7 +1,7 @@
 [back to CMIP7 ancillaries](CMIP7_ancillaries.md)
 
 ## Ozone forcings for HadCM3
-More information and results could be find from: [CMIP7_Ozone](<Attachments/CMIP7_fcg_ozone/CMIP7_Ozone.pptx>)
+More information and results could be find from: [CMIP7_Ozone.pptx](<Attachments/CMIP7_fcg_ozone/CMIP7_Ozone.pptx>)
 
 ### Where to access data
 Data description: https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/
