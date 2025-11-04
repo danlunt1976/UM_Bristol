@@ -70,3 +70,14 @@ To be notice, other jobs related to solar forcing need to be run later, includin
 | **xqchx**  | emissions + solar + land-use + GHGs | 1850–2022      | <- (xqchy,xqchd) |
 
 ## CMIP7 experiments phase
+
+### Test on HadCM3
+
+| experiment | description                             | running length | source |
+| ---------- | --------------------------------------- | -------------- | ------ |
+| **xqgtz**  | copy from xqgra, Tuning HadCM3          | /              | xqgra  |
+| **xqgta**  | Equilibrium TRIFFID, under preind       | 40             | xqgtz  |
+| **xqgtb**  | Dynamic TRIFFID, under preind           | 200            | xqgta  |
+| **xqgtc**  | Emission-driven test, cmip6             | 165            | xqgtd  |
+| **xqgtd**  | Emission-driven test, without emissions | 173            | xqgtz  |
+| **xqgte**  | Emission-driven test, cmip7             | 173            | xqgtd  |
