@@ -26,6 +26,9 @@ Above mods for HadCM3L apply for HadCM3, there are a few modifications for HadCM
 
 ### Full mods (from PJV)
 
+<details>
+<summary><b> Modsets for HadCM3<b></summary>
+
 | update name                                       | Was the update in the original HadCM3   | Purpose of Update                                                                                                                                             | Does it change overall science (but it may change specific diagnostic output)   | Source/creator of update                                                                                                                  |
 |:--------------------------------------------------|:----------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
 | nan                                               | nan                                     | nan                                                                                                                                                           | nan                                                                             | Note that this is only an estimate and I may have got it completely wrong                                                                 |
@@ -120,3 +123,9 @@ Above mods for HadCM3L apply for HadCM3, there are a few modifications for HadCM
 | $PV_UPDATES/volkr/volvar_updated_03.mod           | n                                       | Adds volcanic forcing (in the form of TOA AOD)                                                                                                                | y                                                                               | Multiple owners but latest version by PJV                                                                                                 |
 | $PV_UPDATES/znamelist_hadcm3m21_ocean_cc2.mod     | n                                       | Allows for parameter perturbations for land and ocean carbon cycle                                                                                            | y                                                                               | Based on work of Ben Booth and Jonny Williams                                                                                             |
 | $PV_UPDATES/znamelist_hadcm3m21a_land_cc.mod      | n                                       | Allows for parameter perturbations for land and ocean carbon cycle                                                                                            | y                                                                               | Based on work of Ben Booth and Jonny Williams                                                                                             |
+
+</details>
+
+### Data convention
+
+From the um to the wegpage, (most) datasets are not cf-compliant.
