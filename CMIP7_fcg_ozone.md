@@ -50,9 +50,7 @@ So actually there are 2 datasets useful:
 
 
 **check lat, lon, plev values**: `ncks -H -C -v lat,lon,plev input.nc`     
-
 `cdo sinfo input.nc`     
-
 `cdo showlevel in.nc`     
 
 - lat = -90, -88.105-, -86.211, ... , 86.211, 88.105, 90
@@ -66,6 +64,7 @@ So actually there are 2 datasets useful:
 
 Method: 
 - define lonlat:
+
 `nano grid_72x96.txt`
 ```grid_72x96.txt
 gridtype  = lonlat
