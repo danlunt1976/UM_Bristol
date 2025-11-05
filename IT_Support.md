@@ -19,21 +19,17 @@ All requests for support should go through one of three routes:
 
 ## Faults
 
-* Can't ssh to BC4 from miocene or silurian
-
 ## Day-to-day user support
 
 * convsh/xconv install on new machines
 * xancil install on new machines
 * IDL standard libraries in one place.
 * x-forwarding clash with cdo, nco, netcdf modules
-* update A record of data.deepmip.org
 
 ## Long-term support
 
 * Migrate all machines to Rocky 8 (SET submitted)
 * Set up up paleocene as the new webserver and ummodel/data
-* New data.deepmip server (SET submitted)
 
 
 
