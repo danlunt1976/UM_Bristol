@@ -141,7 +141,10 @@ Valdes et al (2021) simulations = [https://www.paleo.bristol.ac.uk/~ggdjl/climat
 
 tfke, tfks = [https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfke.dat](https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfke.dat)
 
+# Rotating proxy locations
 
+In the Phanerozoic, we need to rotate our modern proxy sites back to their paleo latitudes and longitudes, in a way that is consistent with the rotations in the paleogeography that was input to the climate model. To do this, we can make use of a nice web-based rotation utility that is produced by gplates. The rotations used in the model is called 'PALEOMAP'. For example, try: [https://gws.gplates.org/reconstruct/reconstruct_points/?points=32.2,48.9&time=66&model=PALEOMAP](https://gws.gplates.org/reconstruct/reconstruct_points/?points=32.2,48.9&time=66&model=PALEOMAP) for 66Ma and longitude 32.2, latitude 48.8
+This gives the paleo longitude and latitude, in this case 26.7519 and 41.8311 .
 
 # References
 
