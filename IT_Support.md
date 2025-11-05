@@ -24,12 +24,13 @@ All requests for support should go through one of three routes:
 * convsh/xconv install on new machines
 * IDL standard libraries in one place.
 * x-forwarding clash with cdo, nco, netcdf modules
+* warranty renewal for all Lenovo machines. 
 
 ## Long-term support
 
 * Migrate all machines to Rocky 8 (SET submitted)
 * swsvalde user account
-* happi machine reconfigured
+* happi machine reconfigured as standard BRIDGE machine
 * Set up up paleocene as the new webserver and ummodel/data
 
 
