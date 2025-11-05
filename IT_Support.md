@@ -29,7 +29,7 @@ All requests for support should go through one of three routes:
 ## Long-term support
 
 * Migrate all machines to Rocky 8 (SET submitted)
-* swsvalde user account
+* swsvalde user account new UID
 * happi machine reconfigured as standard BRIDGE machine
 * Set up up paleocene as the new webserver and ummodel/data
 
