@@ -22,13 +22,14 @@ All requests for support should go through one of three routes:
 ## Day-to-day user support
 
 * convsh/xconv install on new machines
-* xancil install on new machines
 * IDL standard libraries in one place.
 * x-forwarding clash with cdo, nco, netcdf modules
 
 ## Long-term support
 
 * Migrate all machines to Rocky 8 (SET submitted)
+* swsvalde user account
+* happi machine reconfigured
 * Set up up paleocene as the new webserver and ummodel/data
 
 
