@@ -19,3 +19,4 @@ add info here how to process the CMIP data into the right format - whether it ne
 * For CMIP5, an AOD file was produced, which Paul then regridded to this format.
 * For CMIP6, the system was that groups contacted a team in Zurich, who converted that group's forcings into whatever format was needed in that model.  We never did this for CMIP6, so we cannot currently run with CMIP6 volcanic forcing.
 * If we can get the CMIP7 volcanic forcings into the required AOD format with 4 numbers per year, then the existing HadCM3 code should work.
+* Dan will make a CMIP7 version of the volcanic forcing file.
