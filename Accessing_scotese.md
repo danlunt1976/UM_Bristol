@@ -87,8 +87,8 @@ where
 * RES is the temporal resolution.  For most variables this is "monthly".  For some it is "annual".
 Valid examples for tfkea for \[EXP].\[VAR] include (but are not limited to):
 * temp_mm_1_5m.monthly = 2m air temperature \[K]
-* precip_mm_srf.monthly = Precipitation \[kg/m2/2]
-* totalEvap_mm_srf.monthly = Evpaoration \[kg/m2/2]
+* precip_mm_srf.monthly = Precipitation \[kg/m2/s]
+* totalEvap_mm_srf.monthly = Evpaoration \[kg/m2/s]
 * downSol_mm_TOA.monthly = Incoming solar radiation at the top of the atmosphere \[W/m2\]
 * upSol_mm_s3_TOA.monthly = Outgoing solar radiation at the top of the atmosphere \[W/m2\]
 * olr_mm_s3_TOA.monthly = Outgoing long wave radiation at the top of the atmosphere \[W/m2] 
