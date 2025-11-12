@@ -26,20 +26,24 @@ and a link to reset your password.
 
 (8) This is the big bit..... 
 
+#### security
+these steps are optional, but recommended for improved security of the VPS
+1. update system packages:
 ```
 sudo apt update
 sudo apt upgrade
 sudo reboot
 ```
+2. create a non-root user with sudo priviliges:
 ```
 sudo adduser deepmip-app
 sudo usermod -aG sudo deepmip-app
 ```
 
-Create key-pairs etc so log in from another machine
+3. Create key-pairs etc so log in from another machine
 `ssh-copy-id deepmip-app@VPS-IP`
 
-Traffic limiting:
+4. Configure firewall and traffic limiting:
 ```
 sudo ufw allow OpenSSH
 sudo ufw allow 80/tcp
@@ -47,27 +51,54 @@ sudo ufw allow 443/tcp
 sudo ufw enable
 ```
 
+We can check the status of the website:
 `nslookup data.deepmip.org`  
 
-load docker:
-follow instructions here: [https://docs.docker.com/engine/install/ubuntu](https://docs.docker.com/engine/install/ubuntu)  
+#### Install docker engine
+We use Docker to quickly deploy the containerised DeepMIP application. In order to run a Docker container, we need to install the Docker engine on the VPS first.
+To load docker, follow instructions here: [https://docs.docker.com/engine/install/ubuntu](https://docs.docker.com/engine/install/ubuntu)  
 (1) `for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done`  
 (2) text from "Set up Docker's apt repository"  
 (3) `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
-Now we can actualyl start the app:  
+Now we can actually launch the app:  
 `sudo docker run -p 8501:8501 sebsteinig/deepmip-eocene-app:latest`
 
 You can now view your Streamlit app in your browser:  
-URL: http://37.59.98.55:8501
+URL: [http://37.59.98.55:8501](http://37.59.98.55:8501)
 
-------
+#### Configure domain DNS
 
-Now needs a web server (engine-x)  
+This works, but we want to access the app via data.deepmip.org, not by going to http://$VPS-IP:8501.
+
+To do this, we need to modify the DNS configuration of our deepmip.org domain. This can be done via the web interface of our domain hosting company and look for the DNS settings.
+
+We need to create/modify the "A record" for the data subdomain:
+
+**A Record:**
+- **Type**: A
+- **Name**: data
+- **Value**: YOUR_VPS_IP
+- **TTL**: lowest possible
+
+This entry will mean, that whenever a user accesses data.deepmip.org, they will be redirected to our new VPS server. So they don't need to remember the full IP address.
+
+We can check whether this worked with `nslookup data.deepmip.org`. And we should be able to access the app in a browser via: http://data.deepmip.org:8501
+
+#### Install and configure nginx
+
+But we don't want to always add the streamlit port 8501 to the URL, but rather reach the app via the base URL alone.
+
+For this, we need to run a web server on our VPS which constantly listens to incoming traffic and redirects it to the according application running in the backend on our VPS (also called a "reverse proxy server"). The most used solution for this is nginx (https://nginx.org/en/).
+
+1. Now needs a web server (engine-x)  
 `sudo apt install -y nginx`
 
+2. create nginx configuration for the app
+`sudo vi /etc/nginx/sites-available/data.deepmip.org`
+
+3. add this configuration:
 ```
-sudo vi /etc/nginx/sites-available/data.deepmip.org
 server {
     listen 80;
     server_name data.deepmip.org;
@@ -87,12 +118,18 @@ server {
 ```
 replaced data.deepmip.org to 37.59.98.55 (will change back later).
 
+4. enable the site
 ```
 sudo ln -s /etc/nginx/sites-available/data.deepmip.org /etc/nginx/sites-enabled/
 sudo rm /etc/nginx/sites-enabled/default
+```
+
+5. test and reload nginx:
+```
 sudo nginx -t
 sudo systemctl reload nginx
 ```
+
 
 `sudo docker run -p 8501:8501 sebsteinig/deepmip-eocene-app:latest`
 
@@ -118,6 +155,10 @@ sudo docker ps
 If website goes down:
 `sudo reboot`  
 or, via ovh webpages.  Either way, it should restart the docker
+
+#### install certbot and obtain SSL certificate
+
+We really don't want to use HTTP, but the more secure HTTPS. For this, we need a SSL certificate for our nginx server config so that the user's browser can trust the connection. Easiest is to use certbot to automatically get this certificate:
 
 `sudo apt install -y certbot python3-certbot-nginx`
 
