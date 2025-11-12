@@ -123,6 +123,10 @@ This is how I solve this problem (I create my own version and run my own version
 2. edit the restart_manually script in your own dictory: change the bp14 into e.g., eocene
 3. run your own version of this script, e.g., sh myscripts/restart_manually [expID]
 
+## Step 5
+If you are carrying out a very long run, then it may time-out (14 days is the default) before completing.  In this case, you just need to create a new ensemble script, but you need to include the option to delete the existing .dat file:  
+`create_ensemble -d y -file xxxxx -expts list_expts`
+
 ## Solving Problems
 
 The output from the jobs is stored in the normal location (\$HOME/um/umui_out) but in files ending .eleave. If the model goes wrong, it will rapidly generate .eleave files every 10-20 minutes.
@@ -188,6 +192,7 @@ A full set of arguments are:
 
 -g)    - groups the experiments into batches of N jobs
 
+If you want to have a different time-out length than the default, then you can do this by creating a new 'template_batch' file in $HOME/ensembles/template_batch .  If this file exists then the script will use this file instead of the default, which lives in ~ggpjv/swsvalde/ensembles/template_batch .  You can copy the default version and then edit the '#SBATCH --time=' line, which controls the time-out length. 
 
 
 # EXTRA USEFUL INFORMATION FROM RUNNING MY FIRST ENSEMBLE:
