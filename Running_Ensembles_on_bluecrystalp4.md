@@ -192,7 +192,7 @@ A full set of arguments are:
 
 -g)    - groups the experiments into batches of N jobs
 
-If you want to have a different time-out length than the default, then you can do this by creating a new 'template_batch' file in $HOME/ensembles/template_batch .  If this file exists then the script will use this file instead of the default, which lives in ~ggpjv/swsvalde/ensembles/template_batch .  You can copy the default version and then edit the '#SBATCH --time=' line, which controls the time-out length. 
+If you want to have a different time-out length than the default, then you can do this by creating a new 'template_batch' file in $HOME/ensembles/template_batch .  If this file exists then the script will use this file instead of the default, which lives in ~ggpjv/swsvalde/ensembles/template_batch .  You can copy the default version and then edit the '#SBATCH --time=' line, which controls the time-out length. Actually, this only works if you are using the '-g' option in create_ensemble.  If not using -g then you will need to create your own create_ensemble file which implements this functionality (see ~ggdjl/ensemblkes/create_ensemble_djl).
 
 
 # EXTRA USEFUL INFORMATION FROM RUNNING MY FIRST ENSEMBLE:
