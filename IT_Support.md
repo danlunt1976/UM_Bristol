@@ -26,7 +26,8 @@ All requests for support should go through one of three routes:
 * convsh/xconv install on new machines
 * IDL standard libraries in one place.
 * x-forwarding clash with cdo, nco, netcdf modules
-* warranty renewal for all Lenovo machines. 
+* warranty renewal for all Lenovo machines.
+* deepmip/umbrella from wordpress to campuspress?  pros/cons...? 
 
 ## Long-term support
 
