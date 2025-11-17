@@ -173,6 +173,27 @@ Emissions are provided at monthly resolution, on a 0.5*0.5 degree grid, with 50-
     CMIP7 annual emission file:
     bc4:/user/home/nd20983/ancil/cmip7/co2_emi_1750_2023_ann
 
+More details:
+
+Please use raw files in the format of '04-18', which is the latest version.
+
+Annual data from raw files in: `eocene:/export/silurian/array-01/nd20983/cmip7_forcings/annual_output`
+
+Annual cat file:
+
+`CO2-em-anthro-anthro_annual_1750-2050.nc`
+
+`CO2-em-AIR-anthro_annual_1750-2050.nc`
+
+Combined emission:
+
+`CO2-em-total_annual_1750-2050.nc`
+
+In HadCM3 res:
+
+`CO2_emi_cmip7_1750_2050_hadcm3_ann.nc`
+
+
 **Data evaluation**
 
 As emission raw data are quite big with high resolution, the processing is slow and error-prone. To avoid possible mistakes, we need proper evaluations on these data.
