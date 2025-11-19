@@ -30,7 +30,7 @@ CMIP_1850_2014_extinction_550nm_strat_only_v3.nc
 
 ### How to process data
 
-add info here how to process the CMIP data into the right format - whether it needs to be ancillary files, text files etc, which categroies to use, units required etc
+Dan is currently writing some python script to do the regridding etc.
 
 ### How to implement the forcing into HadCM3
 
