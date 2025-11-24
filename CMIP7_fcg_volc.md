@@ -30,7 +30,7 @@ CMIP_1850_2014_extinction_550nm_strat_only_v3.nc
 
 ### How to process data
 
-add info here how to process the CMIP data into the right format - whether it needs to be ancillary files, text files etc, which categroies to use, units required etc
+Dan is currently writing some python script to do the regridding etc.
 
 ### How to implement the forcing into HadCM3
 
@@ -42,6 +42,29 @@ add info here how to process the CMIP data into the right format - whether it ne
 * For CMIP6, the system was that groups contacted a team in Zurich, who converted that group's forcings into whatever format was needed in that model.  We never did this for CMIP6, so we cannot currently run with CMIP6 volcanic forcing.
 * If we can get the CMIP7 volcanic forcings into the required AOD format with 4 numbers per year, then the existing HadCM3 code should work.
 * Dan will make a CMIP7 version of the volcanic forcing file.
+* Paul's email:
+
+The job you need is xqgra
+
+This is an all-singing prototype CMIP7 CO2 prescribed HadCM3 setup. Some of the forcings are made up and some are CMIP6. I think none are CMIP7 yet (but solar and CO2 are ready). It does not include aerosols either.
+
+The only two (three) changes to include volcanic forcing are:
+
+In Sub-Model Independent -> Script Inserts and Modifications  
+There is a variable called VOLCANIC_FILE, and it is set to $ANCIL_ROOT/ancil/CMIP7/eVolv2k_v3_-500_1900_mon.dat  
+(ANCIL_ROOT=/user/home/ggpjv/swsvalde)  
+In Modifications for the model  
+There is an update: $PV_UPDATES/volkr/volvar_updated_03.mod  
+(where PV_UPDATES=/user/home/ggpjv/swsvalde/um_updates)  
+You also need to add in:  
+Sub-Model Independent -> Post Processing -> Local post processing scripts.  
+~swsvalde/scripts/add_volcanic_file
+
+I think this is correct. There was a small issue about namelist clashes so I am not 100% certain that the volcanic update will stand alone from the other updates.
+
+The format of the volcanic file is very simple. It is a plain text file with each line being year, month, and then 4 AOD numbers, going from south to north ie.AOD(90S to 30S), AOD(30S to 0), AOD (0 to 30N) and AOD(30-90N).
+
+To calculate the AOD, I did an area weighted average of a more latitudinally structured input from the eVolv2k_v3 dataset (the protocol of the last 2k PMIP simulation).
 
 
 
