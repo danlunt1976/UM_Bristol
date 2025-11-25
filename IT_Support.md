@@ -19,7 +19,7 @@ All requests for support should go through one of three routes:
 
 ## Faults
 
-* none at present
+* Logon issues: Unable to login to Silurian, Miocene, etc. (can only access Eocene)
 
 ## Day-to-day user support
 
