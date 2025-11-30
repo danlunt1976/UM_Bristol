@@ -18,6 +18,8 @@
 
 [Documentation for tools](UM_tools_and_generic_tools.md)
 
+[Running paleo simulations with HadCM3](Paleo_HadCM3)
+
 [Python on BRIDGE machines](Python_BRIDGE.md)
 
 [Collaborations](Collaborations.md)
