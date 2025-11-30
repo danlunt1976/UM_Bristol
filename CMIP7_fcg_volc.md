@@ -22,11 +22,10 @@ The version number for CMIP7 production runs is CMIP_UOEXETER-CMIP-2-2-1 .
 The CMIP7 *ext* data can be downloaded from the ESGF, here:  
 [https://aims2.llnl.gov/search?project=input4MIPs&versionType=all&&activeFacets=%7B%22source_id%22%3A%5B%22UOEXETER-CMIP-2-2-1%22%5D%7D](https://aims2.llnl.gov/search?project=input4MIPs&versionType=all&&activeFacets=%7B%22source_id%22%3A%5B%22UOEXETER-CMIP-2-2-1%22%5D%7D)  
 The key file is:  
-ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_175001-202312.nc (1750-2023)    
-I (Dan L) accessed this via a wget script.  I created an account on the ESGF, which gave me an OpenID and a password.  I am not sure if I had to do that step or not.  Anyway, I downloaded the wget script, and ran it on miocene using `bash -s wget_script_2025-11-19_5-58-29.sh`.  I used the DKRZ node, as the LLN and CEDA ones didn't seem to be working.
+`ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_175001-202312.nc` (1750-2023).  I (Dan L) accessed this via a wget script.  I created an account on the ESGF, which gave me an OpenID and a password.  I am not sure if I had to do that step or not.  Anyway, I downloaded the wget script, and ran it on miocene using `bash -s wget_script_2025-11-19_5-58-29.sh`.  I used the DKRZ node, as the LLN and CEDA ones didn't seem to be working.
 
 Thomas Aubrey also emailed me (Dan L) and sent me the CMIP6 data for variable *ext*:  
-CMIP_1850_2014_extinction_550nm_strat_only_v3.nc
+`CMIP_1850_2014_extinction_550nm_strat_only_v3.nc`
 
 
 ### How to process data
@@ -44,8 +43,8 @@ Paul said that he implemented CMIP5 volcanic forcing in HadCM3, by regridding an
 For CMIP6, Paul said that the system was that groups contacted a team in Zurich, who converted that group's forcings into whatever format was needed in that model.  We did not do this for CMIP6, and haven't yet run with CMIP6 volcanic forcing.  However, as stated above, Thomas Aubrey has sent me (Dan L) the CMIP6 data for variable *ext*, from which we could calculate CMIP6 AOD.
 
 *CMIP7*
-I (Dan L) used the CMIP7 *ext* data in the `ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_175001-202312.nc` file above.  The 550nm data was used, and vertically integrated through each 500m deep vertical slice to create AOD, and then regridded to the required resolution, and output in the required format.  The [python code can be found here](<Attachments/CMIP7_fcg_volc/CMIP7_volcanic.ipynb>)
-
+I (Dan L) used the CMIP7 *ext* data in the `ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_175001-202312.nc` file above.  The 550nm data was used, and vertically integrated through each 500m deep vertical slice to create AOD, and then regridded to the required resolution, and output in the required format.  The [python code can be found here](<Attachments/CMIP7_fcg_volc/CMIP7_volcanic.ipynb>).
+The first check is that we can read in the data and integrated correctly.  To do this, I produced a [plot for comparison with the AOD plot from Aubrey et al](<Attachments/CMIP7_fcg_volc/aod550_cmip7.png>).  This looks OK.  I then [converted this to the HadCM3 latitudinal resolution](<Attachments/CMIP7_fcg_volc/aod550_cmip7_hadcm3.png>).  This itself can [be compared with Paul's Last Millennium file](<Attachments/CMIP7_fcg_volc/aod550_valdes_hadcm3.png>).  This also looks sensible.  Finally, I produced a [CMIP7 volcanic file in the format required by HadCM3](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_1750_2023.dat>).      
 
 ### How to implement the forcing into HadCM3
 
