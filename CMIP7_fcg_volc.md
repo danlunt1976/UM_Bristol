@@ -19,10 +19,10 @@ They provide: *ext, ssa, asy, reff, sad, vd, and nd*.  We need SAOD (stratospher
 I (Dan L) emailed Thomas Aubrey at Oxford, and he confirmed that the SAOD can be calculated simply by vertically integrating the variable *ext*.
 
 The version number for CMIP7 production runs is CMIP_UOEXETER-CMIP-2-2-1 .  
-The CMIP7 *ext* data can be downloaded from the ESGF, here:  
+The CMIP7 *ext* data can be downloaded from the ESGF, for example here:  
 [https://aims2.llnl.gov/search?project=input4MIPs&versionType=all&&activeFacets=%7B%22source_id%22%3A%5B%22UOEXETER-CMIP-2-2-1%22%5D%7D](https://aims2.llnl.gov/search?project=input4MIPs&versionType=all&&activeFacets=%7B%22source_id%22%3A%5B%22UOEXETER-CMIP-2-2-1%22%5D%7D)  
 The key file is:  
-`ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_175001-202312.nc` (1750-2023).  I (Dan L) accessed this via a wget script.  I created an account on the ESGF, which gave me an OpenID and a password.  I am not sure if I had to do that step or not.  Anyway, I downloaded the wget script, and ran it on miocene using `bash -s wget_script_2025-11-19_5-58-29.sh`.  I used the DKRZ node, as the LLN and CEDA ones didn't seem to be working.
+`ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_175001-202312.nc` (1750-2023).  I (Dan L) accessed this via a wget script.  I created an account on the ESGF, which gave me an OpenID and a password.  I am not sure if I had to do that step or not.  Anyway, I downloaded the wget script, and ran it on miocene using `bash -s wget_script_2025-11-19_5-58-29.sh`.  **I used the DKRZ node, as the LLN and CEDA ones didn't seem to work.  Actually, next time I tried this, only the LLN one worked, and I ran the wget script without the bash -s**
 
 Thomas Aubrey also emailed me (Dan L) and sent me the CMIP6 data for variable *ext*:  
 `CMIP_1850_2014_extinction_550nm_strat_only_v3.nc`
