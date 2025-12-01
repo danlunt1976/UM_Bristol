@@ -205,4 +205,23 @@ Isambard 3 completed 300 years.
 Data on /work/um/tfcub/data_300_i3_pd/ pd files.
 
 
+**Gethin 26/11/2025**
+
+downloads on bc4 used sshfs
+BRICS control IB3
+ARM chips don't work with ifc  must use gnu.
+IB3 and BC5 use "clifton"  Puts a certificate on your ssh-key.  Certificate is valid for 12 hours.  Signing in involves user interaction.
+
+Need to push for more diskspace on BC5/IB3.
+
+BC4 used intel compiler, slurm - needs pmi2 (process manager interface)
+BC5 says supports pmi2, but we get an error.  
+Alternative - BC5 may work with gnu.
+
+Geth will re-run the IB3 benchmark, and put on silurian.
+For now, he will work on BC5.
+
+Geth is currently 1 day per week on LFRIC.  Comes to an end soon.
+Geth will contact his line manager to see if he is OK with doing 2 days per week, TONIC-funded.
+
 
