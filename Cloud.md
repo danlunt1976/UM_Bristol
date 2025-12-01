@@ -3,6 +3,8 @@
 
 # Cloud Services
 
+## Setting up cloud services
+
 These are instructions for how to set up the VPS (virtual private server) for [https://data.deepmip.org](https://data.deepmip.org) , but will be useful to anyone setting up cloud services.
 
 (1) In order to pay for cloud services with corporate credit card, need this category (0005 - telecommunications services, or maybe 4816) to be unlocked on the card.  Contact corporate-cloud mailbox, and IT services.  
@@ -179,5 +181,31 @@ To see details of an app:
 `sudo docker inspect deepmip-app | grep -A 5 Mounts`
 
 
+## Deploying changes to the app
 
+The way to implement any changes to the app is to change the files in this repo: [https://github.com/sebsteinig/deepmip-web-app](https://github.com/sebsteinig/deepmip-web-app "https://github.com/sebsteinig/deepmip-web-app"). Best practice is to clone the repo, create a new branch, implement all changes you want, push the new branch to GitHub and then open a pull request to merge the changes into the main branch. Since this is only one line in this case, I created this pull request and merged it already (for reference: [https://github.com/sebsteinig/deepmip-web-app/pull/2](https://github.com/sebsteinig/deepmip-web-app/pull/2 "https://github.com/sebsteinig/deepmip-web-app/pull/2")). Once any file in main changes, the Docker image gets automatically updated and pushed to [https://hub.docker.com/repository/docker/sebsteinig/deepmip-eocene-app/general](https://hub.docker.com/repository/docker/sebsteinig/deepmip-eocene-app/general "https://hub.docker.com/repository/docker/sebsteinig/deepmip-eocene-app/general"). So, the only thing left to do is to tell your VPS to use this updated docker image. I attached the commands you need to run as a Markdown file to this email. Afterwards, the contact email on the deployed app should be updated.
+
+To do this, on the VPS, run:
+```bash
+sudo docker pull sebsteinig/deepmip-eocene-app:latest
+```
+
+to fetch the new image. Then stop and delete the old image with:
+``` bash
+sudo docker stop deepmip-app
+sudo docker rm deepmip-app
+``` 
+
+Finally, you can use the same command you previously used to deploy the app, which should probably be: 
+
+```bash
+sudo docker run -d \
+  --name deepmip-app \
+  --restart unless-stopped \
+  -p 8501:8501 \
+  sebsteinig/deepmip-eocene-app:latest
+```
+
+To check apps running:  
+`sudo docker ps`  
 
