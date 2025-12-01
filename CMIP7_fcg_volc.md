@@ -42,13 +42,17 @@ Paul said that he implemented CMIP5 volcanic forcing in HadCM3, by regridding an
 *CMIP6*
 For CMIP6, Paul said that the system was that groups contacted a team in Zurich, who converted that group's forcings into whatever format was needed in that model.  We did not do this for CMIP6, and haven't yet run with CMIP6 volcanic forcing.  However, as stated above, Thomas Aubrey has sent me (Dan L) the CMIP6 data for variable *ext*, from which we could calculate CMIP6 AOD.
 
-*CMIP7*
+*CMIP7 historical*
 I (Dan L) used the CMIP7 *ext* data in the `ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_175001-202312.nc` file above.  The 550nm data was used, and vertically integrated through each 500m deep vertical slice to create AOD, and then regridded to the required resolution, and output in the required format.  The [python code can be found here](<Attachments/CMIP7_fcg_volc/CMIP7_volcanic.ipynb>).
 The first check is that we can read in the data and integrated correctly.  To do this, I produced a [plot for comparison with the AOD plot from Aubrey et al](<Attachments/CMIP7_fcg_volc/aod550_cmip7.png>).  This looks OK.  I then [converted this to the HadCM3 latitudinal resolution](<Attachments/CMIP7_fcg_volc/aod550_cmip7_hadcm3.png>).  This itself can [be compared with Paul's Last Millennium file](<Attachments/CMIP7_fcg_volc/aod550_valdes_hadcm3.png>).  This also looks sensible.  Finally, I produced a:  
 * [CMIP7 volcanic file in the format required by HadCM3](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_1750_2023.dat>).      
 and a 
 * [CMIP7 volcanic file in the format required by HadCM3, for zero volcanic forcing](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_1750_2023_novolc.dat>). Note that a value of AOD of 1 is used for zero forcing, instead of 0, consistent with a comment in the code that says that a value of 1 should be used because 0 causes a numerical instability.      
 
+*CMIP7 picontrol*
+They also provide a climatology (which is similar to the *historical*, but averaged monthly from 1850-2021).  The file is `ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_185001-202112-clim.nc`.  I [regridded this to HadCM3 resolution](<Attachments/CMIP7_fcg_volc/aod550cr_cmip7_hadcm3.png>).
+* [CMIP7 climatological volcanic file in the format required by HadCM3](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_clim_1600_1949.dat>). (currently set up to run from 1600 to 1949)
+* [CMIP7 climatological volcanic file in a sensible format](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_clim.dat>). (in the form of a single year, but this will require some changes to the code)
 ### How to implement the forcing into HadCM3
 
 The information below is from an email from Paul:
