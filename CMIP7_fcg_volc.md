@@ -51,7 +51,7 @@ and a
 
 *CMIP7 picontrol*
 They also provide a climatology (which is similar to the *historical*, but averaged monthly from 1850-2021).  The file is `ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_185001-202112-clim.nc`.  I [regridded this to HadCM3 resolution](<Attachments/CMIP7_fcg_volc/aod550cr_cmip7_hadcm3.png>).
-* [CMIP7 climatological volcanic file in the format required by HadCM3](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_clim_1600_1949.dat>). (currently set up to run from 1600 to 1949)
+* [CMIP7 climatological volcanic file in the format required by HadCM3](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_clim_1000_3000.dat>). (currently set up to run from years 1000 to 3000)
 * [CMIP7 climatological volcanic file in a sensible format](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_clim.dat>). (in the form of a single year, but this will require some changes to the code)
 ### How to implement the forcing into HadCM3
 
