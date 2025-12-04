@@ -37,4 +37,23 @@ All requests for support should go through one of three routes:
 * Set up up paleocene as the new webserver and ummodel/data
 
 
+# Plan for new systems
+
+
+| Order | Task                                                                                                                                                                | Person responsible         | Target date for completion | Completed |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------------------------- | --------- |
+| (1)   | Finish installation of convsh and xconv on new machines, either hacked version or full-build version.                                                               | DG                         | 5/12/2025                  |           |
+| (2)   | Open up the new firewall hole for paleocene, and make a "paleo2.bris.ac.uk" domain which can be used for testing users' webpages and view-only of ~swsvalde/ummodel | DG                         | 12/12/2025                 |           |
+| (3)   | Ask paleo users to empty silurian, or accept risk of losing data.                                                                                                   | DL                         | 19/12/2205                 |           |
+| (4a)  | Convert silurian to Rocky 8                                                                                                                                         | DG                         | 2/2/2026                   |           |
+| (4b)  | Move all paleo users home directories from old-eocene to eocene2                                                                                                    | all paleo users            | 9/2/2026                   |           |
+| (4c)  | Move ~swsvalde from old-eocene to eoecne2                                                                                                                           | PJV                        | 9/2/2026                   |           |
+| (4d)  | Add paleocene as new web server (i.e. move from paleo2.bris.ac.uk to paleo.bris.ac.uk, and put oligocene onto paleo2.bris.ac.uk)                                    | DG                         | 9/2/2026                   |           |
+| (5)   | Testing of new systems                                                                                                                                              | all paleo users            | 27/2/2026                  |           |
+| (6)   | Ask climate-dynamics users to empty anthropocene, or accept risk of losing data.                                                                                    | DM                         | 6/3/2026                   |           |
+| (7)   | Convert anthropocene to Rocky 8                                                                                                                                     | DG                         | 20/3/2026                  |           |
+| (8)   | Move all climate-dynamics home directories to eocene2                                                                                                               | all climate-dyanmics users | 27/3/2026                  |           |
+| (9)   | Testing of new systems                                                                                                                                              | all climate-dyanmics users | 17/4/2026                  |           |
+| (10)  | Retire oligocene and old-eocene                                                                                                                                     | DG                         | 17/4/2026                  |           |
+
 
