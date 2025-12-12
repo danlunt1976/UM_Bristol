@@ -8,9 +8,7 @@
 
 * precipevap folder is only used for .monthly files and for sed fless over land/ocean -> no global evap climatology field is produced.
 
-
 * wetland and biome post-processing id sone on oligocene in a separate queue - see in ummodel/scripts/sed2.dat.
-
 
 * search for 'ggpjv' in scripts as sometimes functionality only runs for user ggpjv.
 
@@ -29,7 +27,11 @@ ${swsvalde_root}/bin/convert_file$suffix -file $file1 -expt $expt -type $type -l
 `$check` is y or n, usually n I think in the automatic downloads, but default is y in the convert_file script I think.  
 `$famous_rename` should be y if using famous, default is "" in the convert_file script I think.
 
-
+For example, when doing some of the benchmarking for ib3, I ran:
+```
+~swsvalde/bin/convert_file -file xqhgda#pd000002150jn+ -expt xqhgd -type pd -list_runs y -check y -famous_rename n
+```
+Note that the script will move the converted file to ~swsvalde/umdata/EXP.
 
 
 
