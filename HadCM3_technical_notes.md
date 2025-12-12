@@ -34,6 +34,8 @@ Users should instead go to [HadCM3_user_notes](HadCM3_user_notes.md).
 
 [Cloud services](Cloud)
 
+[Transferring to Bluepebble](Transferring_expt_bp)
+
 [BRIDGE System Administration](BRIDGESysAdmin)
 
 [IT Services System Administration](SysAdmin)

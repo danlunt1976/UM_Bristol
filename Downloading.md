@@ -21,17 +21,17 @@ ${swsvalde_root}/bin/convert_file$suffix -file $file1 -expt $expt -type $type -l
 `$suffix` can be set to is ggpjv for testing purposes.  
 `${swsvalde_root}` is ~swsvalde.  
 `$file1` is the name of the file to be converted  
-`$expt` is the experiment name  
+`$expt` is the experiment name  (this will have a 1 or 2 etc. at the end if this is part of a series)
 `$type` is the type, e.g. pa, pb, pc etc.  
 `$list_runs` is y or n depending on whether the list_runs entry in ~swsvalde/ummodel/scripts/html_list/jobs exists.  
 `$check` is y or n, usually n I think in the automatic downloads, but default is y in the convert_file script I think.  
-`$famous_rename` should be y if using famous, default is "" in the convert_file script I think.
-
+`$famous_rename` should be y if using famous, default is "" in the convert_file script I thin
 For example, when doing some of the benchmarking for ib3, I ran:
 ```
-~swsvalde/bin/convert_file -file xqhgda#pd000002150jn+ -expt xqhgd -type pd -list_runs y -check y -famous_rename n
+~swsvalde/bin/convert_file -file xqhgba#pd000001850dc+ -expt xqhgb1 -type pd -list_runs y -check y -famous_rename n
 ```
-Note that the script will move the converted file to ~swsvalde/umdata/EXP.
+Note that the script will move the converted file to ~swsvalde/umdata/${expt}.
+
 
 
 
