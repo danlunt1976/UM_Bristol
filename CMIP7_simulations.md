@@ -73,11 +73,20 @@ To be notice, other jobs related to solar forcing need to be run later, includin
 
 ### Test on HadCM3
 
-| experiment | description                             | running length | source |
-| ---------- | --------------------------------------- | -------------- | ------ |
-| **xqgtz**  | copy from xqgra, Tuning HadCM3          | /              | xqgra  |
-| **xqgta**  | Equilibrium TRIFFID, under preind       | 40             | xqgtz  |
-| **xqgtb**  | Dynamic TRIFFID, under preind           | 200            | xqgta  |
-| **xqgtc**  | Emission-driven test, cmip6             | 165            | xqgtd  |
-| **xqgtd**  | Emission-driven test, without emissions | 173            | xqgtz  |
-| **xqgte**  | Emission-driven test, cmip7             | 173            | xqgtd  |
+| experiment | description                                                                    | running length | source |
+| ---------- | ------------------------------------------------------------------------------ | -------------- | ------ |
+| **xqgtz**  | copy from xqgra, Tuning HadCM3                                                 | /              | xqgra  |
+| **xqgta**  | Equilibrium TRIFFID, under preind                                              | 40             | xqgtz  |
+| **xqgtb**  | Spin-up, Dynamic TRIFFID, under preind (varying solar, volcanic, and land-use) | 200            | xqgta  |
+| **xqgtc**  | Spin-up, Dynamic TRIFFID, under preind (fixed solar, volcanic, and land-use)   | 165            | xqgtd  |
+| **xqgtd**  | Emission-driven test, without emissions                                        | 173            | xqgtz  |
+| **xqgte**  | Emission-driven test, cmip7                                                    | 173            | xqgtd  |
+| **xqgth**  | copy from xqgtb, add GHGs                                                      | 173            | xqgtb  |
+
+However, spun-up results for the carbon cycle are not satisfying. We modified some mods (mainly carbon cycle mods) and redo the spin-up.
+
+
+| experiment | description                                                         | running length | source |
+| ---------- | ------------------------------------------------------------------- | -------------- | ------ |
+| **xqhua(running)**      | updated mods, preindustrial Equilibrium TRIFFID spin-up             | 40             | xqgta  |
+| **xqhuc(working)**      | updated mods, preindustrial Dynamic TRIFFID spin-up (fixed forcing) | 200            | xqgtc  |
