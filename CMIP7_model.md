@@ -148,7 +148,7 @@ We figured out this is primarily due to the soil parameters configuration: an up
 
 - Replace the land carbon cycle mod, use:
 
-   `/user/home/tw23150/mods/znamelist_hadcm3m21_land_cc_v2.mod`
+   `/user/home/nd20983/um_updates/znamelist_hadcm3m21_land_cc_v2.mod`
 
 - Some removed mods:
   
