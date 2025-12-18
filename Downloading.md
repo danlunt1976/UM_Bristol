@@ -25,7 +25,8 @@ ${swsvalde_root}/bin/convert_file$suffix -file $file1 -expt $expt -type $type -l
 `$type` is the type, e.g. pa, pb, pc etc.  
 `$list_runs` is y or n depending on whether the list_runs entry in ~swsvalde/ummodel/scripts/html_list/jobs exists.  
 `$check` is y or n, usually n I think in the automatic downloads, but default is y in the convert_file script I think.  
-`$famous_rename` should be y if using famous, default is "" in the convert_file script I thin
+`$famous_rename` should be y if using famous, default is "" in the convert_file script I think
+
 For example, when doing some of the benchmarking for ib3, I ran:
 ```
 ~swsvalde/bin/convert_file -file xqhgba#pd000001850dc+ -expt xqhgb1 -type pd -list_runs y -check y -famous_rename n
