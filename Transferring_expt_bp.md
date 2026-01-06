@@ -80,3 +80,16 @@ forrtl: severe (24): end-of-file during read, unit 5, file /user/home/tw23150/DU
 ```
 
 Then contact Paul who can implement a fix for you in clustersubmit
+
+
+### 5. Set up automatic downloads
+
+Your data in umdata may be stored on bluepebble itself, or it may be on one of the BRIDGE machines, e.g. silurian.
+
+* Downloading to BRIDGE machines:
+You will need to ensure that you have passwordless key-pairs set up between the BRIDGE machines and bluepebble.  i.e., if you ssh from the BRIDGE machines to bluepebble, you do not need to type in a password or passphrase.  You will need to have a ftp_sh.bp14.params file in your bin directory which contains the list of experiments.  You will also ned to ensure that the /home/bridge/swsvalde/bin/valid_umusers file allows downloads from bp1 and to the BRIDGE machines.  The automatic downloads should then start automatically!
+
+* Downloading to bluepebble itself
+Instructions to follow....
+
+
