@@ -186,7 +186,7 @@ Here is a table including the simulations listed above, plus some other (unpubli
 | tex[p-q]          | 02                 | Foster          | varying        | Vn1b                | ?                | PJV    | Valdes et al (2021)   | Judd et al (2024), Malanoski et al (2024) [Model 3?] |
 | teyd,teyd1        | 03,03a             | Foster          | varying        | Vn2a                | texp             | PJV    |                       |                                                      |
 | teye              | 04                 | Foster          | varying        | Vn2b                | teyd1            | PJV    |                       | Malanoski et al (2024) [Model 2]                     |
-| tfgw              | n/a                | Foster          | varying        | Vn2c                | teye             | DJL    |                       | Judd et al (2024)                                    |
+| tfgw              | scotese_06         | Foster          | varying        | Vn2c                | teye             | DJL    |                       | Judd et al (2024)                                    |
 | tfja              | n/a                | Foster/Rae      | varying        | Vn2d                | tfgw             | DJL    |                       |                                                      |
 | tfke              | scotese_07         | Foster/Rae      | varying        | Vn2d                | tfja             | DJL    | Lunt et al (in prep)  | Judd et al (2024), Malanoski et al (2024) [Model 1]  |
 | tfks              | scotese_08         | Scotese         | varying        | Vn2d                | tfke             | DJL    | Lunt et al (in prep)  | Judd et al (2024)                                    |
