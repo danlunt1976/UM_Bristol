@@ -1,14 +1,13 @@
 [Back to HadCM3_technical_notes](HadCM3_technical_notes.md)
 
+
+# Downloads
+
 * There is a BRIDGE-wide crontab that cycles through users.  This needs root access. Could move to a system where all users have their own crontab.
 
 * tidy_expt does not have the same checks as ftp_master/control, and can sometimes delete files.
 
 * pi->pt and pg->pl is done during downloads, but not after tidy_expt.  Webpage processing will do this final step, or it can be done manually.
-
-* precipevap folder is only used for .monthly files and for sed fless over land/ocean -> no global evap climatology field is produced.
-
-* wetland and biome post-processing id sone on oligocene in a separate queue - see in ummodel/scripts/sed2.dat.
 
 * search for 'ggpjv' in scripts as sometimes functionality only runs for user ggpjv.
 
@@ -32,8 +31,19 @@ For example, when doing some of the benchmarking for ib3, I ran:
 ```
 Note that the script will move the converted file to ~swsvalde/umdata/${expt}.
 
+# Webpage processing
 
+* precipevap folder is only used for .monthly files and for sed filss over land/ocean -> no global evap climatology field is produced.
 
+* wetland and biome post-processing id sone on oligocene in a separate queue - see in ummodel/scripts/sed2.dat.
+
+* uid: `id -u` or `id -u [username]`.  ggdjl = 50892.  ggdagw = 57295.  swsvalde (new) = 18541731.  paleo = 12825.  To see the uid of a file's owner: `stat -c '%u' yourfile.txt` or `ls -ln`
+
+* ~swsvalde/scripts/make_all is the main wrapper.  This calls a number of functions that are in make_all.functions  for example, one of these functions is run_run_aver.  This is a wrapper for the run_aver script.
+
+* The run_aver script is called from run_run_aver with the following options: `${script_home}/run_aver -expt $expt -types $types`, e.g. `~swsvalde/ummodel/scripts/run_aver -expt xqhgb2 -types pc,pd,pf,pg`
+* In run_aver, error message not about not making directory should cause fail.  Also, '>' should be '>>'  to not overwrite previous
+* 
 
 
 
