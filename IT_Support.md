@@ -45,7 +45,7 @@ All requests for support should go through one of three routes:
 | ----- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------------------------- | --------- |
 | (1)   | Finish installation of convsh and xconv on new machines, either hacked version or full-build version.                            | DG                         | 5/12/2025                  | Y         |
 | (2)   | Make a "paleo2.bris.ac.uk" domain which can be used for testing users' webpages and view-only of ~swsvalde/ummodel               | DG                         | 31/1/2026                  |           |
-| (3)   | Ask paleo users to empty silurian, or accept risk of losing data.                                                                | DL                         | 7/1/2026                   |           |
+| (3)   | Ask paleo users to empty silurian, or accept risk of losing data.                                                                | DL                         | 7/1/2026                   | Y         |
 | (4a)  | Convert silurian to Rocky 8 (need to install temporary disks for RAID metadata)                                                  | DG                         | 28/2/2026                  |           |
 | (4b)  | Move all paleo users home directories from old-eocene to eocene2                                                                 | all paleo users            | 9/2/2026                   |           |
 | (4c)  | Move ~swsvalde from old-eocene to eoecne2                                                                                        | PJV                        | 9/2/2026                   |           |
