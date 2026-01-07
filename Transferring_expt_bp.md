@@ -66,7 +66,7 @@ Here I am copying a directory called `mods` from my home directory on BC4. Do th
 
 The _clustersubmit_ script should work as before. If you have copied Paul’s clustersubmit.config file then it should default to using the right queue and partition etc. But you can give options for all of these. The key differences from BC4 are
 
-* use `-q compute`, instead of `-q cpu` or `-q veryshort`
+* use `-q compute`, instead of `-q cpu` or `-q veryshort` (`sinfo -s` lists the available queues and their walltimes etc.)
 * use 24 not 28 cores because the nodes have just 24 cores per node. So `-p 6x4` instead of `-p 7x4`
 * machine name is: `-r bp14` (instead of `-r bc4`)
 
