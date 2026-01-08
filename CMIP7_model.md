@@ -154,6 +154,7 @@ We figured out this is primarily due to the soil parameters configuration: an up
   
   - $PV_UPDATES/change_microphysics_ccn_and_er01
     - This is for the clouds params, as not being compatible with convections, not using.
+    - Updates: we did not include convection scheme here, so this one should be kept.
   
   - $PV_UPDATES/gnuml45.mod
     - This is originally written for FAMOUS. Turned off now, Alex assumes it should be needed.
@@ -166,6 +167,9 @@ We figured out this is primarily due to the soil parameters configuration: an up
   
 - Mods we need:
 
+  - $PV_UPDATES/change_microphysics_ccn_and_er01
+    - We need this one.
+
   - ~tw23150/mods/co2_coupling.mf77
     - Definitely needed.
   
@@ -177,6 +181,7 @@ We figured out this is primarily due to the soil parameters configuration: an up
   
   - ~tw23150/mods/anth_disturb.mf77
     - Needed.
+    - Updates: this is not needed.
   
   - ~tw23150/mods/disturb_grid_fix.mf77
     - Needed when using time-varying land-use ancil. Caution: it will break down when land-use is not time-varying.
@@ -206,7 +211,7 @@ We figured out this is primarily due to the soil parameters configuration: an up
   - $MODS_SULPC/sulpc_re4_5to4_4
   - $MODS_SULPC/rnout3d_4.5
 
-2. Post-processing scripts
+1. Post-processing scripts
 
 We now have the following scripts:
 
@@ -218,6 +223,7 @@ We now have the following scripts:
   - Define ocean remineralisation, will be useful, need to double check there is no overlapping.
 - ~ggpjv/scripts/smcext_ver_opti_02mix_deglac02
   - Define convection params.
+  - As it is not paleo, we do not keep this.
 - ~swsvalde/scripts/UTOPIA_4p5_extra.sh
   - change tracer limits, definitely needed.
 - ~swsvalde/scripts/add_standard_variables
