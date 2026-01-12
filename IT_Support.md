@@ -20,6 +20,7 @@ All requests for support should go through one of three routes:
 ## Faults
 
 * IDL licence issues
+* subfigure in latex
 
 ## Day-to-day user support
 
