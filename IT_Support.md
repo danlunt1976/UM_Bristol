@@ -19,7 +19,7 @@ All requests for support should go through one of three routes:
 
 ## Faults
 
-* Logon issues: Unable to login to Silurian, Miocene, etc. (can only access Eocene)
+* IDL licence issues
 
 ## Day-to-day user support
 
