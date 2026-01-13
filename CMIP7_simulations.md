@@ -86,7 +86,17 @@ To be notice, other jobs related to solar forcing need to be run later, includin
 However, spun-up results for the carbon cycle are not satisfying. We modified some mods (mainly carbon cycle mods) and redo the spin-up.
 
 
-| experiment | description                                                         | running length | source |
-| ---------- | ------------------------------------------------------------------- | -------------- | ------ |
-| **xqhua(running)**      | updated mods, preindustrial Equilibrium TRIFFID spin-up             | 40             | xqgta  |
-| **xqhuc(working)**      | updated mods, preindustrial Dynamic TRIFFID spin-up (fixed forcing) | 200            | xqgtc  |
+| experiment | description                                                         | running length | source         |
+| ---------- | ------------------------------------------------------------------- | -------------- | -------------- |
+| **xqhua**  | updated mods, preindustrial Equilibrium TRIFFID spin-up             | 40             | xqgta          |
+| **xqhuc**  | updated mods, preindustrial Dynamic TRIFFID spin-up (fixed forcing) | 200            | xqgtc          |
+| xqhud      | updated mods, Emission + GHGs                                       | 5              | xqhue          |
+| xqhue      | updated mods, CMIP7 Emission (calibrated based CEDS obs)            | 5              | /              |
+| xqhuf      | updated mods, Emission + Vol                                        | 5              | xqhue          |
+| xqhuh      | updated mods, GHGs                                                  | 5              | xqhuc          |
+| xqhui      | updated mods, Test soil params to UM default, V crit off            | 5              | xqhuc          |
+| xqhuj      | Eqbm run, test plant stress (off)                                   | 40             | xqhua          |
+| xqhuk      | Eqbm run, test plant stress (off) and CCN (on)                      | 40             | xqhua          |
+| xqhul      | CMIP7 Emission + GHGs + LU + Solar + Vol                            | 173            | xqhud          |
+| xqhuu      | check stash                                                         | /              | xqbtn <- xqbmg |
+| xqhuz      | Tuning version of HadCM3C                                           | /              | xqhra          |
