@@ -1,5 +1,6 @@
 
-This page is for documenting the current BC4/BP workflow, and the BC5 workflow, in particular the associated data-flows.
+This page is for documenting the current BC4/BP workflow, and the BC5 workflow, in particular the associated data-flows.  
+**The current issues that are blocking full deployment of the model workflow are in bold.**  
 
 
 **pre-HPC stage:**  
