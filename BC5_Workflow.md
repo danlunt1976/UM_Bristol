@@ -7,7 +7,7 @@ This page is for documenting the current BC4/BP workflow, and the BC5 workflow, 
 2) Input file creation (boundary conditions, mods) 
 
 
-**HPC stage:** 
+**HPC stage:**
 3) **Code base** and user run scripts on HPC machine (could use github) 
 4) Compile (head node) - link to archer because of national umui infrastructure 
 5) Run simulations. 
@@ -19,7 +19,7 @@ This page is for documenting the current BC4/BP workflow, and the BC5 workflow, 
 7) **script/fortran-based post-processing suite and data archiving (currently be done at post-HPC stage)** 
 
 
-post-HPC stage: 
+post-HPC stage:
 7) **script/fortran-based post-processing suite and data archiving (could be done at HPC stage)** 
 8) analysis 
 9) paper-writing 
