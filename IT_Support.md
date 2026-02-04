@@ -19,17 +19,17 @@ All requests for support should go through one of three routes:
 
 ## Faults
 
-* IDL licence issues
+* ~IDL licence issues~
 * subfigure in latex on miocene
 * pdfcrop on miocene
 
 ## Day-to-day user support
 
-* convsh/xconv install on new machines
+* ~convsh/xconv install on new machines~
 * IDL standard libraries in one place.
-* warranty renewal for all Lenovo machines.
+* warranty renewal for all Lenovo machines.  Dan put in request to faculty.  David to explore 3rd-party warranty.
 * deepmip/umbrella from wordpress to campuspress?  pros/cons...?
-* holocene4 disk has failed - look at options for warranty/re-raiding etc.
+* ~holocene4 disk has failed - look at options for warranty/re-raiding etc.  Fixed.~
 * freeze wiki to read-only: [http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/](http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/)
 
 ## Long-term support
