@@ -30,6 +30,7 @@ All requests for support should go through one of three routes:
 * warranty renewal for all Lenovo machines.
 * deepmip/umbrella from wordpress to campuspress?  pros/cons...?
 * holocene4 disk has failed - look at options for warranty/re-raiding etc.
+* freeze wiki to read-only: [http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/]
 
 ## Long-term support
 
