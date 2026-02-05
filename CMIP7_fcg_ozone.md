@@ -47,7 +47,7 @@ So actually there are 2 datasets useful:
 
 ### How to process data
 
-#### step1: regrid to HadCM3B long/lat grid 
+#### Step1: regrid to HadCM3B long/lat grid 
 - target: convert to HadCM3B longitude and latitude resolution
 - input file: `vmro3*.nc`
 - input variable: `vmro3(time, plev=66, lat=96, lon=144)`
@@ -67,8 +67,7 @@ So actually there are 2 datasets useful:
 `cdo sinfo input.nc`     
 `cdo showlevel input.nc`     
 
-**Steps**: 
-- define lat,lon:
+##### Step 1.1 define lat, lon
 `nano grid_73x96.txt`
 ```grid_73x96.txt
 gridtype  = lonlat
@@ -80,18 +79,18 @@ yfirst    = 90
 yinc      = -2.5
 ```
 
-- regrid
+##### Step1.2: regrid
 ```shell
 cdo -selname,vmro3 -remapbil,grid_73x96.txt input.nc output_73x96.nc
 ```
-- vmro3 is intensive variable, so choose **bilinear** method to convert lat and lon.  
+vmro3 is intensive variable, so choose **bilinear** method to convert lat and lon.  
 
-#### step2: interpolate to hybrid levels
+#### Step2: interpolate to hybrid levels
 
 ##### Step2.1: prepare surface pressure data
-In theory, surface pressure data should be the actual surface pressure on a month-by-month basis throughout the period 1850-2013. However, for simplicity, we will **use the climatological averages**. This is also better as it makes the future scenarios straightforward too.
+In theory, surface pressure data should be the actual values on a month-by-month basis throughout the period 1850-2013. However, for simplicity, we will **use the climatological averages**. This is also better as it makes the future scenarios straightforward too.
 
-- target: merge surface pressure data from 12 single-month files to 1 file of 12 months
+- target: merge surface pressure data from 12 single-month files to 1 file with 12 months
 - input file: `Siliruan:swsvalde/ummodel/data/obsel/climate/obsela.pdcljan.nc` (and similarly for other months)
 - input variable: `p_mm_srf(t=1, surface=1, latitude=73, longitude=96)` (Pa)
 - output file: `Siliruan:/home/bridge/mf22281/CMIP7/CMIP7-Ozone/ps_12mon.nc`
@@ -148,7 +147,7 @@ hybrid_eta_x1000 = (/ \
 ```
 **Reverse `hybrid_eta_x1000` to top->bottom order (`hybrid_eta_x1000=(::-1)`)**
 
-#### step3: calculate zonal average
+#### Step3: calculate zonal average
 - input file: `vmro3*_73x96x19hybrid.nc`
 - input variable: `vmro3(time, hybrid_eta_x1000=19, lat=73, lon=96)`
 - output file: `vmro3*73x96x19hybrid_zonmean.nc`
@@ -168,7 +167,7 @@ cdo -zonmean \
 ```
 
 
-#### step4: mergetime
+#### Step4: mergetime
 merge 4 historical transient files into one.
 ```
 cdo -O mergetime \
@@ -181,7 +180,7 @@ cdo -O mergetime \
 `mergetime` concatenates along `time` and will sort by time if needed.
 script: `Siliruan:/home/bridge/mf22281/CMIP7/CMIP7-Ozone/mergetime.sh`
 
-The original file size is too large. So prefer conversion first, and mergetime later.
+The original file size is too large. So prefer convert before merge them into one single file.
 
 ### How to implement the forcing into HadCM3
 
