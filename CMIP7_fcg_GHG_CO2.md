@@ -153,7 +153,65 @@ For more details of how the Community Emissions Data System (CEDS) produced emis
 
 ### 2.2 How to process data
 
-Emissions are provided at monthly resolution, on a 0.5 degrer grid, with 50-years per data file. Files are in netcdf4 v4 (HDFv5) format with CF-compliant and ESGF-compliant metadata.
+Emissions are provided at monthly resolution, on a 0.5*0.5 degree grid, with 50-years per data file. Files are in netcdf4 v4 (HDFv5) format with CF-compliant and ESGF-compliant metadata.
+
+**Steps to produce emission ancils:**
+
+1. Download emissions files, we only need anthro files (surface emissions) and AIR files (aircraft emissions).
+
+    Raw Data is stored in: /export/silurian/array-01/nd20983/cmip7_forcings
+
+2. Produce annual data from annual means -> map to hadcm3 resolution -> concategate time segments -> sum up across sectors/altitudes -> combine anthro and AIR emissions.
+
+    Cdo might be good handling these jobs.
+
+3. Add metadata. Cdo lose some metadata so this is not in standard um formats. Could use iris in python. Output is pp file.
+4. Convert pp to nc file, use um2nc.
+5. (optional): if nc file is not recognised by xancil due to unspecified dimension, rename it using ncrename and fix attributes using ncatted.
+6. Use xancil to produce new ancil file from nc file. (Note that produced pp might not work well with xconv on BRIDGE, while it might be fine on bc4).
+    
+    CMIP7 annual emission file:
+    bc4:/user/home/nd20983/ancil/cmip7/co2_emi_1750_2023_ann
+
+More details:
+
+Please use raw files in the format of '04-18', which is the latest version.
+
+Annual data from raw files in: `eocene:/export/silurian/array-01/nd20983/cmip7_forcings/annual_output`
+
+Annual cat file:
+
+`CO2-em-anthro-anthro_annual_1750-2050.nc`
+
+`CO2-em-AIR-anthro_annual_1750-2050.nc`
+
+Combined emission:
+
+`CO2-em-total_annual_1750-2050.nc`
+
+In HadCM3 res:
+
+`CO2_emi_cmip7_1750_2050_hadcm3_ann.nc`
+
+
+**Data evaluation**
+
+As emission raw data are quite big with high resolution, the processing is slow and error-prone. To avoid possible mistakes, we need proper evaluations on these data.
+
+Internal evaluation:
+
+Evaluated by Yousheng. 
+
+1. Raw data are moved to bc4 and checked in python3.12 env, iris is heavily used. The carbon release estimated for 2023 is ~8 PtG C.
+2. Raw data are processed on bridge machines using cdo(1.19.2). Following steps documented above, global means across tmp files were checked and they are consistent. The carbon release estimated for 2023 is ~10 PtG C.
+3. Then we repeat step01 and found some calculation bugs.
+4. We believe the processing using cdo is robust and so for the ancils.
+5. Also, ~10 PtG C is equivalent to observations – anthropogenic and cement emissions for 2023 are ~10.2 PtG C.
+
+External evaluation:
+
+We might need another volunteer to do the calculation independently.
+
 
 [back to Contents](#contents)
 
@@ -406,12 +464,137 @@ This is a procursor simulation configured for CMIP7 runs. We wanted to start sim
 
 Several conflicts were resolved lately, and the new configuration sits in `xqgtb` (hard copy (strictly speaking, we did change the pathname for dumps, but they look for the same dump files) from `xqgra`). Issues still exist.
 
+> `xqgra`
+> This is the tuning version of HadCM3BC. Gone through several updates.
+> 
+> - Reconfiguration problem
+> 
+> There seem to be some conflicts between different mods so that the model could not get properly reconfigured. Now it is solved and mods have been updated.
+> 
+> - MPI processing problem
+> 
+> After the reconfiguration, the simulation could not actually run under the normal decomposition (-g 7x4), it works on fewer processors (i.e., 1x1, or 1x24).All forcings have been cleanly tested, disturbance seems to be wrongly set up. The given file has a size of 110M (very likely monthly land-use ancil), but had been 'configured' rather than 'updated'. This lead to the decomposition issue. Now the land-use is being updated every 10 days, and the run works with `-g 7x4`.
+
 Later on, we changed the mods for model scripts. Following `xqgra`, we replaced several mods except for volcanic forcing and CO<sub>2</sub> forcing, and `params_in_namelist_hadcm3_v3a.mod`. Failed to run, seems to be related to missing of forcings. Then we added in volcanic and CO<sub>2</sub>.
 
 ### `xqgtb`
 
 Hard copy from `xqgra` (latest version on 03Oct2025). An executable was successfully compiled. But it sticked on the node. Paul had his run going after about a day (not sure how). Then we tried to submit using fewer cores, 1x1 will definitely work but running at ~5 model years per day. 1x24 works at ~30 model years per day (rough guess).
 
+Now a 'standard' start of high-reso CMIP7 simulations. We've updated the running length and starting year.
+
+Accoording to testing results from `xqgra`, we made similar changes to `xqgtb`: select the land-use as 'updated' every 10 days. We also noticed `xqgra` recently added the clouds parameters back `$PV_UPDATES/change_microphysics_ccn_and_er01`, but we will leave this unchanged for now.
+
 ### `xqgtc`
 
-This is a copy of `xqgtb`, using existing execs and changed running targets. Working.
+This is a copy of `xqgtb`, trying to configure it as an emission-driven run.
+
+- Missing namelists
+
+  As the normal configuration from conc-driven to emissions-driven, we need to remove the land-cc mod `PV_UPDATES/znamelist_hadcm3m21_land_cc.mod`, and also remove the post-processing script `~ggpjv/scripts/land_cc`. This likely caused the namelist issue.
+
+  Solutions:
+
+  This is fine when we do not need to purturb the land carbon cycle. Since we want to create a single executable for CMIP7 runs including PPE (parameter purturbation experiments), we should tick this on.
+
+  Also, we ticked off the clouds parameters `$PV_UPDATES/change_microphysics_ccn_and_er01`, which seems to be unrelated to this problem.
+
+- Can't pass CO<sub>2</sub>
+  
+  We got Error Code '27' – 'Message: INIT_A2O: wrong grids for CO2 passing', relating to a CO<sub>2</sub> grids problem.
+
+  This is a hardwired error in `INIT_A2O.f` where this error is thrown out as long as the carbon interaction mode is on. There must be a way to get around this as we did emission-driven runs successfully.
+
+  Okay, by comparing the compiled subroutine `inita2o1.f` from HadCM3 and HadCM3L (emissions-driven), we found the following differences (`diff xqgtd xqchw`):
+
+  ```
+  146,147d145
+  < C Constant arrays needed for Atmosphere-Ocean coupling                     ARGAOCPL.3
+  <      & XUO,XTO,YUO,YTO,XTA,XUA,YTA,YUA,                                    ARGAOCPL.4
+  2041,2059d2038
+  < ! History:                                                                 GRR0F402.77
+  < ! Version  Date    Comment                                                 GRR0F402.78
+  < !  4.2  11/10/96  Enable atmos-ocean coupling for MPP.                     GRR0F402.79
+  < !                 (1): Coupled fields. Change to 'global' sizes            GRR0F402.80
+  < !                 instead of local. R.Rawlins                              GRR0F402.81
+  < C                                                                          TYPAOCPL.3
+  < C     Gridline coordinates for interpolation and area-averaging            TYPAOCPL.4
+  < C     between atmosphere and ocean grids.                                  TYPAOCPL.5
+  < C     Values are set in INIT_A2O from dump header information.             TYPAOCPL.6
+  < C                                                                          TYPAOCPL.7
+  <       REAL                                                                 TYPAOCPL.8
+  <      & XUO(0:AOCPL_IMT)         ! Ocean UV longitude coordinates           GRR0F402.82
+  <      &,XTO(AOCPL_IMT)           ! Ocean TS longitude coordinates           GRR0F402.83
+  <      &,YUO(0:AOCPL_JMT)         ! Ocean UV latitude coordinates            GRR0F402.84
+  <      &,YTO(AOCPL_JMT)           ! Ocean TS latitude coordinates            GRR0F402.85
+  <      &,XTA(AOCPL_ROW_LENGTH+1)  ! Atmosphere TP longitude coordinates      GRR0F402.86
+  <      &,XUA(0:AOCPL_ROW_LENGTH)  ! Atmosphere UV longitude coordinates      GRR0F402.87
+  <      &,YTA(AOCPL_P_ROWS)        ! Atmosphere TP latitude coordinates       GRR0F402.88
+  <      &,YUA(0:AOCPL_P_ROWS)      ! Atmosphere UV latitude coordinates       GRR0F402.89
+  3371,3432d3349
+  < C                                                                          INITA2O1.516
+  < CL----------------------------------------------------------------------   INITA2O1.517
+  < CL    3. Calculate gridline coordinates on all grids using dump            INITA2O1.518
+  < CL    information on grid spacing and position                             INITA2O1.519
+  < C                                                                          INITA2O1.520
+  <       IF (GLOBAL_OCEAN.AND..NOT.CYCLIC_OCEAN) THEN                         INITA2O1.521
+  <         ICODE=24                                                           INITA2O1.522
+  <         CMESSAGE='INIT_A2O: A coupled global ocean must be cyclic'         INITA2O1.523
+  <         GOTO 999                                                           INITA2O1.524
+  <       ELSEIF (.NOT.GLOBAL_OCEAN.AND.CYCLIC_OCEAN) THEN                     INITA2O1.525
+  <         ICODE=25                                                           INITA2O1.526
+  <         CMESSAGE='INIT_A2O: '                                              INITA2O1.527
+  <      &  //'A coupled limited-area ocean must not be cyclic'                INITA2O1.528
+  <         GOTO 999                                                           INITA2O1.529
+  <       ENDIF                                                                INITA2O1.530
+  <       IF (A_REALHD(5).NE.O_REALHD(5).OR.A_REALHD(6).NE.O_REALHD(6))        INITA2O1.531
+  <      &THEN                                                                 INITA2O1.532
+  <         ICODE=26                                                           INITA2O1.533
+  <         CMESSAGE='INIT_A2O: '                                              INITA2O1.534
+  <      &  //'Coupled atmosphere and ocean must have coincident poles'        INITA2O1.535
+  <         GOTO 999                                                           INITA2O1.536
+  <       ENDIF                                                                INITA2O1.537
+  <       IF (L_CO2_INTERACTIVE) THEN                                          CCN1F405.77
+  <         ICODE=27                                                           CCN1F405.78
+  <         CMESSAGE = "INIT_A2O: wrong grids for CO2 passing"                 CCN1F405.79
+  <       ENDIF                                                                CCN1F405.80
+  <       IF (L_CO2_INTERACTIVE.AND..NOT.CYCLIC_OCEAN) THEN                    CCN1F405.81
+  <         ICODE=28                                                           CCN1F405.82
+  <         CMESSAGE = "INIT_A2O: CO2 coupling requires a cyclic ocean"        CCN1F405.83
+  <       ENDIF                                                                CCN1F405.84
+  < C *** The global alternative can be removed when we are sure that the      INITA2O1.543
+  < C *** ocean dump headers have been correctly created                       INITA2O1.544
+  <       IF (GLOBAL_OCEAN) THEN                                               INITA2O1.545
+  <         XUO(1)=O_REALHD(4)+0.5*O_REALHD(1)                                 INITA2O1.546
+  <       ELSE                                                                 INITA2O1.547
+  <         XUO(1)=O_REALHD(8)                                                 INITA2O1.548
+  <       ENDIF                                                                INITA2O1.549
+  <       XUO(0)=XUO(1)-O_COLDEPC(1)                                           INITA2O1.550
+  <       XTO(1)=XUO(1)-0.5*O_COLDEPC(1)                                       INITA2O1.551
+  <       DO I=2,AOCPL_IMT                                                     GRR0F403.258
+  <         XUO(I)=XUO(I-1)+O_COLDEPC(I)                                       INITA2O1.553
+  <         XTO(I)=XTO(I-1)+0.5*(O_COLDEPC(I-1)+O_COLDEPC(I))                  INITA2O1.554
+  <       ENDDO                                                                INITA2O1.555
+  <       YUO(1)=O_REALHD(7)                                                   INITA2O1.556
+  <       YUO(0)=YUO(1)-O_ROWDEPC(1)                                           INITA2O1.557
+  <       YTO(1)=YUO(1)-0.5*O_ROWDEPC(1)                                       INITA2O1.558
+  <       DO J=2,AOCPL_JMT                                                     GRR0F403.259
+  <         YUO(J)=YUO(J-1)+O_ROWDEPC(J)                                       INITA2O1.560
+  <         YTO(J)=YTO(J-1)+0.5*(O_ROWDEPC(J-1)+O_ROWDEPC(J))                  INITA2O1.561
+  <       ENDDO                                                                INITA2O1.562
+  <       XUA(0)=A_REALHD(4)-0.5*A_REALHD(1)                                   INITA2O1.563
+  <       DO I=1,AOCPL_ROW_LENGTH                                              GRR0F403.260
+  <         XTA(I)=A_REALHD(4)+(I-1)*A_REALHD(1)                               INITA2O1.565
+  <         XUA(I)=A_REALHD(4)+(I-0.5)*A_REALHD(1)                             INITA2O1.566
+  <       ENDDO                                                                INITA2O1.567
+  <       XTA(AOCPL_ROW_LENGTH+1)=A_REALHD(4)+AOCPL_ROW_LENGTH*A_REALHD(1)     GRR0F403.261
+  <       DO J=1,AOCPL_P_ROWS                                                  GRR0F403.262
+  <         YTA(J)=A_REALHD(3)-(J-1)*A_REALHD(2)                               INITA2O1.570
+  <       ENDDO                                                                INITA2O1.571
+  <       DO J=0,AOCPL_P_ROWS                                                  GRR0F403.263
+  <         YUA(J)=A_REALHD(3)-(J-0.5)*A_REALHD(2)                             INITA2O1.573
+  <       ENDDO                                                                INITA2O1.574
+  ```
+
+  Solutions: bc4:/home/bridge/tw23150/mods/CO2_coupling.mf77
+

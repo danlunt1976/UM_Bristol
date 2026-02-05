@@ -87,7 +87,8 @@ where
 * RES is the temporal resolution.  For most variables this is "monthly".  For some it is "annual".
 Valid examples for tfkea for \[EXP].\[VAR] include (but are not limited to):
 * temp_mm_1_5m.monthly = 2m air temperature \[K]
-* precip_mm_srf.monthly = Precipitation \[kg/m2/2]
+* precip_mm_srf.monthly = Precipitation \[kg/m2/s]
+* totalEvap_mm_srf.monthly = Evpaoration \[kg/m2/s]
 * downSol_mm_TOA.monthly = Incoming solar radiation at the top of the atmosphere \[W/m2\]
 * upSol_mm_s3_TOA.monthly = Outgoing solar radiation at the top of the atmosphere \[W/m2\]
 * olr_mm_s3_TOA.monthly = Outgoing long wave radiation at the top of the atmosphere \[W/m2] 
@@ -141,7 +142,10 @@ Valdes et al (2021) simulations = [https://www.paleo.bristol.ac.uk/~ggdjl/climat
 
 tfke, tfks = [https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfke.dat](https://www.paleo.bristol.ac.uk/~ggdjl/climate_data/solar_all_tfke.dat)
 
+# Rotating proxy locations
 
+In the Phanerozoic, we need to rotate our modern proxy sites back to their paleo latitudes and longitudes, in a way that is consistent with the rotations in the paleogeography that was input to the climate model. To do this, we can make use of a nice web-based rotation utility that is produced by gplates. The rotations used in the model is called 'PALEOMAP'. For example, try: [https://gws.gplates.org/reconstruct/reconstruct_points/?points=32.2,48.9&time=66&model=PALEOMAP](https://gws.gplates.org/reconstruct/reconstruct_points/?points=32.2,48.9&time=66&model=PALEOMAP) for 66Ma and longitude 32.2, latitude 48.8
+This gives the paleo longitude and latitude, in this case 26.7519 and 41.8311 .
 
 # References
 
@@ -182,7 +186,7 @@ Here is a table including the simulations listed above, plus some other (unpubli
 | tex[p-q]          | 02                 | Foster          | varying        | Vn1b                | ?                | PJV    | Valdes et al (2021)   | Judd et al (2024), Malanoski et al (2024) [Model 3?] |
 | teyd,teyd1        | 03,03a             | Foster          | varying        | Vn2a                | texp             | PJV    |                       |                                                      |
 | teye              | 04                 | Foster          | varying        | Vn2b                | teyd1            | PJV    |                       | Malanoski et al (2024) [Model 2]                     |
-| tfgw              | n/a                | Foster          | varying        | Vn2c                | teye             | DJL    |                       | Judd et al (2024)                                    |
+| tfgw              | scotese_06         | Foster          | varying        | Vn2c                | teye             | DJL    |                       | Judd et al (2024)                                    |
 | tfja              | n/a                | Foster/Rae      | varying        | Vn2d                | tfgw             | DJL    |                       |                                                      |
 | tfke              | scotese_07         | Foster/Rae      | varying        | Vn2d                | tfja             | DJL    | Lunt et al (in prep)  | Judd et al (2024), Malanoski et al (2024) [Model 1]  |
 | tfks              | scotese_08         | Scotese         | varying        | Vn2d                | tfke             | DJL    | Lunt et al (in prep)  | Judd et al (2024)                                    |
