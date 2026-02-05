@@ -167,8 +167,7 @@ cdo -zonmean \
 ```
 
 
-#### Step4: mergetime
-merge 4 historical transient files into one.
+#### Step4: merge 4 historical transient files into one
 ```
 cdo -O mergetime \
   input_185001-189912_72x96x19hybrid_zonmean.nc \
