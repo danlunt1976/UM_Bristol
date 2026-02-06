@@ -230,5 +230,5 @@ Here is documentation for some of the key scripts/processes:
 
 [Documentation for clustersubmit](Documentation_for_clustersubmit.md)
 
-[Documentation for ensembles](Running_Ensembles_on_bluecrystalp4)
+[Documentation for ensembles](Running_Ensembles_on_bluecrystalp4.md)
 
