@@ -2,7 +2,7 @@
 
 # Conversion to New Operating System (Rocky8)
 
-See also notes on [Local Hardware](Local_hardware)
+See also notes on [Local Hardware](Local_hardware.md)
 
 The BRIDGE servers have been using a very old operating system (CentOS6) which is no longer maintained, and hence we no longer get up-to-date security patches. This is a serious security risk for the university and ourselves. The age of the operating system was also impacting on software, where some python codes did not work on our old system.
 
