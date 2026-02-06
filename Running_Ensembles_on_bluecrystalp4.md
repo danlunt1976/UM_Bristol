@@ -339,3 +339,11 @@ In theory this might progress things, in practice there are some strange things 
 
 I'll email separately about the other runs but try this first.
 
+
+**Yousheng's note**:
+I encountered a situation where a faulty compute node (bp1-compute190) was allocated to my ensemble job, causing all experiments on that node to fail repeatedly. Jobs crashed within ~1 minute of starting with the error: `Major problem with MPI code. Suspected system problem.` The ensemble script kept restarting the job every 15 minutes, but it would crash again each time. Multiple different experiments failed on the same node, while an identical configuration ran fine on a different node (e.g. xqjcg on bp1-compute001 worked, while xqjca and xqjcb both failed on bp1-compute190), which ruled out a configuration issue.
+
+To diagnose: check the `.eleave` files for the MPI error, use `check_running` to identify which node the failing job is on, and compare with other ensemble members — if the same config works on one node but not another, the node is likely faulty.
+
+To fix this, I cancelled the batch job (`scancel <JOBID>`) and resubmitted (`sbatch <batch_name>_batch`) to get allocated a different node. Should we also report faulty nodes to HPC support (hpc-help@bristol.ac.uk) so they can be taken offline for repair?
+
