@@ -21,7 +21,7 @@ All requests for support should go through one of three routes:
 
 * ~IDL licence issues~
 * ~subfigure in latex on miocene~
-* pdfcrop on miocene
+* ~pdfcrop on miocene~
 
 ## Day-to-day user support
 
