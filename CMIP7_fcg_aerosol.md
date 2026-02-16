@@ -49,6 +49,10 @@ turn on the Check box: Do you want to include tracers in the atmosphere?
 
 then next to line 79 in the table, put a "1" next to SO2
 
+QUERY - DO WE NEED TO HAVE BL MIXING OF TRACERS? NOT SURE. CURRENTLY OFF
+
+
+
 2. turn on the treacer advection if not already. Go to:
 -> Model Selection
    -> Atmosphere
@@ -108,4 +112,18 @@ $MODS_SULPC/SO4_indirect        - technically only needed for indirect effect bu
 $MODS_SULPC/are4f406.mf77       - makes the sulphur cycle deposition work with the tiled land surface scheme
 $MODS_SULPC/sulpc_re4_5to4_4    - fix for H2O2 calcs
 $MODS_SULPC/rnout3d_4.5         - fix to scavenging/rain out. don't scavenge above rainy layers
+
+
+Model Hand-edits.
+make suree you have the following lines at the end of the RECONA file. Despite turning on number 79 for SO2 tracer, this might not get set in the RECONA file. Also add lines to initialise the various SO2 and SO4 modes/prognostics to zero in the start dump
+
+ ### Tracer fields ###
+ &ITEMS ITEM=79, DOMAIN=1, SOURCE=3 &END
+ ### Atmos user-prognostic fields ###
+ &ITEMS ITEM=101, DOMAIN=1, SOURCE=3 &END
+ &ITEMS ITEM=103, DOMAIN=1, SOURCE=3 &END
+ &ITEMS ITEM=104, DOMAIN=1, SOURCE=3 &END
+ &ITEMS ITEM=105, DOMAIN=1, SOURCE=3 &END
+ &ITEMS ITEM=106, DOMAIN=1, SOURCE=3 &END
+
 
