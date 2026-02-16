@@ -118,12 +118,12 @@ Model Hand-edits.
 make suree you have the following lines at the end of the RECONA file. Despite turning on number 79 for SO2 tracer, this might not get set in the RECONA file. Also add lines to initialise the various SO2 and SO4 modes/prognostics to zero in the start dump
 
  ### Tracer fields ###
- &ITEMS ITEM=79, DOMAIN=1, SOURCE=3 &END
+&ITEMS ITEM=79, DOMAIN=1, SOURCE=3 &END
  ### Atmos user-prognostic fields ###
- &ITEMS ITEM=101, DOMAIN=1, SOURCE=3 &END
- &ITEMS ITEM=103, DOMAIN=1, SOURCE=3 &END
- &ITEMS ITEM=104, DOMAIN=1, SOURCE=3 &END
- &ITEMS ITEM=105, DOMAIN=1, SOURCE=3 &END
- &ITEMS ITEM=106, DOMAIN=1, SOURCE=3 &END
+&ITEMS ITEM=101, DOMAIN=1, SOURCE=3 &END 
+&ITEMS ITEM=103, DOMAIN=1, SOURCE=3 &END
+&ITEMS ITEM=104, DOMAIN=1, SOURCE=3 &END
+&ITEMS ITEM=105, DOMAIN=1, SOURCE=3 &END
+&ITEMS ITEM=106, DOMAIN=1, SOURCE=3 &END
 
 
