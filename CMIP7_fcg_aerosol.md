@@ -85,11 +85,10 @@ click SUR to go to ancillayr files for SO2 emissions. Enter a path and filename.
 back in the SULPHUR panel click on OXID to specify the oxidant ancillaries:
 add a path and filename for oxidants and then select ALL the options to be updated. Again monthly is fine
 
-
---
+4.
 I HAVE NOT YET LOOKED AT STASH OPTIONS OR DIAGNOSTICS - WE WILL LIKELY WANT TO TURN ON SOME MORE DIAGOSNTOCS. NEED TO REVISIT
 
-
+5. Code Mods.
 In mods for the model, check the following are included
 
 set environment variable: MODS_SULPC = /user/home/tw23150/mods/Sulphur
