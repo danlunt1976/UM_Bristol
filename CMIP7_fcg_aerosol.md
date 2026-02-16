@@ -6,10 +6,14 @@ Aerosol forcing has many aspects. In HadCM3 we only implement sulphates (i.e. no
 
 The model may then represents how these interact with:
 - radiation. the so-called "direct effect" or ARI: Aerosol-radiation interaction. This is where aerosols directly intercept/absorb/scatter incoming solar radiaiton
-- clouds. the so-called "indirect effect: or ACI: Aerosol-cloud interaction. This is where aerosols affect clouds and both increase their lifetime and albedo.
+- clouds. the so-called "indirect effect" or ACI: Aerosol-cloud interaction. This is where aerosols affect clouds and both increase their lifetime and albedo.
 
 The sulphate scheme requires a handful of mods to make work. This is documented below. The two effects (direct/indirect) can then be turned on with logical switches:
+- L_USE_SULPC_DIRECT=.TRUE.
 
+- L_USE_SULPC_INDIRECT_SW=.TRUE.
+- L_USE_SULPC_INDIRECT_LW=.TRUE.
+(so the indirect can be switched on/off indiivdiually for SW/LW radiative effects)
 
 NOTE - CURRENTLY (FEB 2026) THE INDIRECT EFFECT DOES NOT WORK - CHRIS TO WRITE UP NOTES, BUT IT SYSTEMATICALLY CAUSEES NEGATIVE THETA/PRESSURE CRASHES EVERY YEAR OR TWO DESPITE COMPILING OK.
 
@@ -17,6 +21,14 @@ NOTE - CURRENTLY (FEB 2026) THE INDIRECT EFFECT DOES NOT WORK - CHRIS TO WRITE U
 ### Where to access data
 
 <add info here where to find CMIP aerosol data>
+for now still being processed (as of 16 Feb 2026). Use the following ancils to test:
+SO2 emissions (both surface and high-level):
+ /user/home/tw23150/dumps/ancil/Sulphur/SO2_1850_1980
+
+oxidants:
+ $ANCIL_ROOT/ancil/preind2/sulphur/sulpc_oxidants_19_A2_1990
+(where ANCIL_ROOT = /user/home/ggpjv/swsvalde)
+this is a repeating file, with 12 monthly values cycled through as a climatology, so can be used for any scenario/year
 
 ### How to process data
 
@@ -76,7 +88,7 @@ add a path and filename for oxidants and then select ALL the options to be updat
 
 --
 I HAVE NOT YET LOOKED AT STASH OPTIONS OR DIAGNOSTICS - WE WILL LIKELY WANT TO TURN ON SOME MORE DIAGOSNTOCS. NEED TO REVISIT
---
+
 
 In mods for the model, check the following are included
 
