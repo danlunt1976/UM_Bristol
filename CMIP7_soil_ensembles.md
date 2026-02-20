@@ -123,27 +123,27 @@ Full per-PFT parameters for all 6 candidates (BL / NL / C3 / C4 / Shrub):
 
 Validation uses `utils_cmip7` against CMIP6 ensemble means and RECCAP2 observations. Results are stored in `validation_outputs/` in the utils_cmip7 repository.
 
-Observational targets: GPP ~120 PgC/yr, NPP ~55–65 PgC/yr, CVeg ~450–550 PgC, CSoil ~1200 PgC.
+Observational targets: GPP ~120 PgC/yr, NPP ~55–65 PgC/yr, CVeg ~450–550 PgC, CSoil ~1200 PgC. Bias shown in parentheses relative to target (midpoint used for ranges).
 
-| Experiment | Score | GPP (PgC/yr) | NPP (PgC/yr) | CVeg (PgC) | CSoil (PgC) |
-| :--------- | :---- | :----------- | :----------- | :--------- | :---------- |
-| **xqjcg** | 0.689 | 135.2 | 68.3 | 720.0 | 1292.3 |
-| xqjch | 0.833 | 106.7 | 62.2 | 444.4 | 1176.4 |
-| xqjci | 0.833 | 101.4 | 49.8 | 460.6 | 952.8 |
-| **xqjcj** | **0.870** | **110.3** | **53.6** | **446.2** | **1039.9** |
-| xqjck | 0.763 | 110.1 | 56.8 | 339.5 | 1100.3 |
-| xqjcl | 0.830 | 98.4 | 50.1 | 483.2 | 984.8 |
+| Experiment | Score | GPP (PgC/yr, target 120) | NPP (PgC/yr, target 55–65) | CVeg (PgC, target 450–550) | CSoil (PgC, target 1200) |
+| :--------- | :---- | :----------------------- | :------------------------- | :------------------------- | :----------------------- |
+| **xqjcg** | 0.689 | 135.2 (+13%) | 68.3 (+14%) | 720.0 (+44%) | 1292.3 (+8%) |
+| xqjch | 0.833 | 106.7 (−11%) | 62.2 (in range) | 444.4 (−11%) | 1176.4 (−2%) |
+| xqjci | 0.833 | 101.4 (−16%) | 49.8 (−17%) | 460.6 (−8%) | 952.8 (−21%) |
+| **xqjcj** | **0.870** | **110.3 (−8%)** | **53.6 (−11%)** | **446.2 (−11%)** | **1039.9 (−13%)** |
+| xqjck | 0.763 | 110.1 (−8%) | 56.8 (in range) | 339.5 (−32%) | 1100.3 (−8%) |
+| xqjcl | 0.830 | 98.4 (−18%) | 50.1 (−17%) | 483.2 (in range) | 984.8 (−18%) |
 
-Global mean vegetation fractions (vs IGBP: BL 0.173, NL 0.068, C3 0.256, C4 0.100, bare soil 0.288):
+Global mean vegetation fractions — bias shown relative to IGBP observations (BL 0.173, NL 0.068, C3 0.256, C4 0.100, bare soil 0.288):
 
 | Experiment | BL | NL | C3 | C4 | Bare soil |
 | :--------- | :- | :- | :- | :- | :-------- |
-| xqjcg | 0.232 | 0.104 | 0.145 | 0.118 | 0.176 |
-| xqjch | 0.201 | 0.057 | 0.190 | 0.145 | 0.178 |
-| xqjci | 0.214 | 0.075 | 0.224 | 0.086 | 0.201 |
-| **xqjcj** | **0.192** | **0.052** | **0.226** | **0.112** | **0.190** |
-| xqjck | 0.159 | 0.045 | 0.190 | 0.175 | 0.178 |
-| xqjcl | 0.211 | 0.046 | 0.244 | 0.102 | 0.190 |
+| xqjcg | 0.232 (+34%) | 0.104 (+53%) | 0.145 (−43%) | 0.118 (+18%) | 0.176 (−39%) |
+| xqjch | 0.201 (+16%) | 0.057 (−16%) | 0.190 (−26%) | 0.145 (+45%) | 0.178 (−38%) |
+| xqjci | 0.214 (+24%) | 0.075 (+10%) | 0.224 (−13%) | 0.086 (−14%) | 0.201 (−30%) |
+| **xqjcj** | **0.192 (+11%)** | **0.052 (−24%)** | **0.226 (−12%)** | **0.112 (+12%)** | **0.190 (−34%)** |
+| xqjck | 0.159 (−8%) | 0.045 (−34%) | 0.190 (−26%) | 0.175 (+75%) | 0.178 (−38%) |
+| xqjcl | 0.211 (+22%) | 0.046 (−32%) | 0.244 (−5%) | 0.102 (+2%) | 0.190 (−34%) |
 
 **xqjcg** (the baseline default) performs worst — CVeg is far too high (720 PgC vs target ~500 PgC) and BL/NL fractions are substantially too high, indicating the untuned parameter set gives excessive tree cover.
 
