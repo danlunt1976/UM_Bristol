@@ -167,20 +167,108 @@ Columns show match-to-observations (1.0 = perfect, green = better) for spatial R
 - **xqjcg** (baseline, 7th) is the weakest of the 6 — poor NL RMSE and CVeg — yet still outscores most of the raw Phase 3 ensemble members below it
 - The Phase 3 members (lower rows) score well on vegetation fractions (right columns, mostly green) but are less well-constrained on global carbon cycle totals
 
-### Regional bias — xqjcg
+### Regional bias
 
-The regional bias heatmaps are available for xqjcg as a worked example. The unified heatmap covers both carbon cycle and vegetation fraction variables across all RECCAP2 regions:
+Regional bias heatmaps from `utils_cmip7` compare each candidate against RECCAP2 observations across 10 regions. Each section is collapsible.
+
+<details>
+<summary><strong>xqjcg</strong> — baseline, score 0.689</summary>
 
 ![Regional bias heatmap (unified): xqjcg vs observations](Attachments/CMIP7_soil_ensembles/xqjcg_bias_heatmap_unified.png)
 
-Key patterns visible in xqjcg:
+Key patterns:
 - **NL fraction**: massively overestimated almost everywhere (Oceania +900%, Central Asia +400%, Africa +200%), indicating too much needleleaf tree cover
-- **C3 fraction**: consistently underestimated (Africa −63%, South America −52%, South Asia −65%), likely displaced by excessive BL/NL
+- **C3 fraction**: consistently underestimated (Africa −63%, South America −52%, South Asia −65%), displaced by excessive BL/NL
 - **CVeg**: strongly overestimated in tropical/subtropical regions — Africa +96%, North America +116%, South America +118%, Oceania +119%
 - **GPP**: overestimated in Africa/North Asia (+16%) and Oceania (+57%); underestimated in South Asia (−43%) and South East Asia (−15%)
-- **CSoil**: mixed signal — too high in Africa (+72%) and Europe (+41%), reasonable or slightly low elsewhere
+- **CSoil**: mixed — too high in Africa (+72%) and Europe (+41%), reasonable or slightly low elsewhere
 - **Tau**: turnover time too long in Africa (+53%) and Central Asia (+47%), too short in South Asia (−60%)
 
-The vs-CMIP6 heatmap (carbon cycle only) is also available:
-
 ![Regional bias heatmap vs CMIP6: xqjcg](Attachments/CMIP7_soil_ensembles/xqjcg_bias_heatmap_vs_cmip6.png)
+
+</details>
+
+<details>
+<summary><strong>xqjch</strong> — score 0.833</summary>
+
+![Regional bias heatmap (unified): xqjch vs observations](Attachments/CMIP7_soil_ensembles/xqjch_bias_heatmap_unified.png)
+
+Key patterns:
+- **GPP**: globally −14%, worst in South Asia (−58%) and South East Asia (−36%); Oceania overestimated (+39%)
+- **NL fraction**: strongly underestimated in Central Asia (−220%) but still too high in Oceania (+503%)
+- **C4 fraction**: overestimated globally (+44%), extreme in South Asia (+501%) and Oceania (+108%)
+- **CVeg**: regionally mixed — underestimated in Africa (−39%) and Europe (−45%), overestimated in Oceania (+69%)
+- **CSoil**: globally near target (−6%), Africa (−53%) and South Asia (−17%) are exceptions
+
+![Regional bias heatmap vs CMIP6: xqjch](Attachments/CMIP7_soil_ensembles/xqjch_bias_heatmap_vs_cmip6.png)
+
+</details>
+
+<details>
+<summary><strong>xqjci</strong> — score 0.833</summary>
+
+![Regional bias heatmap (unified): xqjci vs observations](Attachments/CMIP7_soil_ensembles/xqjci_bias_heatmap_unified.png)
+
+Key patterns:
+- **GPP**: globally −18%, widespread underestimation; only Oceania positive (+18%)
+- **NPP**: globally −17%, following GPP closely
+- **NL fraction**: strongly overestimated in Central Asia (+287%) and South America (+626%), indicating excessive needleleaf cover in those regions
+- **CVeg**: modest global overestimate (+12%), dominated by Oceania (+70%) and South America (+58%); Africa and Europe underestimated
+- **CSoil**: globally low (−24%), fairly uniform across regions
+- **Tau**: too long in Africa (+47%) and Central Asia (+74%), too short in South Asia (−114%)
+
+![Regional bias heatmap vs CMIP6: xqjci](Attachments/CMIP7_soil_ensembles/xqjci_bias_heatmap_vs_cmip6.png)
+
+</details>
+
+<details>
+<summary><strong>xqjcj</strong> — best candidate, score 0.870</summary>
+
+![Regional bias heatmap (unified): xqjcj vs observations](Attachments/CMIP7_soil_ensembles/xqjcj_bias_heatmap_unified.png)
+
+Key patterns:
+- **GPP**: globally −11%, moderate underestimation; Oceania is an exception (+34%)
+- **CVeg**: modest global bias (+8%), with regional spread — Africa (−43%), Oceania (+69%)
+- **CSoil**: globally low (−17%), the most uniform of all candidates
+- **BL fraction**: slight overestimate globally (+11%), driven by Oceania (+81%) and Africa (+38%); otherwise closest to observations
+- **NL fraction**: globally −23%, too low in most regions but still strongly overestimated in Oceania (+407%)
+- **C3 fraction**: moderate underestimate globally (−12%), worst in South Asia (−57%) and Africa (−36%)
+- Overall the most balanced regional performance, with no extreme outliers in carbon cycle metrics
+
+![Regional bias heatmap vs CMIP6: xqjcj](Attachments/CMIP7_soil_ensembles/xqjcj_bias_heatmap_vs_cmip6.png)
+
+</details>
+
+<details>
+<summary><strong>xqjck</strong> — score 0.763</summary>
+
+![Regional bias heatmap (unified): xqjck vs observations](Attachments/CMIP7_soil_ensembles/xqjck_bias_heatmap_unified.png)
+
+Key patterns:
+- **C4 fraction**: very strongly overestimated globally (+75%), with extreme values in Oceania (+132%) and South America (+142%); South Asia severely underestimated (−545%)
+- **Shrubs**: strongly overestimated globally (+55%), extreme in Oceania (+425%) and North America (+229%)
+- **CVeg**: globally low (−18%), consistent with the parameter set suppressing tree cover in favour of C4/shrubs
+- **NL fraction**: strongly underestimated globally (−34%), Central Asia (−174%)
+- **GPP/NPP**: modest global bias (−11%/−6%), masking large regional cancellations
+- **CSoil**: mixed — Africa (+44%) but South America (−43%) and South Asia (−20%) too low
+
+![Regional bias heatmap vs CMIP6: xqjck](Attachments/CMIP7_soil_ensembles/xqjck_bias_heatmap_vs_cmip6.png)
+
+</details>
+
+<details>
+<summary><strong>xqjcl</strong> — score 0.830</summary>
+
+![Regional bias heatmap (unified): xqjcl vs observations](Attachments/CMIP7_soil_ensembles/xqjcl_bias_heatmap_unified.png)
+
+Key patterns:
+- **GPP**: the most strongly underestimated globally of all candidates (−21%), consistent across almost all regions; Oceania (+27%) is the sole exception
+- **CVeg**: globally overestimated (+17%), driven by Oceania (+140%) and Africa (+68%); most other regions near target
+- **BL fraction**: strongly overestimated in Oceania (+144%) and Africa (+58%), suggesting excessive broadleaf tree cover there
+- **NL fraction**: globally low (−32%), Central Asia very low (−194%), but Oceania still too high (+384%)
+- **C3 fraction**: the best C3 match of all candidates (−5% globally), reasonable across most regions
+- **CSoil**: globally low (−21%), fairly uniform
+
+![Regional bias heatmap vs CMIP6: xqjcl](Attachments/CMIP7_soil_ensembles/xqjcl_bias_heatmap_vs_cmip6.png)
+
+</details>
