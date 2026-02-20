@@ -7,3 +7,5 @@
 
 [CMIP7 model](CMIP7_model.md)
 
+[Terrestrial ensembles tuning](CMIP7_soil_ensembles.md)
+
