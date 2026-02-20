@@ -153,6 +153,20 @@ Global mean vegetation fractions (vs IGBP: BL 0.173, NL 0.068, C3 0.256, C4 0.10
 
 **xqjci** and **xqjcl** produce slightly low GPP (~98–101 PgC/yr) and CSoil (~952–985 PgC), falling short of the lower end of observational targets.
 
+### PPE validation heatmap
+
+The `ppe_xqjcg` analysis in `utils_cmip7` evaluates the 6 candidates in the context of the full ~785-member combined dataset (Phase 2 + 3 ensemble members plus the xqjc* runs). The heatmap below shows the top 30 runs ranked by overall score, with the xqjc* experiments (and the two spin-up baselines xqhuc/xqhua) highlighted by red boxes:
+
+![PPE validation heatmap: top 30 runs vs observations](Attachments/CMIP7_soil_ensembles/ppe_xqjcg_validation_heatmap.png)
+
+Columns show match-to-observations (1.0 = perfect, green = better) for spatial RMSE (BL, NL, C3, C4, bare-soil fractions), global carbon cycle (GPP, CVeg, NPP, CSoil) and global-mean vegetation fractions. Key observations:
+
+- **xqjcj** (top row) is clearly the best overall — strong green across both carbon cycle and vegetation fraction metrics
+- **xqjci, xqjch, xqjcl** are similarly close together in the 2nd–4th positions, with weaknesses mainly in the spatial RMSE columns (red = poor spatial pattern)
+- **xqjck** has good carbon cycle scores but notably poor CSoil match
+- **xqjcg** (baseline, 7th) is the weakest of the 6 — poor NL RMSE and CVeg — yet still outscores most of the raw Phase 3 ensemble members below it
+- The Phase 3 members (lower rows) score well on vegetation fractions (right columns, mostly green) but are less well-constrained on global carbon cycle totals
+
 ### Regional bias — xqjcg
 
 The regional bias heatmaps are available for xqjcg as a worked example. The unified heatmap covers both carbon cycle and vegetation fraction variables across all RECCAP2 regions:
