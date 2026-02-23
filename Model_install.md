@@ -17,6 +17,28 @@ On bc4, the model code etc is here:
 
 The key code is here: /mnt/storage/private/bridge/um/PUM64_rocky8/um/vn4.5
 
+----
+18/2/2026
+
+Gethin found the CD at home.
+Plan:
+1) Upload raw CD to github, once unpacked.
+2) Upload Paul's changes:
+	* whitsepace end of line
+	* comments over lin length
+	* automated makefiles (alphabetical order changed)
+	* new configure file
+	* get rid of pdksh
+3) upload stripped copyright (keep line numbers)
+4) upload new licence file
+5) get rid of compiler-specifci section
+6) GCOM (3.1, 3.8, 2.8 ?) new version
+7) Met Office nupdate , or CRAY, or Mike Blackburn
+8) upload again officially and make available
+9) Longer term:
+	* xconv, xancil
+	* Bristol scripts/infrastrucutre/libancil etc.
+
 
 
 
