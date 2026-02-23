@@ -225,3 +225,12 @@ Geth is currently 1 day per week on LFRIC.  Comes to an end soon.
 Geth will contact his line manager to see if he is OK with doing 2 days per week, TONIC-funded.
 
 
+**Gethin 19/2/2026**
+
+Mods for gnu fortran  
+Run job and process with new mods  
+clustersubmit -r bc5/ib3  
+develop manual download hack  
+ftp script auto-stop after x hours
+
+Need to email Geth about getting a BC5 account so I can test things.
