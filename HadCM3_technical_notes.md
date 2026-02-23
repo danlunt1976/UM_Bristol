@@ -30,17 +30,17 @@ Users should instead go to [HadCM3_user_notes](HadCM3_user_notes.md).
 
 [Averaging](Averaging.md)
 
-[Conversion to Rocky8](Rocky8)
+[Conversion to Rocky8](Rocky8.md)
 
-[Cloud services](Cloud)
+[Cloud services](Cloud.md)
 
-[Transferring to Bluepebble](Transferring_expt_bp)
+[Transferring to Bluepebble](Transferring_expt_bp.md)
 
-[BC5 Workflow](BC5_Workflow)
+[BC5 Workflow](BC5_Workflow.md)
 
-[BRIDGE System Administration](BRIDGESysAdmin)
+[BRIDGE System Administration](BRIDGESysAdmin.md)
 
-[IT Services System Administration](SysAdmin)
+[IT Services System Administration](SysAdmin.md)
 
 
 

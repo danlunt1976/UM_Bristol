@@ -142,4 +142,118 @@ Common gotchas
 
 Where to get advanced tips
 - BRIDGE-wide download process + wrapper notes: bridge_um/Downloading.md
-- Concrete step-by-step notes (including params file mention and how data is arranged): bridge_um/Nils_notes_for_running_HadCM3B.md[Back to HadCM3_user_notes](HadCM3_user_notes.md)
+- Concrete step-by-step notes (including params file mention and how data is arranged): bridge_um/Nils_notes_for_running_HadCM3B.md
+
+## utils_cmip7
+
+https://github.com/Climateyousheng/utils_cmip7
+
+utils_cmip7 is a Python toolkit for carbon cycle analysis from UM climate model outputs. It handles the full workflow from raw UM output files to validated results against CMIP6 and RECCAP2 observations.
+
+How to install
+```
+git clone https://github.com/Climateyousheng/utils_cmip7.git
+cd utils_cmip7
+pip install -e .
+```
+
+Requirements: Python >= 3.8, numpy, pandas, matplotlib, iris, cartopy, xarray, cf-units, netCDF4 (all installed automatically with `pip install -e .`).
+
+### Input data
+
+The toolkit works with two types of input:
+
+**Option A: Pre-processed annual mean NetCDF files** (recommended, faster)
+Located in `~/annual_mean/{expt}/`:
+- `{expt}_pa_annual_mean.nc` — atmosphere (temperature, precipitation)
+- `{expt}_pt_annual_mean.nc` — TRIFFID (GPP, NPP, soil respiration, carbon stocks, PFTs)
+- `{expt}_pf_annual_mean.nc` — ocean (fgco2)
+
+Generate these from raw output using:
+```
+./annual_mean_cdo.sh "xqhuj" ~/annual_mean pt pd pf
+```
+
+**Option B: Raw monthly UM files**
+Located in `~/dump2hold/{expt}/datam/`, matching pattern `{expt}a#pi00000{YYYY}{MM}+`.
+
+### STASH code mappings
+
+The toolkit centralises STASH code mappings so you don't need to remember them:
+
+| Variable | STASH (PP) | STASH (NC) | Description |
+|----------|------------|------------|-------------|
+| GPP | m01s03i261 | 3261 | Gross Primary Production |
+| NPP | m01s03i262 | 3262 | Net Primary Production |
+| Rh | m01s03i293 | 3293 | Soil respiration |
+| CV | m01s19i002 | 19002 | Vegetation carbon |
+| CS | m01s19i016 | 19016 | Soil carbon |
+| fracPFTs | m01s19i013 | 19013 | PFT fractions |
+| fgco2 | m02s30i249 | 30249 | Ocean CO2 flux |
+| tas | m01s03i236 | 3236 | Surface air temperature |
+| pr | m01s05i216 | 5216 | Precipitation |
+
+Unit conversions are applied automatically (e.g. kgC/m2/s to PgC/yr for fluxes, kgC/m2 to PgC for stocks).
+
+### Basic usage
+
+Extract annual means from pre-processed NetCDF:
+```python
+from utils_cmip7 import extract_annual_means
+ds = extract_annual_means(expts_list=['xqhuc'])
+
+# Access data
+gpp = ds['xqhuc']['global']['GPP']
+print(f"GPP: {gpp['data']} {gpp['units']}")
+
+# Extract specific regions
+ds = extract_annual_means(['xqhuc'], regions=['global', 'Europe', 'Africa'])
+```
+
+Extract from raw monthly UM files:
+```python
+from utils_cmip7 import extract_annual_mean_raw
+data = extract_annual_mean_raw('xqhuj', start_year=1850, end_year=1900)
+```
+
+### Scripts
+
+**extract_preprocessed.py** — Extract annual means for all RECCAP2 regions (global + 10 regions) and generate time series plots:
+```
+python scripts/extract_preprocessed.py xqhuc
+```
+Outputs to `validation_outputs/single_val_{expt}/`: a CSV of time-mean values plus per-region time series plots for carbon fluxes, stocks, climate variables, and PFT fractions.
+
+**extract_raw.py** — Extract from raw monthly files:
+```
+python scripts/extract_raw.py xqhuj --outdir ./plots
+```
+
+**validate_experiment.py** — Three-way validation (UM vs CMIP6 vs RECCAP2):
+```
+python scripts/validate_experiment.py xqhuc
+```
+Outputs to `validation_outputs/single_val_{expt}/`:
+- `{expt}_metrics.csv` — UM results in observational format
+- `{expt}_bias_vs_cmip6.csv` — bias, bias %, RMSE, within-uncertainty flag
+- `{expt}_bias_vs_reccap2.csv` — same for RECCAP2
+- `comparison_summary.txt` — text summary comparing UM performance
+- `plots/` — three-way comparison bar charts, regional bias heatmaps, time series
+
+### CLI commands (experimental)
+
+```
+utils-cmip7-extract-raw xqhuj
+utils-cmip7-extract-preprocessed xqhuc
+utils-cmip7-validate-experiment xqhuc
+utils-cmip7-validate-ppe
+```
+
+### Common gotchas
+
+- If plots show only a subset of variables, the missing ones were not found during extraction. Check that the annual mean files exist and were generated with the correct STASH codes.
+- Raw extraction reads many monthly files and can be slow. Prefer pre-processed annual mean files when available.
+- STASH codes in NetCDF headers may show a trailing `s` suffix (e.g. `3261s`) — this is normal CDL type notation and does not affect extraction.
+- For regional results, ensure the RECCAP2 mask file is available. Default location: `~/scripts/hadcm3b-ensemble-validator/observations/RECCAP_AfricaSplit_MASK11_Mask_regridded.hadcm3bl_grid.nc`. Override with `export UTILS_CMIP7_RECCAP_MASK=/path/to/mask.nc`.
+
+[Back to HadCM3_user_notes](HadCM3_user_notes.md)

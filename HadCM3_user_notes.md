@@ -1,6 +1,6 @@
 # HadCM3 user notes
 
-[Requesting IT Support](IT_Support)
+[Requesting IT Support](IT_Support.md)
 
 [Getting_started_with_HadCM3](Getting_started_with_HadCM3.md)
 
@@ -18,7 +18,7 @@
 
 [Documentation for tools](UM_tools_and_generic_tools.md)
 
-[Running paleo simulations with HadCM3](Paleo_HadCM3)
+[Running paleo simulations with HadCM3](Paleo_HadCM3.md)
 
 [Python on BRIDGE machines](Python_BRIDGE.md)
 

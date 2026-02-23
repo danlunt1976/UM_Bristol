@@ -199,7 +199,7 @@ We figured out this is primarily due to the soil parameters configuration: an up
     - Only needed when co2 needs to be read from provided dat file.
 
 - Mods good to keep:
-  
+
   Not sure if need these all the time – some only needed for aerosol code, but good for completness to have all the time.
 
   Add path: MODS_SULPC = ~tw23150/mods/Sulphur/
@@ -210,6 +210,82 @@ We figured out this is primarily due to the soil parameters configuration: an up
   - $MODS_SULPC/are4f406.mf77
   - $MODS_SULPC/sulpc_re4_5to4_4
   - $MODS_SULPC/rnout3d_4.5
+
+### Aerosol (sulphate cycle) mods
+
+The sulphate aerosol scheme requires a specific set of mods to compile and run correctly. These were added for `xqhug` and carried forward into `xqhum`.
+
+Set the environment variable in the UMUI:
+```
+MODS_SULPC = /user/home/tw23150/mods/Sulphur
+```
+
+**Key substitution:** replace the standard tracer advection load-balancing mod with the CO<sub>2</sub>-compatible version:
+
+| Remove                                    | Replace with                  | Reason                                                    |
+| :---------------------------------------- | :---------------------------- | :-------------------------------------------------------- |
+| `$MODS_SOURCE/vn4.5/hadam3/gbccf406`     | `$MODS_SULPC/gbccf406_co2`   | Required for interactive CO<sub>2</sub> with sulphur cycle |
+
+**Additional mods required** — several have shadow copies in `/user/home/nd20983/um_updates/` due to conflict fixes (see below):
+
+| Mod                   | Purpose                                                                           | Location used              |
+| :-------------------- | :-------------------------------------------------------------------------------- | :------------------------- |
+| `bl_7a_fix.mod`       | Sets RHOKH tracer mixing coefficients in boundary layer (deck BDYLYR7A)           | `/user/home/nd20983/um_updates/bl_7a_fix.mod` |
+| `SUL_dens_fix.mf77`   | Bug fix for sulphate density calculation                                          | `$MODS_SULPC/` (original)  |
+| `SO4_indirect`        | Required for indirect ACI; safe to include even when indirect effect is off       | `$MODS_SULPC/` (original)  |
+| `are4f406.mf77`       | GS_TILE variable for aerosol stomatal resistance; makes dry deposition work with tiled land surface (deck BL_CTL1) | `/user/home/nd20983/um_updates/are4f406.mf77` |
+| `gbccf406_co2`        | Carbon cycle load balancing with CO<sub>2</sub> coupling additions                | `/user/home/nd20983/um_updates/gbccf406_co2` |
+| `sulpc_re4_5to4_4`    | Fix for H<sub>2</sub>O<sub>2</sub> oxidant calculations                           | `$MODS_SULPC/` (original)  |
+| `rnout3d_4.5`         | Fix for scavenging/rainout: prevents scavenging above precipitating layers        | `$MODS_SULPC/` (original)  |
+| `acn1f406`            | Sulphur chemistry routines                                                        | `/user/home/tw23150/mods/` (original) |
+| `co2_coupling.mf77`   | CO<sub>2</sub> flux coupling between atmosphere and ocean                         | `/user/home/nd20983/um_updates/co2_coupling.mf77` |
+| `gath_fld_co2.mf77`   | CO<sub>2</sub> field gathering for MPP decomposition                              | `/user/home/tw23150/mods/` (original) |
+
+Shadow copies live in `/user/home/nd20983/um_updates/` on bp1.
+
+### Mod conflicts and fixes
+
+When combining the sulphur cycle mods with existing `PV_UPDATES` mods (`pot_evap_chn_nooutput`, `leaf_co2`), three fatal nupdate conflicts arise (`UD041 MULTIPLE INSERTIONS` / `DUPLICATE IDENTIFIER`). Each was fixed by making a shadow copy in `/user/home/nd20983/um_updates`.
+
+**Conflict 1: `bl_7a_fix.mod` vs `pot_evap_chn_nooutput` at `BDYLYR7A.1231`**
+
+Both mods insert at `*I BDYLYR7A.1231`. Fix: shadow `bl_7a_fix.mod` and move its insertion point one line earlier:
+
+```
+*I BDYLYR7A.1231  →  *I BDYLYR7A.1230
+```
+
+The two code blocks are independent so either insertion order is valid.
+
+**Conflict 2: `are4f406.mf77` vs `leaf_co2` at `ARE1F404.78`**
+
+`pot_evap_chn_nooutput` occupies `.77` and `leaf_co2` occupies `.78`, leaving no room for `are4f406.mf77` which also targets `.78`. Fix: shadow `are4f406.mf77` and move its insertion point to `.76`:
+
+```
+*I ARE1F404.78  →  *I ARE1F404.76
+```
+
+**Conflict 3: `gbccf406_co2` duplicate identifier**
+
+The mod uses `*ID GBCCF406`, which already exists in the `umpl` source library. nupdate aborts with `DUPLICATE IDENTIFIER`. Fix: shadow the mod and rename the identifier:
+
+```
+*ID GBCCF406  →  *ID GBC2F406
+```
+
+> [!NOTE]
+> `UD021 OVERLAPPING MODIFICATIONS` warnings on decks like `TRIF` and `OBIOCONST` are non-fatal `NOTE`-level messages and can be ignored. They only appear fatal when printed alongside a genuine fatal error.
+
+### Shadow copy workflow
+
+When a mod needs changes but is owned by another user (e.g. `tw23150`):
+
+1. Copy to `/user/home/nd20983/um_updates/`: `cp $MODS_SULPC/bl_7a_fix.mod /user/home/nd20983/um_updates/`
+2. Strip trailing spaces (prevents `UD004` 72-column truncation): `sed -i 's/[[:space:]]*$//' /user/home/nd20983/um_updates/bl_7a_fix.mod`
+3. Check line lengths ≤ 72 chars: `awk 'length > 72 {print NR": "$0}' /user/home/nd20983/um_updates/bl_7a_fix.mod`
+4. Apply the fix (insertion point change, identifier rename, etc.)
+5. Update `MODS_UM` to reference `/user/home/nd20983/um_updates/` instead of `$MODS_SULPC/`
+6. Submit a compile-only job (`STEP=0`) to verify
 
 1. Post-processing scripts
 
@@ -243,6 +319,10 @@ Might also need:
   - Needed if need to configure all GHGs concentrations including CO2.
 - ~nd20983/scripts/ghgs_noco2_deglac_ver03_last2k
   - Needed if need to configure all GHGs concentrations excluding CO2.
+- `/user/home/nd20983/um_updates/post_scripts_puma2/aero_recon`
+  - Needed for any run with the sulphur cycle aerosol scheme enabled.
+  - Fixes the RECONA file after UMUI processing: sets `ITEM=79` to `SOURCE=6` (initialise SO2 tracer to zero) and inserts the aerosol prognostic block (items 101, 103–106) with `SOURCE=3` after `ITEM=222`.
+  - Run as: `aero_recon <jobid>` after exporting the job from UMUI but before submitting.
 
 
 ### Data convention
