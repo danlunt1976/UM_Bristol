@@ -63,11 +63,39 @@ To be notice, other jobs related to solar forcing need to be run later, includin
 
 ## Combined testing phase
 
-| experiment | description                         | running length | source           |
-| ---------- | ----------------------------------- | -------------- | ---------------- |
-| **xqchz**  | emissions + solar forcing           | 1750-2014      | <- (xqchi,xqcpa) |
-| **xqchy**  | emissions + solar + land-use        | 1750-2014      | <- (xqchz,xqcni) |
-| **xqchx**  | emissions + solar + land-use + GHGs | 1850–2022      | <- (xqchy,xqchd) |
+| experiment | description                                | running length | source           |
+| ---------- | ------------------------------------------ | -------------- | ---------------- |
+| **xqchz**  | emissions + solar forcing                  | 1750-2014      | <- (xqchi,xqcpa) |
+| **xqchy**  | emissions + solar + land-use               | 1750-2014      | <- (xqchz,xqcni) |
+| **xqchx**  | emissions + solar + land-use + GHGs        | 1850–2022      | <- (xqchy,xqchd) |
+| **xqhug**  | aerosol run (sulphate direct effect)       | TBC            | <- xqhuc         |
+
+### xqhug
+
+Aerosol (sulphate) run based on the updated-mods spin-up `xqhuc`. Only the direct effect (ARI) is enabled; the indirect effect (ACI) is switched off.
+
+- **Aerosol indirect effect crashes**
+
+  `L_USE_SULPC_INDIRECT_SW` and `L_USE_SULPC_INDIRECT_LW` cause systematic negative theta/pressure crashes every year or two despite compiling correctly. Root cause not yet identified.
+
+  Solution: keep indirect effect switched off for now. Only direct effect (`L_USE_SULPC_DIRECT=.TRUE.`) is used.
+
+- **RECONA hand-edits required**
+
+  Turning on the SO2 tracer (item 79) via the UMUI panel may not propagate correctly to the RECONA file, and the SO4 mode prognostics are absent from the start dump entirely. The correct entries are:
+
+  ```
+  ### Tracer fields ###
+  &ITEMS ITEM=79,  DOMAIN=1, SOURCE=6, USER_PROG_RCONST=0.0 &END
+  ### Atmos user-prognostic fields ###
+  &ITEMS ITEM=101, DOMAIN=1, SOURCE=3 &END
+  &ITEMS ITEM=103, DOMAIN=1, SOURCE=3 &END
+  &ITEMS ITEM=104, DOMAIN=1, SOURCE=3 &END
+  &ITEMS ITEM=105, DOMAIN=1, SOURCE=3 &END
+  &ITEMS ITEM=106, DOMAIN=1, SOURCE=3 &END
+  ```
+
+  `ITEM=79` must use `SOURCE=6` (initialise to constant 0.0), not `SOURCE=3` — the field does not exist in the original dump and RECON will abort with `Stash code 79 not found on input file`. Items 101 and 103–106 use `SOURCE=3` (read from ancil) and must be inserted after `ITEM=222`. Use the `aero_recon` post-script to apply both fixes automatically: `~/um_updates/post_scripts_puma2/aero_recon <jobid>`.
 
 ## CMIP7 experiments phase
 
@@ -98,5 +126,13 @@ However, spun-up results for the carbon cycle are not satisfying. We modified so
 | xqhuj      | Eqbm run, test plant stress (off)                                   | 40             | xqhua          |
 | xqhuk      | Eqbm run, test plant stress (off) and CCN (on)                      | 40             | xqhua          |
 | xqhul      | CMIP7 Emission + GHGs + LU + Solar + Vol                            | 173            | xqhud          |
+| xqhum      | CMIP7 all forcings (+ aerosol), debugging                           | TBC            | <- (xqhul, xqhug) |
 | xqhuu      | check stash                                                         | /              | xqbtn <- xqbmg |
 | xqhuz      | Tuning version of HadCM3C                                           | /              | xqhra          |
+
+### xqhum
+
+All-forcings run combining `xqhul` (Emission + GHGs + LU + Solar + Vol) with the sulphate aerosol scheme from `xqhug`. Currently being debugged.
+
+> [!NOTE]
+> Document bugs and fixes here as they are identified.
