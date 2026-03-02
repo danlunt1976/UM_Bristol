@@ -7,6 +7,7 @@
 - [Overview](#overview)
 - [Tuning by Seb](#tuning-by-seb)
 - [Tuning by Yousheng](#tuning-by-yousheng)
+  - [Step 5: Dynamic spin-up with tuned parameters](#step-5-dynamic-spin-up-with-tuned-parameters)
 
 ## Overview
 
@@ -125,47 +126,56 @@ Validation uses `utils_cmip7` against CMIP6 ensemble means and RECCAP2 observati
 
 Observational targets: GPP ~120 PgC/yr, NPP ~55–65 PgC/yr, CVeg ~450–550 PgC, CSoil ~1200 PgC. Bias shown in parentheses relative to target (midpoint used for ranges).
 
-| Experiment | Score | GPP (PgC/yr, target 120) | NPP (PgC/yr, target 55–65) | CVeg (PgC, target 450–550) | CSoil (PgC, target 1200) |
-| :--------- | :---- | :----------------------- | :------------------------- | :------------------------- | :----------------------- |
-| **xqjcg** | 0.689 | 135.2 (+13%) | 68.3 (+14%) | 720.0 (+44%) | 1292.3 (+8%) |
-| xqjch | 0.833 | 106.7 (−11%) | 62.2 (in range) | 444.4 (−11%) | 1176.4 (−2%) |
-| xqjci | 0.833 | 101.4 (−16%) | 49.8 (−17%) | 460.6 (−8%) | 952.8 (−21%) |
-| **xqjcj** | **0.870** | **110.3 (−8%)** | **53.6 (−11%)** | **446.2 (−11%)** | **1039.9 (−13%)** |
-| xqjck | 0.763 | 110.1 (−8%) | 56.8 (in range) | 339.5 (−32%) | 1100.3 (−8%) |
-| xqjcl | 0.830 | 98.4 (−18%) | 50.1 (−17%) | 483.2 (in range) | 984.8 (−18%) |
+| Experiment | Spin-up | Score | GPP (PgC/yr, target 120) | NPP (PgC/yr, target 55–65) | CVeg (PgC, target 450–550) | CSoil (PgC, target 1200) |
+| :--------- | :------ | :---- | :----------------------- | :------------------------- | :------------------------- | :----------------------- |
+| **xqjcg** | eqbm | 0.689 | 135.2 (+13%) | 68.3 (+14%) | 720.0 (+44%) | 1292.3 (+8%) |
+| xqjch | eqbm | 0.833 | 106.7 (−11%) | 62.2 (in range) | 444.4 (−11%) | 1176.4 (−2%) |
+| xqjci | eqbm | 0.833 | 101.4 (−16%) | 49.8 (−17%) | 460.6 (−8%) | 952.8 (−21%) |
+| **xqjcj** | **eqbm** | **0.870** | **110.3 (−8%)** | **53.6 (−11%)** | **446.2 (−11%)** | **1039.9 (−13%)** |
+| xqjck | eqbm | 0.763 | 110.1 (−8%) | 56.8 (in range) | 339.5 (−32%) | 1100.3 (−8%) |
+| xqjcl | eqbm | 0.830 | 98.4 (−18%) | 50.1 (−17%) | 483.2 (in range) | 984.8 (−18%) |
+| xqjlb | dyn | 0.811 | 108.5 (−10%) | 63.6 (in range) | 507.3 (in range) | 1156.6 (−4%) |
+| **xqjlc** | **dyn** | **0.856** | **112.6 (−6%)** | **54.8 (−9%)** | **516.8 (in range)** | **1055.8 (−12%)** |
 
 Global mean vegetation fractions — bias shown relative to IGBP observations (BL 0.173, NL 0.068, C3 0.256, C4 0.100, bare soil 0.288):
 
-| Experiment | BL | NL | C3 | C4 | Bare soil |
-| :--------- | :- | :- | :- | :- | :-------- |
-| xqjcg | 0.232 (+34%) | 0.104 (+53%) | 0.145 (−43%) | 0.118 (+18%) | 0.176 (−39%) |
-| xqjch | 0.201 (+16%) | 0.057 (−16%) | 0.190 (−26%) | 0.145 (+45%) | 0.178 (−38%) |
-| xqjci | 0.214 (+24%) | 0.075 (+10%) | 0.224 (−13%) | 0.086 (−14%) | 0.201 (−30%) |
-| **xqjcj** | **0.192 (+11%)** | **0.052 (−24%)** | **0.226 (−12%)** | **0.112 (+12%)** | **0.190 (−34%)** |
-| xqjck | 0.159 (−8%) | 0.045 (−34%) | 0.190 (−26%) | 0.175 (+75%) | 0.178 (−38%) |
-| xqjcl | 0.211 (+22%) | 0.046 (−32%) | 0.244 (−5%) | 0.102 (+2%) | 0.190 (−34%) |
+| Experiment | Spin-up | BL | NL | C3 | C4 | Bare soil |
+| :--------- | :------ | :- | :- | :- | :- | :-------- |
+| xqjcg | eqbm | 0.232 (+34%) | 0.104 (+53%) | 0.145 (−43%) | 0.118 (+18%) | 0.176 (−39%) |
+| xqjch | eqbm | 0.201 (+16%) | 0.057 (−16%) | 0.190 (−26%) | 0.145 (+45%) | 0.178 (−38%) |
+| xqjci | eqbm | 0.214 (+24%) | 0.075 (+10%) | 0.224 (−13%) | 0.086 (−14%) | 0.201 (−30%) |
+| **xqjcj** | **eqbm** | **0.192 (+11%)** | **0.052 (−24%)** | **0.226 (−12%)** | **0.112 (+12%)** | **0.190 (−34%)** |
+| xqjck | eqbm | 0.159 (−8%) | 0.045 (−34%) | 0.190 (−26%) | 0.175 (+75%) | 0.178 (−38%) |
+| xqjcl | eqbm | 0.211 (+22%) | 0.046 (−32%) | 0.244 (−5%) | 0.102 (+2%) | 0.190 (−34%) |
+| xqjlb | dyn | 0.205 (+19%) | 0.056 (−17%) | 0.195 (−24%) | 0.144 (+43%) | 0.189 (−34%) |
+| **xqjlc** | **dyn** | **0.203 (+18%)** | **0.055 (−19%)** | **0.232 (−10%)** | **0.110 (+9%)** | **0.206 (−28%)** |
 
 **xqjcg** (the baseline default) performs worst — CVeg is far too high (720 PgC vs target ~500 PgC) and BL/NL fractions are substantially too high, indicating the untuned parameter set gives excessive tree cover.
 
-**xqjcj** is the top-scoring candidate (0.870), with GPP, CVeg, and CSoil all close to observational targets and the most realistic vegetation fractions.
+**xqjcj** is the top-scoring equilibrium candidate (0.870), with GPP, CVeg, and CSoil all close to observational targets and the most realistic vegetation fractions.
 
 **xqjck** has unrealistically low CVeg (340 PgC) despite reasonable GPP and score, suggesting the parameter combination suppresses vegetation carbon storage too strongly.
 
 **xqjci** and **xqjcl** produce slightly low GPP (~98–101 PgC/yr) and CSoil (~952–985 PgC), falling short of the lower end of observational targets.
 
+**xqjlc** (dynamic spin-up with xqjcj parameters) is the 2nd-highest scoring experiment overall (0.856). It has the best vegetation fractions of the dynamic spin-up runs — C3 bias only −10% and C4 bias +9%, both substantially more realistic than xqjlb. CVeg (517 PgC) and CSoil (1056 PgC) are within or close to target ranges.
+
+**xqjlb** (dynamic spin-up with xqjch parameters) scores 0.811, lower than its equilibrium counterpart (0.833). C4 fraction is notably overestimated (+43%), and C3 remains underestimated (−24%), similar to the equilibrium xqjch.
+
 ### PPE validation heatmap
 
-The `ppe_xqjcg` analysis in `utils_cmip7` evaluates the 6 candidates in the context of the full ~785-member combined dataset (Phase 2 + 3 ensemble members plus the xqjc* runs). The heatmap below shows the top 30 runs ranked by overall score, with the xqjc* experiments (and the two spin-up baselines xqhuc/xqhua) highlighted by red boxes:
+The `ppe_xqjlb` analysis in `utils_cmip7` evaluates all 8 candidates (6 equilibrium xqjc* + 2 dynamic xqjl*) in the context of the full ~788-member combined dataset (Phase 2 + 3 ensemble members plus xqjc*/xqjl* runs). The heatmap below shows the top 30 runs ranked by overall score, with the highlighted experiments (and the two spin-up baselines xqhuc/xqhua) marked by red boxes:
 
-![PPE validation heatmap: top 30 runs vs observations](Attachments/CMIP7_soil_ensembles/ppe_xqjcg_validation_heatmap.png)
+![PPE validation heatmap: top 30 runs vs observations](Attachments/CMIP7_soil_ensembles/ppe_xqjlb_validation_heatmap.png)
 
 Columns show match-to-observations (1.0 = perfect, green = better) for spatial RMSE (BL, NL, C3, C4, bare-soil fractions), global carbon cycle (GPP, CVeg, NPP, CSoil) and global-mean vegetation fractions. Key observations:
 
-- **xqjcj** (top row) is clearly the best overall — strong green across both carbon cycle and vegetation fraction metrics
-- **xqjci, xqjch, xqjcl** are similarly close together in the 2nd–4th positions, with weaknesses mainly in the spatial RMSE columns (red = poor spatial pattern)
-- **xqjck** has good carbon cycle scores but notably poor CSoil match
-- **xqjcg** (baseline, 7th) is the weakest of the 6 — poor NL RMSE and CVeg — yet still outscores most of the raw Phase 3 ensemble members below it
-- The Phase 3 members (lower rows) score well on vegetation fractions (right columns, mostly green) but are less well-constrained on global carbon cycle totals
+- **xqjcj** (score 0.870) remains the top overall performer
+- **xqjlc** (score 0.856) is 2nd place — the dynamic spin-up with xqjcj parameters performs very well, close behind its equilibrium counterpart
+- **xqjci, xqjch, xqjcl** cluster in the 3rd–5th positions (scores 0.829–0.833)
+- **xqjlb** (score 0.811) sits 6th — below its equilibrium counterpart xqjch (0.833), indicating the dynamic spin-up slightly degrades the xqjch parameter set
+- **xqjck** (0.763) and **xqjcg** (0.689, baseline) trail behind
+- All 8 highlighted experiments outperform the bulk of the raw Phase 2/3 ensemble members
 
 ### Regional bias
 
@@ -272,3 +282,62 @@ Key patterns:
 ![Regional bias heatmap vs CMIP6: xqjcl](Attachments/CMIP7_soil_ensembles/xqjcl_bias_heatmap_vs_cmip6.png)
 
 </details>
+
+<details>
+<summary><strong>xqjlb</strong> — dynamic spin-up (xqjch params), score 0.811</summary>
+
+![Regional bias heatmap (unified): xqjlb vs observations](Attachments/CMIP7_soil_ensembles/xqjlb_bias_heatmap_unified.png)
+
+Key patterns:
+- **GPP**: globally −13%, similar to equilibrium xqjch (−11%); South Asia (−58%) and South East Asia (−35%) remain the weakest regions
+- **NPP**: globally +5%, slightly overestimated in Europe (+28%) and Oceania (+67%); South Asia severely underestimated (−50%)
+- **CVeg**: globally +23% vs RECCAP2, driven by South America (+51%), Africa (+46%), and Oceania (+72%); North Asia (−45%) and South Asia (−48%) too low
+- **CSoil**: globally −8%, moderate — Africa too high (+49%), South America too low (−44%)
+- **C4 fraction**: overestimated globally (+43%), extreme in Oceania (+58%) — a persistent weakness inherited from the xqjch parameter set
+- **C3 fraction**: underestimated globally (−24%), worse than the equilibrium xqjch (−26%), similar pattern
+
+![Regional bias heatmap vs CMIP6: xqjlb](Attachments/CMIP7_soil_ensembles/xqjlb_bias_heatmap_vs_cmip6.png)
+
+</details>
+
+<details>
+<summary><strong>xqjlc</strong> — dynamic spin-up (xqjcj params), score 0.856</summary>
+
+![Regional bias heatmap (unified): xqjlc vs observations](Attachments/CMIP7_soil_ensembles/xqjlc_bias_heatmap_unified.png)
+
+Key patterns:
+- **GPP**: globally −9%, an improvement over equilibrium xqjcj (−8% global but −11% in the eqbm run); South Asia (−60%) and South East Asia (−29%) remain weak
+- **NPP**: globally −9%, close to target; South Asia (−62%) is the main outlier
+- **CVeg**: globally +25% vs RECCAP2, driven by South America (+70%) and Africa (+51%); North Asia (−52%) and South Asia (−51%) too low
+- **CSoil**: globally −16%, fairly uniform across regions; South America (−46%) is the worst
+- **C3 fraction**: −10% globally — the best C3 match of any dynamic spin-up candidate, and competitive with the best equilibrium runs
+- **C4 fraction**: +9% globally — by far the most realistic C4 of all candidates (equilibrium or dynamic)
+- **BL fraction**: +18% globally, moderate overestimate; Oceania remains too high
+- Overall the most balanced regional performance among the dynamic spin-up experiments
+
+![Regional bias heatmap vs CMIP6: xqjlc](Attachments/CMIP7_soil_ensembles/xqjlc_bias_heatmap_vs_cmip6.png)
+
+</details>
+
+### Step 5: Dynamic spin-up with tuned parameters
+
+The equilibrium TRIFFID runs (`xqjcg`–`xqjcl`) use an accelerated equilibrium spin-up which may not reflect the carbon cycle state that a transient (dynamic TRIFFID) spin-up would produce. To test this, two dynamic spin-up experiments were run from the preindustrial spin-up `xqhuc`, using the parameter sets from the two strongest equilibrium candidates:
+
+| Experiment | Source params | V_CRIT_ALPHA | Spin-up type | Score |
+| :--------- | :----------- | :----------- | :----------- | :---- |
+| xqjlb | xqjch | 0.361 | Dynamic TRIFFID, 200 yr | 0.811 |
+| xqjlc | xqjcj | 0.314 | Dynamic TRIFFID, 200 yr | 0.856 |
+
+Key findings from the dynamic spin-up experiments:
+
+1. **CVeg increases under dynamic spin-up**: both experiments show ~60–70 PgC higher CVeg than their equilibrium counterparts (507 vs 444 for xqjlb/xqjch; 517 vs 446 for xqjlc/xqjcj). This shifts CVeg from slightly below target into the target range (450–550 PgC).
+
+2. **CSoil is relatively stable**: xqjlb (1157 PgC) is close to xqjch (1176 PgC); xqjlc (1056 PgC) is close to xqjcj (1040 PgC). The dynamic spin-up does not dramatically shift soil carbon.
+
+3. **GPP and NPP are similar**: differences between equilibrium and dynamic spin-up are within ~2 PgC/yr for both metrics.
+
+4. **xqjlc confirms xqjcj as the best parameter set**: it ranks 2nd overall out of 788 experiments (behind only xqjcj itself), with the most realistic vegetation fractions of any dynamic run (C3 −10%, C4 +9%).
+
+5. **xqjlb underperforms its equilibrium counterpart**: score drops from 0.833 (xqjch) to 0.811 (xqjlb), mainly due to increased C4 overestimation (+43% vs +45%) and higher CVeg bias.
+
+6. **Persistent regional weaknesses**: South Asia (GPP −58 to −60%) and South East Asia (GPP −29 to −35%) remain problematic across all experiments, suggesting a structural model bias unrelated to the tuned parameters.

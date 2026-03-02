@@ -129,6 +129,17 @@ However, spun-up results for the carbon cycle are not satisfying. We modified so
 | xqhum      | CMIP7 all forcings (+ aerosol), debugging                           | TBC            | <- (xqhul, xqhug) |
 | xqhuu      | check stash                                                         | /              | xqbtn <- xqbmg |
 | xqhuz      | Tuning version of HadCM3C                                           | /              | xqhra          |
+| **xqjlb**  | Dynamic TRIFFID spin-up, tuned params from xqjch                    | 200            | xqhuc          |
+| **xqjlc**  | Dynamic TRIFFID spin-up, tuned params from xqjcj                    | 200            | xqhuc          |
+
+### xqjlb / xqjlc
+
+Dynamic TRIFFID spin-up experiments using tuned terrestrial carbon cycle parameters from the [soil ensemble selection](CMIP7_soil_ensembles.md). Both start from the updated-mods preindustrial spin-up `xqhuc` and run for 200 years with fixed forcing.
+
+- **xqjlb**: uses the parameter set from `xqjch` (V_CRIT_ALPHA = 0.361)
+- **xqjlc**: uses the parameter set from `xqjcj` (V_CRIT_ALPHA = 0.314)
+
+These test whether the equilibrium-TRIFFID tuning results hold under dynamic TRIFFID spin-up. See [CMIP7 soil ensembles](CMIP7_soil_ensembles.md#step-5-dynamic-spin-up-with-tuned-parameters) for validation results.
 
 ### xqhum
 
