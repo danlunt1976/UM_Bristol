@@ -15,6 +15,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-03-02** — add GitHub Action to auto-update README Recent Updates
 - **2026-03-02** — Add key updates and recent updates sections to README
 - **2026-02-27** — Add CMIP7 outcomes page and QR code
 - **2026-02-26** — Update CMIP7 Ozone v2.0 data
@@ -24,7 +25,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-02-20** — Add bias annotations to validation results tables
 - **2026-02-20** — Add PPE validation heatmap for xqjcg candidates
 - **2026-02-20** — Add terrestrial ensemble tuning documentation
-- **2026-02-19** — Document aerosol mods, conflicts, and xqhug/xqhum experiments
 
 ---
 [How to edit these pages](Editing_guide.md)
