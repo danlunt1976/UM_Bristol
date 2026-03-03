@@ -8,6 +8,7 @@
 - [Tuning by Seb](#tuning-by-seb)
 - [Tuning by Yousheng](#tuning-by-yousheng)
   - [Step 5: Dynamic spin-up with tuned parameters](#step-5-dynamic-spin-up-with-tuned-parameters)
+    - [Spin-up timeseries](#spin-up-timeseries)
 
 ## Overview
 
@@ -327,6 +328,23 @@ The equilibrium TRIFFID runs (`xqjcg`–`xqjcl`) use an accelerated equilibrium 
 | :--------- | :----------- | :----------- | :----------- | :---- |
 | xqjlb | xqjch | 0.361 | Dynamic TRIFFID, 200 yr | 0.811 |
 | xqjlc | xqjcj | 0.314 | Dynamic TRIFFID, 200 yr | 0.856 |
+
+#### Spin-up timeseries
+
+The figure below shows the temporal evolution of key diagnostics during the 200-year dynamic TRIFFID spin-ups for xqjlb (red dashed) and xqjlc (blue solid), both starting from the preindustrial spin-up `xqhuc`.
+
+![Dynamic spin-up timeseries: xqjlb and xqjlc](Attachments/CMIP7_soil_ensembles/Spin_up_xqjlb_xqjlc.png)
+
+- **tas (a)**: Both runs oscillate around ~287.4–288.0 K with no significant drift. xqjlb runs slightly warmer. Temperature is reasonably stable by ~1950 onward.
+- **Trees Total (b)**: Steady decline from ~0.33 to ~0.22–0.24 over the full period. The decline slows but has not fully levelled off, indicating the dynamic vegetation has not fully equilibrated.
+- **CVeg (c)**: Drops sharply from ~700 PgC to ~400–500 PgC, mirroring the tree fraction loss. xqjlb retains slightly higher CVeg. The decline slows but does not fully stabilise.
+- **CSoil (d)**: Declines from ~1200 PgC to ~1050–1100 PgC (xqjlc lower). Still drifting slightly downward at the end.
+- **Land Carbon (e)**: Declines from ~2000 to ~1400–1500 PgC/yr, tracking CVeg and CSoil losses. Both runs overlap closely.
+- **GPP (f)**: Fluctuates around 105–115 PgC/yr with high interannual variability but no clear trend — appears stable.
+- **NEP (g)**: Large negative excursions early on (−15 to −20 PgC/yr), indicating the land is a net carbon source as vegetation adjusts. By ~1950 it oscillates around zero, suggesting the carbon cycle is approaching balance.
+- **fgco2 (h)**: Ocean CO2 flux ranges from −3.5 to −4.5 PgC/yr, both runs tracking closely with no drift.
+
+The two spin-ups behave very similarly. The main concern is the ongoing decline in trees, CVeg, and CSoil — the dynamic vegetation and soil carbon pools have not fully equilibrated after 200 years, though GPP, NEP, and ocean flux are stable. This is a common feature of HadCM3B-ES spin-ups with TRIFFID dynamic vegetation.
 
 Key findings from the dynamic spin-up experiments:
 
