@@ -15,6 +15,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-03-03** — Add xqjlb/xqjlc dynamic spin-up timeseries to soil ensembles
 - **2026-03-02** — Add xqjlb/xqjlc dynamic spin-up validation results
 - **2026-03-02** — add GitHub Action to auto-update README Recent Updates
 - **2026-03-02** — Add key updates and recent updates sections to README
@@ -24,7 +25,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-02-23** — Update Model_install.md
 - **2026-02-20** — Add regional bias sections for all 6 xqjc candidates, folded by default
 - **2026-02-20** — Add bias annotations to validation results tables
-- **2026-02-20** — Add PPE validation heatmap for xqjcg candidates
 
 ---
 [How to edit these pages](Editing_guide.md)
