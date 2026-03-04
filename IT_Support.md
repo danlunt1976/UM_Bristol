@@ -35,6 +35,7 @@ All requests for support should go through one of three routes:
 * happi machine reconfigured as standard BRIDGE machine.  Wait for Rocky 8 migration. 
 * Set up up paleocene as the new webserver and ummodel/data
 * swsvalde webserver - no longer run as swsvalde. Possible solution - only internal users allowed to write files.  Externals can no longer make new plots.
+* plans for more frequent reboots - e.g. script to check for downlaods running. 
 
 # Completed
 
