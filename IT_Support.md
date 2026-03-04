@@ -19,27 +19,31 @@ All requests for support should go through one of three routes:
 
 ## Faults
 
-* ~IDL licence issues~
-* ~subfigure in latex on miocene~
-* ~pdfcrop on miocene~
+* none at present
 
 ## Day-to-day user support
 
-* ~convsh/xconv install on new machines~
+
 * IDL standard libraries in one place.
 * warranty renewal for all Lenovo machines.  Dan put in request to faculty.  David to explore 3rd-party warranty.
 * deepmip/umbrella from wordpress to campuspress?  pros/cons...?
-* ~holocene4 disk has failed - look at options for warranty/re-raiding etc.  Fixed.~
 * freeze wiki to read-only: [http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/](http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/)
 
 ## Long-term support
 
 * Migrate all machines to Rocky 8 (SET submitted)
-* ~swsvalde user account new UID~
 * happi machine reconfigured as standard BRIDGE machine.  Wait for Rocky 8 migration. 
 * Set up up paleocene as the new webserver and ummodel/data
 * swsvalde webserver - no longer run as swsvalde. Possible solution - only internal users allowed to write files.  Externals can no longer make new plots.
 
+# Completed
+
+* ~IDL licence issues~
+* ~subfigure in latex on miocene~
+* ~pdfcrop on miocene~
+* ~swsvalde user account new UID~
+* ~convsh/xconv install on new machines~
+* ~holocene4 disk has failed - look at options for warranty/re-raiding etc.~
 
 # Plan for new systems
 
