@@ -29,7 +29,7 @@ def get_recent_md_commits(count=10):
     seen = set()
     entries = []
     for line in result.stdout.strip().splitlines():
-        if not line or "[skip ci]" in line:
+        if not line or "[skip readme]" in line:
             continue
         parts = line.split("\t", 1)
         if len(parts) != 2:
