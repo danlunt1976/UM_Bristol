@@ -16,6 +16,8 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-03-04** — Update IT_Support.md
+- **2026-03-04** — updates to IT and collabs
 - **2026-03-03** — Update README.md
 - **2026-03-03** — Add CMIP26 Kyoto conference to key updates in README
 - **2026-03-03** — Add xqjlb/xqjlc dynamic spin-up timeseries to soil ensembles
@@ -24,8 +26,10 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-03-02** — Add key updates and recent updates sections to README
 - **2026-02-27** — Add CMIP7 outcomes page and QR code
 - **2026-02-26** — Update CMIP7 Ozone v2.0 data
+- **2026-02-24** — Update Collaborations_scotese.md
 - **2026-02-23** — Update University_HPC.md
 - **2026-02-23** — Update Model_install.md
+- **2026-02-20** — Add regional bias sections for all 6 xqjc candidates, folded by default
 
 ---
 [How to edit these pages](Editing_guide.md)

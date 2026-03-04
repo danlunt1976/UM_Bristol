@@ -19,27 +19,32 @@ All requests for support should go through one of three routes:
 
 ## Faults
 
-* ~IDL licence issues~
-* ~subfigure in latex on miocene~
-* ~pdfcrop on miocene~
+* none at present
 
 ## Day-to-day user support
 
-* ~convsh/xconv install on new machines~
+
 * IDL standard libraries in one place.
-* warranty renewal for all Lenovo machines.  Dan put in request to faculty.  David to explore 3rd-party warranty.
+* warranty renewal for all Lenovo machines.  Dan put in request to faculty.  David is exploring 3rd-party warranty.
 * deepmip/umbrella from wordpress to campuspress?  pros/cons...?
-* ~holocene4 disk has failed - look at options for warranty/re-raiding etc.  Fixed.~
 * freeze wiki to read-only: [http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/](http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/)
 
 ## Long-term support
 
 * Migrate all machines to Rocky 8 (SET submitted)
-* ~swsvalde user account new UID~
 * happi machine reconfigured as standard BRIDGE machine.  Wait for Rocky 8 migration. 
 * Set up up paleocene as the new webserver and ummodel/data
 * swsvalde webserver - no longer run as swsvalde. Possible solution - only internal users allowed to write files.  Externals can no longer make new plots.
+* plans for more frequent reboots - e.g. script to check for downlaods running. 
 
+# Completed
+
+* ~IDL licence issues~
+* ~subfigure in latex on miocene~
+* ~pdfcrop on miocene~
+* ~swsvalde user account new UID~
+* ~convsh/xconv install on new machines~
+* ~holocene4 disk has failed - look at options for warranty/re-raiding etc.~
 
 # Plan for new systems
 
@@ -47,7 +52,7 @@ All requests for support should go through one of three routes:
 | Order | Task                                                                                                                             | Person responsible         | Target date for completion | Completed |
 | ----- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | -------------------------- | --------- |
 | (1)   | Finish installation of convsh and xconv on new machines, either hacked version or full-build version.                            | DG                         | 5/12/2025                  | Y         |
-| (2)   | Make a "paleo2.bris.ac.uk" domain which can be used for testing users' webpages and view-only of ~swsvalde/ummodel               | DG                         | 31/1/2026                  |           |
+| (2)   | Make a "paleo2-test.ggy.bris.ac.uk" domain which can be used for testing users' webpages and view-only of ~swsvalde/ummodel               | DG                         | 31/1/2026                  | Y         |
 | (3)   | Ask paleo users to empty silurian, or accept risk of losing data.                                                                | DL                         | 7/1/2026                   | Y         |
 | (4a)  | Convert silurian to Rocky 8 (need to install temporary disks for RAID metadata)                                                  | DG                         | 28/2/2026                  |           |
 | (4b)  | Move all paleo users home directories from old-eocene to eocene2                                                                 | all paleo users            | 9/2/2026                   |           |
