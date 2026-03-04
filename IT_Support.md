@@ -25,7 +25,7 @@ All requests for support should go through one of three routes:
 
 
 * IDL standard libraries in one place.
-* warranty renewal for all Lenovo machines.  Dan put in request to faculty.  David to explore 3rd-party warranty.
+* warranty renewal for all Lenovo machines.  Dan put in request to faculty.  David is exploring 3rd-party warranty.
 * deepmip/umbrella from wordpress to campuspress?  pros/cons...?
 * freeze wiki to read-only: [http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/](http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/)
 
