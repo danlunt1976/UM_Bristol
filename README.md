@@ -15,6 +15,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-03-04** — Update IT_Support.md
 - **2026-03-04** — updates to IT and collabs
 - **2026-03-02** — add GitHub Action to auto-update README Recent Updates
 - **2026-03-02** — Add key updates and recent updates sections to README
@@ -24,7 +25,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-02-23** — Update University_HPC.md
 - **2026-02-23** — Update Model_install.md
 - **2026-02-20** — Add regional bias sections for all 6 xqjc candidates, folded by default
-- **2026-02-20** — Add bias annotations to validation results tables
 
 ---
 [How to edit these pages](Editing_guide.md)
