@@ -16,6 +16,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-03-08** — use absolute GitHub Pages URLs for HTML animation links
 - **2026-03-08** — add poster page and HTML supplementary animations for carbon cycle poster
 - **2026-03-08** — populate CMIP7_outcomes with CMIP Community Workshop 2026 entries
 - **2026-03-04** — Update IT_Support.md
@@ -25,7 +26,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-03-03** — Update README.md
 - **2026-03-03** — Add CMIP26 Kyoto conference to key updates in README
 - **2026-03-03** — Add xqjlb/xqjlc dynamic spin-up timeseries to soil ensembles
-- **2026-03-02** — update Recent Updates section [skip ci]
 
 ---
 [How to edit these pages](Editing_guide.md)
