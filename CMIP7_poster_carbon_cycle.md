@@ -22,5 +22,5 @@ Interactive figures are best viewed in a desktop browser. Click the links below 
 
 | Animation | Description |
 |-----------|-------------|
-| [Basic model diagnostics](Attachments/CMIP7_poster_carbon_cycle/basic_diagnosis_interactive.html) | Interactive basic model diagnostics comparing multiple HadCM3B CMIP7 runs |
-| [TAS anomaly timeseries](Attachments/CMIP7_poster_carbon_cycle/tas_anomaly_interactive02.html) | Interactive surface air temperature (TAS) anomaly timeseries for HadCM3B CMIP7 simulations |
+| [Basic model diagnostics](https://danlunt1976.github.io/UM_Bristol/Attachments/CMIP7_poster_carbon_cycle/basic_diagnosis_interactive.html) | Interactive basic model diagnostics comparing multiple HadCM3B CMIP7 runs |
+| [TAS anomaly timeseries](https://danlunt1976.github.io/UM_Bristol/Attachments/CMIP7_poster_carbon_cycle/tas_anomaly_interactive02.html) | Interactive surface air temperature (TAS) anomaly timeseries for HadCM3B CMIP7 simulations |
