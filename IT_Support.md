@@ -34,8 +34,8 @@ All requests for support should go through one of three routes:
 * Migrate all machines to Rocky 8 (SET submitted)
 * happi machine reconfigured as standard BRIDGE machine.  Wait for Rocky 8 migration. 
 * Set up up paleocene as the new webserver and ummodel/data
-* swsvalde webserver - no longer run as swsvalde. Possible solution - only internal users allowed to write files.  Externals can no longer make new plots.
-* plans for more frequent reboots - e.g. script to check for downlaods running. 
+* swsvalde webserver - no longer run as swsvalde - use webserver user. Possible solution - only internal users allowed to write files.  Externals can no longer make new plots.  Make ACL (access control list) to determine who can read/write.  Need to set up SE Linux rules for the webserver to able to write, for security.
+* plans for more frequent reboots - e.g. script to check for downloads running. 
 
 # Completed
 
@@ -54,7 +54,7 @@ All requests for support should go through one of three routes:
 | (1)   | Finish installation of convsh and xconv on new machines, either hacked version or full-build version.                            | DG                         | 5/12/2025                  | Y         |
 | (2)   | Make a "paleo2-test.ggy.bris.ac.uk" domain which can be used for testing users' webpages and view-only of ~swsvalde/ummodel               | DG                         | 31/1/2026                  | Y         |
 | (3)   | Ask paleo users to empty silurian, or accept risk of losing data.                                                                | DL                         | 7/1/2026                   | Y         |
-| (4a)  | Convert silurian to Rocky 8 (need to install temporary disks for RAID metadata)                                                  | DG                         | 28/2/2026                  |           |
+| (4a)  | Convert silurian to Rocky 8 (need to install temporary disks for RAID metadata)                                                  | DG                         | 31/5/2026                  |           |
 | (4b)  | Move all paleo users home directories from old-eocene to eocene2                                                                 | all paleo users            | 9/2/2026                   |           |
 | (4c)  | Move ~swsvalde from old-eocene to eoecne2                                                                                        | PJV                        | 9/2/2026                   |           |
 | (4d)  | Add paleocene as new web server (i.e. move from paleo2.bris.ac.uk to paleo.bris.ac.uk, and put oligocene onto paleo2.bris.ac.uk) | DG                         | 9/2/2026                   |           |
