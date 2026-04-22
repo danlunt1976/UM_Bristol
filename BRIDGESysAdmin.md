@@ -13,7 +13,7 @@ see also notes on our old wiki (some aspects of which are outdated):
 `ssh-agent $SHELL ; ssh-add`  
 `[root password]`
 
-`cd ~swsvsalde/sbin/`  
+`cd ~swsvalde/sbin/`  
 `./add_bridge_user.sh -u [UoB username - top priority] -d [for debug - doesn't do anything] -n [surname etc. - uses ldap] -e "2017-12-01" [expiry date] [-g miocene,lentil] [-s ksh] [-q is for quiet]`
 
 Then type the number for the user you want.  
