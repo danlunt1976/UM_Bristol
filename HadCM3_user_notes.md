@@ -16,6 +16,8 @@
 
 [HadCM3 for CMIP7](HadCM3_CMIP7.md)
 
+[Running on BC5](BC5_running.md)
+
 [Documentation for tools](UM_tools_and_generic_tools.md)
 
 [Running paleo simulations with HadCM3](Paleo_HadCM3.md)
