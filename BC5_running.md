@@ -61,7 +61,7 @@ and you should be logged in!
 
 ## Setting up to run the UM
 
-In my home directory, once only:
+In your home directory, once only, set up these folders/links:
 ```
 mkdir /projects/public/b55a/ggdjl
 mkdir /projects/public/b55a/ggdjl/um
@@ -95,7 +95,9 @@ cp  /home/b55a/ggdagw.b55a/met.kshrc .
 ```
 clustersubmit -s y -q general -r bc5 -P " " xqhgf
 ```
-Now `cd` to ~/`umui_runs` and you will need to hand-edit the SCRIPT and SUBMIT files in the latest folder.
+Now `cd` to ~/`umui_runs` .  Normally you would just type `ksh SUBMIT`, but for now you will either have to do some hand-edits first, or submit as above but using /home/b55a/ggdjl.b55a/clustersubmit_ggdjl in place of clustersubmit.
+
+If you used the usual clustersubmit then will need to hand-edit the SCRIPT and SUBMIT files in the latest umui_runs folder.
 In SUBMIT:
 ```
 echo "#!/usr/bin/env ksh">/tmp/qsubmit.$thisHost.$$
@@ -116,6 +118,7 @@ You can then submit with
 ```
 ksh SUBMIT
 ```
+
 You can check on the progress of the compile job with:
 ```
 squeue --me
@@ -127,7 +130,7 @@ squeue --me
 clustersubmit -s y -q general -r bc5 -P " " -a y -p 8x4 -c n xqhgf
 ```
 
-And then do the same hand-edits as for compile, and run in the same way.
+And then do the same hand-edits as for compile (or use clustersubmit_ggdjl), and run in the same way.
 
 ## Help etc.
 
