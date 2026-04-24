@@ -33,13 +33,6 @@ mkdir clifton ; cd clifton
 curl -L https://github.com/isambard-sc/clifton/releases/latest/download/clifton-linux-musl-x86_64 -o clifton 
 chmod u+x clifton
 ```
-The default is for you to be logged out every minute or so of not typing.  To avoid this, in .ssh/config, add these 3 lines after the Include line:
-```
-Include "/home/ggdjl/.ssh/config_clifton"
-TCPKeepALive yes
-ServerAliveInterval 10
-ServerAliveCountMax 100
-```
 
 Every time you log in to BC5, to authenticate your ssh link:
 ```
@@ -58,6 +51,13 @@ ssh -X -Y b55a.bc5.digital-labs
 ```
 and you should be logged in!
 
+The default is for you to be logged out every minute or so of not typing.  To avoid this, in .ssh/config, add these 3 lines after the Include line:
+```
+Include "/home/ggdjl/.ssh/config_clifton"
+TCPKeepALive yes
+ServerAliveInterval 10
+ServerAliveCountMax 100
+```
 
 ## Setting up to run the UM
 
