@@ -13,9 +13,9 @@ However, in the end I joined via an invite from SH to the 'BC5 Testing' project,
 ## Creating an account
 
 There are instructions on how to get an account [here](https://docs.isambard.ac.uk/user-documentation/tutorials/setup/).
-In brief, login at the [BriCS portal](https://portal.isambard.ac.uk/) via "University Login (MyAccessID)".
+In brief, go to the [BriCS portal](https://portal.isambard.ac.uk/) and choose the identify provider "University Login (MyAccessID)".
 If this is your first time, choose the same linux username as you have on the BRIDGE machines, i.e. your UoB username, and accept the terms and conditions.
-Note that on BC5, your username will actually be in the form USER.PROJECT . For example, mine is ggdjl.b55
+Note that on BC5, your username will actually be in the form USER.PROJECT . For example, mine is ggdjl.b55  . As such, ~ggdjl will not work, it has to be ~ggdjl.b55
 
 ## Logging in
 
@@ -41,13 +41,13 @@ ServerAliveInterval 10
 ServerAliveCountMax 100
 ```
 
-Every time you log in, to authenticate your ssh link:
+Every time you log in to BC5, to authenticate your ssh link:
 ```
 cd clifton
 ./clifton auth --identity /home/ggdjl/.ssh/id_ed25519_bc5
 ```
-This popped up a QR code (there was no default web browser set on miocene), which I read into my mobile phone, and logged in via the webpages that popped up on my phone.
-Back on miocene I then did: (you only need to do this once, the very first time you log in)
+This pops up a QR code (there was no default web browser set on miocene), which you read into your mobile phone, and log in via the webpages that pop up on your phone.
+Back on miocene you then do: (you only need to do this once, the very first time you log in)
 ```
 cd clifton
 ./clifton ssh-config write
