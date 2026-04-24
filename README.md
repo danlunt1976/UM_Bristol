@@ -16,6 +16,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-04-24** — Update BC5_running.md
 - **2026-04-23** — Update HadCM3_user_notes.md
 - **2026-04-23** — Create BC5_running.md
 - **2026-04-22** — Update Collaborations_scotese.md
@@ -25,7 +26,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-04-01** — Update CMIP7_fcg_LUC.md
 - **2026-03-30** — Update Collaborations_scotese.md
 - **2026-03-23** — Update Collaborations_scotese.md
-- **2026-03-08** — use absolute GitHub Pages URLs for HTML animation links
 
 ---
 [How to edit these pages](Editing_guide.md)
