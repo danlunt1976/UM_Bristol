@@ -8,7 +8,7 @@ There is a [dedicated page for BC5](https://docs.isambard.ac.uk/user-documentati
 ## Creating a project
 
 I initially set up a new project called "BC5 HadCM3" following the instructions [here](https://apply.isambard.ac.uk/bristol/) .
-However, mostly you would be joining an existing project via an invitation from a PI, that arrived by email. 
+However, in the end I joined via an invite from SH to the 'BC5 Testing' project, and mostly you would be joining an existing project via an invitation from a PI, that arrived by email. 
 
 ## Creating an account
 
