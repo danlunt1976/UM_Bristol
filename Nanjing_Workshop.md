@@ -49,5 +49,5 @@ And if you are mega-keen then you could also read a [description of our climate 
 
 
 Here is a link to: 
-[Handbook](Paleo_Modelling_Handbook_core.ipynb)
+[Handbook](Paleo_Modelling_Handbook_core.html)
 
