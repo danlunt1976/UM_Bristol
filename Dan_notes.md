@@ -17,3 +17,7 @@
 | 6x  |                   |                       |                        |                    | xpjpf<br>tfcme@z00 |                                                                                     |                   |                    |                    |
 | 9x  |                   |                       |                        |                    | xpjpg<br>tfcme@z00 |                                                                                     |                   |                    |                    |
 |     |                   |                       |                        |                    |                    |                                                                                     |                   |                    |                    |
+
+
+Here is a link to: 
+[Handbook](Paleo_Modelling_Handbook_core.ipynb)
