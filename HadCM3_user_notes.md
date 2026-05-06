@@ -28,4 +28,6 @@
 
 [Dan notes](Dan_notes.md)
 
+[Workshops](Workshops)
+
 
