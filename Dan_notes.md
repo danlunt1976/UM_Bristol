@@ -20,4 +20,4 @@
 
 
 Here is a link to: 
-[Handbook](Paleo_Modelling_Handbook_core.ipnyb)
+[Handbook](Paleo_Modelling_Handbook_core.ipynb)
