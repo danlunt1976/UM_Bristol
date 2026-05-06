@@ -19,9 +19,3 @@
 |     |                   |                       |                        |                    |                    |                                                                                     |                   |                    |                    |
 
 
-<<<<<<< HEAD
-
-=======
-Here is a link to: 
-[Handbook](Paleo_Modelling_Handbook_core.html)
->>>>>>> efe8417a0bf170f368e26b004f7d5319ec23180e
