@@ -18,11 +18,11 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-05-06** — Update Dan_notes.md
 - **2026-05-06** — Update README.md
 - **2026-05-06** — Create Workshops.md
 - **2026-05-06** — Create Nanjing_Workshop.md
 - **2026-05-06** — Update HadCM3_user_notes.md
-- **2026-05-06** — Update Dan_notes.md
 - **2026-04-28** — Update Model_install.md
 - **2026-04-24** — Update BC5_running.md
 - **2026-04-23** — Update HadCM3_user_notes.md
