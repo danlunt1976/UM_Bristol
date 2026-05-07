@@ -14579,38 +14579,32 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Visualising-and-analysing-paleoclimate-model-outputs">Visualising and analysing paleoclimate model outputs<a class="anchor-link" href="#Visualising-and-analysing-paleoclimate-model-outputs">&#182;</a></h1><h2 id="Dan-Lunt-and-Stephanie-Clark">Dan Lunt and Stephanie Clark<a class="anchor-link" href="#Dan-Lunt-and-Stephanie-Clark">&#182;</a></h2><h2 id="Paleo-Modelling-Group,-University-of-Bristol,-UK">Paleo Modelling Group, University of Bristol, UK<a class="anchor-link" href="#Paleo-Modelling-Group,-University-of-Bristol,-UK">&#182;</a></h2><p>Contents:</p>
-<ul>
-<li><a href="#Introduction-to-the-model-outputs">Introduction to the model outputs</a></li>
-<li><a href="#Introduction-to-Python">Introduction to Python</a><ul>
+<h1 id="Visualising-and-analysing-paleoclimate-model-outputs">Visualising and analysing paleoclimate model outputs<a class="anchor-link" href="#Visualising-and-analysing-paleoclimate-model-outputs">&#182;</a></h1><h2 id="Dan-Lunt-and-Stephanie-Clark">Dan Lunt and Stephanie Clark<a class="anchor-link" href="#Dan-Lunt-and-Stephanie-Clark">&#182;</a></h2><h2 id="Paleo-Modelling-Group,-University-of-Bristol,-UK">Paleo Modelling Group, University of Bristol, UK<a class="anchor-link" href="#Paleo-Modelling-Group,-University-of-Bristol,-UK">&#182;</a></h2><h2 id="Contents:">Contents:<a class="anchor-link" href="#Contents:">&#182;</a></h2><ul>
+<li><a href="#Part-1:-Introduction-to-the-model-outputs">Part 1: Introduction to the model outputs</a></li>
+<li><a href="#Part-2:-Introduction-to-Python">Part 2: Introduction to Python</a><ul>
 <li><a href="#Background">Background</a></li>
 <li><a href="#Making-a-new-Jupyter-notebook">Making a new Jupyter notebook</a></li>
 <li><a href="#Package-setup">Package setup</a></li>
 </ul>
 </li>
-<li><a href="#Part-1:-Making-global-and-regional-maps">Part 1: Making global and regional maps</a><ul>
+<li><a href="#Part-3:-Making-a-global-map">Part 3: Making a global map</a><ul>
 <li><a href="#Reading-in-files">Reading in files</a></li>
 <li><a href="#Extracting-variables">Extracting variables</a></li>
 <li><a href="#Global-maps">Global maps</a></li>
+</ul>
+</li>
+<li><a href="#Part-4:-Other-maps">Part 4: Other maps</a><ul>
 <li><a href="#Regional-maps-and-proxies">Regional maps and proxies</a></li>
-<li><a href="#Boundary-conditions">Boundary conditions</a></li>
+<li><a href="#Boundary-condition-maps">Boundary condition maps</a></li>
 </ul>
 </li>
-<li><a href="#Part-2:-Accessing-and-analysing-more-simulations">Part 2: Accessing and analysing more simulations</a><ul>
-<li><a href="#Exploring-paleoclimate-model-outputs">Exploring paleoclimate model outputs</a><ul>
-<li><a href="#1\">1) Published simulations in the BRIDGE archive</a>-Published-simulations-in-the-BRIDGE-archive)</li>
-<li><a href="#2\">2) Phanerozoic simulations</a>-Phanerozoic-simulations)</li>
-<li><a href="#3\">3) Glacial-interglacial Plio-Pleistocene simulations</a>-Glacial-interglacial-Plio-Pleistocene-simulations)</li>
-<li><a href="#Downloading-multiple-simulations">Downloading multiple simulations</a></li>
-</ul>
-</li>
+<li><a href="#Part-5:-Automation">Part 5: Automation</a><ul>
 <li><a href="#Reading-in-multiple-files">Reading in multiple files</a></li>
 <li><a href="#Functions">Functions</a></li>
-<li><a href="#Further-data-and-tools">Further data and tools</a></li>
 <li><a href="#Phanerozoic-paleo-rotations">Phanerozoic paleo rotations</a>   </li>
 </ul>
 </li>
-<li><a href="#Part-3:-Other-analysis-and-plotting-tools">Part 3: Other analysis and plotting tools</a><ul>
+<li><a href="#Part-6:-Other-analysis-and-plotting-tools">Part 6: Other analysis and plotting tools</a><ul>
 <li><a href="#Global-and-regional-means">Global and regional means</a></li>
 <li><a href="#Other-plotting-tools">Other plotting tools</a><ul>
 <li><a href="#Masking">Masking</a></li>
@@ -14620,11 +14614,21 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </li>
 </ul>
 </li>
+<li><a href="#Part-7:-Accessing-and-analysing-more-model-outputs">Part 7: Accessing and analysing more model outputs</a><ul>
+<li><a href="#Exploring-more-paleoclimate-model-simulations">Exploring more paleoclimate model simulations</a><ul>
+<li><a href="#1\">1) Published simulations in the BRIDGE archive</a>-Published-simulations-in-the-BRIDGE-archive)</li>
+<li><a href="#2\">2) Phanerozoic simulations</a>-Phanerozoic-simulations)</li>
+<li><a href="#3\">3) Glacial-interglacial Plio-Pleistocene simulations</a>-Glacial-interglacial-Plio-Pleistocene-simulations)</li>
+<li><a href="#Downloading-multiple-simulations">Downloading multiple simulations</a></li>
+</ul>
+</li>
+<li><a href="#Exploring-additional-variables">Exploring additional variables</a></li>
+</ul>
+</li>
+<li><a href="#Coda">Coda</a></li>
 <li><a href="#References">References</a></li>
 <li><a href="#Appendices">Appendices</a><ul>
 <li><a href="#Appendix-1:-Anaconda-download">Appendix 1: Anaconda download</a></li>
-<li><a href="#Appendix-2:-Variable-documentation">Appendix 2: Variable documentation</a></li>
-<li><a href="#Appendix-3:-Simulations-documentation">Appendix 3: Simulations documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -14639,7 +14643,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Introduction-to-the-model-outputs">Introduction to the model outputs<a class="anchor-link" href="#Introduction-to-the-model-outputs">&#182;</a></h2><p>The aim of this handbook is to introduce you to visualising and analysing paleoclimate model outputs.  For this, we will analyse some "real" existing paleoclimate model outputs, rather than running a model yourself to create the outputs.  Running climate models requires access to, and dedicated time on a supercomputing resource, which can be very expensive. However, many institutions make their climate model outputs public so you can download simulations and analyse them yourself.</p>
+<h2 id="Part-1:-Introduction-to-the-model-outputs">Part 1: Introduction to the model outputs<a class="anchor-link" href="#Part-1:-Introduction-to-the-model-outputs">&#182;</a></h2><p>The aim of this handbook is to introduce you to visualising and analysing paleoclimate model outputs.  For this, we will analyse some "real" existing paleoclimate model outputs, rather than running a model yourself to create the outputs.  Running climate models requires access to, and dedicated time on a supercomputing resource, which can be very expensive. However, many institutions make their climate model outputs public so you can download simulations and analyse them yourself.</p>
 <p>Here, we examine simulations that have been carried out with the UK Met Office climate model, HadCM3, by researchers in the Paleo Modelling Group in the School of Geographical Sciences at the University of Bristol, UK.  This is a quite an old model now, but it is one of the best climate models available that is computationally efficient enough to be run a large number (an 'ensemble') of simulations for many thousands of years, allowing the simulations to come to full equilibrium, even in the deep ocean.  The model is described in detail in Valdes et al (2017).</p>
 <p>We will start off by downloading outputs from Lunt et al (2008), which was the first paper I wrote that used simulations that I had carried out using the HadCM3 model.  It was exploring the impact of the closure of the Panama Seaway in the Pliocene, ~3 million years ago.  I carried out 3 simulations; a modern preindustrial control simulation (called 'xbmsc'), a pre-closure Pliocene simulation with a open Panama Seaway ('xbmsb'), and a post-closure Pliocene simulation with an closed Panama Seaway ('xbmsa').<br>
 You can download annual-mean data from the closed-Seaway simulation here: 
@@ -14658,7 +14662,7 @@ You can download annual-mean data from the closed-Seaway simulation here:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Introduction-to-Python">Introduction to Python<a class="anchor-link" href="#Introduction-to-Python">&#182;</a></h2><h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3><p>Over the years, I have used many different languages to visualise and/or analyse climate model outputs, including IDL, ferret, VCS, Grads, ncl, ncview, xconv, Panoply, fortran, and seveal others!  They come in and out of fashion, but they all have strengths and weaknesses.  Some are good for just viewing data very quickly (e.g. xconv), others are very fast for analysis (e.g. fortran), and others make very nice publication-quality plots (e.g. IDL).</p>
+<h2 id="Part-2:-Introduction-to-Python">Part 2: Introduction to Python<a class="anchor-link" href="#Part-2:-Introduction-to-Python">&#182;</a></h2><h3 id="Background">Background<a class="anchor-link" href="#Background">&#182;</a></h3><p>Over the years, I have used many different languages to visualise and/or analyse climate model outputs, including IDL, ferret, VCS, Grads, ncl, ncview, xconv, Panoply, fortran, and seveal others!  They come in and out of fashion, but they all have strengths and weaknesses.  Some are good for just viewing data very quickly (e.g. xconv), others are very fast for analysis (e.g. fortran), and others make very nice publication-quality plots (e.g. IDL).</p>
 <p>In this handbook we will use Python.  Currently, Python is widely used in climate science as it has a huge online community, has many useful built-in functions for handling spatial data, and is great for publication-quality plots.  It is also widely used outside of climate science, and so coding in Python is a useful skill to have.</p>
 <p>You will need two main components to start. The first is the latest version of Python, the installation itself. The second is your 'Integrated Development Environment' (IDE), the way you interact with Python which allows you to view, write and debug code.</p>
 <h4 id="University-of-Bristol-users:">University of Bristol users:<a class="anchor-link" href="#University-of-Bristol-users:">&#182;</a></h4><p>Download and Install Anaconda via the Windows 'Company Portal' app. This makes the Jupyter Notebook app available, which includes an integrated Python install.</p>
@@ -14770,7 +14774,7 @@ You can download annual-mean data from the closed-Seaway simulation here:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Part-1:-Making-global-and-regional-maps">Part 1: Making global and regional maps<a class="anchor-link" href="#Part-1:-Making-global-and-regional-maps">&#182;</a></h2><h3 id="Reading-in-files">Reading in files<a class="anchor-link" href="#Reading-in-files">&#182;</a></h3>
+<h2 id="Part-3:-Making-a-global-map">Part 3: Making a global map<a class="anchor-link" href="#Part-3:-Making-a-global-map">&#182;</a></h2><h3 id="Reading-in-files">Reading in files<a class="anchor-link" href="#Reading-in-files">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14872,7 +14876,7 @@ root group (NETCDF3_CLASSIC data model, file format NETCDF3):
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>As you can see, there are a lot of variables!  Most of the names are reasonably self-explanatory, but if you are uncertain then see Appendix 2. In a netCDF file, data has 'dimensions' to describe the structure of a variable. Most variables have a strucutre (time x level x latitude x longitude).  'Latitude' is of size 73, and 'longitude' is of size 96 (see the 'dimensions' list in the output above).  But 'time' is only of size 1, as are most 'level', and so most variables are essentially 2-dimensional latitude-longitude global maps of data.  We are going to read in the near-surface air temperature.  'near-surface' in this case is 1.5 metres above the surface.  The variable name is 'temp_mm_1_5m'.  Note that because this variable is actually 4-dimensional (even though two of the dimensions have size 1), we need to make sure we extract third (latitude) and fourth (longitude) dimensions.  We will also read in the longitudes and latitudes themselves, which will allow us to make the plot correctly.  We'll also print the latitudes and longitudes to make sure all looks OK (we won't print out the temperature as this would be 96x73 = 7008 numbers!).  We can then close this dataset as we won't need it any more.</p>
+<p>As you can see, there are a lot of variables!  Most of the names are reasonably self-explanatory, but if you are uncertain then see <a href="https://www.paleo.bristol.ac.uk/ummodel/scripts/papers/Using_BRIDGE_webpages.pdf">this document</a>. In a netCDF file, data has 'dimensions' to describe the structure of a variable. Most variables have a strucutre (time x level x latitude x longitude).  'Latitude' is of size 73, and 'longitude' is of size 96 (see the 'dimensions' list in the output above).  But 'time' is only of size 1, as are most 'level', and so most variables are essentially 2-dimensional latitude-longitude global maps of data.  We are going to read in the near-surface air temperature.  'near-surface' in this case is 1.5 metres above the surface.  The variable name is 'temp_mm_1_5m'.  Note that because this variable is actually 4-dimensional (even though two of the dimensions have size 1), we need to make sure we extract third (latitude) and fourth (longitude) dimensions.  We will also read in the longitudes and latitudes themselves, which will allow us to make the plot correctly.  We'll also print the latitudes and longitudes to make sure all looks OK (we won't print out the temperature as this would be 96x73 = 7008 numbers!).  We can then close this dataset as we won't need it any more.</p>
 
 </div>
 </div>
@@ -15214,7 +15218,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Regional-maps-and-proxies">Regional maps and proxies<a class="anchor-link" href="#Regional-maps-and-proxies">&#182;</a></h3><p>A few other things that you might want to do are (1) zoom in on a particular region, (2) show the actual gridboxes, instead of contouring which can disguise the model resolution, and (3) plot some geologically-derived proxy temperature observations on top:</p>
+<h2 id="Part-4:-Other-maps">Part 4: Other maps<a class="anchor-link" href="#Part-4:-Other-maps">&#182;</a></h2><h3 id="Regional-maps-and-proxies">Regional maps and proxies<a class="anchor-link" href="#Regional-maps-and-proxies">&#182;</a></h3><p>A few other things that you might want to do are (1) zoom in on a particular region, (2) show the actual gridboxes, instead of contouring which can disguise the model resolution, and (3) plot some geologically-derived proxy temperature observations on top:</p>
 
 </div>
 </div>
@@ -15512,13 +15516,13 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Boundary-conditions">Boundary conditions<a class="anchor-link" href="#Boundary-conditions">&#182;</a></h3><p>Another thing that you may wish to do is look at some of the boundary conditions in the model.  Boundary conditions are fields that the user provides to the model, and that the model cannot change.  These typically include details about the land-surface (e.g. height above sea-level of the surface), and atmospheric composition (e.g. CO2 concentration).  There are details of some of these boundary conditions, and how to access them, in Appendix 3.</p>
-<p>For example the topography, bathymetry, and land-sea mask.  These can be downloaded, for example for experiment xbmsb (Pliocene open seaway):<br>
+<h3 id="Boundary-condition-maps">Boundary condition maps<a class="anchor-link" href="#Boundary-condition-maps">&#182;</a></h3><p>Another thing that you may wish to do is look at some of the boundary conditions in the model.  Boundary conditions are fields that the user provides to the model, and that the model cannot change.  These typically include details about the land-surface (e.g. height above sea-level of the surface, soil properties), and atmospheric composition (e.g. CO2 concentration).</p>
+<p>For example, we may wish to plot the topography, bathymetry, and land-sea mask.  These can be downloaded, for example for experiment xbmsb (Pliocene open seaway):<br>
 Orogoraphy: <a href="https://www.paleo.bristol.ac.uk/ummodel/data/xbmsb/inidata/xbmsb.qrparm.orog.nc">https://www.paleo.bristol.ac.uk/ummodel/data/xbmsb/inidata/xbmsb.qrparm.orog.nc</a> (variable 'ht')<br>
 Bathymetry: <a href="https://www.paleo.bristol.ac.uk/ummodel/data/xbmsb/inidata/xbmsb.qrparm.omask.nc">https://www.paleo.bristol.ac.uk/ummodel/data/xbmsb/inidata/xbmsb.qrparm.omask.nc</a> (variable 'depthdepth')<br>
 Land-sea mask: <a href="https://www.paleo.bristol.ac.uk/ummodel/data/xbmsb/inidata/xbmsb.qrparm.mask.nc">https://www.paleo.bristol.ac.uk/ummodel/data/xbmsb/inidata/xbmsb.qrparm.mask.nc</a> (variable 'lsm')<br>
 Put these files in the 'Data/panama' folder.</p>
-<p>Let's read in the boundary conditions:</p>
+<p>Let's read in these boundary conditions:</p>
 
 </div>
 </div>
@@ -15734,30 +15738,12 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Part-2:-Accessing-and-analysing-more-simulations">Part 2: Accessing and analysing more simulations<a class="anchor-link" href="#Part-2:-Accessing-and-analysing-more-simulations">&#182;</a></h2><h3 id="Exploring-paleoclimate-model-outputs">Exploring paleoclimate model outputs<a class="anchor-link" href="#Exploring-paleoclimate-model-outputs">&#182;</a></h3><p>You are welcome to explore other variables in the xbmsa, xbmsb, and xbmsc simulations.  In the Lunt et al (2008) paper I only plotted a handful of variables, so you may be able to find some new and exciting discoveries about the closure of the Panama Seaway!</p>
-<p>However, you may want to explore other simulations as well.  We have lots of potentially exciting data that we have never even looked at.  Broadly speaking, these are the ways that you can access these data:</p>
-<h4 id="1)-Published-simulations-in-the-BRIDGE-archive">1) Published simulations in the BRIDGE archive<a class="anchor-link" href="#1)-Published-simulations-in-the-BRIDGE-archive">&#182;</a></h4><p>We have a webpage that lists the <a href="https://www.paleo.bristol.ac.uk/ummodel/scripts/papers/">simulations from a selection of our published papers</a>.  Click on a paper that you are interested in, e.g. <a href="https://www.paleo.bristol.ac.uk/ummodel/scripts/papers/Farnsworth_et_al_2019b.html">Farnsworth et al, 2019</a> which explores the evolution of the East Asian monsoon over the last 150 million years, or <a href="https://www.paleo.bristol.ac.uk/ummodel/scripts/papers/Armstrong_et_al_2023.html">Armstrong et al, 2023</a> which explores the evolution of the African monsoon over the last 800 thousand years (both include global outputs with many different variables).  This takes you to a table which lists the experiment names in that paper (typically a 5 or 6-letter code similar to the 'xbmsa' we used earlier).  If you click on one of the experiment names, it will take you to a table of plots, but here we will download the data and make our own plots, as this gives us more flexibility, and allows us to carry out analysis. Full details on downloading data from the webpage archive, for a given experiment name, are available in Appendix 3.</p>
-<p>Again, there are loads of variables that I have never looked at in these simulations, so have fun exploring!  These data are open access, so feel free to use them in publications.  In addition, the Paleo Modelling Group at the University of Bristol are always happy to be involved as collaborators if you think that would be useful - just get in contact (d.j.lunt@bristol.ac.uk).</p>
-<h4 id="2)-Phanerozoic-simulations">2) Phanerozoic simulations<a class="anchor-link" href="#2)-Phanerozoic-simulations">&#182;</a></h4><p>We have recently been working on multiple suites of Phanerozoic simulations.  Some of these are published in Valdes et al (2021).  You can access those in the same was as above, from <a href="https://www.paleo.bristol.ac.uk/ummodel/scripts/papers/Valdes_et_al_2021.html">here</a>, and then click on 'Detailed list of runs' for the ensemble that you are interested in.  However, we also have some unpublished runs which you can explore. Their detailed descriptions, download instructions and naming conventions are available in Appendix 3. <strong>However, please don't publish with the unpublished simulations without discussing with Dan first (d.j.lunt@bristol.ac.uk)!</strong></p>
-<h4 id="3)-Glacial-interglacial-Plio-Pleistocene-simulations">3) Glacial-interglacial Plio-Pleistocene simulations<a class="anchor-link" href="#3)-Glacial-interglacial-Plio-Pleistocene-simulations">&#182;</a></h4><p>We also have some a very recent set of simulations through the last 3.6 million years.  Their naming conventions are available in Appendix 4.  <strong>These are completely unpublished so again, please don't publish with these without discussing with Dan and Jeanne Millot-Weil and Paul Valdes first (d.j.lunt@bristol.ac.uk and xk22684@bristol.ac.uk and p.j.valdes@bristol.ac.uk)!</strong></p>
-<h4 id="Downloading-multiple-simulations">Downloading multiple simulations<a class="anchor-link" href="#Downloading-multiple-simulations">&#182;</a></h4><p>If you are wanting to download lots of simulations (e.g. a Phanerozoic or Plio-Pleistocene ensemble), then downloading each simulation manually in turn will take a long time.  Instead, if you have Mac or Linux machine, then you can write a script to automate this; see Appendix 3.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Reading-in-multiple-files">Reading in multiple files<a class="anchor-link" href="#Reading-in-multiple-files">&#182;</a></h3><p>Now that you are likely exploring multiple simulations, we need to automate the reading of multiple files.  To do this we use 'loops', which are generally useful for reading in and handling large quantities of data. We already used one when comparing proxy and model data earlier in the handbook, but we can also use these for reading in lots of files.</p>
-<p>Here as an example we will use some of the simulations from Valdes et al (2021), the 'texp' series known as 'scotese_02' (see Appendix 3 for more details). 'texps2' is a Turonian (mid-Cretaceous, 92 million years ago; 92Ma) simulation from that series.</p>
-<p>Surface atmospheric variables, like surface temperature which we examined earlier, are available for simulation, following the structure described above. The link for the annual means is therefore:<br>
+<h2 id="Part-5:-Automation">Part 5: Automation<a class="anchor-link" href="#Part-5:-Automation">&#182;</a></h2><h3 id="Reading-in-multiple-files">Reading in multiple files<a class="anchor-link" href="#Reading-in-multiple-files">&#182;</a></h3><p>It is often useful to automate the reading of multiple files.  To do this we use 'loops', which are generally useful for reading in and handling large quantities of data. We already used one when comparing proxy and model data earlier in the handbook, but we can also use these for reading in lots of files.</p>
+<p>Here as an example we will use a simulation from Valdes et al (2021), from the 'Foster CO2' Phanerozoic series, which is also known as the 'scotese_02' series in Judd et al (2024), and the 'texp' series internally in Bristol. 'texps2' is a Turonian (mid-Cretaceous, 92 million years ago; 92Ma) simulation from that series.</p>
+<p>Surface atmospheric variables, such as surface temperature which we examined earlier, are available for simulation. The link for the annual means is:<br>
 <a href="https://www.paleo.bristol.ac.uk/ummodel/data/texps2/climate/texps2a.pdclann.nc">https://www.paleo.bristol.ac.uk/ummodel/data/texps2/climate/texps2a.pdclann.nc</a><br>
-where 'ann' can be changed to 3-month seasons, such as 'djf', or as a shortening of 1 month, such as 'dec' for December.</p>
-<p>The code below assumes that you have downloaded all 12 months and an annual file to a 'texps2' folder within your 'Data' folder.</p>
+where 'ann' can be changed to a specific month, i.e. 'jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', or 'dec'.</p>
+<p>The examples below assume that you have downloaded all 12 months to a 'texps2' folder within your 'Data' folder.</p>
 <p>This code reads in March to May in one go, via a loop:</p>
 
 </div>
@@ -15813,7 +15799,7 @@ where 'ann' can be changed to 3-month seasons, such as 'djf', or as a shortening
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You now have a stack of 3 months of mean precipitation in mm/day for the mid-Cretaceous.  Let's plot the March-April-May (MAM)seasonal mean.</p>
+<p>You now have a stack of 3 months of mean precipitation in mm/day for the mid-Cretaceous.  Let's plot the March-April-May (MAM) seasonal mean.</p>
 <p>We first need to calculate the mean from the stack, and then read in the land-sea mask (download this from <a href="https://www.paleo.bristol.ac.uk/ummodel/data/texps2/inidata/texps2.qrparm.mask.nc">https://www.paleo.bristol.ac.uk/ummodel/data/texps2/inidata/texps2.qrparm.mask.nc</a> , and put in the directory Data/texps2 ).</p>
 <p>We will assume that <code>lat</code> and <code>lonc</code> are already read in above.</p>
 
@@ -16213,24 +16199,6 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Further-data-and-tools">Further data and tools<a class="anchor-link" href="#Further-data-and-tools">&#182;</a></h3><p>In addition to the climate and boundary condition files above, you can also download some other useful data.</p>
-<p>In particular, we have run an offline sediments model, with input from the modelled temperature and precipitation for all of the simulations. This includes modelled predictions of regions, of evaporites, coals, bauxite etc. These modelled predictions can be compared with the geological record of sedimentological data, in order to evaluate the model, and/or to indicate regions of potential sediments in regions where the geological record may be incomplete.<br>
-Download instructions for these, adn other derived quantities, can be found in Appendix 3.</p>
-<p>We also have timeseries of some variables.  The climate files above all represent the climatological average of several (typically 30 or 50 or 100 years) at the end of the model simulation.  However, the simulation may be thousands of years long.  We do not save the entire timeseries for all variables, but we do for some key variables.
-These can be downloaded, for example for experiment texps2 (mid Cretaceous), for the variable temp_mm_1_5m (near-surface air temperature):<br>
-<a href="https://www.paleo.bristol.ac.uk/ummodel/data/texps2/monthly/texps2.temp_mm_1_5m.monthly.nc">https://www.paleo.bristol.ac.uk/ummodel/data/texps2/monthly/texps2.temp_mm_1_5m.monthly.nc</a><br>
-For more info see Appendix 3.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Phanerozoic-paleo-rotations">Phanerozoic paleo rotations<a class="anchor-link" href="#Phanerozoic-paleo-rotations">&#182;</a></h3><p>The earlier examples of plotting paleo proxy data over China was valid because the Pliocene is relatively recent, such that the proxy locations (longitude,latitude) have not moved much under plate tectonic motions between the Pliocene and modern.  However, for older time periods in the Phanerozoic, we need to rotate our modern proxy sites back to their paleo latitudes and longitudes, in a way that is consistent with the rotations in the paleogeography that was input to the climate model.  To do this, we can make use of a nice web-based rotation utility that is produced by gplates.  The rotations used in the climate model is called 'PALEOMAP'.  For example, try:<br>
 <a href="https://gws.gplates.org/reconstruct/reconstruct_points/?points=32.2,48.9&amp;time=66&amp;model=PALEOMAP">https://gws.gplates.org/reconstruct/reconstruct_points/?points=32.2,48.9&amp;time=66&amp;model=PALEOMAP</a><br>
 for 66Ma and longitude 32.2, latitude 48.8<br>
@@ -16301,7 +16269,7 @@ This gives the paleo longitude and latitude, in this case 26.7519 and 41.8311 .<
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Part-3:-Other-analysis-and-plotting-tools">Part 3: Other analysis and plotting tools<a class="anchor-link" href="#Part-3:-Other-analysis-and-plotting-tools">&#182;</a></h2>
+<h2 id="Part-6:-Other-analysis-and-plotting-tools">Part 6: Other analysis and plotting tools<a class="anchor-link" href="#Part-6:-Other-analysis-and-plotting-tools">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -17012,7 +16980,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>These maps, plots and techniques should be enough to get you started with analysing climate model outputs. Congratulations on completing this handbook on plotting and analysing paleoclimate model outputs!</p>
+<h2 id="Coda">Coda<a class="anchor-link" href="#Coda">&#182;</a></h2><p>Congratulations on completing this handbook on plotting and analysing paleoclimate model outputs!  These maps, plots and techniques should be enough to get you started with analysing climate model outputs.</p>
 
 </div>
 </div>
@@ -17043,19 +17011,6 @@ class="
 <h2 id="Appendices">Appendices<a class="anchor-link" href="#Appendices">&#182;</a></h2><h3 id="Appendix-1:-Anaconda-download">Appendix 1: Anaconda download<a class="anchor-link" href="#Appendix-1:-Anaconda-download">&#182;</a></h3><p>Download Anaconda at : <a href="https://www.anaconda.com/download">https://www.anaconda.com/download</a></p>
 <p>Download guide updated by the Anaconda distributors available at : <a href="https://www.anaconda.com/docs/getting-started/anaconda/install#macos-linux-installation">https://www.anaconda.com/docs/getting-started/anaconda/install#macos-linux-installation</a></p>
 <p>The basic steps are to first register. Then, click the download link in your email. You can choose between Anaconda, with more packages and a graphical user interface best for beginners, or a lighter, more customizable version called Miniconda if you have more experience. Once decided, click the download you want. For Mac users, it may be easier to use the Graphical installer than the command line installer.  When complete, double click the download and follow the instructions. See the online guide above for detail. You should then be able to open Anaconda like any other application.</p>
-<h3 id="Appendix-2:-Variable-documentation">Appendix 2: Variable documentation<a class="anchor-link" href="#Appendix-2:-Variable-documentation">&#182;</a></h3><p><a href="https://www.paleo.bristol.ac.uk/ummodel/scripts/papers/Using_BRIDGE_webpages.pdf">https://www.paleo.bristol.ac.uk/ummodel/scripts/papers/Using_BRIDGE_webpages.pdf</a></p>
-<h3 id="Appendix-3:-Simulations-documentation">Appendix 3: Simulations documentation<a class="anchor-link" href="#Appendix-3:-Simulations-documentation">&#182;</a></h3><p>This handbook describes how to access some variables from Lunt et al (2008).  However you can additionally access any of our simulations, if you know the 5-letter or 6-letter code of that simulation.  For the various file types and naming conventions, see sections 'Climate variables' and 'Timeseries' and 'Sediments and other derived quantities' and 'Boundary conditions and chronologies'  here:
-<a href="https://danlunt1976.github.io/UM_Bristol/Accessing_scotese.html">https://danlunt1976.github.io/UM_Bristol/Accessing_scotese.html</a>
-That webpage also provides a script for automating the process of downloading multiple files (see Appendix 2 in that webpage).<br>
-<strong>However, please don't publish with the unpublished simulations without discussing with Dan first (d.j.lunt@bristol.ac.uk)!</strong></p>
-<h3 id="Appendix-4:-Plio-Pleistocene-simulations">Appendix 4: Plio-Pleistocene simulations<a class="anchor-link" href="#Appendix-4:-Plio-Pleistocene-simulations">&#182;</a></h3><p>This is a set of 919 simulations through the plio-Pleistocene (3.6 Ma to 0 Ma), including changes to topography bathymetry, land-sea mask, ice sheets, orbit, and CO2.<br>
-The naming convention is:<br>
-xxxx{a..z} ; xxxx{A..Z} ; xxxx{0..9} = 26+26+10=62 simulations per set<br>
-where xxxx is: tfmc, tfmC, tfMc, tfMC, tFmc, tFmC, tFMc, tFMC, tfmd, tfmD, tfMd, tfMD, tFmd, tFmD = 14 full sets<br>
-and where xxxx is tFMd{a..z}, tFMd{A..Y} = 26+25 = 51 simulations<br>
-TOTAL = 14*62 + 51 = 868+51 = 919 simulations</p>
-<p>The age of of each simulation is such that there is 1 simulation per kyr from 0 to 24ka (25 simulations), and then 1 simulation every 4 years (919-25 simulations).  So the total covered is 24kyr+((919-25=894)*4=3576 kyr) = 3.6Myr.<br>
-<strong>These are completely unpublished so again, please don't publish with these without discussing with Dan and Jeanne Millot-Weil and Paul Valdes first (d.j.lunt@bristol.ac.uk and xk22684@bristol.ac.uk and p.j.valdes@bristol.ac.uk)!</strong></p>
 
 </div>
 </div>
