@@ -5,9 +5,9 @@
 
 This workshop will provide an introduction to climate models and paleoclimate modelling. In particular, you will have an opportunity to explore paleoclimate model outputs, with a focus on visualisation, model-data comparison, and analysis of mechanisms. You will have the opportunity to explore cutting-edge simulations that have not previously been published or analysed in detail, and to apply them to paleoclimate problems of your own choosing.  During the seminar session, you will present your new work to the group.  You will be supported by a team including Prof. Dan Lunt from the University of Bristol, UK.
 
-The workshop is organised into 3 sessions, running over a total of 5 days, from **_2pm on Wednesday 13th May to 12pm on Monday 18th May:_**
+The workshop is organised into 3 sessions, running over a total of 5 days, from **2pm on Wednesday 13th May 2026 to 12pm on Monday 18th May 2026:**
 
-**Session 1: Introduction to climate models and paleoclimate modelling
+**Session 1: Introduction to climate models and paleoclimate modelling**
 
 * Welcome – Prof Fan.
 * Introduction to climate models – Prof Lunt.
@@ -17,13 +17,13 @@ The workshop is organised into 3 sessions, running over a total of 5 days, from 
 
 * Practical exercise 1: Paleo Modelling Handbook 
 	* [Handbook](Paleo_Modelling_Handbook_core.html)
-**Session 3: Paleoclimate modelling
 
+**Session 3: Paleoclimate modelling**
 * Introduction to University of Bristol Paleo Modelling Group simulation database – Prof Lunt
 	* [Info on Database](Paleo_Modelling_Handbook_extra.html)
 * Practical exercise 2: Project work on paleoclimate periods/questions of your choice
 
-**Session 4: Seminar
+**Session 4: Seminar**
 
 * Presentations from individuals or groups on their findings from their personal projects.
 
