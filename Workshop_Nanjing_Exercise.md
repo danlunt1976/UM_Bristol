@@ -1,4 +1,18 @@
-# Guidance on exercise
+<table width="100%">  
+<tr>  
+<td align="left">  
+<img src="Attachments/Workshop_images/UoB_RGB_24.png" width="150"/>  
+</td>  
+<td style="width: 50%;"></td> <!-- spacer column -->
+<td align="right">  
+<img src="Attachments/Workshop_images/Nanjing.png" width="150"/>  
+</td>  
+</tr>  
+</table>
+
+# Nanjing Paleoclimate Modelling Workshop 2026
+
+## Guidance on exercise
 The aim of the exercise is to address a research question of your own devising, related to paleoclimates.  To do this you will analyse model outputs from the University of Bristol Paleo Modelling Group. 
 
 You will typically have about 4 days to complete your analysis (depending on how long it took you to work through the handbook), and then you will present your work in an EGU/AGU-style seminar, on the final morning of the workshop.
@@ -27,7 +41,7 @@ I don't want to be too prescriptive - it is nice if you are able to come up with
 
 **Good Luck!!**
 
-### References
+## References
 
 Farnsworth A, Lunt DJ, O’Brien CL, et al (2019) Climate sensitivity on geological timescales controlled by nonlinear feedbacks and ocean circulation. Geophysical Research Letters 46(16):9880–9889. https://doi.org/https://doi.org/10.1029/ 2019GL083574
 
@@ -35,3 +49,14 @@ Feng R, Bhattacharya T, Otto-Bliesner B, et al (2022) Past terrestrial hydroclim
 
 Heinemann M, Jungclaus JH, Marotzke J (2009) Warm paleocene/eocene climate as simulated in echam5/mpi-om. Climate of the Past 5(4):785–802. https://doi.org/10.5194/cp-5-785-2009,  https://cp.copernicus.org/articles/5/785/2009/
 
+<table width="100%">  
+<tr>  
+<td align="left">  
+<img src="Attachments/Workshop_images/UoB_RGB_24.png" width="150"/>  
+</td>  
+<td style="width: 50%;"></td> <!-- spacer column -->
+<td align="right">  
+<img src="Attachments/Workshop_images/Nanjing.png" width="150"/>  
+</td>  
+</tr>  
+</table>

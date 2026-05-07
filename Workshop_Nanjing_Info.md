@@ -10,7 +10,6 @@
 </tr>  
 </table>
 
-
 # Nanjing Paleoclimate Modelling Workshop 2026
 
 ## Professor Dan Lunt, Professor Junxuan Fan
@@ -51,4 +50,14 @@ If you are really keen then you could also read two papers which describe some o
 And if you are mega-keen then you could also read a [description of our climate model](https://doi.org/10.5194/gmd-10-3715-2017).
 
 
-
+<table width="100%">  
+<tr>  
+<td align="left">  
+<img src="Attachments/Workshop_images/UoB_RGB_24.png" width="150"/>  
+</td>  
+<td style="width: 50%;"></td> <!-- spacer column -->
+<td align="right">  
+<img src="Attachments/Workshop_images/Nanjing.png" width="150"/>  
+</td>  
+</tr>  
+</table>
