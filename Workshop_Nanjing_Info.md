@@ -1,10 +1,9 @@
-
 <table width="100%">  
 <tr>  
 <td align="left">  
 <img src="Attachments/Workshop_images/UoB_RGB_24.png" width="150"/>  
 </td>  
-<td style="width: 100%;"></td> <!-- spacer column -->
+<td style="width: 50%;"></td> <!-- spacer column -->
 <td align="right">  
 <img src="Attachments/Workshop_images/Nanjing.png" width="150"/>  
 </td>  
