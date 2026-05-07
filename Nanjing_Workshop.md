@@ -7,36 +7,29 @@ This workshop will provide an introduction to climate models and paleoclimate mo
 
 The workshop is organised into 3 sessions, running over a total of 5 days, from **_2pm on Wednesday 13th May to 12pm on Monday 18th May:_**
 
-**Session 1: Introduction to climate models and paleoclimate modelling (Wednesday 13th May, 2pm – 6pm)**
+**Session 1: Introduction to climate models and paleoclimate modelling
 
-·         Welcome – Prof Fan.
+* Welcome – Prof Fan.
+* Introduction to climate models – Prof Lunt.
+* Introduction to paleoclimate modelling  - Prof Lunt
 
-·         Introduction to climate models – Prof Lunt.
+**Session 2: Visualisation and analysis of paleoclimate model outputs**
 
-·         Introduction to paleoclimate modelling  - Prof Lunt
+* Practical exercise 1: Paleo Modelling Handbook 
+	* [Handbook](Paleo_Modelling_Handbook_core.html)
+**Session 3: Paleoclimate modelling
 
-·         **_Practical 1: Visualisation of paleoclimate model outputs_**
+* Introduction to University of Bristol paleoclimate simulation database – Prof Lunt
+	* [Handbook](Paleo_Modelling_Handbook_extra.html)
+* Practical exercise 2: Project work on paleoclimate periods/questions of your choice
 
-**Session 2: Paleoclimate modelling (Thursday 14th May, 9am – Sunday 17th May, 6pm)**
+**Session 4: Seminar
 
-·         Introduction to University of Bristol paleoclimate simulation database – Prof Lunt
-
-·         **_Practical 2: Exploring paleoclimate model outputs_**
-
-o   _Model-data comparisons_
-
-o   _Analysis of mechanisms_
-
-o   _Personal project work on paleoclimate periods/questions of your choice_
-
-**Session 3: Seminar (Monday 18th May, 9am-12pm)**
-
-·         Presentations from individuals or groups on their findings from their personal projects.
+* Presentations from individuals or groups on their findings from their personal projects.
 
 **Requirements:**
 
 ·         Your own laptop
-
 ·         Python and Jupyter notebook installed on your laptop
 
 **Preparation:**
@@ -49,5 +42,5 @@ And if you are mega-keen then you could also read a [description of our climate 
 
 
 Here is a link to: 
-[Handbook](Paleo_Modelling_Handbook_core.html)
+
 
