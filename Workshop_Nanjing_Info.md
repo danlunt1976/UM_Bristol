@@ -1,12 +1,10 @@
 
-| <img src="Attachments/Workshop_images/UoB_RGB_24.png" width="150"/> | <img src="Attachments/Workshop_images/Nanjing.png" width="150"/> | 
-| :-------------------------------------- | ---------------------------------------: | 
-
 <table width="100%">  
 <tr>  
 <td align="left">  
 <img src="Attachments/Workshop_images/UoB_RGB_24.png" width="150"/>  
 </td>  
+<td></td> <!-- spacer column -->
 <td align="right">  
 <img src="Attachments/Workshop_images/Nanjing.png" width="150"/>  
 </td>  
