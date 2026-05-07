@@ -1,4 +1,4 @@
 # Workshops
 
-[Nanjing Workshop](Nanjing_Workshop)
+[Nanjing Workshop](Workshop_Nanjing_Info.md)
 
