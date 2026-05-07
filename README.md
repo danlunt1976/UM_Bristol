@@ -18,8 +18,8 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
-- **2026-05-07** — Create Paleo_Modelling_Handbook_extra.md
 - **2026-05-07** — Update Nanjing_Workshop.md
+- **2026-05-07** — Create Paleo_Modelling_Handbook_extra.md
 - **2026-05-06** — Update Nanjing_Workshop.md
 - **2026-05-06** — Update Dan_notes.md
 - **2026-05-06** — Update README.md
