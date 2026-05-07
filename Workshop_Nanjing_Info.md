@@ -1,3 +1,19 @@
+
+| <img src="Attachments/Workshop_images/UoB_RGB_24.png" width="150"/> | <img src="Attachments/Workshop_images/Nanjing.png" width="150"/> | 
+| :-------------------------------------- | ---------------------------------------: | 
+
+<table width="100%">  
+<tr>  
+<td align="left">  
+<img src="Attachments/Workshop_images/UoB_RGB_24.png" width="150"/>  
+</td>  
+<td align="right">  
+<img src="Attachments/Workshop_images/Nanjing.png" width="150"/>  
+</td>  
+</tr>  
+</table>
+
+
 # Nanjing Paleoclimate Modelling Workshop 2026
 
 ## Professor Dan Lunt, Professor Junxuan Fan
