@@ -39,6 +39,20 @@ I don't want to be too prescriptive - it is nice if you are able to come up with
 * How do mid-latitude storms vary through the Phanerozoic and why?
 * ... and many more possibilities - do ask me if you are unsure!
 
+### Timetable
+
+Different groups and individuals will work in different ways, but very broadly this is a guide to how you might choose to arrange your time over the three main days of analysis:
+
+Friday:  You should identify all the simulations you need to answer your research question.  Focus today on really becoming familiar with your model outputs.  .  By the end of Friday, aim to have visualised all your relevant model data (for example as a series of maps), in a way that enables you to answer your research question.
+
+Saturday: By the end of Saturday, aim to have analysed your model outputs to assess why the model gives the results that it does for example by carrying out correlation analysis, and/or carry out model-data comparisons
+
+Sunday: Spend today focussing on your key plots that you will include in your presentation, making them publication-quality, and writing your presentations.
+
+
+
+
+
 **Good Luck!!**
 
 ## References
