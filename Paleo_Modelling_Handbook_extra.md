@@ -23,7 +23,15 @@ Detailed descriptions of all our Phanerozoic simulations, download instructions,
  [https://danlunt1976.github.io/UM_Bristol/Accessing_scotese.html](https://danlunt1976.github.io/UM_Bristol/Accessing_scotese.html)
 **However, please don't publish with the unpublished simulations without discussing with Dan first (d.j.lunt@bristol.ac.uk)!**
 
-### 3) Glacial-interglacial Plio-Pleistocene simulations
+### 3) Phanerozoic simulations with biogeochemistry
+
+Paul Valdes has carried out some initial ocean biogeochemistry simulations through the Phanerozoic.  **These are completely unpublished so again, please don't publish with these without discussing with Dan and Paul Valdes first (d.j.lunt@bristol.ac.uk and p.j.valdes@bristol.ac.uk)!**   This is the 'teyj' series.  You can see an overview of the experiment names, and view some pre-produced plots here:
+[https://www.paleo.bristol.ac.uk/ummodel/scripts/html_bridge/scotese_OBC_02.html](https://www.paleo.bristol.ac.uk/ummodel/scripts/html_bridge/scotese_OBC_02.html)
+To access the actual netcdf data for the biogeochemistry variables, you will need to download the data, and then view it in Python, or in Panoply.  The data are in the 'o.pg' files (see [https://danlunt1976.github.io/UM_Bristol/Accessing_scotese.html](https://danlunt1976.github.io/UM_Bristol/Accessing_scotese.html) for details), which can be downloaded, for example for the preindustrial control, from:
+[https://www.paleo.bris.ac.uk/ummodel/data/teyja/climate/teyjao.pgclann.nc](https://www.paleo.bris.ac.uk/ummodel/data/teyja/climate/teyjao.pgclann.nc)
+or e.g. for the early Cambrian from:
+[https://www.paleo.bris.ac.uk/ummodel/data/teyja/climate/teyjao.pgclann.nc](https://www.paleo.bris.ac.uk/ummodel/data/teyja/climate/teyjao.pgclann.nc)
+### 4) Glacial-interglacial Plio-Pleistocene simulations
 
 We also have some a very recent set of simulations through the last 3.6 million years, carried out by Paul Valdes and Jeanne Millot-Weil.  Their naming conventions are available in Appendix 4, and you can download them following the guidance in Appendix 3.  **These are completely unpublished so again, please don't publish with these without discussing with Dan and Jeanne Millot-Weil and Paul Valdes first (d.j.lunt@bristol.ac.uk and xk22684@bristol.ac.uk and p.j.valdes@bristol.ac.uk)!**   
 
