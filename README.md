@@ -18,6 +18,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-05-15** — updates
 - **2026-05-15** — Update Paleo_Modelling_Handbook_extra.md
 - **2026-05-15** — Update Workshop_Nanjing_Exercise.md
 - **2026-05-13** — Adding coding worksheet
@@ -27,7 +28,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-05-07** — Updates for images
 - **2026-05-07** — Nanjing workshop changes
 - **2026-05-07** — Update Nanjing_Workshop.md
-- **2026-05-07** — Create Paleo_Modelling_Handbook_extra.md
 
 ---
 [How to edit these pages](Editing_guide.md)
