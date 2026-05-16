@@ -124,7 +124,7 @@ where
 
 * EXP is the simulation name (see above)
 
-* BOUND can be “qrparm.mask” (land-sea mask and river runoff routing), “qrparm.omask” (ocean mask and bathymetry), “qrparm.orog” (topography and gravity wave-drag parameters), “qrparm.soil” (soil parameters), "qrfrac.type" (ice sheet area).
+* BOUND can be “qrparm.mask” (land-sea mask and river runoff routing), “qrparm.omask” (ocean mask and bathymetry), “qrparm.orog” (topography and gravity wave-drag parameters), “qrparm.soil” (soil parameters), "qrfrac.type" (ice sheet area). 
 
 The CO2 values (in ppmv, column 3) and dates (in Ma, column 2) for each simulation are available in the following locations/files:
 
