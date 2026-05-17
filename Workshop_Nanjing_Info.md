@@ -36,6 +36,7 @@ The workshop is organised into 3 sessions, running over a total of 5 days, from 
 
 **Session 4: Seminar**
 * Presentations from individuals or groups on their findings from their personal projects.
+	* [Guidance for Presentations and Seminar Timetable](Workshop_Nanjing_Presentations)
 
 **Requirements:**
 
