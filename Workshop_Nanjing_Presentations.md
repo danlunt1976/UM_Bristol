@@ -22,13 +22,13 @@ There is no "prescribed" structure for scientific talks, but the following is se
 * Looking at the audience will help to keep their attention
 
 With the above principles in mind, a possible structure, that I often aim to follow myself, is:
-(1) Title slide with contents of talk
-(2) Motivation and Previous Work
-(3) Research Questions / Hypotheses
-(4) Methods
-(5) Results and Analysis
-(6) Conclusions
-(7) Future Work
+(1) Title slide with contents of talk  
+(2) Motivation and Previous Work  
+(3) Research Questions / Hypotheses  
+(4) Methods  
+(5) Results and Analysis  
+(6) Conclusions  
+(7) Future Work  
 
 
 
