@@ -40,15 +40,16 @@ With the above principles in mind, a possible structure, that I often aim to fol
 
 ### 9:10-9:50: Session 1 - Paleobiology
 
-| Name(s)                                                                                  | Ttitle                                                                                                                                                 | Duration | Time |
+| Name(s)                                                                                  | Title                                                                                                                                                  | Duration | Time |
 | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ---- |
 | Yuchen Yu                                                                                | Debet about extinction of dinosaurs during Jurassic-Cretaceous Boundary                                                                                | 5 min    | 9:10 |
 | Junlin Fan, Guotao Zhu, Yingjun Peng, Feifan Liu, Ying Wang, Chenyu Li                   | Habitat suitability of Glossopteridales from Late Permian to Early Triassic                                                                            | 5 min    | 9:18 |
 | Ronghua Sha, Yiying Deng, Xinyu Li, Baimao Zhang, Zhangshuai Hou, Xinyao Guo, Xiahui Liu | Evolution of the Fundamental Niche of Ostracods in China During the Late Cretaceous: A Quantitative Paleoenvironmental Study Based on the HadCM3 Model | 5 min    | 9:26 |
 | Shu An, Nini Wang                                                                        | Evaluation of Different HadCM3L Data Sets: A Case Study of Plesiosaur Niche Simulation and Dominant Factor Analysis                                    | 5 min    | 9:34 |
+
 ### 9:42-10:30: Session 2 - Model-Data integration and comparison
 
-| Name(s)                                            | Ttitle                                                                                                                                                            | Duration | Time  |
+| Name(s)                                            | Title                                                                                                                                                             | Duration | Time  |
 | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----- |
 | Jiarui Sun                                         | Model Evaluation Framework based on Multiple Metrics                                                                                                              | 5 min    | 9:42  |
 | Xiaoli Ma, Heyang Wang, Qingteng Zhang, Tianyi Chu | Machine Learning for PETM Temperature Reconstruction                                                                                                              | 5 min    | 9:50  |
@@ -62,7 +63,7 @@ With the above principles in mind, a possible structure, that I often aim to fol
 
 ### 10:50-11:50: Session 3 - Paleoclimate Mechanisms
 
-| Name(s)                                                                | Ttitle                                                                                                                                                         | Duration | Time  |
+| Name(s)                                                                | Title                                                                                                                                                          | Duration | Time  |
 | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----- |
 | Tianyi Chu                                                             | The rise and fall of hemispheric polar amplification asymmetry across the Plio-Pleistocene                                                                     | 5 min    | 10:50 |
 | Qingteng Zhang                                                         | Influence of Continental Topography on Global Climate Through Atmosphere–Ocean Dynamical Coupling                                                              | 5 min    | 10:58 |
