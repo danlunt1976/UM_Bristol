@@ -109,6 +109,10 @@ where
 
 * EXP is the simulation name (see above)
 
+# Ocean overturning
+
+You can access ocean overturning streamfunction from e.g.:
+[https://www.paleo.bristol.ac.uk/ummodel/data/tfkea/merid_ocn/tfkeao.meridclann.nc](https://www.paleo.bristol.ac.uk/ummodel/data/tfkea/merid_ocn/tfkeao.meridclann.nc)  
 
 # Boundary conditions and chronologies
 
