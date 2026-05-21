@@ -26,6 +26,8 @@
 
 [Collaborations](Collaborations.md)
 
+[Running with isotopes](Running_isotopes)
+
 [Dan notes](Dan_notes.md)
 
 [Workshops](Workshops)
