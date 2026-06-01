@@ -18,6 +18,8 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-06-02** — Update Workshops.md
+- **2026-06-02** — Create Workshop_XTBG_Info.md
 - **2026-05-31** — Update BC5_running.md
 - **2026-05-31** — Added Ernesto
 - **2026-05-21** — Isotopes files
@@ -26,8 +28,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-05-17** — Updates to nanjing
 - **2026-05-16** — Update Accessing_scotese.md
 - **2026-05-15** — updates
-- **2026-05-15** — Update Paleo_Modelling_Handbook_extra.md
-- **2026-05-15** — Update Workshop_Nanjing_Exercise.md
 
 ---
 [How to edit these pages](Editing_guide.md)
