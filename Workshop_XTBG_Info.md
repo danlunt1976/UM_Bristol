@@ -34,11 +34,11 @@ The workshop is organised into 3 sessions, running over a total of 4 days, from 
 * Introduction to University of Bristol Paleo Modelling Group simulation database – Prof Lunt
 	* [Info on Database](Paleo_Modelling_Handbook_extra)
 * Practical exercise 2: Project work on paleoclimate periods/questions of your choice
-	* [Guidance](Workshop_Nanjing_Exercise.md)
+	* [Guidance](Workshop_XTBG_Exercise.md)
 
 **Session 4: Seminar**
 * Presentations from individuals or groups on their findings from their personal projects.
-	* [Guidance for Presentations and Seminar Timetable](Workshop_Nanjing_Presentations)
+	* [Guidance for Presentations and Seminar Timetable](Workshop_XTBG_Presentations)
 
 **Requirements:**
 
