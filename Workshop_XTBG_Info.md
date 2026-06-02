@@ -29,6 +29,7 @@ The workshop is organised into 3 sessions, running over a total of 4 days, from 
 * Practical exercise 1: Paleo Modelling Handbook 
 	* [Coding Handbook](Paleo_Modelling_Handbook_coding.html)
 	* [Exercise Handbook](Paleo_Modelling_Handbook_core.html)
+	* [Solutions to potential issues](Solutions_XTBG)
 
 **Session 3: DIY paleoclimate modelling**
 * Introduction to University of Bristol Paleo Modelling Group simulation database – Prof Lunt
