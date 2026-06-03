@@ -26,7 +26,7 @@ You will typically have about 3 days to complete your analysis (depending on how
 ### Visualisation and analysis
 * It is always a good idea to start by visualising your model outputs.  As well as spatial patterns, explore global and/or regional means.  
 * If you notice something interesting, then always aim to quantify it, rather than relying on your eye, which can be misleading.
-* There are many types of in-depth analysis that can be applied, but in 5 days it is unlikely that you will be able to get hugely deep into this analysis.  However, you can make a really good start by calculating pairs of quantities and regressing them against each other (see the handbook when we did this for model versus proxy temperatures, but you could extend this to, for example, regressing modelled winds strengths against, for example, meridional temperature gradients).  Some analysis tools that are useful in the longer term, which you may have time to apply if you are very rapid and ambitious, include energy balance analysis (e.g. Heinemann et al, 2009), forcing-feedback analysis (e.g. Farnsworth et al, 2019), and hydrological budget decomposition (e.g. Feng et al, 2022).   
+* There are many types of in-depth analysis that can be applied, but in the time availabls it is unlikely that you will be able to get hugely deep into this analysis.  However, you can make a really good start by calculating pairs of quantities and regressing them against each other (see the handbook when we did this for model versus proxy temperatures, but you could extend this to, for example, regressing modelled winds strengths against, for example, meridional temperature gradients).  Some analysis tools that are useful in the longer term, which you may have time to apply if you are very rapid and ambitious, include energy balance analysis (e.g. Heinemann et al, 2009), forcing-feedback analysis (e.g. Farnsworth et al, 2019), and hydrological budget decomposition (e.g. Feng et al, 2022).   
 
 ### Possible avenues to explore
 
@@ -48,9 +48,6 @@ Wednesday:  You should identify all the simulations you need to answer your rese
 Thursday: By the end of Thursday, aim to have analysed your model outputs to assess why the model gives the results that it does for example by carrying out correlation analysis, and/or carry out model-data comparisons
 
 Friday: Spend the morning focussing on your key plots that you will include in your presentation, making them publication-quality, and writing your presentations.
-
-
-
 
 
 **Good Luck!!**
