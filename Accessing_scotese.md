@@ -109,6 +109,16 @@ where
 
 * EXP is the simulation name (see above)
 
+# Vegetation
+
+In addition to the dynamic vegetation available as predicted in-line by the TRIFFID vegetation model (available in the 'land surface variables' files as detailed above in the 'Climate variables' section), we have run several diagnostic vegetation schemes off-line, driven by the model outputs.
+
+Firstly, we run the BIOME4 vegetation model - outputs available from e.g.
+[https://www.paleo.bristol.ac.uk/ummodel/data/tfkea/biome/tfkea_biome4out_co2.nc](https://www.paleo.bristol.ac.uk/ummodel/data/tfkea/biome/tfkea_biome4out_co2.nc)  
+Secondly, we run the Sheffield Dynamic Global Vegetation Model (SDGVM) - outputs available from e.g.
+[https://www.paleo.bristol.ac.uk/ummodel/data/tfkea/wetland/tfkea_bioflux.nc](https://www.paleo.bristol.ac.uk/ummodel/data/tfkea/wetland/tfkea_bioflux.nc)  
+Thirdly, there are several vegetation indices available (Walter, Koppen, Holdridge) in the 'Sediments' files, see above.
+
 # Ocean overturning
 
 You can access ocean overturning streamfunction from e.g.:
