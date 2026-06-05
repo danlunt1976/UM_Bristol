@@ -48,5 +48,6 @@ Please upload your presentations to  the wechat group in the format : Number_sho
 | Jinyu Xiao    | Evolution of Potentially Suitable Areas of Barringtonia: Evidence from Fossil Records and Biomod2                                       | 10mins   | 4:30pm | 07     |
 | Lin Yang      | Identification of Last Glacial Maximum Climate Refugia in Yunnan Province Based on High-Resolution Topographic Downscaling **(ONLINE)** | 10mins   | 4:50pm | 08     |
 | Shumei Xiao   | Starvation-driven collapse: Climate-mediated NPP loss drives dinosaur extinction across the K/Pg boundary **(ONLINE)**                  | 10mins   | 5:10pm | 09     |
+| Li Yiyun      | Climate changes across different regions of China during the early Paleogene                                                            | 10mins   | 5:30pm | 10     |
 
 5:30pm: Closing Remarks
