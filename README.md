@@ -18,6 +18,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-06-17** — Changes
 - **2026-06-10** — Update Collaborations_scotese.md
 - **2026-06-05** — Update Workshop_XTBG_Presentations.md
 - **2026-06-04** — Added vegetation info
@@ -27,7 +28,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-06-02** — Create Workshop_XTBG_Presentations.md
 - **2026-06-02** — Create Workshop_XTBG_Exercise.md
 - **2026-06-02** — Update Workshops.md
-- **2026-06-02** — Create Workshop_XTBG_Info.md
 
 ---
 [How to edit these pages](Editing_guide.md)
