@@ -4,6 +4,8 @@
 
 ## To add a new user:
 
+The below only works on the old machines (eocene, silurian).  For other machines, contact IT services via Halo.    
+
 see also notes on our old wiki (some aspects of which are outdated):
 [http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/SystemAdmin/New-users](http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/SystemAdmin/New-users)
 
@@ -22,10 +24,10 @@ Standard bash is in /etc/skel
 
 ## To modify a user:
 
-The below only works on the old machines (eocene, silurian).  For other machines, contact David.    
+The below only works on the old machines (eocene, silurian).  For other machines, contact IT services via Halo.    
 
-log into e.g. silurian.
 ### Expiration date:
+log into eocene
 `sudo -i`  
 `chage -l [USER]` : check for expiration date  
 `usermod -e YYYY-MM-DD [USER]`  
@@ -33,8 +35,11 @@ log into e.g. silurian.
 
 If you do this on eocene, you can send things to other clients using:  
 `make -C /var/yp`
+on eocene, as root.
+
 ### Disk space:
 To change array quota:  
+log into e.g. silurian
 `xfs_quota -x -c 'report -h' /export/silurian/array-01`  
 `xfs_quota -x -c "limit bhard=50000g [USER]" /export/silurian/array-01`  
 `xfs_quota -x -c "limit bsoft=49000g [USER]" /export/silurian/array-01`
