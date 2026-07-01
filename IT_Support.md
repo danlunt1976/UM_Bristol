@@ -19,7 +19,10 @@ All requests for support should go through one of three routes:
 
 ## Faults
 
-* none at present
+* Dan and Paul to sudo on new machines for file access (ID:0145026)
+* Disk array location on new machines?
+* Unmounting of rdsf - set for as long as possible.
+* convsh error messages to root mailbox.
 
 ## Day-to-day user support
 
@@ -28,6 +31,8 @@ All requests for support should go through one of three routes:
 * deepmip/umbrella from wordpress to campuspress?  pros/cons...?
 * ~freeze wiki to read-only: [http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/](http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/)~ and switch to static copy 
 * Check mechanism for updates to the user quota stats page: [http://paleo-wikis.ggy.bris.ac.uk/wiki/bridge/Computing/StorageStats#Pliocene] 
+
+
 
 ## Long-term support
 
