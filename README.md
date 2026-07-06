@@ -18,6 +18,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-07-06** — Update BC5_running.md
 - **2026-07-01** — Update Local_hardware.md
 - **2026-07-01** — Update IT_Support.md
 - **2026-07-01** — Update BRIDGESysAdmin.md
@@ -27,7 +28,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-06-04** — Added vegetation info
 - **2026-06-03** — Minor changes to xtbg handbook
 - **2026-06-02** — Update Workshop_XTBG_Info.md
-- **2026-06-02** — Create Solutions_XTBG.md
 
 ---
 [How to edit these pages](Editing_guide.md)
