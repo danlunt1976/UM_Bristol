@@ -27,6 +27,9 @@ ssh-keygen -t ed25519
 ```
 and renamed the file to /home/ggdjl/.ssh/id_ed25519_bc5
 and set a passphrase (cd6).
+
+bc5 uses a program called clifton to authorize usage. It generates a certificate that lasts for 12 hours before requiring renewal (you can also renew earlier if preferred). We have installed clifton in ~swsvalde/bin on our newer machines (triassic/miocene/holocene4). On our older machines, we have not done this so you will need to do the following.
+
 Again, only once, I installed clifton in a clifton directory in my home directory:
 ```
 mkdir clifton ; cd clifton
@@ -36,8 +39,7 @@ chmod u+x clifton
 
 Every time you log in to BC5, to authenticate your ssh link:
 ```
-cd clifton
-./clifton auth --identity /home/ggdjl/.ssh/id_ed25519_bc5
+clifton auth --identity /home/ggdjl/.ssh/id_ed25519_bc5
 ```
 This pops up a QR code (there was no default web browser set on miocene), which you read into your mobile phone, and log in via the webpages that pop up on your phone.
 Back on miocene you then do: (you only need to do this once, the very first time you log in)
@@ -59,81 +61,58 @@ ServerAliveInterval 10
 ServerAliveCountMax 100
 ```
 
+On our newer machines, there is also a script that tells you how long your certificate has before it expires:
+
+check_certificate
+
 ## Setting up to run the UM
 
-In your home directory, once only, set up these folders/links:
+The home directory is relatively small (as it is on many HPC machines) so the recomendation is to have most of your folders in the bigger projects space, and then use sym links. In your home directory, once only, do the following:
 ```
 mkdir /projects/public/b55a/ggdjl
-mkdir /projects/public/b55a/ggdjl/um
-mkdir /projects/public/b55a/ggdjl/tmp
+for folder in DUMP2HOLD ancils dumps work umui_jobs umui_runs tmp ; do
+   mkdir /projects/public/b55a/ggdjl/$folder
+   ln -s /projects/public/b55a/ggdjl/$folder
+done
 
-ln -s /projects/public/b55a/ggdjl/um /projects/public/b55a/ggdjl/DUMP2HOLD
-ln -s /projects/public/b55a/ggdjl/DUMP2HOLD
-ln -s /projects/public/b55a/ggdjl/um dump2hold
-ln -s /projects/public/b55a/ggdjl work
+mkdir DUMP2HOLD/um
+ln -s /projects/public/b55a/ggdjl/DUMP2HOLD/um dump2hold
 
-ln -s /projects/public/b55a/swsvalde
-ln -s /projects/public/b55a/um/PUM64_intel PUM64
-ln -s /projects/public/b55a/ggdjl/tmp
-ln -s /projects/public/b55a project
+ln -s /projects/public/b56i/swsvalde
+ln -s /projects/public/b56i/ggpjv/UM_HOME
 
-ln -s swsvalde/ancil
-ln -s swsvalde/dumps
-
-ln -s ln -s PUM64/setvars
-
-mkdir umui_jobs
-
-cp /home/b55a/ggdagw.b55a/.profile .
-cp  /home/b55a/ggdagw.b55a/met.kshrc .
+ln -s UM_HOME/setvars
+cp /home/b56i/ggpjv.b56i/.profile .
+mkdir $HOME/.um
+cp /home/b56i/ggpjv.b56i/.um/clustersubmit.conf $HOME/.um
 
 ```
-You may also want to use xconv and um2nc, so add to your .profile:
+Then, in the clustersubmit.conf file, change the final line to your home location. i.e.
 ```
-export PATH=$PATH:/projects/public/b55a/convsh/bin
+home='/home/b55a'
 ```
+
+ALSO, there is a line in clustersubmit which converts usernames from our normal format on triassic etc, to the more unusual format of bc5. Add your username to the existing list:
+```
+username_convert=("ggpjv:ggpjv.b56i" "glxaf:glxaf.b56r" "ggdjl:ggdjl.b55i")
+```
+
 ## Compile and Run:
 
+If the above changes are done correctly, then the rest should be simple. Moreover, the defaults for clustersubmit have been set so the usage can be very simple.
 ### compile:
-```
-clustersubmit -s y -q general -r bc5 -P " " xqhgf
-```
-Now `cd` to ~/`umui_runs` .  Normally you would just type `ksh SUBMIT`, but for now you will either have to do some hand-edits first, or submit as above but using /home/b55a/ggdjl.b55a/clustersubmit_ggdjl in place of clustersubmit.
-
-If you used the usual clustersubmit then will need to hand-edit the SCRIPT and SUBMIT files in the latest umui_runs folder.
-In SUBMIT:
-```
-echo "#!/usr/bin/env ksh">/tmp/qsubmit.$thisHost.$$
-```
 
 ```
-qsubCmd1="/projects/public/b55a/um/bin/qsub-um -o $OUTPUT_FILE -s ksh
-qsubCmd2="/projects/public/b55a/um/bin/qsub-um -o $OUTPUT_FILE -s ksh 
-qsubCmd1="/projects/public/b55a/um/bin/qsub-um -o $OUTPUT_FILE -r $CJOBN -s ksh qsubCmd2="/projects/public/b55a/um/bin/qsub-um -o $OUTPUT_FILE -r $CJOBN -s ksh 
-```
-
-In SCRIPT:
-```
-MODSCRIPT=false         # set true to use test versions of scripts
-```
-
-You can then submit with 
-```
-ksh SUBMIT
-```
-
-You can check on the progress of the compile job with:
-```
-squeue --me
+clustersubmit -C y xqhgf
 ```
 
 ### run:
 
 ```
-clustersubmit -s y -q general -r bc5 -P " " -a y -p 8x4 -c n xqhgf
+clustersubmit -c n -a y xqhgf
 ```
 
-And then do the same hand-edits as for compile (or use clustersubmit_ggdjl), and run in the same way.
+
 
 ## Paul's notes from CMIP7 meeting:
 
