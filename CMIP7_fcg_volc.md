@@ -36,8 +36,7 @@ The CMIP7 ScenarioMIP *ext* data can be downloaded from the ESGF, for example he
 [https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22UOEXETER-ScenarioMIP-2-2-2%22%7D](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22UOEXETER-ScenarioMIP-2-2-2%22%7D)
 The key file is:  
 `ext_input4MIPs_aerosolProperties_ScenarioMIP_UOEXETER-ScenarioMIP-2-2-2_gnz_202201-210012.nc`
-I needed to use the DKRZ node, rather than the ornl one above, otherwise I couldn't download the wget. I filtered with MIP Era: CMIP7, Institution ID: UoExeter, and Source ID: ScenarioMIP2-2-2.  I then clicked to download the wget script, and moved this to holocene4 (~ggdjl/cmip7).  I made the wget script and made it executable, and just ran it.  It asked me for my OpenID.  I get an error message: Certificate could not be retrieved.  I tried lots of things, but gave up.  Luckily it loks like I already donloaded the file last year, so I will use that one and hope it hasn't changed!
-
+I needed to use the DKRZ node, rather than the ornl one above, otherwise I couldn't download the wget. I filtered with MIP Era: CMIP7, Institution ID: UoExeter, and Source ID: ScenarioMIP2-2-2.  I then clicked to download the wget script, and moved this to holocene4 (~ggdjl/cmip7).  I made the wget script and made it executable, and just ran it.  It asked me for my OpenID.  I get an error message: Certificate could not be retrieved.  I tried lots of things, including -H option, and resetting my password, but gave up. It looks like I already downloaded the 2-2-1 file last year, so I will use that one for now....actually, the wget script is working now!!  I just used the -s option to run the wget script and it just worked!!!
 
 ### How to process data
 
@@ -55,10 +54,16 @@ For CMIP6, Paul said that the system was that groups contacted a team in Zurich,
 
 *CMIP7 historical*
 I (Dan L) used the CMIP7 *ext* data in the `ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_175001-202312.nc` file above.  The 550nm data was used, and vertically integrated through each 500m deep vertical slice to create AOD, and then regridded to the required resolution, and output in the required format.  The [python code can be found here](<Attachments/CMIP7_fcg_volc/CMIP7_volcanic.ipynb>).
-The first check is that we can read in the data and integrated correctly.  To do this, I produced a [plot for comparison with the AOD plot from Aubrey et al](<Attachments/CMIP7_fcg_volc/aod550_cmip7.png>).  This looks OK.  I then [converted this to the HadCM3 latitudinal resolution](<Attachments/CMIP7_fcg_volc/aod550_cmip7_hadcm3.png>).  This itself can [be compared with Paul's Last Millennium file](<Attachments/CMIP7_fcg_volc/aod550_valdes_hadcm3.png>).  This also looks sensible.  Finally, I produced a:  
+The first check is that we can read in the data and integrated correctly.  To do this, I produced a [plot for comparison with the AOD plot from Aubrey et al](<Attachments/CMIP7_fcg_volc/aod550_cmip7.png>).  This looks OK.  I then [converted this to the HadCM3 latitudinal resolution](<Attachments/CMIP7_fcg_volc/aod550_cmip7_hadcm3.png>).  This itself can [be compared with Paul's Last Millennium file](![[aod550_scenariomip_hadcm3 1.png]]).  This also looks sensible.  Finally, I produced a:  
 * [CMIP7 volcanic file in the format required by HadCM3](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_1750_2023.dat>).      
 and a 
 * [CMIP7 volcanic file in the format required by HadCM3, for zero volcanic forcing](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_1750_2023_novolc.dat>). Note that a value of AOD of 1 is used for zero forcing, instead of 0, consistent with a comment in the code that says that a value of 1 should be used because 0 causes a numerical instability.      
+
+*CMIP7 SCENARIOMIP*
+I (Dan L) used the SCENARIOMIP *ext* data in the `ext_input4MIPs_aerosolProperties_ScenarioMIP_UOEXETER-ScenarioMIP-2-2-2_gnz_202201-210012.nc` file above.  As above, the 550nm data was used, and vertically integrated through each 500m deep vertical slice to create AOD, and then regridded to the required resolution, and output in the required format.  The [python code can be found here](<Attachments/CMIP7_fcg_volc/CMIP7_volcanic.ipynb>).
+Regridded to HadCM3 resolution, the timeseries [looks reasonable](<Attachments/CMIP7_fcg_volc/aod550_scenariomip_hadcm3.png>).  However, there is a [slight inconsistency between the historical and SCENARIOMIP timeseries](<aod550_cmip7_scenariomip_overlap.png>).  We think that this inconsistency is too small to worry about.
+ Finally, I produced a:  
+* [SCENARIOMIP volcanic file in the format required by HadCM3](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_2022_2100.dat>).         
 
 *CMIP7 picontrol*
 They also provide a climatology (which is similar to the *historical*, but averaged monthly from 1850-2021).  The file is `ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_185001-202112-clim.nc`.  I [regridded this to HadCM3 resolution](<Attachments/CMIP7_fcg_volc/aod550cr_cmip7_hadcm3.png>).
