@@ -7,9 +7,18 @@ Data description and documentation can be found here: https://input4mips-cvs.rea
 
 The time-varying disturbance file at HadCM3 resolution can be found here: eocene: /home/bridge/xk22684/land_dist/LU.
 
-<add info here where to find CMIP LU data>
+Currenlty, only VL (very low) and H (high) scenario forcings are available at the above link. Ancillary files for these two forcings are currently being processed and will be available on Blue Pebble (??). More ancillary files need to be produced as the other scenario forcings become available. 
+
+add info here where to find CMIP LU data
 
 ### How to process data
+1) Download nc files from above data link: under ScenarioMIP subheader, select link to ESGF for specific forcing file, download file ending in '.multiple-states.gn'
+2) From downloaded file, sum together 'C3 annual crops', 'C3 nitrogen fixing crops', 'C3 perenial crops', 'C4 annual crops', 'C4 perenial crops', 'managed pasture' fractions to get total_land_use_disturbance_fraction
+3) Regrid 'total_land_use_disturbance_fraction' to HadCM3 spatial resolution
+4) Add metadata to 'total_land_use_disturbance_fraction' (what metadata is needed for it to work in xancil ??)
+5) Use iris (iris.save()) to save 'total_land_use_disturbance_fraction' in nc format
+6) Use xconv to convert iris nc file to nc file that will work in xancil 
+
 The land-use should be an ancillary file, in the pp format, containing fraction of vegetation (values between 0 and 1) on each point of the land area of the model grid. If the initial land-use file is on a netcdf4 format, convert in on pp format by: 
 1) Open xancil
 2) Load nc file of interest
