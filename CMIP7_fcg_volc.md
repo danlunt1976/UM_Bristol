@@ -18,14 +18,25 @@ They provide: *ext, ssa, asy, reff, sad, vd, and nd*.  We need SAOD (stratospher
 
 I (Dan L) emailed Thomas Aubrey at Oxford, and he confirmed that the SAOD can be calculated simply by vertically integrating the variable *ext*.
 
-The version number for CMIP7 production runs is CMIP_UOEXETER-CMIP-2-2-1 .  
-The CMIP7 *ext* data can be downloaded from the ESGF, for example here:  
+*DECK (historical and piControl) data*
+
+The version number for CMIP7 DECK (*historical* and *piControl*) production runs is CMIP_UOEXETER-CMIP-2-2-1 .  
+The CMIP7 DECK *ext* data can be downloaded from the ESGF, for example here:  
 [https://aims2.llnl.gov/search?project=input4MIPs&versionType=all&&activeFacets=%7B%22source_id%22%3A%5B%22UOEXETER-CMIP-2-2-1%22%5D%7D](https://aims2.llnl.gov/search?project=input4MIPs&versionType=all&&activeFacets=%7B%22source_id%22%3A%5B%22UOEXETER-CMIP-2-2-1%22%5D%7D)  
 The key file is:  
 `ext_input4MIPs_aerosolProperties_CMIP_UOEXETER-CMIP-2-2-1_gnz_175001-202312.nc` (1750-2023).  I (Dan L) accessed this via a wget script.  I created an account on the ESGF, which gave me an OpenID and a password.  I am not sure if I had to do that step or not.  Anyway, I downloaded the wget script, and ran it on miocene using `bash -s wget_script_2025-11-19_5-58-29.sh`.  **I used the DKRZ node, as the LLN and CEDA ones didn't seem to work.  Actually, next time I tried this, only the LLN one worked, and I ran the wget script without the bash -s**
 
-Thomas Aubrey also emailed me (Dan L) and sent me the CMIP6 data for variable *ext*:  
+Thomas Aubrey also emailed me (Dan L) and sent me the CMIP6 historical data for variable *ext*:  
 `CMIP_1850_2014_extinction_550nm_strat_only_v3.nc`
+
+*ScenarioMIP data*
+
+The version number for CMIP7 DECK SCENARIOMIP production runs is UOEXETER-ScenarioMIP-2-2-2.  
+The CMIP7 ScenarioMIP *ext* data can be downloaded from the ESGF, for example here:  
+[https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22UOEXETER-ScenarioMIP-2-2-2%22%7D](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22UOEXETER-ScenarioMIP-2-2-2%22%7D)
+The key file is:  
+`ext_input4MIPs_aerosolProperties_ScenarioMIP_UOEXETER-ScenarioMIP-2-2-2_gnz_202201-210012.nc`
+I needed to use the DKRZ node, rather than the ornl one above, otherwise I couldn't download the wget. I filtered with MIP Era: CMIP7, Institution ID: UoExeter, and Source ID: ScenarioMIP2-2-2.  I then clicked to download the wget script, and moved this to holocene4 (~ggdjl/cmip7).  I made the wget script and made it executable, and just ran it.  It asked me for my OpenID.  I get an error message: Certificate could not be retrieved.  I tried lots of things, but gave up.  Luckily it loks like I already donloaded the file last year, so I will use that one and hope it hasn't changed!
 
 
 ### How to process data
