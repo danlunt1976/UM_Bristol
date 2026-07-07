@@ -61,7 +61,7 @@ and a
 
 *CMIP7 SCENARIOMIP*
 I (Dan L) used the SCENARIOMIP *ext* data in the `ext_input4MIPs_aerosolProperties_ScenarioMIP_UOEXETER-ScenarioMIP-2-2-2_gnz_202201-210012.nc` file above.  As above, the 550nm data was used, and vertically integrated through each 500m deep vertical slice to create AOD, and then regridded to the required resolution, and output in the required format.  The [python code can be found here](<Attachments/CMIP7_fcg_volc/CMIP7_volcanic.ipynb>).
-Regridded to HadCM3 resolution, the timeseries [looks reasonable](<Attachments/CMIP7_fcg_volc/aod550_scenariomip_hadcm3.png>).  However, there is a [slight inconsistency between the historical and SCENARIOMIP timeseries](<aod550_cmip7_scenariomip_overlap.png>).  We think that this inconsistency is too small to worry about.
+Regridded to HadCM3 resolution, the timeseries [looks reasonable](<Attachments/CMIP7_fcg_volc/aod550_scenariomip_hadcm3.png>).  However, there is a [slight inconsistency between the historical and SCENARIOMIP timeseries](<Attachments/CMIP7_fcg_volc/aod550_cmip7_scenariomip_overlap.png>).  We think that this inconsistency is too small to worry about.
  Finally, I produced a:  
 * [SCENARIOMIP volcanic file in the format required by HadCM3](<Attachments/CMIP7_fcg_volc/CMIP7_aod_550_2022_2100.dat>).         
 
