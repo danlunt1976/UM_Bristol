@@ -18,6 +18,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-07-07** — Processed data for Ozone scenarios vl and h
 - **2026-07-07** — Update CMIP7_fcg_LUC.md with scenario details
 - **2026-07-07** — Update CMIP7_fcg_volc.md
 - **2026-07-06** — Update BC5_running.md
@@ -27,7 +28,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-06-17** — Changes
 - **2026-06-10** — Update Collaborations_scotese.md
 - **2026-06-05** — Update Workshop_XTBG_Presentations.md
-- **2026-06-04** — Added vegetation info
 
 ---
 [How to edit these pages](Editing_guide.md)
