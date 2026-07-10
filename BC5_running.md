@@ -112,6 +112,25 @@ clustersubmit -C y xqhgf
 clustersubmit -c n -a y xqhgf
 ```
 
+## The new installation of the UM:
+
+bc5 (and isambard) has a new installation of the UM which goes back to the original code base. For most typical users, the differences are hidden and the following explanation is not required reading. However, for some users, it may be useful to be aware of:
+
+1. The installation of the UM is in ~ggpjv.b56i/UM_HOME. This contains everything you need to run standard versions of the model, in particular:
+
+   1. ~ggpjv.b56i/UM_HOME/um/bin            contains clustersubmit (as well as qsub-um which controls the queueing software).
+   2. ~ggpjv.b56i/UM_HOME/um/bristol_mods   contains modsets formerly in ~swsvalde/um_updates (in the UMUI known as PV_UPDATES). These modsets are in the public release of the model, including all of the jobs owned by swsvalde in the umui.
+   3. ~ggpjv.b56i/UM_HOME/um/bristol_ancils and bristol_dumps    contains the ancil and dump files used for the standard model setups
+
+2. Some of the modsets have been merged together. This is because there are several sets of modsets that always need to be used together and it seemed daft to have them listed separately. It also reduces the total number of modsets for particular jobs, which is useful because some jobs were approaching the umui limit of 100 modsets.
+   
+3. Additional scripts used for monitoring the simulations, and modifying them, are in ~ggpjv.b56i/swsvalde/bin. These are scripts which help things on bristol machines but are not for general distribution (mainly because they are either very specific for the Bristol setup, or the script does not have the quality of comments or error checking that are needed for more general release versions. NOTE that I have not copied across every script which we had on bc4. Let me know if there is a command that is missing.
+
+4. Similarly, additional ancil and dump files are in ~ggpjv.b56i/swsvalde/ancils and dumps. (NOTE that the ancil folder has been renamed to ancils).
+
+5. We are using a different version of the nupdate command (which implements all of the modsets and creates the fortran). We have noticed a few places where it works differently to the previous version. If you are using your own modsets, please check your code carefully.
+   
+6.  The above changes means that you need a new umui job. These have been created in the umui folder, under swsvalde.
 
 
 ## Paul's notes from CMIP7 meeting:
