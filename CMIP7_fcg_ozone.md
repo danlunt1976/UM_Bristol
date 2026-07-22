@@ -15,14 +15,20 @@ File list ready for HadCM3BL model running:
 - piControl and historical transient: 
 `vmro3*_2-0_182901-202212_73x96x19hybrid_zonmean.nc`  
 
+- Scenario vl:
+`vmro3*_ScenarioMIP_*vl-1-0*_202201-210012_73x96x19hybrid_zonmean.nc`
+- Scenario h:
+`vmro3*_ScenarioMIP_*h-1-0*_202201-210012_73x96x19hybrid_zonmean.nc`
 ### Where to access data
 Data description: https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/
 
 Download data from:
 - [FZJ-CMIP-ozone-1-2](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-1-2%22%7D): for piControl climatology and transient.
 - [FZJ-CMIP-ozone-2-0](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-2-0%22%7D): for historical transient.
+- [FZJ-CMIP-ozone-vl-1-0](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-vl-1-0%22%7D): for Scenario `vl`.
+- [FZJ-CMIP-ozone-h-1-0](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-h-1-0%22%7D): for Scenario `h`.
 
-The download links would direct you to CMIP7 ozone data version1.2 and version 2.0. But if not, you can search by `source_id = FZJ-CMIP-ozone-1-2` and `source_id = FZJ-CMIP-ozone-2-0`.
+The download links would direct you to CMIP7 ozone data for specific version. But if not, you can search by `source_id`, such as `source_id = FZJ-CMIP-ozone-1-2`.
 
 Data list:
 - **v1.2: piControl climatology** for 185001-185012.
@@ -43,7 +49,16 @@ Data list:
 	- file4: vmro3_input4MIPs_ozone_CMIP_FZJ-CMIP-ozone-2-0_gn_**200001-202212**.nc
 	- Comments: CMIP7 historical ozone forcing with nudged QBO signal, historical solar forcing, and historical emissions.
 	- version: 20260211; replica=true; size=4.35 GB
-
+- **v1.0: Scenario `vl`** for **202201-210012**.
+	- Dataset: input4MIPs.CMIP7.ScenarioMIP.FZJ.FZJ-CMIP-ozone-`vl`-1-0.atmos.`mon`.vmro3.gn
+	- File1: vmro3_input4MIPs_ozone_ScenarioMIP_FZJ-CMIP-ozone-vl-1-0_gn_202201-205912.nc
+	- File2: vmro3_input4MIPs_ozone_ScenarioMIP_FZJ-CMIP-ozone-vl-1-0_gn_206001-210012.nc
+	- version: 20260409
+- **v1.0 Scenario `h`** for **202201-210012**.
+	- Dataset: input4MIPs.CMIP7.ScenarioMIP.FZJ.FZJ-CMIP-ozone-`h`-1-0.atmos.`mon`.vmro3.gn
+	- File1: vmro3_input4MIPs_ozone_ScenarioMIP_FZJ-CMIP-ozone-h-1-0_gn_202201-205912.nc
+	- File2: vmro3_input4MIPs_ozone_ScenarioMIP_FZJ-CMIP-ozone-h-1-0_gn_206001-210012.nc
+	- version: 20260409
 ### How to process data
 
 #### Step1: regrid to HadCM3BL lon/lat grid 
@@ -184,7 +199,8 @@ cdo -O mergetime \
 `mergetime` concatenates along `time` and will sort by time if needed.
 script: `Siliruan:/home/bridge/mf22281/CMIP7/CMIP7-Ozone/mergetime.sh`; `Siliruan:/home/bridge/mf22281/CMIP7/CMIP7-Ozone/run_pres2hybrid_zonmean_vmro3_ncl.sh`
 
-
+#### Processed result
+![ozone_global_mean_historical_scenario_h_vl_hyb99.247.png](Attachments/CMIP7_fcg_ozone/ozone_global_mean_historical_scenario_h_vl_hyb99.247.png)
 ### How to implement the forcing into HadCM3
 
 <add info here how to incorporate into a model run>
