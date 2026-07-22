@@ -6,6 +6,8 @@ Users should instead go to [HadCM3_user_notes](HadCM3_user_notes.md).
 
 [PUMA](PUMA.md)
 
+[UMUI](UMUI.md)
+
 [Model_install](Model_install.md)
 
 [Standard_jobs](Standard_jobs.md)
