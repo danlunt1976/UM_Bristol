@@ -13,6 +13,12 @@ One solution is to downgrade Cartopy, as this seems to be caused by a compatibil
    
 ## Issues with map plots
 
+### collapsing plots
+
+You may find that the map plots do not appear, and all you see is a colour legend.  This can be solved by removing the `gl.top_labels = False` line.
+
+### rendering of contours
+
 Some people may encounter a problem in Cell 21 and Cell 25 where the colors in the plots cannot be rendered properly. A general solution is to make sure that the longitude array matches the data array after adding the cyclic point, and to use a 2D meshgrid when plotting with transform_first=True.
 
 For example, in Cell 21, the original cyclic-point section could be replaced with the following:
