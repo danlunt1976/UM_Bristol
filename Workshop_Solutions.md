@@ -41,7 +41,7 @@ The same logic can also be applied to Cell 25 if you encounter the same colour-r
 
 ## Alternative to Anaconda
 
-As an alternative solution, for students people still experience other unexpected issues, or who find it too difficult to install and run Conda on their own computers, Tianyi Chu from Nanjing University has also set up an online JupyterLab environment ([http://140.245.99.146:8888](http://140.245.99.146:8888/ "http://140.245.99.146:8888")), which he will  keep maintaining until the end of the workshop.
+As an alternative solution, for students people still experience other unexpected issues, or who find it too difficult to install and run Conda on their own computers, Tianyi Chu from Nanjing University has also set up an online JupyterLab environment ( [https://workshop.qxlove.top](https://workshop.qxlove.top/) ), which he will  keep maintaining until the end of the workshop.
 You can use their own name in English as the username. 
 The password is: 
 ```WDTRcn/HwOgQiZgdqb0WRef6```
