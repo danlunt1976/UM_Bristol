@@ -18,6 +18,8 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-08-01** — Update JupyterLab URL
+- **2026-08-01** — Update Workshops.md
 - **2026-08-01** — New Urbino file
 - **2026-08-01** — Update Workshop_XTBG_Info.md
 - **2026-07-22** — Added umui page
@@ -26,8 +28,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-07-07** — Update CMIP7_fcg_LUC.md with scenario details
 - **2026-07-07** — Update CMIP7_fcg_volc.md
 - **2026-07-06** — Update BC5_running.md
-- **2026-07-01** — Update Local_hardware.md
-- **2026-07-01** — Update IT_Support.md
 
 ---
 [How to edit these pages](Editing_guide.md)
