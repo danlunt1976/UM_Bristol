@@ -26,7 +26,9 @@
 
 [Collaborations](Collaborations.md)
 
-[Running with isotopes](Running_isotopes)
+[Running with isotopes](Running_isotopes.md)
+
+
 
 [Dan notes](Dan_notes.md)
 
