@@ -4,7 +4,9 @@
 # Running with isotopes
 
 > **Example experiment:** `xqmxa → xqmxb`
+
 > **Purpose:** Run a complete stable water isotope experiment and obtain the isotope output.
+
 > **Core configuration:** `4x1`
 
 
