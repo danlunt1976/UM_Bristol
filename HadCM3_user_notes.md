@@ -28,7 +28,7 @@
 
 [Running with isotopes](Running_isotopes.md)
 
-[Orbit Setup](Modify_orbit.md)
+[Orbit Setup](Orbit_setup.md)
 
 [Dan notes](Dan_notes.md)
 
