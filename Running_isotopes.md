@@ -554,8 +554,13 @@ Set `GLOBAL_SALINITY` according to the number of permanent ice sheets:
 | One polar ice sheet  |           `34.63` |
 | Two polar ice sheets |           `34.84` |
 
-Modify `GLOBAL_SALINITY` in the copied experiment according to the ice-sheet condition of the selected geological age.
+**Modify in the copied experiment on `puma2`:**
+
+```text
+Model Selection
+→ Sub-Model Independent
+→ Script Inserts and Modifications
+→ GLOBAL_SALINITY 34.23
+```
 
 ---
-
-
