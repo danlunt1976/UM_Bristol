@@ -3,11 +3,6 @@
 
 # Running with isotopes
 
-# Running HadCM3 with Isotopes
-
-
-# HadCM3 Stable Water Isotope Experiment — Example Workflow
-
 > **Example experiment:** `xqmxa → xqmxb`
 > **Purpose:** Run a complete stable water isotope experiment and obtain the isotope output.
 > **Core configuration:** `4x1`
