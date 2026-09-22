@@ -18,6 +18,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-09-22** — Update Modify_orbit.md
 - **2026-09-22** — Add files via upload
 - **2026-09-22** — Update HadCM3_user_notes.md
 - **2026-09-22** — Update Running_isotopes.md
@@ -27,7 +28,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-08-01** — Update JupyterLab URL
 - **2026-08-01** — Update Workshops.md
 - **2026-08-01** — New Urbino file
-- **2026-08-01** — Update Workshop_XTBG_Info.md
 
 ---
 [How to edit these pages](Editing_guide.md)
