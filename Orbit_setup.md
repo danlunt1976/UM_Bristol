@@ -150,61 +150,175 @@ This method calculates the HadCM3 orbital inputs from astronomical parameters:
 * Perihelion − 180°
 * Vernal equinox
 
-The resulting HadCM3 inputs are:
+### 3.1 Source Astronomical Parameters
 
-| HadCM3 parameter | Meaning                               |
-| ---------------- | ------------------------------------- |
-| `GAMMA` (`γ`)    | Supplement of longitude of perihelion |
-| `E`              | Eccentricity                          |
-| `TAU0` (`τ₀`)    | Perihelion passage time               |
-| `SINOBL`         | Sine of obliquity                     |
+The astronomical parameters are obtained from the **Laskar (2004)** orbital solution, using the corresponding orbital table:
+
+For a specified geological age, the program identifies the two surrounding entries in the table and performs linear interpolation.
+
+The three primary astronomical quantities used are:
+
+| Laskar parameter | Meaning                                                       | Unit / form   |
+| ---------------- | ------------------------------------------------------------- | ------------- |
+| `E`              | Orbital eccentricity                                          | dimensionless |
+| `OBLQ`           | Obliquity                                                     | radians       |
+| `LPH`            | Longitude of perihelion relative to the moving vernal equinox | radians       |
+
+If the target age does not exactly correspond to a tabulated value, each parameter is linearly interpolated:
+
+```text
+E    = interpolated eccentricity
+OBLQ = interpolated obliquity
+LPH  = interpolated longitude of perihelion
+```
+
+Thus, the first stage is:
+
+```text
+Laskar 2004 table
+        │
+        ▼
+Interpolation at target age
+        │
+        ├── E
+        ├── OBLQ
+        └── LPH
+```
 
 ### Reference
 
 [UM Technical Documentation — Radiation](https://www.paleo.bristol.ac.uk/~swsvalde/UM_Docs/UM_Technical_Documents/Radiation_p023.pdf)
+---
 
-### 3.1 Basic Definitions
+### 3.2 Conversion to HadCM3 Orbital Parameters
 
-#### `SINOBL`
+The interpolated astronomical parameters are then converted into the four quantities required by HadCM3.
+
+#### `E_IN` — Eccentricity
+
+The HadCM3 eccentricity input is simply the interpolated orbital eccentricity:
 
 ```text
-SINOBL = sin(obliquity)
+E_IN = E
 ```
 
-#### Eccentricity
+Therefore, if the interpolated eccentricity is:
 
-`E` is the orbital eccentricity, either directly specified or interpolated from Laskar (2004).
+```text
+E = 0.043182
+```
 
-#### `GAMMA`
+the value written to `CNTLATM` is:
 
-`GAMMA` is the supplement of the longitude of perihelion:
+```text
+E_IN=0.043182,
+```
+
+`E` is dimensionless, so it is naturally represented as a decimal number.
+
+---
+
+#### `SINOBL_IN` — Sine of Obliquity
+
+The Laskar table provides obliquity as `OBLQ` in radians.
+
+HadCM3 requires the sine of the obliquity rather than the obliquity angle itself:
+
+```text
+SINOBL = sin(OBLQ)
+```
+
+Therefore:
+
+```text
+SINOBL_IN = sin(OBLQ)
+```
+
+For example:
+
+```text
+OBLQ ≈ 23.2°
+```
+
+corresponds to approximately:
+
+```text
+OBLQ ≈ 0.405 rad
+```
+
+and therefore:
+
+```text
+sin(OBLQ) ≈ 0.3946
+```
+
+giving a HadCM3 input of the form:
+
+```text
+SINOBL_IN=0.394615,
+```
+
+Thus, `0.394615` is **not an obliquity angle in degrees**. It is the dimensionless value of `sin(obliquity)`.
+
+---
+
+### 3.3 Calculation of `GAMMA_IN`
+
+`GAMMA` is not directly equal to the longitude of perihelion.
+
+The HadCM3 formulation uses the supplement of the longitude of perihelion:
 
 ```text
 GAMMA = π − LPH
 ```
 
-or equivalently:
+where `LPH` is in radians.
+
+The result is then normalised to the interval:
 
 ```text
-GAMMA = PI - atan2(esinw, ecosw)
+0 ≤ GAMMA < 2π
 ```
 
-#### `TAU0`
-
-`TAU0` represents the time of perihelion passage:
+Thus:
 
 ```text
-τ₀ = DATE_VE − MEAN_ANOMALY(VE) × TropYear / (2π)
+GAMMA_IN = GAMMA
 ```
+
+For example, if:
+
+```text
+LPH ≈ 2.8853 rad
+```
+
+then:
+
+```text
+GAMMA = π − LPH
+       ≈ 0.256314 rad
+```
+
+and the value written to `CNTLATM` is:
+
+```text
+GAMMA_IN=0.256314,
+```
+
+Therefore, `0.256314` is a value in **radians**, not degrees.
 
 ---
 
-### 3.2 Laskar-style Calculation
+### 3.4 Calculation of `TAU0_IN`
 
-#### Step 1 — Auxiliary Variables
+`TAU0` is calculated from the position of the vernal equinox in the orbit.
+
+It is not directly read from the Laskar table.
+
+First, several auxiliary quantities are calculated from eccentricity:
 
 ```text
-β  = sqrt(1 − E²)
+β = sqrt(1 − E²)
 
 EE1 = (0.5E + 0.125E³)(1 + β)
 
@@ -213,74 +327,121 @@ EE2 = −0.25E²(0.5 + β)
 EE3 = 0.125E³(1/3 + β)
 ```
 
-#### Step 2 — Mean Anomaly at Vernal Equinox
+The mean anomaly at the vernal equinox is then calculated as:
 
 ```text
 MEAN_ANOM_VE =
-GAMMA − 2 × [
-    EE1 sin(GAMMA)
-    + EE2 sin(2GAMMA)
-    + EE3 sin(3GAMMA)
-]
+    GAMMA
+    − 2 × [
+        EE1 sin(GAMMA)
+        + EE2 sin(2GAMMA)
+        + EE3 sin(3GAMMA)
+      ]
 ```
 
-#### Step 3 — Perihelion Timing
+The perihelion passage time is subsequently obtained from:
 
 ```text
-TAU0 = DATE_VE − MEAN_ANOM_VE × TropYear / (2π)
+TAU0 =
+    DATE_VE
+    − MEAN_ANOM_VE × TropYearLength / (2π)
+```
+where:
+
+DATE_VE is the reference time of the vernal equinox.
+
+MEAN_ANOM_VE is the mean anomaly of the Earth at the vernal equinox, expressed in radians.
+
+TropYearLength is the year-length scale used to convert the angular mean anomaly into a time interval.
+
+The important point is that `TAU0_IN` is therefore a **derived orbital timing parameter**, rather than a value directly taken from the Laskar table.
+
+---
+
+### 3.5 Parameter Normalisation
+
+The calculated parameters are normalised before being written to the model configuration.
+
+#### `GAMMA`
+
+`GAMMA` is constrained to one orbital cycle:
+
+```text
+while GAMMA < 0:
+    GAMMA += 2π
+
+while GAMMA >= 2π:
+    GAMMA -= 2π
+```
+
+Therefore:
+
+```text
+0 ≤ GAMMA < 2π
+```
+
+and the final value is expressed in radians.
+
+#### `TAU0`
+
+`TAU0` is wrapped into one model year:
+
+```text
+while TAU0 < 0:
+    TAU0 += DINY
+
+while TAU0 > DINY:
+    TAU0 -= DINY
+```
+
+where `DINY` corresponds to the model calendar length.
+
+---
+
+Thus, the final four HadCM3 inputs are obtained through:
+
+```text
+E_IN     = interpolated E
+
+SINOBL_IN = sin(interpolated OBLQ)
+
+GAMMA_IN  = π − interpolated LPH
+            followed by angular normalisation
+
+TAU0_IN   = calculated from GAMMA, E,
+            mean anomaly, vernal-equinoctial date,
+            and the model calendar conversion
 ```
 
 ---
 
-### 3.3 Normalisation
+### 3.6 HadCM3 Configuration
 
-#### `TAU0` — Days
-
-```text
-while tau0 < 0:
-    tau0 += DINY
-
-while tau0 > DINY:
-    tau0 -= DINY
-```
-
-#### `GAMMA` — Radians
-
-```text
-while gamma < 0:
-    gamma += 2π
-
-while gamma > 2π:
-    gamma -= 2π
-```
-
----
-
-### 3.4 HadCM3 / UMUI Workflow
+After the four parameters have been calculated, the model configuration is modified.
 
 #### Step 1 — Pre-process on `puma2`
 
-Calculate the required:
+Calculate:
 
 ```text
-GAMMA
-E
-TAU0
-SINOBL
+GAMMA_IN
+E_IN
+TAU0_IN
+SINOBL_IN
 ```
 
-before modifying the UM configuration.
+for the required geological age.
 
 #### Step 2 — Edit `CNTLATM`
 
-In `umui_jobs`, remove the last 8 lines:
+In `umui_jobs`, remove the final 8 lines:
 
 ```bash
 head -n -8 CNTLATM > temp_CNTLATM.dat
 mv temp_CNTLATM.dat CNTLATM
 ```
 
-#### Step 3 — Add Fixed Switches
+#### Step 3 — Add Fixed Orbital Switches
 
 Add:
 
@@ -292,9 +453,9 @@ SEC_VAR_FILE=.FALSE.,
 SEC_VAR_YEAR=0,
 ```
 
-#### Step 4 — Add Orbital Parameters
+#### Step 4 — Add the Calculated Orbital Parameters
 
-Append:
+Append the calculated numerical values:
 
 ```bash
 echo "GAMMA_IN=${gamma_in},"   >> CNTLATM
@@ -303,7 +464,7 @@ echo "TAU0_IN=${tau0_in},"     >> CNTLATM
 echo "SINOBL_IN=${sinobl_in}," >> CNTLATM
 ```
 
-#### Step 5 — Add Final Block
+#### Step 5 — Close the Final Configuration Block
 
 Append:
 
@@ -314,9 +475,9 @@ echo "&END" >> CNTLATM
 
 ---
 
-### 3.5 Final `CNTLATM` Example
+### 3.9 Final `CNTLATM` Example
 
-A complete final block should look like:
+The resulting final block is:
 
 ```text
 L_SEC_VAR=.FALSE.,
@@ -341,5 +502,3 @@ NOUTPUT_ORB=1,
 
 &END
 ```
-
-After completing the `CNTLATM` modification, compile the model and run the experiment.
