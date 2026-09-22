@@ -339,18 +339,7 @@ For example:
 Model Selection
 → Sub-Model Independent
 → Script Inserts and Modifications
-```
-
-Change:
-
-```text
-SOLAR_AGE 154.7 Ma
-```
-
-to:
-
-```text
-SOLAR_AGE 136.4 Ma
+→ SOLAR_AGE 136.4 Ma
 ```
 
 ---
@@ -377,20 +366,8 @@ Example:
 Model Selection
 → Sub-Model Independent
 → File & Directory Naming. Time Convention & Envirmnt Vars.
+→ MY_ANCIL ~ggpjv/ancil/scotese/136_4_1deg
 ```
-
-Change:
-
-```text
-MY_ANCIL ~ggpjv/ancil/scotese/000_0_1deg
-```
-
-to:
-
-```text
-MY_ANCIL ~ggpjv/ancil/scotese/136_4_1deg
-```
-
 
 ### 10.3 Number of Land Points
 
@@ -415,18 +392,7 @@ Model Selection
 → Atmosphere
 → Model Resolution and Domain
 → Horizontal
-```
-
-Change:
-
-```text
-Number of Land Points = 2014
-```
-
-to:
-
-```text
-Number of Land Points = 2515
+→ Number of Land Points = 2515
 ```
 
 
@@ -453,19 +419,7 @@ Model Selection
 → Atmosphere
 → Scientific Parameters and Sections
 → General physics Constants
-```
-
-Change:
-
-```text
-CO2 Mass Mixing Ratio for whole run
-= 1.61929e-03
-```
-
-to:
-
-```text
-CO2 Mass Mixing Ratio for whole run
+→ CO2 Mass Mixing Ratio for whole run
 = 1.07774e-03
 ```
 
@@ -520,12 +474,7 @@ Model Selection
 → Atmosphere
 → Ancillary and input data files
 → Start dump
-```
-
-Set:
-
-```text
-tfkSba#da000003000c1+
+→ tfkSba#da000003000c1+
 ```
 
 Ocean:
@@ -535,16 +484,11 @@ Model Selection
 → Ocean GCM
 → Input Files
 → Start dump
-```
-
-Set:
-
-```text
-tfkSbo#da000003000c1+
+→ tfkSbo#da000003000c1+
 ```
 
 
-### 10.6 Number of Islands
+### 10.7 Island Parameters
 
 **Find on `puma2`:**
 
@@ -552,50 +496,53 @@ tfkSbo#da000003000c1+
 ~ggdjl/scotese/islands
 ```
 
-The `teye*` files contain the island information.
+Find the appropriate `.dat` file for the target geological age.
 
-The relevant values are:
-
-| Value       | Meaning                                 |
-| ----------- | --------------------------------------- |
-| 1st         | Number of islands                       |
-| 2nd         | Maximum number of segments in an island |
-| 3rd         | Total number of island segments         |
-| 4th / final | Ignore                                  |
-
-For the 136.4 Ma example:
+The island files are named as:
 
 ```text
-Number of Islands = 2
-Total number of island segments = 3
+teye[a–z]
 ```
 
-**Modify in the copied experiment on `bp1`:**
+and follow the same geological-age sequence as the restart simulations, but with the `teye` naming convention:
+
+| Geological age | Island file |
+| -------------- | ----------- |
+| 0–125 Ma       | `teye[a–z]` |
+| 130–255 Ma     | `teyE[a–z]` |
+| 260–385 Ma     | `teYe[a–z]` |
+| 390–515 Ma     | `teYE[a–z]` |
+| 520–540 Ma     | `tEye[a–e]` |
+
+For a specific age, use the letter corresponding to the same simulation position in the sequence.
+
+For example, if the selected geological age corresponds to the `b` simulation in the `tfkS[a–z]` series, use:
+
+```text
+teyeb
+```
+
+The first three numbers in the selected `.dat` file are:
+
+1. **Number of Islands**
+2. **Maximum number of segments in an island**
+3. **Total number of island segments**
+
+The fourth and final number can be ignored.
+
+**Modify in the copied experiment on `puma2`:**
 
 ```text
 Model Selection
 → Ocean GCM
 → Model Resolution and Domain
 → Vertical
+→ Number of Islands
+  Maximum number of segments in an island
+  Total number of island segments
 ```
 
-Change:
-
-```text
-Total number of island segments = 11
-Number of Islands = 9
-```
-
-to:
-
-```text
-Total number of island segments = 3
-Number of Islands = 2
-```
-
----
-
-
+according to the selected `teye*` file.
 
 ### 10.7 `GLOBAL_SALINITY`
 
