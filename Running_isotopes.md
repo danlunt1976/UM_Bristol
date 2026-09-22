@@ -201,9 +201,9 @@ The stable water isotope experiment is successful when the model runs to complet
 
 ---
 
-# Step 9 — Isotope output and STASH codes
+## Step 9 — Isotope output and STASH codes
 
-## 9.1 Atmospheric STASH code 338
+### 9.1 Atmospheric STASH code 338
 
 **STASH code 338** is a 19-level `pd` field. The precipitation isotope information is stored in levels 1–12 as follows.
 
@@ -226,11 +226,11 @@ The remaining levels of STASH 338 are not used for the precipitation fields list
 
 ---
 
-## 9.2 Calculate δ18O, δD and d-excess
+### 9.2 Calculate δ18O, δD and d-excess
 
 The fields in STASH 338 represent the **absolute amounts** of 16O, 18O and deuterium. Calculate the isotope composition using the corresponding 16O field.
 
-### δ18O
+#### δ18O
 
 ```text
 δ18O = ((18O / 16O) − 2005.2E−6) / 2005.2E−9
@@ -245,13 +245,13 @@ d18o_in_large_scale_rain = (
 ) / 2005.2E-9
 ```
 
-### δD
+#### δD
 
 ```text
 δD = ((D / 16O) − 155.76E−6) / 155.76E−9
 ```
 
-### d-excess
+#### d-excess
 
 ```text
 d-excess = δD − 8 × δ18O
@@ -273,7 +273,7 @@ dD_in_convective_precipitation = (
 
 ---
 
-## 9.3 Other isotope-related STASH codes
+### 9.3 Other isotope-related STASH codes
 
 | STASH | Field                                                  |
 | ----: | ------------------------------------------------------ |
