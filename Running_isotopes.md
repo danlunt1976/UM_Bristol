@@ -516,10 +516,10 @@ and follow the same geological-age sequence as the restart simulations, but with
 
 For a specific age, use the letter corresponding to the same simulation position in the sequence.
 
-For example, if the selected geological age corresponds to the `b` simulation in the `tfkS[a–z]` series, use:
+For example, for 136.4 Ma, use:
 
 ```text
-teyeb
+teyEb
 ```
 
 The first three numbers in the selected `.dat` file are:
