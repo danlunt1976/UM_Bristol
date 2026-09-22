@@ -18,6 +18,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-09-22** — Update Running_isotopes.md
 - **2026-09-04** — Update Collaborations_scotese.md
 - **2026-09-03** — Update Collaborations_scotese.md
 - **2026-08-01** — Update Workshop_Solutions.md
@@ -27,7 +28,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-08-01** — Update Workshop_XTBG_Info.md
 - **2026-07-22** — Added umui page
 - **2026-07-10** — Update BC5_running.md
-- **2026-07-07** — Processed data for Ozone scenarios vl and h
 
 ---
 [How to edit these pages](Editing_guide.md)
