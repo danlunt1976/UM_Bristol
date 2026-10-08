@@ -44,6 +44,8 @@ Users should instead go to [HadCM3_user_notes](HadCM3_user_notes.md).
 
 [IT Services System Administration](SysAdmin.md)
 
+[Paleo Modelling Group webpage](paleomod.md)
+
 
 
 
