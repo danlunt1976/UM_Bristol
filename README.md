@@ -18,6 +18,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-10-08** — Update paleomod.md
 - **2026-10-08** — some changes
 - **2026-09-22** — Update Orbit_setup.md
 - **2026-09-22** — Update HadCM3_user_notes.md
@@ -27,7 +28,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-09-04** — Update Collaborations_scotese.md
 - **2026-09-03** — Update Collaborations_scotese.md
 - **2026-08-01** — Update Workshop_Solutions.md
-- **2026-08-01** — Update JupyterLab URL
 
 ---
 [How to edit these pages](Editing_guide.md)
