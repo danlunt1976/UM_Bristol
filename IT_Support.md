@@ -28,6 +28,7 @@ All requests for support should go through one of three routes:
 
 * Dan and Paul to sudo on new machines for file access (ID:0145026).  David to add Dan and Paul.
 * convsh error messages to root mailbox.  Dan emailed Paul re. error message.
+* on the new Rocky8 machines xconv crash (core dump) when trying to visualise data (either plot or table) as well as not being able to interact with any tabs/buttons.
 
 
 ## Day-to-day user support
