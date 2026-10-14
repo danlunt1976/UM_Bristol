@@ -8,7 +8,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 [HadGEM_technical_notes](HadGEM_technical_notes.md)
 
-
+[HadCM3 Emulator technical notes](Emulator_Workflow.md)
 
 ## Key Updates
 
@@ -18,6 +18,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-10-14** — Add Emulator_Workflow.md
 - **2026-10-09** — Update IT_Support.md
 - **2026-10-08** — Update paleomod.md
 - **2026-10-08** — some changes
