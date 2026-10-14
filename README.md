@@ -18,7 +18,8 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
-- **2026-10-14** — Add Emulator_Workflow.md
+- **2026-10-14** — Add HadCM3 Emulator technical notes link
+- **2026-10-14** — Create Paleo_emu_Workflow.md with setup details
 - **2026-10-09** — Update IT_Support.md
 - **2026-10-08** — Update paleomod.md
 - **2026-10-08** — some changes
@@ -27,8 +28,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-09-22** — Update Modify_orbit.md
 - **2026-09-22** — Add files via upload
 - **2026-09-22** — Update Running_isotopes.md
-- **2026-09-04** — Update Collaborations_scotese.md
-- **2026-09-03** — Update Collaborations_scotese.md
 
 ---
 [How to edit these pages](Editing_guide.md)
