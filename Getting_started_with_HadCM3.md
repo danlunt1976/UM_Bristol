@@ -169,7 +169,7 @@ Press return for all questions (DO NOT ENTER A PASSPHRASE).
 chmod 400 ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 ssh-copy-id -i ~/.ssh/id_rsa bc4
-ssh-copy-id -i ~/.ssh/id_rsa bp14_
+ssh-copy-id -i ~/.ssh/id_rsa bp14
 ```
 
 ### (d) archer2/puma2
