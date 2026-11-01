@@ -66,7 +66,7 @@ Data list:
 	- [FZJ-CMIP-ozone-m-1-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-m-1-0%22%7D>)
 		- version: 20260706
 	- [FZJ-CMIP-ozone-hl-1-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-hl-1-0%22%7D>)
-		-version: 20260706
+		- version: 20260706
 	- [FZJ-CMIP-ozone-ln-1-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-ln-1-0%22%7D>)
 		- version: 20260930
 	- [FZJ-CMIP-ozone-l-1-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-l-1-0%22%7D>)
