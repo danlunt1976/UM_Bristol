@@ -21,6 +21,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-11-01** — update ozone future scenarios
 - **2026-10-27** — Update README with Paleo-Modelling Group link
 - **2026-10-19** — Fix ssh-copy-id command for user bp14
 - **2026-10-14** — Add HadCM3 Emulator technical notes link
@@ -30,7 +31,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-10-08** — some changes
 - **2026-09-22** — Update Orbit_setup.md
 - **2026-09-22** — Update HadCM3_user_notes.md
-- **2026-09-22** — Update Modify_orbit.md
 
 ---
 [How to edit these pages](Editing_guide.md)
