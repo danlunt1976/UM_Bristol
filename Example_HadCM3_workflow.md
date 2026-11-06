@@ -112,6 +112,9 @@ Whilst the code is compiling type `cd ~/dump2hold/[JOB_ID]/code`, and then try `
 To submit the actual job, on BlueCrystal:
 `~ggpjv/swsvalde/bin/clustersubmit -s y -c n -a y -r bc4 -q veryshort -p 7x4 -P [PROJECT_CODE] [JOB_ID]`
 
+on BluePebble:
+`~ggpjv/swsvalde/bin/clustersubmit -s y -c n -a y -r bp14 -q short -p 6x4 -P GEOG030184 [JOB_ID]`
+
 You can check the status of your job in the queue of the supercomputer by typing:
 `myqs1`
 
