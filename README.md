@@ -21,6 +21,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-11-06** — Update Example_HadCM3_workflow with BluePebble command
 - **2026-11-01** — Update CMIP7_fcg_ozone.md
 - **2026-11-01** — update ozone future scenarios
 - **2026-10-27** — Update README with Paleo-Modelling Group link
@@ -30,7 +31,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-10-09** — Update IT_Support.md
 - **2026-10-08** — Update paleomod.md
 - **2026-10-08** — some changes
-- **2026-09-22** — Update Orbit_setup.md
 
 ---
 [How to edit these pages](Editing_guide.md)
