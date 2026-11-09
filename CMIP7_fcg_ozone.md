@@ -15,50 +15,67 @@ File list ready for HadCM3BL model running:
 - piControl and historical transient: 
 `vmro3*_2-0_182901-202212_73x96x19hybrid_zonmean.nc`  
 
-- Scenario vl:
-`vmro3*_ScenarioMIP_*vl-1-0*_202201-210012_73x96x19hybrid_zonmean.nc`
-- Scenario h:
-`vmro3*_ScenarioMIP_*h-1-0*_202201-210012_73x96x19hybrid_zonmean.nc`
+- Scenarios:  
+`vmro3*_ScenarioMIP_*h-1-0*_202201-210012_73x96x19hybrid_zonmean.nc`  
+`vmro3*_ScenarioMIP_*hl-1-0*_202201-210012_73x96x19hybrid_zonmean.nc`  
+`vmro3*_ScenarioMIP_*l-1-0*_202201-210012_73x96x19hybrid_zonmean.nc`  
+`vmro3*_ScenarioMIP_*ln-1-0*_202201-210012_73x96x19hybrid_zonmean.nc`  
+`vmro3*_ScenarioMIP_*m-1-0*_202201-210012_73x96x19hybrid_zonmean.nc`  
+`vmro3*_ScenarioMIP_*ml-1-0*_202201-210012_73x96x19hybrid_zonmean.nc`  
+`vmro3*_ScenarioMIP_*vl-1-0*_202201-210012_73x96x19hybrid_zonmean.nc`  
+
+
 ### Where to access data
 Data description: https://input4mips-cvs.readthedocs.io/en/latest/dataset-overviews/ozone/
-
-Download data from:
-- [FZJ-CMIP-ozone-1-2](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-1-2%22%7D): for piControl climatology and transient.
-- [FZJ-CMIP-ozone-2-0](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-2-0%22%7D): for historical transient.
-- [FZJ-CMIP-ozone-vl-1-0](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-vl-1-0%22%7D): for Scenario `vl`.
-- [FZJ-CMIP-ozone-h-1-0](https://esgf-node.ornl.gov/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-h-1-0%22%7D): for Scenario `h`.
-
-The download links would direct you to CMIP7 ozone data for specific version. But if not, you can search by `source_id`, such as `source_id = FZJ-CMIP-ozone-1-2`.
+The data has the DOI: 10.25981/ESGF.input4MIPs.CMIP7/2584173.
 
 Data list:
 - **v1.2: piControl climatology** for 185001-185012.
-	- Dataset: input4MIPs.CMIP7.CMIP.FZJ.FZJ-CMIP-ozone-1-2.atmos.`monC`.vmro3.gn
+	- [FZJ-CMIP-ozone-1-2](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-1-2%22%7D>)
+	- Dataset: input4MIPs.CMIP7.`CMIP`.FZJ.FZJ-CMIP-ozone-1-2.atmos.`monC`.vmro3.gn
 	- File: vmro3_input4MIPs_ozone_CMIP_FZJ-CMIP-ozone-1-2_gn_**185001-185012-clim**.nc
 	- Recommendation: This dataset averages over a longer simulation, essentially removing variability like the QBO. If you wish to use this forcing for your piControl, simply apply it on repeat.
 	- version: 20251010; replica=false; size=41.81 MB
 -  **v1.2: piControal transient**, time range equal to 182901-184912
-	- Dataset: input4MIPs.CMIP7.CMIP.FZJ.FZJ-CMIP-ozone-1-2.atmos.`mon`.vmro3.gn
+	- [FZJ-CMIP-ozone-1-2](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-1-2%22%7D>)
+	- Dataset: input4MIPs.CMIP7.`CMIP`.FZJ.FZJ-CMIP-ozone-1-2.atmos.`mon`.vmro3.gn
 	- File: vmro3_input4MIPs_ozone_CMIP_FZJ-CMIP-ozone-1-2_gn_**182901-184912**.nc
 	- Recommendation: The 182901-184912 file should **ONLY** use for piControl and do **NOT** include it in historical forcing. This transient piControl forcing includes the QBO signal but uses average solar forcing and repeating 1850 emissions. If you wish to use this forcing for your piControl, simply apply it on repeat.
 	- version: 20251025; replica=false; size=541.73 MB
 - **v2.0: historical forcing** for 185001-202212. 
-	- Dataset: input4MIPs.CMIP7.CMIP.FZJ.FZJ-CMIP-ozone-2-0.atmos.`mon`.vmro3.gn
+	- [FZJ-CMIP-ozone-2-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-2-0%22%7D>)
+	- Dataset: input4MIPs.CMIP7.`CMIP`.FZJ.FZJ-CMIP-ozone-2-0.atmos.`mon`.vmro3.gn
 	- File1: vmro3_input4MIPs_ozone_CMIP_FZJ-CMIP-ozone-2-0_gn_**185001-189912**.nc
-	- File2:  vmro3_input4MIPs_ozone_CMIP_FZJ-CMIP-ozone-2-0_gn_**190001-194912**.nc
+	- File2: vmro3_input4MIPs_ozone_CMIP_FZJ-CMIP-ozone-2-0_gn_**190001-194912**.nc
 	- File3: vmro3_input4MIPs_ozone_CMIP_FZJ-CMIP-ozone-2-0_gn_**195001-199912**.nc
 	- file4: vmro3_input4MIPs_ozone_CMIP_FZJ-CMIP-ozone-2-0_gn_**200001-202212**.nc
 	- Comments: CMIP7 historical ozone forcing with nudged QBO signal, historical solar forcing, and historical emissions.
 	- version: 20260211; replica=true; size=4.35 GB
-- **v1.0: Scenario `vl`** for **202201-210012**.
-	- Dataset: input4MIPs.CMIP7.ScenarioMIP.FZJ.FZJ-CMIP-ozone-`vl`-1-0.atmos.`mon`.vmro3.gn
-	- File1: vmro3_input4MIPs_ozone_ScenarioMIP_FZJ-CMIP-ozone-vl-1-0_gn_202201-205912.nc
-	- File2: vmro3_input4MIPs_ozone_ScenarioMIP_FZJ-CMIP-ozone-vl-1-0_gn_206001-210012.nc
-	- version: 20260409
-- **v1.0 Scenario `h`** for **202201-210012**.
-	- Dataset: input4MIPs.CMIP7.ScenarioMIP.FZJ.FZJ-CMIP-ozone-`h`-1-0.atmos.`mon`.vmro3.gn
-	- File1: vmro3_input4MIPs_ozone_ScenarioMIP_FZJ-CMIP-ozone-h-1-0_gn_202201-205912.nc
-	- File2: vmro3_input4MIPs_ozone_ScenarioMIP_FZJ-CMIP-ozone-h-1-0_gn_206001-210012.nc
-	- version: 20260409
+- **v1.0: future scenarios** for **202201-210012**.
+	- [FZJ-CMIP-ozone-vl-1-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-vl-1-0%22%7D>)
+		- Dataset: input4MIPs.CMIP7.`ScenarioMIP`.FZJ.FZJ-CMIP-ozone-`vl`-1-0.atmos.`mon`.vmro3.gn
+		- File1: vmro3_input4MIPs_ozone_ScenarioMIP_FZJ-CMIP-ozone-vl-1-0_gn_202201-205912.nc 
+		- File2: vmro3_input4MIPs_ozone_ScenarioMIP_FZJ-CMIP-ozone-vl-1-0_gn_206001-210012.nc
+		- version: 20260409
+		(file name formats are similar for follows)
+	- [FZJ-CMIP-ozone-h-1-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-h-1-0%22%7D>)
+		- Dataset: *h-1-0.atmos.mon.vmro3.gn
+		- File1: *h-1-0_gn_202201-205912.nc
+		- File2: *h-1-0_gn_206001-210012.nc
+		- version: 20260409
+	- [FZJ-CMIP-ozone-m-1-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-m-1-0%22%7D>)
+		- version: 20260706
+	- [FZJ-CMIP-ozone-hl-1-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-hl-1-0%22%7D>)
+		- version: 20260706
+	- [FZJ-CMIP-ozone-ln-1-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-ln-1-0%22%7D>)
+		- version: 20260930
+	- [FZJ-CMIP-ozone-l-1-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-l-1-0%22%7D>)
+		- version: 20260930
+	- [FZJ-CMIP-ozone-ml-1-0](<https://metagrid.esgf-west.org/search?project=input4MIPs&versionType=all&activeFacets=%7B%22source_id%22%3A%22FZJ-CMIP-ozone-ml-1-0%22%7D>)
+		- version: 20260930
+	- Comments: ScenarioMIP also provides `zmta` (zonal mean temeprature) files. But for HadCM3B, we don't need these zmta files, so I just ignore them. The meaning of zmta v2.0 files is unchanged from the v1.0 files. However values which were set to NaN in the v1.0 files because they were below the Earth's surface have been set to the surface values in v2.0.
+
+
 ### How to process data
 
 #### Step1: regrid to HadCM3BL lon/lat grid 
@@ -184,8 +201,10 @@ cdo -zonmean \
 ```
 
 
-#### Step4: merge piControl and 4 historical transient files into one
+#### Step4: merge files of different years into one 
 The original file size is too large. So prefer convert before merge them into one single file.
+
+Merge piControl transient and historical transient files into one:
 
 ```
 cdo -O mergetime \
@@ -200,7 +219,8 @@ cdo -O mergetime \
 script: `Siliruan:/home/bridge/mf22281/CMIP7/CMIP7-Ozone/mergetime.sh`; `Siliruan:/home/bridge/mf22281/CMIP7/CMIP7-Ozone/run_pres2hybrid_zonmean_vmro3_ncl.sh`
 
 #### Processed result
-![ozone_global_mean_historical_scenario_h_vl_hyb99.247.png](Attachments/CMIP7_fcg_ozone/ozone_global_mean_historical_scenario_h_vl_hyb99.247.png)
+![ozone_global_mean_hyb99.247_all_month_ann.png](Attachments/CMIP7_fcg_ozone/ozone_global_mean_hyb99.247_all_month_ann.png)
+![ozone_global_mean_hyb99.247_all_ann_2000-2100.png](Attachments/CMIP7_fcg_ozone/ozone_global_mean_hyb99.247_all_ann_2000-2100.png)
 ### How to implement the forcing into HadCM3
 
 <add info here how to incorporate into a model run>

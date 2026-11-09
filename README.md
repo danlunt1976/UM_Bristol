@@ -8,7 +8,10 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 [HadGEM_technical_notes](HadGEM_technical_notes.md)
 
+[HadCM3 Emulator technical notes](Emulator_Workflow.md)
 
+
+[Paleo-Modelling Group webpage](https://paleo-modelling-bristol.github.io/website/)
 
 ## Key Updates
 
@@ -18,16 +21,16 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
-- **2026-09-22** — Update Orbit_setup.md
-- **2026-09-22** — Update HadCM3_user_notes.md
-- **2026-09-22** — Update Modify_orbit.md
-- **2026-09-22** — Add files via upload
-- **2026-09-22** — Update Running_isotopes.md
-- **2026-09-04** — Update Collaborations_scotese.md
-- **2026-09-03** — Update Collaborations_scotese.md
-- **2026-08-01** — Update Workshop_Solutions.md
-- **2026-08-01** — Update JupyterLab URL
-- **2026-08-01** — Update Workshops.md
+- **2026-11-06** — Update Example_HadCM3_workflow with BluePebble command
+- **2026-11-01** — Update CMIP7_fcg_ozone.md
+- **2026-11-01** — update ozone future scenarios
+- **2026-10-27** — Update README with Paleo-Modelling Group link
+- **2026-10-19** — Fix ssh-copy-id command for user bp14
+- **2026-10-14** — Add HadCM3 Emulator technical notes link
+- **2026-10-14** — Create Paleo_emu_Workflow.md with setup details
+- **2026-10-09** — Update IT_Support.md
+- **2026-10-08** — Update paleomod.md
+- **2026-10-08** — some changes
 
 ---
 [How to edit these pages](Editing_guide.md)
