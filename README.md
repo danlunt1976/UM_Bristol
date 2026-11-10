@@ -21,6 +21,8 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-11-10** — Update UMUI.md
+- **2026-11-10** — Update CMIP7_simulations.md
 - **2026-11-09** — ADDING cmip webpages
 - **2026-11-09** — Update Dan_notes.md
 - **2026-11-06** — Update Example_HadCM3_workflow with BluePebble command
@@ -29,8 +31,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-10-27** — Update README with Paleo-Modelling Group link
 - **2026-10-19** — Fix ssh-copy-id command for user bp14
 - **2026-10-14** — Add HadCM3 Emulator technical notes link
-- **2026-10-14** — Create Paleo_emu_Workflow.md with setup details
-- **2026-10-09** — Update IT_Support.md
 
 ---
 [How to edit these pages](Editing_guide.md)
