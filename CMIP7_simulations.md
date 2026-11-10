@@ -145,5 +145,9 @@ These test whether the equilibrium-TRIFFID tuning results hold under dynamic TRI
 
 All-forcings run combining `xqhul` (Emission + GHGs + LU + Solar + Vol) with the sulphate aerosol scheme from `xqhug`. Currently being debugged.
 
+### xqifw/xqify
+Chirs Jones said (10/11/2026) that these are the latest picontrol simulations that Paul is working on.
+
+
 > [!NOTE]
 > Document bugs and fixes here as they are identified.
