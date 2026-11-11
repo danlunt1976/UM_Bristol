@@ -8,7 +8,7 @@ Login in to SAFE with your SAFE credentials.
 
 Go to Login accounts → Request login account, select the "n02" project and click Next.  Then choose "Cirrus" as the machine and click Next.  
   
-Note: Your Cirrus username must match your ARCHER2 username.  This should also be the same as your UoB account.
+Choose your username - things will be a lot easier if you use the same username as your UoB account.
 
 Upload an SSH public key, created on the machine that you wish to log in from.  For example, in holocene4 I did:
 `ssh-keygen -t rsa -f ~/.ssh/id_rsa_cirrus`

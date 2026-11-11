@@ -22,7 +22,7 @@ We use a variety of different computers for running and processing climate model
 
 (c) For bluepebble only, You may also need to email them because you need to ask them to create a folder: /bp1/geog-tropical/users/(your username). Also ask to be added to the s-tropical group. Cc [p.j.valdes@bristol.ac.uk](mailto:p.j.valdes@bristol.ac.uk) on your email since they need to confirm additions.
 
-(d) Cirrus.  "Cirrus” is the machine that holds a database of (almost) all Met Office Unified Model (UM) climate simulations ever carried out in universities in the UK.  It is also the machine from which we set up and submit simulations.  To obtain an account on Cirrus: [Obtaining_accounts_cirrus](Obtaining_accounts_cirrus.md). To get access to Cirrus, you need to have an account on archer2.
+(d) Cirrus.  "Cirrus” is the machine that holds a database of (almost) all Met Office Unified Model (UM) climate simulations ever carried out in universities in the UK.  It is also the machine from which we set up and submit simulations.  To obtain an account on Cirrus: [Obtaining_accounts_cirrus](Obtaining_accounts_cirrus.md). To get access to Cirrus, you need to have an account on the SAFE system.
 
 (d_old) Puma2.  ”puma2” is the machine that holds a database of (almost) all Met Office Unified Model (UM) climate simulations ever carried out in universities in the UK.  It is also the machine from which we set up and submit simulations.  puma2 is now part of the Archer national computing resources. To get access to puma, you need to have an account on archer2. Instructions for access the system are here: [https://cms.ncas.ac.uk/puma2/](https://cms.ncas.ac.uk/puma2/)
 
