@@ -21,6 +21,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-11-11** — Update steps and examples in Orbit_setup.md
 - **2026-11-11** — Create UM_webpages.md
 - **2026-11-11** — Update PUMA.md
 - **2026-11-11** — Update HadCM3_technical_notes.md
@@ -30,7 +31,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-11-11** — Added Cirrus instrucitons
 - **2026-11-11** — Create Obtaining_accounts_cirrus.md
 - **2026-11-10** — Update UMUI.md
-- **2026-11-10** — Update CMIP7_simulations.md
 
 ---
 [How to edit these pages](Editing_guide.md)
