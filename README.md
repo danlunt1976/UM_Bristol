@@ -21,6 +21,7 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 
 ## Recent Updates
 
+- **2026-11-11** — Update Obtaining_accounts_cirrus.md
 - **2026-11-11** — more on Cirrus
 - **2026-11-11** — Added Cirrus instrucitons
 - **2026-11-11** — Create Obtaining_accounts_cirrus.md
@@ -30,7 +31,6 @@ Documentation for the Bristol version of the UK Met Office Unified Model.
 - **2026-11-09** — Update Dan_notes.md
 - **2026-11-06** — Update Example_HadCM3_workflow with BluePebble command
 - **2026-11-01** — Update CMIP7_fcg_ozone.md
-- **2026-11-01** — update ozone future scenarios
 
 ---
 [How to edit these pages](Editing_guide.md)
