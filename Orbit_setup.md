@@ -432,7 +432,23 @@ SINOBL_IN
 
 for the required geological age.
 
-#### Step 2 — Edit `CNTLATM`
+#### Step 2a - edit parameters in umui
+
+In puma2, `umui &`
+
+In File --> Open read write
+
+```text
+Model Selection
+ -> Sub-Model Independent
+  -> Script Inserts and Modifications
+```
+
+find parameters called ORB_GAMMA, ORB_E, ORB_TAU0, ORB_SINOBL, change the value to what you need.
+
+Process and go to HPC to continue move files, compile and run model.
+
+#### Step 2b — Edit `CNTLATM` (alternative method of a)
 
 In `umui_jobs`, remove the final 8 lines:
 
@@ -441,7 +457,7 @@ head -n -8 CNTLATM > temp_CNTLATM.dat
 mv temp_CNTLATM.dat CNTLATM
 ```
 
-#### Step 3 — Add Fixed Orbital Switches
+#### Step 3b — Add Fixed Orbital Switches
 
 Add:
 
@@ -453,7 +469,7 @@ SEC_VAR_FILE=.FALSE.,
 SEC_VAR_YEAR=0,
 ```
 
-#### Step 4 — Add the Calculated Orbital Parameters
+#### Step 4b — Add the Calculated Orbital Parameters
 
 Append the calculated numerical values:
 
@@ -464,7 +480,7 @@ echo "TAU0_IN=${tau0_in},"     >> CNTLATM
 echo "SINOBL_IN=${sinobl_in}," >> CNTLATM
 ```
 
-#### Step 5 — Close the Final Configuration Block
+#### Step 5b — Close the Final Configuration Block
 
 Append:
 
@@ -475,7 +491,7 @@ echo "&END" >> CNTLATM
 
 ---
 
-### 3.9 Final `CNTLATM` Example
+### 3.9b Final `CNTLATM` Example
 
 The resulting final block is:
 
