@@ -22,19 +22,19 @@ We use a variety of different computers for running and processing climate model
 
 (c) For bluepebble only, You may also need to email them because you need to ask them to create a folder: /bp1/geog-tropical/users/(your username). Also ask to be added to the s-tropical group. Cc [p.j.valdes@bristol.ac.uk](mailto:p.j.valdes@bristol.ac.uk) on your email since they need to confirm additions.
 
-(d) Cirrus.  "Cirrus” is the machine that holds a database of (almost) all Met Office Unified Model (UM) climate simulations ever carried out in universities in the UK.  It is also the machine from which we set up and submit simulations.  To obtain an account on Cirrus: [Obtaining_accounts_cirrus](Obtaining_accounts_cirrus.md). To get access to Cirrus, you need to have an account on the SAFE system.
+(d) Cirrus.  "Cirrus” is the machine that is a portal to puma2 (see below). To obtain an account on Cirrus: [Obtaining_accounts_cirrus](Obtaining_accounts_cirrus.md). To get access to Cirrus, you need to have an account on the SAFE system.  Instructions for accessing Cirrus are here: [https://docs.cirrus.ac.uk/user-guide/connecting/](https://docs.cirrus.ac.uk/user-guide/connecting/).  In brief, once you have uploaded your public key to the SAFE system and set up MFA, you can simply do: `ssh -Y login.cirrus.ac.uk -i ~/.ssh/id_rsa_cirrus` (assuming you named your public key id_rsa_cirrus).
 
-(d_old) Puma2.  ”puma2” is the machine that holds a database of (almost) all Met Office Unified Model (UM) climate simulations ever carried out in universities in the UK.  It is also the machine from which we set up and submit simulations.  puma2 is now part of the Archer national computing resources. To get access to puma, you need to have an account on archer2. Instructions for access the system are here: [https://cms.ncas.ac.uk/puma2/](https://cms.ncas.ac.uk/puma2/)
+(e) Puma2.  ”puma2” is the machine that holds a database of (almost) all Met Office Unified Model (UM) climate simulations ever carried out in universities in the UK.  It is also the machine from which we set up and submit simulations.  puma2 is part of the Archer(now Cirrus) national computing resources. To get access to puma, you need to have an account on archer2(now cirrus). Instructions for access the system are here: [https://cms.ncas.ac.uk/puma2/](https://cms.ncas.ac.uk/puma2/) (although these are currently for via archer2, not via cirrus).
 
-I would strongly recommend that you choose the same username on puma/archer as at Bristol. It makes life simpler.
+I would strongly recommend that you choose the same username on puma/archer/cirrus as at Bristol. It makes life simpler.
 
 In order to access the system, you need to create a ssh-key from one of our servers. The new system allows multiple such keys. I would suggest you do this on bluecrystal but also on our BRIDGE servers. To create the key, on bluecrystal and/or BRIDGE server type:
 
 `ssh-keygen -t rsa -f ~/.ssh/id_rsa_puma2`
 
-The resulting key needs to be sent to archer, following the instructions in the NCAS website above.
+The resulting key needs to be sent to archer(cirrus), following the instructions in the NCAS website above.
 
-(e) You also need access to our webpage server. Go to: [https://www.paleo.bristol.ac.uk/](https://www.paleo.bristol.ac.uk/).   This gives you access to all of our model simulations. This is almost overwhelming since over the last 30 years we have performed about 50000 simulations!!!  More details about the web page can be found here: [https://www.paleo.bristol.ac.uk/ummodel/scripts/papers/Using_BRIDGE_webpages.pdf](https://www.paleo.bristol.ac.uk/ummodel/scripts/papers/Using_BRIDGE_webpages.pdf)
+(f) You also need access to our webpage server. Go to: [https://www.paleo.bristol.ac.uk/](https://www.paleo.bristol.ac.uk/).   This gives you access to all of our model simulations. This is almost overwhelming since over the last 30 years we have performed about 50000 simulations!!!  More details about the web page can be found here: [https://www.paleo.bristol.ac.uk/ummodel/scripts/papers/Using_BRIDGE_webpages.pdf](https://www.paleo.bristol.ac.uk/ummodel/scripts/papers/Using_BRIDGE_webpages.pdf)
 
 There are also some help pages on our BRIDGE wiki (note that you will need to be on the university network/VPN to access this). See: [https://www.paleo.bristol.ac.uk/wiki/bridge/](https://www.paleo.bristol.ac.uk/wiki/bridge/)
 
